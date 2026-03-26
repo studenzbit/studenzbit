@@ -93,27 +93,22 @@
 <body class="bg-brand-blush font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
 <div class="fixed inset-0 grain-overlay z-[60]"></div>
 <!-- Navigation Shell -->
-<nav class="fixed top-0 w-full z-50 bg-[#faf9f6]/80 dark:bg-[#EDF4ED] backdrop-blur-xl shadow-sm shadow-black/5">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<a class="text-2xl font-serif text-[#303330] dark:text-[#faf9f6] italic" href="studenzbit_home.html">StudenzBit</a>
-<div class="hidden md:flex items-center gap-10 font-['Noto_Serif'] font-bold tracking-tight">
-<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#303330] hover:opacity-80 transition-opacity duration-300" href="studenzbit_destinations.html">Destinations</a>
-<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#303330] hover:opacity-80 transition-opacity duration-300" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
-<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#303330] hover:opacity-80 transition-opacity duration-300" href="studenzbit_student_toolkit_updated.html">Student Toolkit</a>
-<a class="text-[#805353] dark:text-[#fec3c3] border-b-2 border-[#805353] pb-1 hover:opacity-80 transition-opacity duration-300" href="studenzbit_blog.html">Blog</a>
+<nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 72px; background: #ffffff; border-bottom: 1px solid #e2ddd6; padding: 0 48px; display: flex; align-items: center; justify-content: space-between;">
+<a href="index.html" style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 22px; color: #2c2c2c; text-decoration: none; line-height: 1;">Studenz<span style="color: #7b3f3f;">Bit</span></a>
+<div style="display: flex; align-items: center; gap: 32px;">
+<a href="studenzbit_destinations.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Destinations</a>
+<a href="studenzbit_tech_hub_updated.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Tech Hub</a>
+<a href="studenzbit_student_toolkit_updated.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Student Toolkit</a>
+<a href="studenzbit_blog.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #7b3f3f; text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: #7b3f3f;">Blog</a>
 </div>
-<div class="flex items-center gap-4 text-[#805353]">
-<span class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity">search</span>
-<a class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity" href="#">account_circle</a>
-</div>
-</div>
+<a href="#" style="background: #7b3f3f; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 20px; border-radius: 20px; text-decoration: none; border: none;">Sign In</a>
 </nav>
-<main class="pt-24 pb-20 max-w-7xl mx-auto px-6 md:px-12">
+<main class="pt-24 pb-20 max-w-7xl mx-auto px-6 md:px-12" style="padding-top: 72px;">
 <!-- Breadcrumb -->
 <nav class="mb-12 flex items-center gap-2 text-sm text-on-surface-variant tracking-wide font-medium">
-<a class="hover:text-primary transition-colors" href="#">Blog</a>
+<a class="hover:text-primary transition-colors" href="studenzbit_blog.html">Blog</a>
 <span class="material-symbols-outlined text-[14px]">chevron_right</span>
-<a class="hover:text-primary transition-colors" href="#">Canada</a>
+<a class="hover:text-primary transition-colors" href="studenzbit_toronto_detail.html">Canada</a>
 <span class="material-symbols-outlined text-[14px]">chevron_right</span>
 <span class="text-primary font-bold">First Week Guide</span>
 </nav>
@@ -343,27 +338,48 @@
 </section>
 <!-- More Articles -->
 <section class="mt-32">
-<h3 class="font-headline text-3xl mb-12 text-center">More from the Sanctuary</h3>
+<h3 class="font-headline text-3xl mb-12 text-center">Keep Reading</h3>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[
-                    {t: "Top 10 Cities for Tech Students", c: "TECH HUB", img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&amp;fit=crop&amp;q=80&amp;w=800"},
-                    {t: "Mastering the Art of Networking", c: "TOOLKIT", img: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&amp;fit=crop&amp;q=80&amp;w=800"},
-                    {t: "Balancing Part-time Work &amp; GPA", c: "STUDENT LIFE", img: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&amp;fit=crop&amp;q=80&amp;w=800"}
-                ].map(article =&gt; (
-                    <div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
 <div class="h-48 overflow-hidden relative">
-<img alt="${article.t}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant editorial photography of modern cityscapes and students with soft warm sunlight and clean compositions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJw2Yljp-vj8l7QfcJuMiXr4t0llMZ_e9CfVsZi2lrFBkgnMOkje7mASmMad-frDp-XX9D8xTqcG2fGKzdG1YjDrnx7jYu6LINHd5990nePKFgYS2Xl6Jxi47_63J76gq95eHwKwD5DtGf_lDyfYspe2yml4OvNVJCicem2tR_SUEsAYq7qeEOZl8LydnW0UdXvY4GI6FiFq0zmJgcZCBvS-gImz2o45QygnupMpX937WFGYAZPf1w4P4LfmvPO-EyDD8KHoIQxEO"/>
+<img alt="5 Banks Every International Student Should Know About in Canada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Students using online banking and finance tools in a modern apartment setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJw2Yljp-vj8l7QfcJuMiXr4t0llMZ_e9CfVsZi2lrFBkgnMOkje7mASmMad-frDp-XX9D8xTqcG2fGKzdG1YjDrnx7jYu6LINHd5990nePKFgYS2Xl6Jxi47_63J76gq95eHwKwD5DtGf_lDyfYspe2yml4OvNVJCicem2tR_SUEsAYq7qeEOZl8LydnW0UdXvY4GI6FiFq0zmJgcZCBvS-gImz2o45QygnupMpX937WFGYAZPf1w4P4LfmvPO-EyDD8KHoIQxEO"/>
 <div class="absolute top-4 left-4">
-<span class="bg-primary text-on-primary px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full">${article.c}</span>
+<span class="bg-primary text-on-primary px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full">FINANCE · CANADA</span>
 </div>
 </div>
 <div class="p-8">
-<h4 class="font-headline text-xl mb-4 group-hover:text-primary transition-colors">${article.t}</h4>
-<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2" href="#">Read Article <span class="material-symbols-outlined text-[14px]">east</span></a>
+<h4 class="font-headline text-xl mb-4 group-hover:text-primary transition-colors">5 Banks Every International Student Should Know About in Canada</h4>
+<div class="text-[11px] text-on-surface-variant mb-4 uppercase tracking-widest font-bold">5 min read</div>
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2" href="studenzbit_blog.html">Read <span class="material-symbols-outlined text-[14px]">east</span></a>
 </div>
 </div>
-                ))}
-            </div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+<div class="h-48 overflow-hidden relative">
+<img alt="How to Write a Canadian Resume (With Template)" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Resume writing desk with laptop, notebook, and checklist for international students" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJw2Yljp-vj8l7QfcJuMiXr4t0llMZ_e9CfVsZi2lrFBkgnMOkje7mASmMad-frDp-XX9D8xTqcG2fGKzdG1YjDrnx7jYu6LINHd5990nePKFgYS2Xl6Jxi47_63J76gq95eHwKwD5DtGf_lDyfYspe2yml4OvNVJCicem2tR_SUEsAYq7qeEOZl8LydnW0UdXvY4GI6FiFq0zmJgcZCBvS-gImz2o45QygnupMpX937WFGYAZPf1w4P4LfmvPO-EyDD8KHoIQxEO"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-on-primary px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full">CAREER · CANADA</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline text-xl mb-4 group-hover:text-primary transition-colors">How to Write a Canadian Resume (With Template)</h4>
+<div class="text-[11px] text-on-surface-variant mb-4 uppercase tracking-widest font-bold">8 min read</div>
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2" href="studenzbit_blog.html">Read <span class="material-symbols-outlined text-[14px]">east</span></a>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+<div class="h-48 overflow-hidden relative">
+<img alt="eSIM vs Local SIM: Which Should You Get Before Landing?" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Phone setup choices showing eSIM and local SIM options for travelers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJw2Yljp-vj8l7QfcJuMiXr4t0llMZ_e9CfVsZi2lrFBkgnMOkje7mASmMad-frDp-XX9D8xTqcG2fGKzdG1YjDrnx7jYu6LINHd5990nePKFgYS2Xl6Jxi47_63J76gq95eHwKwD5DtGf_lDyfYspe2yml4OvNVJCicem2tR_SUEsAYq7qeEOZl8LydnW0UdXvY4GI6FiFq0zmJgcZCBvS-gImz2o45QygnupMpX937WFGYAZPf1w4P4LfmvPO-EyDD8KHoIQxEO"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-on-primary px-3 py-1 text-[10px] font-bold tracking-widest uppercase rounded-full">TECH · GLOBAL</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline text-xl mb-4 group-hover:text-primary transition-colors">eSIM vs Local SIM: Which Should You Get Before Landing?</h4>
+<div class="text-[11px] text-on-surface-variant mb-4 uppercase tracking-widest font-bold">3 min read</div>
+<a class="text-xs font-bold uppercase tracking-widest text-on-surface-variant flex items-center gap-2" href="studenzbit_blog.html">Read <span class="material-symbols-outlined text-[14px]">east</span></a>
+</div>
+</div>
+</div>
 </section>
 </main>
 <!-- Footer -->
@@ -373,14 +389,14 @@
 <div class="flex gap-8 text-[#5d605c] dark:text-[#b0b3ae]">
 <a class="hover:text-[#805353] transition-colors" href="#">Privacy Policy</a>
 <a class="hover:text-[#805353] transition-colors" href="#">Terms of Service</a>
-<a class="hover:text-[#805353] transition-colors" href="#">Contact Us</a>
+<a class="hover:text-[#805353] transition-colors" href="#">Contact</a>
 <a class="hover:text-[#805353] transition-colors" href="#">About</a>
 </div>
 <div class="flex items-center gap-4 text-[#805353]">
 <span class="material-symbols-outlined hover:opacity-70 cursor-pointer">photo_camera</span>
 <span class="material-symbols-outlined hover:opacity-70 cursor-pointer">alternate_email</span>
 </div>
-<p class="text-[#5d605c] dark:text-[#b0b3ae]">© 2024 Scholarly Sanctuary. Designed for the global mind.</p>
+<p class="text-[#5d605c] dark:text-[#b0b3ae]">© 2026 StudenzBit. Your guide to studying abroad.</p>
 </div>
 </footer>
 </body></html>

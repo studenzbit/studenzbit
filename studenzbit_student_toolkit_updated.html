@@ -102,25 +102,17 @@ body::before {
 </head>
 <body class="bg-background font-body text-on-surface">
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 rounded-b-xl bg-white/80 dark:bg-[#1a1c1e]/80 backdrop-blur-xl shadow-sm shadow-[#1a1c1e]/5">
-<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<a class="font-serif italic text-2xl text-[#1a1c1e] dark:text-[#faf9f6]" href="studenzbit_home.html">StudenzBit</a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-[#44474e] hover:text-[#1a1c1e] transition-colors font-serif italic text-lg lg:text-xl tracking-tight" href="studenzbit_destinations.html">Destinations</a>
-<a class="text-[#44474e] hover:text-[#1a1c1e] transition-colors font-serif italic text-lg lg:text-xl tracking-tight" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
-<a class="text-[#805353] border-b-2 border-[#805353] pb-1 font-semibold font-serif italic text-lg lg:text-xl tracking-tight" href="studenzbit_student_toolkit_updated.html">Student Toolkit</a>
-<a class="text-[#44474e] hover:text-[#1a1c1e] transition-colors font-serif italic text-lg lg:text-xl tracking-tight" href="studenzbit_blog.html">Blog</a>
+<nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 72px; background: #ffffff; border-bottom: 1px solid #e2ddd6; padding: 0 48px; display: flex; align-items: center; justify-content: space-between;">
+<a href="index.html" style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 22px; color: #2c2c2c; text-decoration: none; line-height: 1;">Studenz<span style="color: #7b3f3f;">Bit</span></a>
+<div style="display: flex; align-items: center; gap: 32px;">
+<a href="studenzbit_destinations.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Destinations</a>
+<a href="studenzbit_tech_hub_updated.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Tech Hub</a>
+<a href="studenzbit_student_toolkit_updated.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #7b3f3f; text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: #7b3f3f;">Student Toolkit</a>
+<a href="studenzbit_blog.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Blog</a>
 </div>
-<div class="flex items-center gap-6">
-<div class="hidden lg:flex items-center bg-black/5 px-4 py-2 rounded-full">
-<span class="material-symbols-outlined text-outline text-sm">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm w-32 ml-2" placeholder="Search guides..." type="text"/>
-</div>
-<a class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-medium hover:opacity-80 transition-opacity duration-300 active:scale-[0.98]" href="#">Sign In</a>
-</div>
-</div>
+<a href="#" style="background: #7b3f3f; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 20px; border-radius: 20px; text-decoration: none; border: none;">Sign In</a>
 </nav>
-<main class="pt-32 max-w-7xl mx-auto px-8">
+<main class="pt-32 max-w-7xl mx-auto px-8" style="padding-top: 72px;">
 <!-- Page Header -->
 <header class="mb-20">
 <span class="font-label text-xs tracking-[0.2em] font-bold text-on-surface-variant uppercase">STUDENT TOOLKIT</span>
@@ -143,13 +135,13 @@ body::before {
 <div class="z-10 max-w-xl">
 <span class="inline-block bg-primary-container text-on-primary-container text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-6">BEST VALUE</span>
 <h2 class="font-headline text-4xl md:text-5xl text-white mb-4">The Complete Student Bundle</h2>
-<p class="text-outline-variant text-lg mb-8">Every guide, template, and checklist in one download. Save over 45% when you buy the full sanctuary pack.</p>
+<p class="text-outline-variant text-lg mb-8">Every guide, template, and checklist in one download. Save over 45%.</p>
 <div class="flex items-baseline gap-4 mb-10">
 <span class="text-white text-4xl font-bold">$49.99</span>
 <span class="text-outline-variant text-xl line-through">$89.99</span>
 </div>
 <button class="bg-primary text-on-primary px-10 py-4 rounded-full text-lg font-medium flex items-center gap-2 hover:opacity-90 transition-opacity">
-                        Get the Bundle 
+                        Get the Bundle →
                         <span class="material-symbols-outlined">arrow_right_alt</span>
 </button>
 </div>
@@ -190,16 +182,16 @@ body::before {
 <div class="w-16 h-16 rounded-xl bg-primary-container flex items-center justify-center">
 <span class="material-symbols-outlined text-on-primary-container text-3xl">description</span>
 </div>
-<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">ACADEMIC</span>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">PROFESSIONAL</span>
 </div>
 <h4 class="font-headline text-xl mb-3 text-on-surface">Resume Template for Academics</h4>
-<p class="text-on-surface-variant text-sm mb-6 flex-grow">Tailored for research assistantships and university work-study roles.</p>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">ATS-optimized resume template designed for the Canadian, US, and Australian job market. Includes formatting for international degrees, work permits, and co-op experience. What's inside: 3 resume formats (chronological, functional, hybrid), cover letter template, LinkedIn summary guide, 10 action verb lists by industry.</p>
 <div class="flex items-center gap-2 mb-6">
 <span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
 </div>
 <div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
 <span class="font-bold text-lg text-on-surface">$14.99</span>
-<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+<a class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all" href="job_search_roadmap_detail.html">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
 </div>
 </div>
 <!-- Product 2 -->
@@ -211,7 +203,7 @@ body::before {
 <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">FINANCE</span>
 </div>
 <h4 class="font-headline text-xl mb-3 text-on-surface">Banking &amp; Credit Guide</h4>
-<p class="text-on-surface-variant text-sm mb-6 flex-grow">A step-by-step guide to building credit and choosing the right student bank account.</p>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Step-by-step guide to opening your first bank account as an international student. Covers TD, RBC, Scotiabank for Canada - Chase, BoA for USA - CommBank, ANZ for Australia. What's inside: bank comparison table, required documents checklist, GIC guide for Canada, credit score building tips, SIN/SSN setup guide.</p>
 <div class="flex items-center gap-2 mb-6">
 <span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
 </div>
@@ -229,7 +221,7 @@ body::before {
 <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">CAREER</span>
 </div>
 <h4 class="font-headline text-xl mb-3 text-on-surface">Job Search Roadmap</h4>
-<p class="text-on-surface-variant text-sm mb-6 flex-grow">From networking to first offer. A strategic guide for competitive markets.</p>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">A 30-day action plan for international students entering the job market. From LinkedIn optimization to your first offer letter - with scripts, templates, and daily tasks. What's inside: 30-day calendar, resume tailoring guide, 50+ job boards by country, interview prep framework, salary negotiation scripts for newcomers.</p>
 <div class="flex items-center gap-2 mb-6">
 <span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
 </div>
@@ -247,7 +239,7 @@ body::before {
 <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">LEGAL</span>
 </div>
 <h4 class="font-headline text-xl mb-3 text-on-surface">Lease Agreement Checklist</h4>
-<p class="text-on-surface-variant text-sm mb-6 flex-grow">Don't sign before checking these 25 critical points for student housing.</p>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">25-point checklist to review before signing any student lease in Canada or Australia. Avoid hidden fees, illegal clauses, and deposit traps that catch new arrivals off guard. What's inside: lease red flags list, tenant rights summary by province/state, deposit protection guide, utility responsibility checklist.</p>
 <div class="flex items-center gap-2 mb-6">
 <span>🇨🇦</span><span>🇦🇺</span>
 </div>
@@ -265,7 +257,7 @@ body::before {
 <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">CAREER</span>
 </div>
 <h4 class="font-headline text-xl mb-3 text-on-surface">LinkedIn Profile Guide</h4>
-<p class="text-on-surface-variant text-sm mb-6 flex-grow">Optimize your profile for international recruiters and hiring managers.</p>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Optimize your LinkedIn profile for international recruiters and hiring managers. Includes profile templates, connection strategies, and messaging scripts that get responses. What's inside: profile optimization checklist, headline formulas, about section templates, connection request scripts, InMail templates.</p>
 <div class="flex items-center gap-2 mb-6">
 <span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
 </div>
@@ -283,12 +275,48 @@ body::before {
 <span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">ARRIVAL</span>
 </div>
 <h4 class="font-headline text-xl mb-3 text-on-surface">Canada First Week Checklist</h4>
-<p class="text-on-surface-variant text-sm mb-6 flex-grow">Essential steps from SIN activation to phone plans and transport cards.</p>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Your complete arrival checklist for the first 7 days in Canada. From landing at Pearson to activating your SIN, setting up banking, getting a SIM card, and registering at university. What's inside: day-by-day task list, SIN registration guide, Presto card setup, nearest Service Canada locations, grocery store guide, emergency contacts.</p>
 <div class="flex items-center gap-2 mb-6">
 <span>🇨🇦</span>
 </div>
 <div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
 <span class="font-bold text-lg text-secondary">Free</span>
+<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- Product 7 -->
+<div class="bg-[#FDFCFB] p-8 rounded-2xl flex flex-col border border-[#E2DDD6] hover:shadow-xl hover:shadow-on-surface/5 transition-all group">
+<div class="mb-6 flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-primary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">record_voice_over</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">CAREER</span>
+</div>
+<h4 class="font-headline text-xl mb-3 text-on-surface">Interview Prep Guide</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Master behavioral interviews, technical screens, and cultural fit questions in the Canadian, US, and Australian job market. Includes 50+ real interview questions with model answers. What's inside: STAR method framework, 50+ behavioral questions with answers, technical interview tips, salary expectation scripts, thank-you email templates.</p>
+<div class="flex items-center gap-2 mb-6">
+<span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="font-bold text-lg text-on-surface">$19.99</span>
+<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- Product 8 -->
+<div class="bg-[#FDFCFB] p-8 rounded-2xl flex flex-col border border-[#E2DDD6] hover:shadow-xl hover:shadow-on-surface/5 transition-all group">
+<div class="mb-6 flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-secondary-container/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl">inventory_2</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">BUNDLE - BEST VALUE (SAVE 45%)</span>
+</div>
+<h4 class="font-headline text-xl mb-3 text-on-surface">Complete Student Bundle</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Every guide, template, and checklist in one download. Everything from banking setup to job offer negotiation - your complete international student survival kit. What's inside: all 7 products above combined. Lifetime access. Instant download.</p>
+<div class="flex items-center gap-2 mb-6">
+<span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="font-bold text-lg text-on-surface">$49.99</span>
 <button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
 </div>
 </div>
@@ -306,11 +334,11 @@ body::before {
 <div class="text-on-surface-variant text-xs font-medium tracking-wide uppercase">Average Rating</div>
 </div>
 <div class="text-center">
-<div class="font-headline text-3xl mb-1 text-on-surface">Instant</div>
-<div class="text-on-surface-variant text-xs font-medium tracking-wide uppercase">Digital Download</div>
+<div class="font-headline text-3xl mb-1 text-on-surface">Instant Download</div>
+<div class="text-on-surface-variant text-xs font-medium tracking-wide uppercase">Delivered Immediately</div>
 </div>
 <div class="text-center">
-<div class="font-headline text-xl mb-1 text-on-surface">By Internationals</div>
+<div class="font-headline text-xl mb-1 text-on-surface">Made by Internationals,</div>
 <div class="text-on-surface-variant text-[10px] font-bold tracking-wide uppercase">For Internationals</div>
 </div>
 </div>
@@ -323,19 +351,19 @@ body::before {
 <div class="text-primary/10 font-headline text-8xl mb-[-40px] z-0">01</div>
 <span class="material-symbols-outlined text-primary text-4xl mb-6 z-10">shopping_cart</span>
 <h4 class="font-headline text-xl mb-2 text-on-surface">Choose Your Guide</h4>
-<p class="text-on-surface-variant">Select the specific resources that match your destination and current stage.</p>
+<p class="text-on-surface-variant">Browse by destination, category, or your current stage of the journey.</p>
 </div>
 <div class="flex flex-col items-center text-center">
 <div class="text-primary/10 font-headline text-8xl mb-[-40px] z-0">02</div>
 <span class="material-symbols-outlined text-primary text-4xl mb-6 z-10">download</span>
 <h4 class="font-headline text-xl mb-2 text-on-surface">Instant Download</h4>
-<p class="text-on-surface-variant">Access your PDF guides and editable templates immediately after checkout.</p>
+<p class="text-on-surface-variant">Pay securely via Stripe. Your files are delivered immediately after checkout.</p>
 </div>
 <div class="flex flex-col items-center text-center">
 <div class="text-primary/10 font-headline text-8xl mb-[-40px] z-0">03</div>
 <span class="material-symbols-outlined text-primary text-4xl mb-6 z-10">verified</span>
 <h4 class="font-headline text-xl mb-2 text-on-surface">Arrive Confident</h4>
-<p class="text-on-surface-variant">Use our step-by-step systems to navigate your new country with total peace of mind.</p>
+<p class="text-on-surface-variant">Use your guides before, during, and after arrival. Real advice, real results.</p>
 </div>
 </div>
 </section>
@@ -348,7 +376,7 @@ body::before {
 <p class="text-on-surface-variant text-lg mb-8">Two of our most popular guides are completely free — just drop your email and we'll send them over.</p>
 <form class="flex flex-col sm:flex-row gap-4">
 <input class="flex-grow rounded-full border-none bg-white px-6 py-4 focus:ring-2 focus:ring-primary/20 shadow-sm" placeholder="Enter your email" type="email"/>
-<button class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity" type="submit">Send Free Guides</button>
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity" type="submit">Send Me the Free Guides →</button>
 </form>
 <p class="mt-4 text-[10px] text-on-surface-variant uppercase tracking-wider">NO CREDIT CARD REQUIRED. JOIN 15,000+ SUBSCRIBERS.</p>
 </div>
@@ -361,7 +389,7 @@ body::before {
 <div class="w-40 h-56 bg-white rounded-xl shadow-lg p-4 flex flex-col rotate-[5deg] translate-y-4">
 <span class="material-symbols-outlined text-primary mb-3">calendar_today</span>
 <div class="text-[10px] font-bold text-on-surface-variant mb-1">ARRIVAL</div>
-<div class="text-sm font-headline leading-tight text-on-surface">Canada First Week</div>
+<div class="text-sm font-headline leading-tight text-on-surface">Canada First Week Checklist</div>
 </div>
 </div>
 </div>
@@ -373,12 +401,12 @@ body::before {
 <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
 <div class="flex flex-col items-center md:items-start gap-2">
 <div class="font-serif italic text-xl text-[#1a1c1e] dark:text-[#faf9f6]">StudenzBit</div>
-<div class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae]">© 2024 StudenzBit. The Scholarly Sanctuary.</div>
+<div class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae]">© 2026 StudenzBit. Your guide to studying abroad.</div>
 </div>
 <div class="flex gap-8">
 <a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Privacy Policy</a>
 <a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Terms of Service</a>
-<a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Contact Us</a>
+<a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Contact</a>
 <a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">About</a>
 </div>
 <div class="flex gap-4">

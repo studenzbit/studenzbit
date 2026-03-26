@@ -101,25 +101,20 @@
 </head>
 <body class="bg-background font-body text-charcoal warm-grain">
 <!-- Top Navigation (Shared Component) -->
-<header class="bg-[#faf9f6]/80 backdrop-blur-xl dark:bg-[#EDF4ED] font-['Noto_Serif'] antialiased tracking-tight docked full-width top-0 sticky z-50 shadow-[0px_20px_40px_rgba(48,51,48,0.04)]">
-<nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
-<a class="text-2xl font-serif italic text-[#805353] dark:text-[#fec3c3]" href="studenzbit_home.html">StudenzBit</a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="studenzbit_destinations.html">Destinations</a>
-<a class="text-[#805353] dark:text-[#fec3c3] border-b-2 border-[#805353] pb-1 font-bold" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
-<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="studenzbit_student_toolkit_updated.html">Student Toolkit</a>
-<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="studenzbit_blog.html">Blog</a>
+<nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 72px; background: #ffffff; border-bottom: 1px solid #e2ddd6; padding: 0 48px; display: flex; align-items: center; justify-content: space-between;">
+<a href="index.html" style="font-family: 'Noto Serif', serif; font-style: italic; font-size: 22px; color: #2c2c2c; text-decoration: none; line-height: 1;">Studenz<span style="color: #7b3f3f;">Bit</span></a>
+<div style="display: flex; align-items: center; gap: 32px;">
+<a href="studenzbit_destinations.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Destinations</a>
+<a href="studenzbit_tech_hub_updated.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #7b3f3f; text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: #7b3f3f;">Tech Hub</a>
+<a href="studenzbit_student_toolkit_updated.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Student Toolkit</a>
+<a href="studenzbit_blog.html" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 500; color: #2c2c2c; text-decoration: none;">Blog</a>
 </div>
-<div class="flex items-center gap-6">
-<span class="material-symbols-outlined text-[#805353] cursor-pointer hover:bg-[#eeeeea] p-2 rounded-full transition-all">search</span>
-<a class="bg-[#805353] text-[#fff7f6] px-6 py-2 rounded-full text-sm font-medium hover:scale-95 transition-transform duration-200" href="#">Sign In</a>
-</div>
+<a href="#" style="background: #7b3f3f; color: #ffffff; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 500; padding: 8px 20px; border-radius: 20px; text-decoration: none; border: none;">Sign In</a>
 </nav>
-</header>
-<main class="relative z-10 max-w-7xl mx-auto px-8 pt-8 pb-20">
+<main class="relative z-10 max-w-7xl mx-auto px-8 pt-8 pb-20" style="padding-top: 72px;">
 <!-- Breadcrumb -->
 <nav class="mb-12 flex items-center gap-2 text-sm text-on-surface-variant font-medium">
-<a class="hover:text-primary" href="#">Tech Hub</a>
+<a class="hover:text-primary" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
 <span class="material-symbols-outlined text-xs">chevron_right</span>
 <a class="hover:text-primary" href="#">Laptops</a>
 <span class="material-symbols-outlined text-xs">chevron_right</span>
@@ -482,21 +477,21 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-7xl mx-auto">
 <div class="space-y-6">
 <div class="text-xl font-serif italic text-[#805353]">StudenzBit</div>
-<p class="text-[#5d605c] leading-relaxed">The Scholarly Sanctuary for international students building their future abroad.</p>
+<p class="text-[#5d605c] leading-relaxed">Your guide to studying abroad.</p>
 </div>
 <div>
 <h4 class="font-bold text-[#805353] mb-6">Explore</h4>
 <ul class="space-y-4">
-<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Destinations</a></li>
-<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Tech Hub</a></li>
-<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Student Toolkit</a></li>
-<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Blog</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="studenzbit_destinations.html">Destinations</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="studenzbit_tech_hub_updated.html">Tech Hub</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="studenzbit_student_toolkit_updated.html">Student Toolkit</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="studenzbit_blog.html">Blog</a></li>
 </ul>
 </div>
 <div>
 <h4 class="font-bold text-[#805353] mb-6">Company</h4>
 <ul class="space-y-4">
-<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">About Us</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">About</a></li>
 <li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Privacy Policy</a></li>
 <li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Terms of Service</a></li>
 <li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Contact</a></li>
@@ -514,7 +509,7 @@
 </div>
 </div>
 <div class="px-12 py-8 border-t border-black/5 text-center text-[#5d605c] opacity-60">
-            © 2024 StudenzBit. The Scholarly Sanctuary.
+            © 2026 StudenzBit. Your guide to studying abroad.
         </div>
 </footer>
 </body></html>
