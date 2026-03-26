@@ -113,7 +113,7 @@
 </header>
 <!-- Interactive World Map Section -->
 <section class="mb-20">
-<div class="relative w-full aspect-[21/9] rounded-[16px] overflow-hidden" style="background:#f0ede8;">
+<div class="relative w-full aspect-[21/9] rounded-[16px] overflow-hidden" style="background:#dedad4;">
 <div class="w-full h-full" id="interactive-world-map"></div>
 </div>
 <div class="mt-6 hidden" id="map-back-wrap">
@@ -327,7 +327,10 @@
     const panelWrap = document.getElementById("canada-city-panel-wrap");
     const panelEl = document.getElementById("canada-city-panel");
 
-    const HIGHLIGHT = { 124: "#EDD5D5", 840: "#F5EDE0", 36: "#D5E8D5" };
+    const HIGHLIGHT = { 124: "#C9898A", 840: "#D4B896", 36: "#8BB88B" };
+    const HOVER_HIGHLIGHT = { 124: "#B87475", 840: "#C4A882", 36: "#7AA87A" };
+    const DEFAULT_FILL = "#c8c3bb";
+    const DEFAULT_STROKE = "#b0aba3";
     const canadaCities = [
       { key: "toronto", label: "Toronto", rent: "$2,200/mo", tuition: "$20k-$41k", pop: "150,000+", href: "studenzbit_toronto_detail.html", cta: "Explore Toronto ->" },
       { key: "vancouver", label: "Vancouver", rent: "$2,500/mo", tuition: "$18k-$38k", pop: "120,000+", href: "canada.html", cta: "Explore Vancouver ->" },
@@ -336,6 +339,22 @@
       { key: "ottawa", label: "Ottawa", rent: "$1,800/mo", tuition: "$20k-$38k", pop: "50,000+", href: "canada.html", cta: "Explore Ottawa ->" },
       { key: "edmonton", label: "Edmonton", rent: "$1,400/mo", tuition: "$16k-$32k", pop: "40,000+", href: "canada.html", cta: "Explore Edmonton ->" }
     ];
+
+    const mapShell = container.parentElement;
+    const tooltip = document.createElement("div");
+    tooltip.style.position = "absolute";
+    tooltip.style.zIndex = "100";
+    tooltip.style.pointerEvents = "none";
+    tooltip.style.display = "none";
+    tooltip.style.background = "#ffffff";
+    tooltip.style.color = "#7b3f3f";
+    tooltip.style.fontFamily = "'Plus Jakarta Sans', sans-serif";
+    tooltip.style.fontSize = "12px";
+    tooltip.style.padding = "6px 12px";
+    tooltip.style.borderRadius = "8px";
+    tooltip.style.border = "1px solid #e2ddd6";
+    tooltip.style.boxShadow = "0 2px 8px rgba(0,0,0,0.1)";
+    mapShell.appendChild(tooltip);
 
     let selectedCity = "toronto";
     let zoomedCountry = null;
@@ -390,8 +409,16 @@
 
     function updateCountryStyles() {
       g.selectAll("path.country")
-        .attr("fill", (d) => HIGHLIGHT[+d.id] || "#e8e4de")
+        .attr("fill", (d) => HIGHLIGHT[+d.id] || DEFAULT_FILL)
         .attr("opacity", (d) => (zoomedCountry && +d.id !== zoomedCountry ? 0.55 : 1));
+    }
+
+    function countryTooltipText(d) {
+      const id = +d.id;
+      if (id === 124) return "Canada 🇨🇦";
+      if (id === 840) return "USA 🇺🇸";
+      if (id === 36) return "Australia 🇦🇺";
+      return d.properties?.name || d.properties?.name_long || d.properties?.admin || "Country";
     }
 
     function zoomToCountry(countryId) {
@@ -464,17 +491,27 @@
         .append("path")
         .attr("class", "country")
         .attr("d", path)
-        .attr("fill", (d) => HIGHLIGHT[+d.id] || "#e8e4de")
-        .attr("stroke", "#d4cfc9")
+        .attr("fill", (d) => HIGHLIGHT[+d.id] || DEFAULT_FILL)
+        .attr("stroke", DEFAULT_STROKE)
         .attr("stroke-width", 0.5)
         .style("cursor", (d) => HIGHLIGHT[+d.id] ? "pointer" : "default")
         .on("mouseenter", function(event, d) {
-          if (!HIGHLIGHT[+d.id]) return;
-          d3.select(this).transition().duration(150).attr("filter", "brightness(1.08)");
+          const id = +d.id;
+          tooltip.textContent = countryTooltipText(d);
+          tooltip.style.display = "block";
+          if (!HIGHLIGHT[id]) return;
+          d3.select(this).transition().duration(150).attr("fill", HOVER_HIGHLIGHT[id]);
+        })
+        .on("mousemove", function(event) {
+          const rect = mapShell.getBoundingClientRect();
+          tooltip.style.left = `${event.clientX - rect.left + 12}px`;
+          tooltip.style.top = `${event.clientY - rect.top + 12}px`;
         })
         .on("mouseleave", function(event, d) {
-          if (!HIGHLIGHT[+d.id]) return;
-          d3.select(this).transition().duration(150).attr("filter", null);
+          const id = +d.id;
+          tooltip.style.display = "none";
+          if (!HIGHLIGHT[id]) return;
+          d3.select(this).transition().duration(150).attr("fill", HIGHLIGHT[id]);
         })
         .on("click", (event, d) => {
           const id = +d.id;
