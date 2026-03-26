@@ -5,6 +5,8 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Destinations | StudenzBit</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -111,47 +113,20 @@
 </header>
 <!-- Interactive World Map Section -->
 <section class="mb-20">
-<div class="relative w-full aspect-[21/9] bg-surface-container-high rounded-xl overflow-hidden group">
-<div class="absolute inset-0 flex items-center justify-center">
-<!-- Map Placeholder Container -->
-<div class="w-full h-full bg-surface-container flex items-center justify-center overflow-hidden">
-<img alt="Stylized world map" class="w-full h-full object-cover opacity-40 mix-blend-multiply" data-alt="Minimalist world map illustration in stone beige and greige tones with subtle grain texture and soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJuUy5hWCAi-SX4j3ZNgJPaHYm1l8zJFa_TSf5bxWdcuqxk03G4mXSjXoo7Jz5rRKhI_g4Nd_71yq9aKwfkANw672-_3K1N_ELCS2FgojjbjCXVzb97jmxjINSHZ9xo4XQrUggIM6PctD0V9nJOUZbfNAhVfDRPoZRi9u96dtPCUyyE6BolcoUDpARVehX-biI5I-k8PbJDKiTaRbPr7q2vQ4VVO7vo-I95ECUhyZbh7IoFwZDcJZAMRxVIRS_AOethOLqsP1u3aP6"/>
+<div class="relative w-full aspect-[21/9] rounded-[16px] overflow-hidden" style="background:#f0ede8;">
+<div class="w-full h-full" id="interactive-world-map"></div>
 </div>
-<!-- Pulsing Hotspots (Canada) -->
-<div class="absolute top-[25%] left-[20%] group/pin">
-<div class="relative">
-<div class="absolute -inset-4 bg-primary-container/40 rounded-full blur-xl animate-pulse"></div>
-<div class="w-4 h-4 bg-primary rounded-full relative z-10 border-4 border-surface-container-lowest"></div>
-<div class="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-surface-container-lowest px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover/pin:opacity-100 transition-opacity">
-<span class="font-headline italic text-primary">Canada</span>
+<div class="mt-6 hidden" id="map-back-wrap">
+<button class="px-4 py-2 rounded-full border border-[#e2ddd6] bg-white text-[#2c2c2c] text-sm font-medium hover:border-[#7b3f3f] hover:text-[#7b3f3f] transition-colors" id="map-back-btn" type="button">← Back to World Map</button>
 </div>
+<div class="mt-6 hidden" id="map-status-wrap">
+<div class="bg-surface-container-lowest border border-outline-variant/10 rounded-xl p-6 text-on-surface-variant text-sm" id="map-status-msg"></div>
 </div>
+<div class="mt-6 hidden" id="canada-city-controls-wrap">
+<div class="flex flex-wrap gap-3" id="canada-city-pills"></div>
 </div>
-<!-- Pulsing Hotspots (USA) -->
-<div class="absolute top-[35%] left-[25%] group/pin">
-<div class="relative">
-<div class="absolute -inset-4 bg-secondary-container/40 rounded-full blur-xl animate-pulse"></div>
-<div class="w-4 h-4 bg-secondary rounded-full relative z-10 border-4 border-surface-container-lowest"></div>
-<div class="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-surface-container-lowest px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover/pin:opacity-100 transition-opacity">
-<span class="font-headline italic text-secondary">USA</span>
-</div>
-</div>
-</div>
-<!-- Pulsing Hotspots (Australia) -->
-<div class="absolute top-[75%] left-[85%] group/pin">
-<div class="relative">
-<div class="absolute -inset-4 bg-secondary-container/40 rounded-full blur-xl animate-pulse"></div>
-<div class="w-4 h-4 bg-secondary rounded-full relative z-10 border-4 border-surface-container-lowest"></div>
-<div class="absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-surface-container-lowest px-4 py-2 rounded-lg shadow-lg opacity-0 group-hover/pin:opacity-100 transition-opacity">
-<span class="font-headline italic text-secondary">Australia</span>
-</div>
-</div>
-</div>
-</div>
-<div class="absolute bottom-8 left-8 flex items-center gap-3 bg-surface-container-lowest/80 backdrop-blur-md px-4 py-2 rounded-full text-xs font-label uppercase tracking-widest text-on-surface-variant">
-<span class="material-symbols-outlined text-[16px]">touch_app</span>
-                    Click a country to zoom in and explore cities.
-                </div>
+<div class="mt-6 hidden" id="canada-city-panel-wrap">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/10 p-6" id="canada-city-panel"></div>
 </div>
 </section>
 <!-- Country Cards Row -->
@@ -204,9 +179,9 @@
 <p class="text-sm font-semibold">F-1 Student Visa</p>
 </div>
 </div>
-<button class="w-full py-3 rounded-full border border-primary text-primary font-label text-sm font-bold group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center gap-2">
+<a class="w-full py-3 rounded-full border border-primary text-primary font-label text-sm font-bold group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center gap-2" href="usa.html">
                     Explore USA <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</button>
+</a>
 </div>
 <!-- Australia Card -->
 <div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_20px_40px_rgba(48,51,48,0.02)] border border-outline-variant/10 hover:shadow-xl transition-all duration-500 group">
@@ -230,9 +205,9 @@
 <p class="text-sm font-semibold">Student Visa (Subclass 500)</p>
 </div>
 </div>
-<button class="w-full py-3 rounded-full border border-primary text-primary font-label text-sm font-bold group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center gap-2">
+<a class="w-full py-3 rounded-full border border-primary text-primary font-label text-sm font-bold group-hover:bg-primary group-hover:text-on-primary transition-all flex items-center justify-center gap-2" href="australia.html">
                     Explore Australia <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-</button>
+</a>
 </div>
 </section>
 <!-- Zoomed In Canada State -->
@@ -340,4 +315,181 @@
 </div>
 </div>
 </footer>
+<script>
+  (() => {
+    const container = document.getElementById("interactive-world-map");
+    const backWrap = document.getElementById("map-back-wrap");
+    const backBtn = document.getElementById("map-back-btn");
+    const statusWrap = document.getElementById("map-status-wrap");
+    const statusMsg = document.getElementById("map-status-msg");
+    const pillsWrap = document.getElementById("canada-city-controls-wrap");
+    const pillsEl = document.getElementById("canada-city-pills");
+    const panelWrap = document.getElementById("canada-city-panel-wrap");
+    const panelEl = document.getElementById("canada-city-panel");
+
+    const HIGHLIGHT = { 124: "#EDD5D5", 840: "#F5EDE0", 36: "#D5E8D5" };
+    const canadaCities = [
+      { key: "toronto", label: "Toronto", rent: "$2,200/mo", tuition: "$20k-$41k", pop: "150,000+", href: "studenzbit_toronto_detail.html", cta: "Explore Toronto ->" },
+      { key: "vancouver", label: "Vancouver", rent: "$2,500/mo", tuition: "$18k-$38k", pop: "120,000+", href: "canada.html", cta: "Explore Vancouver ->" },
+      { key: "montreal", label: "Montreal", rent: "$1,200/mo", tuition: "$8k-$20k", pop: "100,000+", href: "canada.html", cta: "Explore Montreal ->" },
+      { key: "calgary", label: "Calgary", rent: "$1,690/mo", tuition: "$18k-$35k", pop: "45,000+", href: "canada.html", cta: "Explore Calgary ->" },
+      { key: "ottawa", label: "Ottawa", rent: "$1,800/mo", tuition: "$20k-$38k", pop: "50,000+", href: "canada.html", cta: "Explore Ottawa ->" },
+      { key: "edmonton", label: "Edmonton", rent: "$1,400/mo", tuition: "$16k-$32k", pop: "40,000+", href: "canada.html", cta: "Explore Edmonton ->" }
+    ];
+
+    let selectedCity = "toronto";
+    let zoomedCountry = null;
+    let svg, g, projection, path, countries;
+    let width = 0;
+    let height = 0;
+
+    function setStatus(message) {
+      statusMsg.textContent = message;
+      statusWrap.classList.remove("hidden");
+    }
+    function clearStatus() { statusWrap.classList.add("hidden"); }
+
+    function renderCanadaPanel() {
+      const city = canadaCities.find((c) => c.key === selectedCity);
+      if (!city) return;
+      panelEl.innerHTML = `
+        <h4 class="font-headline text-2xl italic text-on-surface mb-4">${city.label}</h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 text-sm">
+          <div><div class="text-on-surface-variant text-xs uppercase tracking-widest mb-1">Avg Rent</div><div class="font-semibold">${city.rent}</div></div>
+          <div><div class="text-on-surface-variant text-xs uppercase tracking-widest mb-1">Avg Tuition</div><div class="font-semibold">${city.tuition}</div></div>
+          <div><div class="text-on-surface-variant text-xs uppercase tracking-widest mb-1">Student Pop</div><div class="font-semibold">${city.pop}</div></div>
+        </div>
+        <a class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary text-primary text-sm font-bold hover:bg-primary hover:text-on-primary transition-colors" href="${city.href}">${city.cta}</a>
+      `;
+    }
+
+    function renderCanadaPills() {
+      pillsEl.innerHTML = "";
+      canadaCities.forEach((city) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = city.label;
+        btn.className = "px-5 py-2 rounded-full text-sm font-medium transition-colors";
+        if (city.key === selectedCity) {
+          btn.style.background = "#7b3f3f";
+          btn.style.color = "#ffffff";
+          btn.style.border = "1px solid #7b3f3f";
+        } else {
+          btn.style.background = "#ffffff";
+          btn.style.color = "#2c2c2c";
+          btn.style.border = "1px solid #e2ddd6";
+        }
+        btn.addEventListener("click", () => {
+          selectedCity = city.key;
+          renderCanadaPills();
+          renderCanadaPanel();
+        });
+        pillsEl.appendChild(btn);
+      });
+    }
+
+    function updateCountryStyles() {
+      g.selectAll("path.country")
+        .attr("fill", (d) => HIGHLIGHT[+d.id] || "#e8e4de")
+        .attr("opacity", (d) => (zoomedCountry && +d.id !== zoomedCountry ? 0.55 : 1));
+    }
+
+    function zoomToCountry(countryId) {
+      const target = countries.find((f) => +f.id === countryId);
+      if (!target) return;
+      zoomedCountry = countryId;
+      const [[x0, y0], [x1, y1]] = path.bounds(target);
+      const dx = x1 - x0;
+      const dy = y1 - y0;
+      const x = (x0 + x1) / 2;
+      const y = (y0 + y1) / 2;
+      const scale = Math.min(8, 0.88 / Math.max(dx / width, dy / height));
+      const translate = [width / 2 - scale * x, height / 2 - scale * y];
+
+      g.transition().duration(600).ease(d3.easeCubicInOut)
+        .attr("transform", `translate(${translate[0]},${translate[1]}) scale(${scale})`);
+
+      backWrap.classList.remove("hidden");
+      updateCountryStyles();
+
+      if (countryId === 124) {
+        clearStatus();
+        pillsWrap.classList.remove("hidden");
+        panelWrap.classList.remove("hidden");
+        selectedCity = "toronto";
+        renderCanadaPills();
+        renderCanadaPanel();
+      } else if (countryId === 840) {
+        pillsWrap.classList.add("hidden");
+        panelWrap.classList.add("hidden");
+        setStatus("USA destination guide is coming soon.");
+      } else if (countryId === 36) {
+        pillsWrap.classList.add("hidden");
+        panelWrap.classList.add("hidden");
+        setStatus("Australia destination guide is coming soon.");
+      }
+    }
+
+    function zoomOutWorld() {
+      zoomedCountry = null;
+      g.transition().duration(600).ease(d3.easeCubicInOut)
+        .attr("transform", "translate(0,0) scale(1)");
+      backWrap.classList.add("hidden");
+      pillsWrap.classList.add("hidden");
+      panelWrap.classList.add("hidden");
+      clearStatus();
+      updateCountryStyles();
+    }
+
+    async function initMap() {
+      const rect = container.getBoundingClientRect();
+      width = Math.max(420, Math.floor(rect.width));
+      height = Math.max(220, Math.floor(rect.height));
+      container.innerHTML = "";
+      svg = d3.select(container).append("svg")
+        .attr("viewBox", `0 0 ${width} ${height}`)
+        .attr("width", "100%")
+        .attr("height", "100%");
+      g = svg.append("g");
+
+      const world = await d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json");
+      const collection = topojson.feature(world, world.objects.countries);
+      countries = collection.features;
+      projection = d3.geoNaturalEarth1().fitSize([width, height], collection);
+      path = d3.geoPath(projection);
+
+      g.selectAll("path.country")
+        .data(countries)
+        .enter()
+        .append("path")
+        .attr("class", "country")
+        .attr("d", path)
+        .attr("fill", (d) => HIGHLIGHT[+d.id] || "#e8e4de")
+        .attr("stroke", "#d4cfc9")
+        .attr("stroke-width", 0.5)
+        .style("cursor", (d) => HIGHLIGHT[+d.id] ? "pointer" : "default")
+        .on("mouseenter", function(event, d) {
+          if (!HIGHLIGHT[+d.id]) return;
+          d3.select(this).transition().duration(150).attr("filter", "brightness(1.08)");
+        })
+        .on("mouseleave", function(event, d) {
+          if (!HIGHLIGHT[+d.id]) return;
+          d3.select(this).transition().duration(150).attr("filter", null);
+        })
+        .on("click", (event, d) => {
+          const id = +d.id;
+          if (!HIGHLIGHT[id]) return;
+          zoomToCountry(id);
+        });
+    }
+
+    backBtn.addEventListener("click", zoomOutWorld);
+    window.addEventListener("resize", () => {
+      if (!container) return;
+      zoomOutWorld();
+      initMap();
+    });
+    initMap();
+  })();
+</script>
 </body></html>
