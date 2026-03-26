@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -144,45 +146,12 @@
 <!-- Interactive Canada Map -->
 <section class="w-full bg-surface-container-low/50 py-20 my-20">
 <div class="max-w-screen-xl mx-auto px-8 text-center mb-12">
-<h2 class="serif-text text-3xl font-bold mb-4">Geographic Landscape</h2>
-<p class="text-on-surface-variant">Click on a hub to explore local academic opportunities.</p>
+<h2 class="serif-text text-3xl font-bold mb-4">Choose Your City</h2>
+<p class="text-on-surface-variant">Hover a city to preview costs. Click to explore the full city guide.</p>
 </div>
 <div class="max-w-screen-xl mx-auto px-8 relative">
-<div class="aspect-[21/9] bg-[#e8eee8] rounded-3xl relative overflow-hidden border border-outline-variant/10">
-<img class="w-full h-full object-cover opacity-60 grayscale-[20%]" data-alt="Minimalist illustrated map of Canada showing province borders in soft neutral tones on a sage green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-nBHqTUq2HXgBY7E4o7SJSqSlCGAUzLwUZSCPpfSUgZAK0NKT2V0dRJcZnyBXpB95yexHFvJjQXoQk_lqK-0EN4-DoFzEUDr-7wMl5R03FpXaNICuB7ZTZgzyUab_OLVewD3eI3k5rzYuT3kx2I7qeT9c0jm2JcAq_GWzRT4N0TdnmTZ8WYJlqV07ETcNhx-t7CiTRGsm9qWO1ko379vqnZRlOuTuWxlhkcNcNabM3T4WsxrvAobTwy3tXr4PtoWtF0KQEEUg2Eon"/>
-<!-- Map Pulsing Dots -->
-<div class="absolute inset-0">
-<!-- Toronto -->
-<div class="absolute top-[80%] left-[80%] flex flex-col items-center">
-<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Toronto</span>
-</div>
-<!-- Vancouver -->
-<div class="absolute top-[75%] left-[15%] flex flex-col items-center">
-<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Vancouver</span>
-</div>
-<!-- Montreal -->
-<div class="absolute top-[78%] left-[85%] flex flex-col items-center">
-<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Montreal</span>
-</div>
-<!-- Calgary -->
-<div class="absolute top-[73%] left-[22%] flex flex-col items-center">
-<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Calgary</span>
-</div>
-<!-- Ottawa -->
-<div class="absolute top-[77%] left-[82%] flex flex-col items-center">
-<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Ottawa</span>
-</div>
-<!-- Edmonton -->
-<div class="absolute top-[68%] left-[23%] flex flex-col items-center">
-<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
-<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Edmonton</span>
-</div>
-</div>
+<div class="relative overflow-hidden border border-outline-variant/10" id="canada-map-wrap" style="width: 100%; height: 500px; border-radius: 16px; background: #dedad4;">
+<div id="canada-d3-map" style="width: 100%; height: 100%;"></div>
 </div>
 </div>
 </section>
@@ -434,4 +403,141 @@
 <p class="font-sans text-xs text-[#5d605c] dark:text-[#b0b3ae]">© 2024 StudenzBit. Editorial excellence for international journeys.</p>
 </div>
 </footer>
+<script>
+  (() => {
+    const mapRoot = document.getElementById("canada-d3-map");
+    if (!mapRoot || typeof d3 === "undefined" || typeof topojson === "undefined") return;
+
+    const cities = [
+      { name: "Toronto", coords: [-79.3832, 43.6532], tooltip: "Toronto 🏙️ — Avg Rent $2,200/mo", href: "studenzbit_toronto_detail.html" },
+      { name: "Vancouver", coords: [-123.1216, 49.2827], tooltip: "Vancouver 🏔️ — Avg Rent $2,500/mo", href: "canada.html" },
+      { name: "Montreal", coords: [-73.5673, 45.5017], tooltip: "Montreal 🎭 — Avg Rent $1,200/mo", href: "canada.html" },
+      { name: "Calgary", coords: [-114.0719, 51.0447], tooltip: "Calgary 🌄 — Avg Rent $1,690/mo", href: "canada.html" },
+      { name: "Ottawa", coords: [-75.6972, 45.4215], tooltip: "Ottawa 🏛️ — Avg Rent $1,800/mo", href: "canada.html" },
+      { name: "Edmonton", coords: [-113.4909, 53.5461], tooltip: "Edmonton ❄️ — Avg Rent $1,400/mo", href: "canada.html" }
+    ];
+
+    const tooltip = document.createElement("div");
+    tooltip.style.position = "absolute";
+    tooltip.style.pointerEvents = "none";
+    tooltip.style.zIndex = "100";
+    tooltip.style.display = "none";
+    tooltip.style.background = "#ffffff";
+    tooltip.style.color = "#7b3f3f";
+    tooltip.style.fontFamily = "'Plus Jakarta Sans', sans-serif";
+    tooltip.style.fontSize = "12px";
+    tooltip.style.padding = "8px 14px";
+    tooltip.style.borderRadius = "8px";
+    tooltip.style.border = "1px solid #e2ddd6";
+    tooltip.style.boxShadow = "0 2px 8px rgba(0,0,0,0.12)";
+    document.getElementById("canada-map-wrap").appendChild(tooltip);
+
+    async function loadCanadaGeo() {
+      try {
+        const geo = await d3.json("https://cdn.jsdelivr.net/npm/canada-provinces-geojson@1.0.0/canada.geojson");
+        if (geo && (geo.type === "FeatureCollection" || geo.features)) return geo;
+      } catch (e) {}
+      const topo = await d3.json("https://raw.githubusercontent.com/jakobzhao/geog328/main/labs/lab05/assets/canada.json");
+      if (topo.type === "Topology" && topo.objects) {
+        const firstKey = Object.keys(topo.objects)[0];
+        return topojson.feature(topo, topo.objects[firstKey]);
+      }
+      return topo;
+    }
+
+    async function renderMap() {
+      const w = mapRoot.clientWidth || 1000;
+      const h = mapRoot.clientHeight || 500;
+      mapRoot.innerHTML = "";
+
+      const svg = d3.select(mapRoot).append("svg")
+        .attr("width", w)
+        .attr("height", h)
+        .attr("viewBox", `0 0 ${w} ${h}`);
+
+      const g = svg.append("g");
+      const data = await loadCanadaGeo();
+      const fc = data.type === "FeatureCollection" ? data : { type: "FeatureCollection", features: [] };
+      const projection = d3.geoMercator().fitSize([w, h], fc);
+      const path = d3.geoPath(projection);
+
+      g.selectAll("path.province")
+        .data(fc.features)
+        .enter()
+        .append("path")
+        .attr("class", "province")
+        .attr("d", path)
+        .attr("fill", "#c8c3bb")
+        .attr("stroke", "#b0aba3")
+        .attr("stroke-width", 0.8);
+
+      const cityGroup = g.append("g").attr("class", "city-layer");
+      const cityNode = cityGroup.selectAll("g.city")
+        .data(cities)
+        .enter()
+        .append("g")
+        .attr("class", "city")
+        .attr("transform", (d) => {
+          const p = projection(d.coords);
+          return `translate(${p[0]},${p[1]})`;
+        })
+        .style("cursor", "pointer")
+        .on("mouseover", function(event, d) {
+          d3.select(this).select("circle.dot").transition().duration(150).attr("r", 11).attr("fill", "#5a2d2d");
+          tooltip.textContent = d.tooltip;
+          tooltip.style.display = "block";
+        })
+        .on("mousemove", function(event) {
+          const rect = document.getElementById("canada-map-wrap").getBoundingClientRect();
+          tooltip.style.left = `${event.clientX - rect.left + 12}px`;
+          tooltip.style.top = `${event.clientY - rect.top + 12}px`;
+        })
+        .on("mouseout", function() {
+          d3.select(this).select("circle.dot").transition().duration(150).attr("r", 8).attr("fill", "#7b3f3f");
+          tooltip.style.display = "none";
+        })
+        .on("click", function(event, d) {
+          window.location.href = d.href;
+        });
+
+      cityNode.append("circle")
+        .attr("class", "pulse")
+        .attr("r", 14)
+        .attr("fill", "#7b3f3f")
+        .attr("opacity", 0.3);
+
+      cityNode.append("circle")
+        .attr("class", "dot")
+        .attr("r", 8)
+        .attr("fill", "#7b3f3f")
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 2);
+
+      cityNode.append("text")
+        .attr("y", 24)
+        .attr("text-anchor", "middle")
+        .style("font-family", "'Plus Jakarta Sans', sans-serif")
+        .style("font-size", "12px")
+        .style("font-weight", "600")
+        .style("fill", "#2c2c2c")
+        .text((d) => d.name);
+
+      function pulse() {
+        cityNode.select("circle.pulse")
+          .attr("r", 14)
+          .attr("opacity", 0.3)
+          .transition()
+          .duration(2000)
+          .ease(d3.easeCubicOut)
+          .attr("r", 21)
+          .attr("opacity", 0)
+          .on("end", pulse);
+      }
+      pulse();
+    }
+
+    renderMap();
+    window.addEventListener("resize", () => renderMap());
+  })();
+</script>
 </body></html>
