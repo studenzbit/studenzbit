@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Toolkit | StudenzBit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#fec3c3",
+                        "secondary-container": "#d9eaa3",
+                        "tertiary": "#655e56",
+                        "surface": "#EBF2F7",
+                        "surface-container": "#eeeeea",
+                        "on-error": "#fff7f6",
+                        "secondary-fixed": "#d9eaa3",
+                        "on-primary-fixed": "#4f292a",
+                        "on-secondary": "#f2ffc7",
+                        "on-background": "#1a1c1e",
+                        "surface-tint": "#805353",
+                        "surface-dim": "#d9dbd6",
+                        "error": "#a73b21",
+                        "surface-container-high": "#e7e9e4",
+                        "on-primary-container": "#653c3c",
+                        "on-secondary-container": "#495720",
+                        "error-container": "#fd795a",
+                        "tertiary-container": "#fdf2e7",
+                        "surface-container-low": "#F5F9FC",
+                        "outline": "#797b78",
+                        "on-tertiary": "#fff8f2",
+                        "primary": "#805353",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#56652c",
+                        "outline-variant": "#b0b3ae",
+                        "on-tertiary-fixed": "#4f4941",
+                        "inverse-primary": "#fec3c3",
+                        "on-secondary-fixed-variant": "#536129",
+                        "secondary-fixed-dim": "#cbdc96",
+                        "on-error-container": "#6e1400",
+                        "surface-variant": "#e1e3de",
+                        "primary-container": "#fec3c3",
+                        "surface-container-highest": "#e1e3de",
+                        "error-dim": "#791903",
+                        "tertiary-fixed": "#fdf2e7",
+                        "tertiary-dim": "#59524a",
+                        "surface-bright": "#faf9f6",
+                        "on-tertiary-fixed-variant": "#6c655d",
+                        "on-tertiary-container": "#625b53",
+                        "on-primary": "#fff7f6",
+                        "on-surface-variant": "#44474e",
+                        "inverse-surface": "#0d0f0d",
+                        "inverse-on-surface": "#9d9d9a",
+                        "on-surface": "#1a1c1e",
+                        "background": "#EBF2F7",
+                        "primary-dim": "#734748",
+                        "on-secondary-fixed": "#37440e",
+                        "tertiary-fixed-dim": "#eee4d9",
+                        "secondary-dim": "#4a5821",
+                        "primary-fixed-dim": "#efb5b5",
+                        "on-primary-fixed-variant": "#704545"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-color: #EBF2F7;
+    position: relative
+    }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.04;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDesINxhPMbbMEulIgmNoV-gXKWEykdXsbeynZco7RiK-OqbhBx89oyeAqUhXPymC_e2Evo1dHyug6Dfme752_VriurkK6nOKT7IAkgK59GkuqZqa0b0VwbMKfLfibmnV-AbZ9ThIHaPGbKdK7pkADNO5XvrOMwo5eJwc_T7sm-20jJHIJkVt5oLyO4PUOaYRnhNJmrbQumHWw8yhkdyQwyW_v4ugRNk1qW0yiWJyT7hhEgia1IcDVU8szW5Q3j0AK1-DgiJ7_A2hn4);
+    background-repeat: repeat
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.serif-italic {
+    font-family: "Noto Serif", serif;
+    font-style: italic
+    }</style>
+</head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 rounded-b-xl bg-white/80 dark:bg-[#1a1c1e]/80 backdrop-blur-xl shadow-sm shadow-[#1a1c1e]/5">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="font-serif italic text-2xl text-[#1a1c1e] dark:text-[#faf9f6]">StudenzBit</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#44474e] hover:text-[#1a1c1e] transition-colors font-serif italic text-lg lg:text-xl tracking-tight" href="#">Destinations</a>
+<a class="text-[#44474e] hover:text-[#1a1c1e] transition-colors font-serif italic text-lg lg:text-xl tracking-tight" href="#">Tech Hub</a>
+<a class="text-[#805353] border-b-2 border-[#805353] pb-1 font-semibold font-serif italic text-lg lg:text-xl tracking-tight" href="#">Student Toolkit</a>
+<a class="text-[#44474e] hover:text-[#1a1c1e] transition-colors font-serif italic text-lg lg:text-xl tracking-tight" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-black/5 px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-outline text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 ml-2" placeholder="Search guides..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-medium hover:opacity-80 transition-opacity duration-300 active:scale-[0.98]">Sign In</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 max-w-7xl mx-auto px-8">
+<!-- Page Header -->
+<header class="mb-20">
+<span class="font-label text-xs tracking-[0.2em] font-bold text-on-surface-variant uppercase">STUDENT TOOLKIT</span>
+<h1 class="font-headline text-5xl md:text-6xl mt-6 mb-8 max-w-3xl leading-tight text-on-surface">Everything You Need to Arrive Ready.</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed mb-10">
+                Downloadable guides, templates, and checklists — built specifically for international students moving to Canada, USA, and Australia.
+            </p>
+<div class="flex flex-wrap gap-3">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-medium">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant text-sm font-medium border border-[#E2DDD6] hover:bg-surface-container-low transition-colors">Resume &amp; Career</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant text-sm font-medium border border-[#E2DDD6] hover:bg-surface-container-low transition-colors">Finance &amp; Banking</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant text-sm font-medium border border-[#E2DDD6] hover:bg-surface-container-low transition-colors">Arrival &amp; Housing</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant text-sm font-medium border border-[#E2DDD6] hover:bg-surface-container-low transition-colors">Legal</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest text-on-surface-variant text-sm font-medium border border-[#E2DDD6] hover:bg-surface-container-low transition-colors">Bundles</button>
+</div>
+</header>
+<!-- Featured Bundle Banner -->
+<section class="mb-28">
+<div class="bg-[#2F2D2B] rounded-3xl p-10 md:p-16 flex flex-col md:flex-row items-center justify-between overflow-hidden relative">
+<div class="z-10 max-w-xl">
+<span class="inline-block bg-primary-container text-on-primary-container text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-6">BEST VALUE</span>
+<h2 class="font-headline text-4xl md:text-5xl text-white mb-4">The Complete Student Bundle</h2>
+<p class="text-outline-variant text-lg mb-8">Every guide, template, and checklist in one download. Save over 45% when you buy the full sanctuary pack.</p>
+<div class="flex items-baseline gap-4 mb-10">
+<span class="text-white text-4xl font-bold">$49.99</span>
+<span class="text-outline-variant text-xl line-through">$89.99</span>
+</div>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full text-lg font-medium flex items-center gap-2 hover:opacity-90 transition-opacity">
+                        Get the Bundle 
+                        <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+<div class="mt-12 md:mt-0 flex relative -right-10 md:right-0">
+<div class="relative w-72 h-80 flex items-center justify-center">
+<div class="absolute w-48 h-64 bg-surface-container-lowest rounded-xl shadow-2xl rotate-[-15deg] translate-x-[-40px] flex flex-col p-4">
+<div class="w-12 h-1.5 bg-primary-container rounded mb-4"></div>
+<div class="space-y-2">
+<div class="w-full h-1 bg-surface-container rounded"></div>
+<div class="w-4/5 h-1 bg-surface-container rounded"></div>
+</div>
+</div>
+<div class="absolute w-48 h-64 bg-surface-container-lowest rounded-xl shadow-2xl rotate-[5deg] translate-x-[0px] flex flex-col p-4">
+<div class="w-12 h-1.5 bg-secondary-container rounded mb-4"></div>
+<div class="space-y-2">
+<div class="w-full h-1 bg-surface-container rounded"></div>
+<div class="w-4/5 h-1 bg-surface-container rounded"></div>
+</div>
+</div>
+<div class="absolute w-48 h-64 bg-surface-container-lowest rounded-xl shadow-2xl rotate-[20deg] translate-x-[40px] flex flex-col p-4 border border-primary/20">
+<div class="w-12 h-1.5 bg-primary rounded mb-4"></div>
+<div class="space-y-2">
+<div class="w-full h-1 bg-surface-container rounded"></div>
+<div class="w-4/5 h-1 bg-surface-container rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="mb-28">
+<h3 class="font-headline text-3xl mb-12 text-on-surface">All Resources</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product 1 -->
+<div class="bg-[#FDFCFB] p-8 rounded-2xl flex flex-col border border-[#E2DDD6] hover:shadow-xl hover:shadow-on-surface/5 transition-all group">
+<div class="mb-6 flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-3xl">description</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">ACADEMIC</span>
+</div>
+<h4 class="font-headline text-xl mb-3 text-on-surface">Resume Template for Academics</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Tailored for research assistantships and university work-study roles.</p>
+<div class="flex items-center gap-2 mb-6">
+<span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="font-bold text-lg text-on-surface">$14.99</span>
+<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="bg-[#FDFCFB] p-8 rounded-2xl flex flex-col border border-[#E2DDD6] hover:shadow-xl hover:shadow-on-surface/5 transition-all group">
+<div class="mb-6 flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl">account_balance</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">FINANCE</span>
+</div>
+<h4 class="font-headline text-xl mb-3 text-on-surface">Banking &amp; Credit Guide</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">A step-by-step guide to building credit and choosing the right student bank account.</p>
+<div class="flex items-center gap-2 mb-6">
+<span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="font-bold text-lg text-secondary">Free</span>
+<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="bg-[#FDFCFB] p-8 rounded-2xl flex flex-col border border-[#E2DDD6] hover:shadow-xl hover:shadow-on-surface/5 transition-all group">
+<div class="mb-6 flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container text-3xl">map</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">CAREER</span>
+</div>
+<h4 class="font-headline text-xl mb-3 text-on-surface">Job Search Roadmap</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">From networking to first offer. A strategic guide for competitive markets.</p>
+<div class="flex items-center gap-2 mb-6">
+<span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="font-bold text-lg text-on-surface">$24.99</span>
+<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="bg-[#FDFCFB] p-8 rounded-2xl flex flex-col border border-[#E2DDD6] hover:shadow-xl hover:shadow-on-surface/5 transition-all group">
+<div class="mb-6 flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-outline-variant/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">fact_check</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">LEGAL</span>
+</div>
+<h4 class="font-headline text-xl mb-3 text-on-surface">Lease Agreement Checklist</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Don't sign before checking these 25 critical points for student housing.</p>
+<div class="flex items-center gap-2 mb-6">
+<span>🇨🇦</span><span>🇦🇺</span>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="font-bold text-lg text-on-surface">$9.99</span>
+<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="bg-[#FDFCFB] p-8 rounded-2xl flex flex-col border border-[#E2DDD6] hover:shadow-xl hover:shadow-on-surface/5 transition-all group">
+<div class="mb-6 flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-primary-container/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">share</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">CAREER</span>
+</div>
+<h4 class="font-headline text-xl mb-3 text-on-surface">LinkedIn Profile Guide</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Optimize your profile for international recruiters and hiring managers.</p>
+<div class="flex items-center gap-2 mb-6">
+<span>🇨🇦</span><span>🇺🇸</span><span>🇦🇺</span>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="font-bold text-lg text-on-surface">$12.99</span>
+<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="bg-[#FDFCFB] p-8 rounded-2xl flex flex-col border border-[#E2DDD6] hover:shadow-xl hover:shadow-on-surface/5 transition-all group">
+<div class="mb-6 flex justify-between items-start">
+<div class="w-16 h-16 rounded-xl bg-secondary-container/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl">calendar_today</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant uppercase bg-surface-container px-2 py-1 rounded">ARRIVAL</span>
+</div>
+<h4 class="font-headline text-xl mb-3 text-on-surface">Canada First Week Checklist</h4>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Essential steps from SIN activation to phone plans and transport cards.</p>
+<div class="flex items-center gap-2 mb-6">
+<span>🇨🇦</span>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/10">
+<span class="font-bold text-lg text-secondary">Free</span>
+<button class="flex items-center gap-1 text-primary font-bold text-sm group-hover:gap-2 transition-all">Get it <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Strip -->
+<section class="py-16 bg-surface-container-low rounded-3xl mb-28 border border-black/5">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-10">
+<div class="text-center">
+<div class="font-headline text-3xl mb-1 text-on-surface">2,400+</div>
+<div class="text-on-surface-variant text-xs font-medium tracking-wide uppercase">Students Helped</div>
+</div>
+<div class="text-center">
+<div class="font-headline text-3xl mb-1 text-on-surface">4.9★</div>
+<div class="text-on-surface-variant text-xs font-medium tracking-wide uppercase">Average Rating</div>
+</div>
+<div class="text-center">
+<div class="font-headline text-3xl mb-1 text-on-surface">Instant</div>
+<div class="text-on-surface-variant text-xs font-medium tracking-wide uppercase">Digital Download</div>
+</div>
+<div class="text-center">
+<div class="font-headline text-xl mb-1 text-on-surface">By Internationals</div>
+<div class="text-on-surface-variant text-[10px] font-bold tracking-wide uppercase">For Internationals</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="mb-28 p-12 bg-white/40 rounded-3xl border border-white/60">
+<h2 class="font-headline text-4xl text-center mb-16 text-on-surface">How it works</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="flex flex-col items-center text-center">
+<div class="text-primary/10 font-headline text-8xl mb-[-40px] z-0">01</div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6 z-10">shopping_cart</span>
+<h4 class="font-headline text-xl mb-2 text-on-surface">Choose Your Guide</h4>
+<p class="text-on-surface-variant">Select the specific resources that match your destination and current stage.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="text-primary/10 font-headline text-8xl mb-[-40px] z-0">02</div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6 z-10">download</span>
+<h4 class="font-headline text-xl mb-2 text-on-surface">Instant Download</h4>
+<p class="text-on-surface-variant">Access your PDF guides and editable templates immediately after checkout.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="text-primary/10 font-headline text-8xl mb-[-40px] z-0">03</div>
+<span class="material-symbols-outlined text-primary text-4xl mb-6 z-10">verified</span>
+<h4 class="font-headline text-xl mb-2 text-on-surface">Arrive Confident</h4>
+<p class="text-on-surface-variant">Use our step-by-step systems to navigate your new country with total peace of mind.</p>
+</div>
+</div>
+</section>
+<!-- Free Resources CTA -->
+<section class="mb-28">
+<div class="bg-[#D5E8D5] rounded-3xl p-10 md:p-16 border border-[#c5d8c5]">
+<div class="max-w-4xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
+<div class="flex-1">
+<h2 class="font-headline text-4xl mb-4 text-on-surface">Start for Free.</h2>
+<p class="text-on-surface-variant text-lg mb-8">Two of our most popular guides are completely free — just drop your email and we'll send them over.</p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-grow rounded-full border-none bg-white px-6 py-4 focus:ring-2 focus:ring-primary/20 shadow-sm" placeholder="Enter your email" type="email"/>
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity" type="submit">Send Free Guides</button>
+</form>
+<p class="mt-4 text-[10px] text-on-surface-variant uppercase tracking-wider">NO CREDIT CARD REQUIRED. JOIN 15,000+ SUBSCRIBERS.</p>
+</div>
+<div class="flex gap-4">
+<div class="w-40 h-56 bg-white rounded-xl shadow-lg p-4 flex flex-col rotate-[-5deg]">
+<span class="material-symbols-outlined text-secondary mb-3">account_balance</span>
+<div class="text-[10px] font-bold text-on-surface-variant mb-1">FINANCE</div>
+<div class="text-sm font-headline leading-tight text-on-surface">Banking &amp; Credit Guide</div>
+</div>
+<div class="w-40 h-56 bg-white rounded-xl shadow-lg p-4 flex flex-col rotate-[5deg] translate-y-4">
+<span class="material-symbols-outlined text-primary mb-3">calendar_today</span>
+<div class="text-[10px] font-bold text-on-surface-variant mb-1">ARRIVAL</div>
+<div class="text-sm font-headline leading-tight text-on-surface">Canada First Week</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-white/50 dark:bg-[#1a1c1e] pt-12 pb-8 border-t border-black/5">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-serif italic text-xl text-[#1a1c1e] dark:text-[#faf9f6]">StudenzBit</div>
+<div class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae]">© 2024 StudenzBit. The Scholarly Sanctuary.</div>
+</div>
+<div class="flex gap-8">
+<a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Privacy Policy</a>
+<a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Terms of Service</a>
+<a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Contact Us</a>
+<a class="font-sans text-sm tracking-wide text-[#44474e] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">About</a>
+</div>
+<div class="flex gap-4">
+<div class="p-2 rounded-full hover:translate-y-[-1px] transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-[#805353]">camera_alt</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

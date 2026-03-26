@@ -1,0 +1,15 @@
+.DS_Store
+**/.DS_Store
+
+# Local build/export output
+.dist/
+dist/
+
+# Common tooling (safe defaults)
+node_modules/
+.env
+.env.*
+
+# OS/editor noise
+.vscode/
+.idea/

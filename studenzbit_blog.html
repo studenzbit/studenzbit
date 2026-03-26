@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog | StudenzBit - The Scholarly Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#734748",
+              "error": "#a73b21",
+              "error-dim": "#791903",
+              "secondary-dim": "#4a5821",
+              "on-error-container": "#6e1400",
+              "error-container": "#fd795a",
+              "background": "#faf9f6",
+              "on-error": "#fff7f6",
+              "on-secondary": "#f2ffc7",
+              "primary": "#805353",
+              "surface-container-high": "#e7e9e4",
+              "on-surface-variant": "#5d605c",
+              "on-tertiary-fixed-variant": "#6c655d",
+              "surface-container-lowest": "#ffffff",
+              "outline-variant": "#b0b3ae",
+              "primary-fixed": "#fec3c3",
+              "tertiary-fixed": "#fdf2e7",
+              "surface-variant": "#e1e3de",
+              "on-primary-fixed-variant": "#704545",
+              "tertiary-container": "#fdf2e7",
+              "inverse-surface": "#0d0f0d",
+              "surface-container": "#eeeeea",
+              "secondary-container": "#d9eaa3",
+              "on-tertiary": "#fff8f2",
+              "on-secondary-fixed": "#37440e",
+              "surface-container-low": "#f4f4f0",
+              "primary-container": "#fec3c3",
+              "on-background": "#303330",
+              "inverse-primary": "#fec3c3",
+              "surface-tint": "#805353",
+              "on-primary": "#fff7f6",
+              "on-tertiary-fixed": "#4f4941",
+              "on-surface": "#303330",
+              "outline": "#797b78",
+              "surface-container-highest": "#e1e3de",
+              "tertiary-fixed-dim": "#eee4d9",
+              "tertiary-dim": "#59524a",
+              "tertiary": "#655e56",
+              "surface": "#faf9f6",
+              "inverse-on-surface": "#9d9d9a",
+              "on-tertiary-container": "#625b53",
+              "surface-bright": "#faf9f6",
+              "on-primary-fixed": "#4f292a",
+              "secondary": "#56652c",
+              "on-secondary-container": "#495720",
+              "secondary-fixed-dim": "#cbdc96",
+              "secondary-fixed": "#d9eaa3",
+              "primary-fixed-dim": "#efb5b5",
+              "on-primary-container": "#653c3c",
+              "on-secondary-fixed-variant": "#536129",
+              "surface-dim": "#d9dbd6"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem", "20px": "1.25rem", "16px": "1rem"},
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAdLYgL-M--NMQsPu1GsRb8W8pzkT8wr_yi0IHqJEy1zx2DXJ6VEkeIoO01bJxxsVDcHFmn8tP14agKLvA_mR6krSPb4ed-gxsU83PzLs73FjHmMUbVtgwPnscxqnU0K0HMlI6rSEoL8A5f8E0SaD7LYtRak0D86Pl-Wfyd2GpVRE0v2t-koaMKOhBCsDBqm2D-w5XI4RAD3Yv4FXXTdsBLHJ0bO2pPuPg-88robj4K5T2pv_7zKj_Y6WL08w8qevpODaasncEwxXMG);
+    opacity: 0.03
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="fixed inset-0 pointer-events-none grain-overlay z-[100]"></div>
+<!-- TopNavBar from Shared Components JSON -->
+<nav class="bg-[#faf9f6]/80 dark:bg-stone-900/80 backdrop-blur-xl docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif italic text-[#303330] dark:text-[#eeeeea]">StudenzBit</div>
+<div class="hidden md:flex items-center space-x-8 font-['Noto_Serif'] font-normal text-sm tracking-tight">
+<a class="text-[#5d605c] dark:text-stone-400 hover:text-[#303330] hover:opacity-80 transition-opacity duration-300" href="#">Destinations</a>
+<a class="text-[#5d605c] dark:text-stone-400 hover:text-[#303330] hover:opacity-80 transition-opacity duration-300" href="#">Tech Hub</a>
+<a class="text-[#5d605c] dark:text-stone-400 hover:text-[#303330] hover:opacity-80 transition-opacity duration-300" href="#">Student Toolkit</a>
+<a class="text-[#805353] dark:text-[#fec3c3] font-semibold border-b-2 border-[#805353] pb-1 hover:opacity-80 transition-opacity duration-300" href="#">Blog</a>
+</div>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">search</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label text-sm hover:opacity-80 transition-opacity duration-300 active:scale-95 ease-in-out">Sign In</button>
+</div>
+</div>
+<div class="bg-[#eeeeea] dark:bg-stone-800 h-[1px] w-full"></div>
+</nav>
+<main class="max-w-7xl mx-auto px-8 py-12 lg:py-20">
+<!-- Page Header -->
+<header class="mb-16">
+<span class="text-on-surface-variant font-label text-xs uppercase tracking-widest mb-4 block">THE STUDENZBIT JOURNAL</span>
+<h1 class="font-headline text-5xl md:text-6xl text-on-surface font-bold leading-tight mb-6">Stories, Guides &amp; Insights</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                Navigating international student life with precision. Expert-led guides for your journey across borders, campuses, and careers.
+            </p>
+<div class="mt-10 flex flex-wrap gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-medium transition-colors">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Canada</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">USA</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Australia</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Career</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Finance</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Tech</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Student Life</button>
+</div>
+</header>
+<!-- Featured Article -->
+<section class="mb-24">
+<div class="bg-[#F5EDE0] rounded-20px overflow-hidden flex flex-col lg:flex-row min-h-[500px]">
+<div class="flex-1 p-10 lg:p-16 flex flex-col justify-center">
+<span class="text-primary-dim font-label text-xs font-bold tracking-widest mb-4">FEATURED</span>
+<h2 class="font-headline text-3xl md:text-4xl lg:text-5xl text-on-surface leading-tight mb-6 italic">The Ultimate First Week Guide: What Nobody Tells You About Arriving in Canada</h2>
+<p class="text-on-surface-variant text-lg mb-8 line-clamp-3 leading-relaxed">
+                        From navigating Pearson International to securing your first SIM card and opening a bank account in 48 hours. This is your survival map for the first seven days.
+                    </p>
+<div class="flex items-center gap-4 text-sm text-on-surface-variant mb-8">
+<span class="font-medium text-on-surface">By Elena Richardson</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>12 min read</span>
+</div>
+<a class="text-primary font-bold text-lg inline-flex items-center group" href="#">
+                        Read Article 
+                        <span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+<div class="flex-1 bg-primary-container/30 flex items-center justify-center p-12">
+<img alt="Featured Article Image" class="w-full h-full object-cover rounded-xl shadow-lg mix-blend-multiply opacity-80" data-alt="Modern illustration style photo of a stylish student with a vintage leather suitcase standing in a sunlit airport terminal with warm pastel morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHbvRKpjnXJuUgcMt-0je89BP17TDD2gO-1c_27-bydZG8wx5LciISg1PF0roPGZ9tZuao7F4sI_23_Bn1yorSCIBt9S84bRow2nVj1CQmxdRLyryoyGAB4HPEDzLHAyr5N8QZcHNc4xBP0smCNh8V8frYMSO66JfOtOUwQpSctScEGHScCS6G6lfO52ZUJEZasv7D_cuzsZE7W0vCV_Al9qlIG-5VtgP6fTBNXQYgLop9EiqdbbW87SVbdiZki_4fN8hFRacQY7g4"/>
+</div>
+</div>
+</section>
+<!-- Recent Articles Grid -->
+<section class="mb-24">
+<div class="flex justify-between items-end mb-10">
+<h3 class="font-headline text-3xl font-bold">Latest Dispatches</h3>
+<a class="text-primary font-label text-sm font-bold uppercase tracking-wider" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#d9eaa3] p-0"></div>
+<div class="p-8">
+<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">FINANCE • CANADA</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Top 5 Banks for Students: Hidden Perks and Fees</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>Marcus Chen</span>
+<span>·</span>
+<span>6 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#fec3c3] p-0"></div>
+<div class="p-8">
+<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">TECH • GLOBAL</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Mac vs Windows: The Best Laptop for Your Major</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>Sarah Jenkins</span>
+<span>·</span>
+<span>8 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#eee4d9] p-0"></div>
+<div class="p-8">
+<span class="text-tertiary font-label text-[10px] font-bold tracking-widest mb-3 block">CAREER • CANADA</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Securing Your First Job in Toronto: A Playbook</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>David Wu</span>
+<span>·</span>
+<span>10 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#d9eaa3] p-0"></div>
+<div class="p-8">
+<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">CANADA</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Vancouver Cost of Living 2024: Budgeting Right</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>Elena Richardson</span>
+<span>·</span>
+<span>7 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#fec3c3] p-0"></div>
+<div class="p-8">
+<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">TECH • GLOBAL</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">eSIM vs Local Carriers: Which is Cheaper for Travelers?</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>Tom Harris</span>
+<span>·</span>
+<span>5 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#d9eaa3] p-0"></div>
+<div class="p-8">
+<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">AUSTRALIA</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Sydney Student Housing: Suburbs to Watch</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>Aria Patel</span>
+<span>·</span>
+<span>9 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+<!-- Card 7 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#eee4d9] p-0"></div>
+<div class="p-8">
+<span class="text-tertiary font-label text-[10px] font-bold tracking-widest mb-3 block">CAREER • CANADA</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">The Perfect Canadian Resume Template for 2024</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>David Wu</span>
+<span>·</span>
+<span>6 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+<!-- Card 8 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#fec3c3] p-0"></div>
+<div class="p-8">
+<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">USA</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">F-1 Visa Interview: Real Questions and Best Answers</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>Linda Thompson</span>
+<span>·</span>
+<span>15 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+<!-- Card 9 -->
+<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<div class="h-4 bg-[#d9eaa3] p-0"></div>
+<div class="p-8">
+<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">FINANCE • CANADA</span>
+<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Building Credit From Scratch: A Step-by-Step Guide</h4>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
+<span>Marcus Chen</span>
+<span>·</span>
+<span>11 min read</span>
+</div>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="#">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
+</div>
+</article>
+</div>
+</section>
+<!-- Newsletter Strip -->
+<section class="mb-24">
+<div class="bg-[#EDD5D5] rounded-20px p-10 lg:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="max-w-md">
+<h3 class="font-headline text-3xl font-bold text-on-primary-container mb-2">Get the Weekly Brief</h3>
+<p class="text-on-primary-fixed-variant leading-relaxed">Essential student updates, exclusive career tips, and sanctuary-only insights delivered to your inbox.</p>
+</div>
+<div class="w-full max-w-lg flex flex-col sm:flex-row gap-4">
+<input class="flex-1 bg-surface-container-lowest border-none rounded-full px-6 py-4 text-on-surface focus:ring-2 focus:ring-primary outline-none" placeholder="Enter your email" type="email"/>
+<button class="bg-[#303330] text-white px-8 py-4 rounded-full font-bold inline-flex items-center justify-center whitespace-nowrap hover:opacity-90 transition-opacity">
+                        Subscribe 
+                        <span class="material-symbols-outlined ml-2">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Popular This Month -->
+<section class="mb-24">
+<h3 class="font-headline text-3xl font-bold mb-10">Popular This Month</h3>
+<div class="space-y-0">
+<!-- Item 1 -->
+<div class="group flex items-center py-8 border-b border-outline-variant/20 cursor-pointer">
+<span class="font-headline text-4xl text-surface-container-highest mr-12 transition-colors group-hover:text-primary-container">01</span>
+<div class="flex-1">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant block mb-1">CAREER</span>
+<h4 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors italic">How to Network in a New Country Without Feeling Awkward</h4>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group flex items-center py-8 border-b border-outline-variant/20 cursor-pointer">
+<span class="font-headline text-4xl text-surface-container-highest mr-12 transition-colors group-hover:text-primary-container">02</span>
+<div class="flex-1">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant block mb-1">FINANCE</span>
+<h4 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors italic">The Student Tax Return: Maximizing Your Refund</h4>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group flex items-center py-8 border-b border-outline-variant/20 cursor-pointer">
+<span class="font-headline text-4xl text-surface-container-highest mr-12 transition-colors group-hover:text-primary-container">03</span>
+<div class="flex-1">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant block mb-1">STUDENT LIFE</span>
+<h4 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors italic">Finding Your Community: Clubs, Societies, and Beyond</h4>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group flex items-center py-8 border-b border-outline-variant/20 cursor-pointer">
+<span class="font-headline text-4xl text-surface-container-highest mr-12 transition-colors group-hover:text-primary-container">04</span>
+<div class="flex-1">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant block mb-1">USA</span>
+<h4 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors italic">California vs New York: Which State is Best for You?</h4>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="group flex items-center py-8 border-b border-outline-variant/20 cursor-pointer">
+<span class="font-headline text-4xl text-surface-container-highest mr-12 transition-colors group-hover:text-primary-container">05</span>
+<div class="flex-1">
+<span class="text-[10px] font-bold tracking-widest text-on-surface-variant block mb-1">ARRIVAL</span>
+<h4 class="font-headline text-xl text-on-surface group-hover:text-primary transition-colors italic">The Essential Packing List: What to Bring and What to Buy</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Topics Grid -->
+<section class="mb-24">
+<h3 class="font-headline text-3xl font-bold mb-10">Explore Topics</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Canada -->
+<div class="bg-[#d9eaa3]/30 p-8 rounded-16px hover:bg-[#d9eaa3]/50 transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:scale-110 transition-transform">map</span>
+<h5 class="font-headline text-lg mb-1">Canada</h5>
+<span class="text-xs text-on-surface-variant">42 articles</span>
+</div>
+<!-- Career -->
+<div class="bg-[#fec3c3]/30 p-8 rounded-16px hover:bg-[#fec3c3]/50 transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform">work</span>
+<h5 class="font-headline text-lg mb-1">Career &amp; Jobs</h5>
+<span class="text-xs text-on-surface-variant">38 articles</span>
+</div>
+<!-- Finance -->
+<div class="bg-[#eee4d9]/40 p-8 rounded-16px hover:bg-[#eee4d9]/60 transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-4xl text-tertiary mb-4 block group-hover:scale-110 transition-transform">payments</span>
+<h5 class="font-headline text-lg mb-1">Finance &amp; Banking</h5>
+<span class="text-xs text-on-surface-variant">25 articles</span>
+</div>
+<!-- Tech -->
+<div class="bg-[#e1e3de] p-8 rounded-16px hover:bg-surface-variant transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant mb-4 block group-hover:scale-110 transition-transform">devices</span>
+<h5 class="font-headline text-lg mb-1">Tech &amp; Gadgets</h5>
+<span class="text-xs text-on-surface-variant">19 articles</span>
+</div>
+<!-- Australia -->
+<div class="bg-[#fdf2e7] p-8 rounded-16px hover:bg-tertiary-container transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-4xl text-tertiary-dim mb-4 block group-hover:scale-110 transition-transform">beach_access</span>
+<h5 class="font-headline text-lg mb-1">Australia</h5>
+<span class="text-xs text-on-surface-variant">21 articles</span>
+</div>
+<!-- USA -->
+<div class="bg-[#fec3c3]/20 p-8 rounded-16px hover:bg-[#fec3c3]/40 transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-4xl text-primary-dim mb-4 block group-hover:scale-110 transition-transform">location_city</span>
+<h5 class="font-headline text-lg mb-1">USA</h5>
+<span class="text-xs text-on-surface-variant">29 articles</span>
+</div>
+<!-- Student Life -->
+<div class="bg-[#d9eaa3]/20 p-8 rounded-16px hover:bg-[#d9eaa3]/40 transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-4xl text-secondary-dim mb-4 block group-hover:scale-110 transition-transform">local_library</span>
+<h5 class="font-headline text-lg mb-1">Student Life</h5>
+<span class="text-xs text-on-surface-variant">34 articles</span>
+</div>
+<!-- Housing -->
+<div class="bg-[#f4f4f0] p-8 rounded-16px hover:bg-surface-container transition-colors cursor-pointer text-center group">
+<span class="material-symbols-outlined text-4xl text-outline mb-4 block group-hover:scale-110 transition-transform">home_pin</span>
+<h5 class="font-headline text-lg mb-1">Arrival &amp; Housing</h5>
+<span class="text-xs text-on-surface-variant">22 articles</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer from Shared Components JSON -->
+<footer class="bg-[#faf9f6] dark:bg-stone-950 w-full pt-20 pb-10 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto px-8 border-t border-[#eeeeea] dark:border-stone-800 pt-16">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-serif italic text-[#303330] dark:text-[#eeeeea] mb-6">StudenzBit</div>
+<p class="font-sans text-xs uppercase tracking-widest text-[#5d605c] leading-loose">
+                    © 2024 StudenzBit. The Scholarly Sanctuary for Global Minds.
+                </p>
+</div>
+<div>
+<h6 class="font-sans text-xs uppercase tracking-widest text-[#303330] font-bold mb-6">Platform</h6>
+<ul class="space-y-4 font-sans text-xs uppercase tracking-widest">
+<li><a class="text-[#5d605c] dark:text-stone-500 hover:text-[#805353] transition-colors" href="#">About Us</a></li>
+<li><a class="text-[#5d605c] dark:text-stone-500 hover:text-[#805353] transition-colors" href="#">Resources</a></li>
+<li><a class="text-[#5d605c] dark:text-stone-500 hover:text-[#805353] transition-colors" href="#">Community</a></li>
+<li><a class="text-[#5d605c] dark:text-stone-500 hover:text-[#805353] transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-sans text-xs uppercase tracking-widest text-[#303330] font-bold mb-6">Support</h6>
+<ul class="space-y-4 font-sans text-xs uppercase tracking-widest">
+<li><a class="text-[#5d605c] dark:text-stone-500 hover:text-[#805353] transition-colors" href="#">Contact</a></li>
+<li><a class="text-[#5d605c] dark:text-stone-500 hover:text-[#805353] transition-colors" href="#">Support</a></li>
+<li><a class="text-[#5d605c] dark:text-stone-500 hover:text-[#805353] transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-[#5d605c] dark:text-stone-500 hover:text-[#805353] transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-sans text-xs uppercase tracking-widest text-[#303330] font-bold mb-6">Follow</h6>
+<div class="flex space-x-4">
+<a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary-container transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toronto - StudenzBit City Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#faf9f6",
+                        "on-primary-container": "#653c3c",
+                        "surface-container-highest": "#e1e3de",
+                        "on-error": "#fff7f6",
+                        "tertiary-fixed": "#fdf2e7",
+                        "outline": "#797b78",
+                        "secondary-container": "#d9eaa3",
+                        "primary-container": "#fec3c3",
+                        "tertiary": "#655e56",
+                        "primary-dim": "#734748",
+                        "secondary-dim": "#4a5821",
+                        "on-tertiary-fixed": "#4f4941",
+                        "tertiary-container": "#fdf2e7",
+                        "tertiary-dim": "#59524a",
+                        "surface-bright": "#faf9f6",
+                        "surface-dim": "#d9dbd6",
+                        "inverse-surface": "#0d0f0d",
+                        "on-tertiary-fixed-variant": "#6c655d",
+                        "on-primary": "#fff7f6",
+                        "surface-tint": "#805353",
+                        "inverse-primary": "#fec3c3",
+                        "on-primary-fixed-variant": "#704545",
+                        "primary-fixed": "#fec3c3",
+                        "error-dim": "#791903",
+                        "on-surface": "#303330",
+                        "surface-container-high": "#e7e9e4",
+                        "surface-variant": "#e1e3de",
+                        "surface": "#faf9f6",
+                        "surface-container-low": "#f4f4f0",
+                        "secondary": "#56652c",
+                        "primary": "#805353",
+                        "primary-fixed-dim": "#efb5b5",
+                        "on-surface-variant": "#5d605c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#4f292a",
+                        "inverse-on-surface": "#9d9d9a",
+                        "outline-variant": "#b0b3ae",
+                        "surface-container": "#eeeeea",
+                        "on-secondary-fixed-variant": "#536129",
+                        "on-background": "#303330",
+                        "tertiary-fixed-dim": "#eee4d9",
+                        "secondary-fixed": "#d9eaa3",
+                        "error": "#a73b21",
+                        "on-secondary-fixed": "#37440e",
+                        "secondary-fixed-dim": "#cbdc96",
+                        "on-secondary-container": "#495720",
+                        "error-container": "#fd795a",
+                        "on-tertiary-container": "#625b53",
+                        "on-secondary": "#f2ffc7",
+                        "on-tertiary": "#fff8f2",
+                        "on-error-container": "#6e1400"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+body {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDrDGXNqh1BNvGLReX_7kG368HOPEuZxxInNBZqjW-LkQcTK3T7ZO1AM1RZq13_91cT3AJVmSus8X38xXMr4zkKoGkGVjGUjYfSBFQPi8YGmhO363vGgKvZSCjiJM1c9HIcJzy4_zrJpd4MB9K0nzs5filS_Fv-Gx4-BTdT5bmVAVdZvDhiqf5ADc2LaDKqkHbKhcHCuaRoTUz6LOmG9adihunJCVgXa_5KqLU3qU3fw7q8sT4VBj0eGuP1h-kDLcwCGxLcMPDmcOgV);
+    background-repeat: repeat
+    }
+.grain-overlay {
+    position: relative
+    }
+.grain-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAjN5sClFfVAG4zulFyJjg7wjo_z_B3AvVI9fjkfdIlsoD4Rs56ttqtDaWNoPNOmKoObpR4QIb6N6SjAmVMink_2Y4-Tsk3rD2HGWC2ROklxLbqzSGyMdxYDUvowXMP2FIOYGNGZwjgYKYlJbuTwqVlsdbu5Wqf6dXxOP8eBFezU69RZi544q39rvzBwllwXGM7XnuZBacc1qTfCs5Zyfzm2mkM7jGhuSGs6kWs0Xwl-E1awvg4dljC9QCbRfpUoxO1RqqMMDxvSC_N)
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f6]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-xl shadow-stone-900/5 dark:shadow-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif tracking-tight text-[#805353] dark:text-[#fec3c3] font-headline">StudenzBit</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#805353] dark:text-[#fec3c3] font-bold border-b-2 border-[#805353] pb-1 font-label" href="#">Destinations</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#805353] transition-colors font-label" href="#">Resources</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#805353] transition-colors font-label" href="#">Housing</a>
+<a class="text-stone-500 dark:text-stone-400 font-medium hover:text-[#805353] transition-colors font-label" href="#">Community</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="search">search</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label text-sm hover:opacity-90 transition-all Active:scale-95 duration-200">Sign In</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="mt-20 h-[400px] w-full relative overflow-hidden bg-gradient-to-br from-[#fec3c3] to-[#faf9f6] flex items-center grain-overlay">
+<div class="max-w-screen-2xl mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-2 items-center">
+<div class="z-10">
+<nav class="text-xs uppercase tracking-widest text-on-primary-container mb-4 font-label">
+                    Destinations <span class="mx-2">→</span> Canada <span class="mx-2">→</span> Toronto
+                </nav>
+<h1 class="text-[80px] leading-tight font-headline text-on-primary-container mb-2">Toronto</h1>
+<p class="text-xl font-label text-on-primary-container/80 flex items-center gap-2 italic">
+                    Ontario, Canada 🇨🇦
+                </p>
+</div>
+<div class="hidden md:flex justify-end opacity-20">
+<img alt="Toronto Skyline Silhouette" class="h-64 object-contain mix-blend-multiply" data-alt="Minimal architectural line art of Toronto's CN Tower and skyline silhouette against a soft dusty rose background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyNQ4t_H2FqtbULf8bedW6_eMZ0VgUoErnMUGK-NXBR9_OqjSpa9DVzFAMSWi_rT-Uzbyihl6hSWsaU20M7O_uD_g62aW12M-x3hmdTkIEsGZeefJV8F4ACsqgsVQmx6NZZgnrXy7KPs-vGSygVOjpN1E0rypxyUC4THKCYv_Zis-5WdjshQAMOtu4-5xwn2apq0CowxzeEAZaDhltHwEVFapviyZVCwAlbb14GLU1qdh6nX8yN4-rT0T5UitqWLaHwCSfk2wGTy9h"/>
+</div>
+</div>
+</section>
+<!-- Quick Stats Bar -->
+<div class="bg-surface-container-low border-y border-outline-variant/10">
+<div class="max-w-screen-2xl mx-auto px-10 py-8 grid grid-cols-2 md:grid-cols-5 gap-8">
+<div class="text-center md:border-r border-outline-variant/20 last:border-0">
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-1 font-label">Avg Tuition</p>
+<p class="text-lg font-bold text-primary font-body">$28,000 / yr</p>
+</div>
+<div class="text-center md:border-r border-outline-variant/20 last:border-0">
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-1 font-label">Avg Rent</p>
+<p class="text-lg font-bold text-primary font-body">$2,100 / mo</p>
+</div>
+<div class="text-center md:border-r border-outline-variant/20 last:border-0">
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-1 font-label">Safety</p>
+<p class="text-lg font-bold text-primary font-body">Very High</p>
+</div>
+<div class="text-center md:border-r border-outline-variant/20 last:border-0">
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-1 font-label">Population</p>
+<p class="text-lg font-bold text-primary font-body">2.93 Million</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-1 font-label">Visa</p>
+<p class="text-lg font-bold text-primary font-body">Study Permit</p>
+</div>
+</div>
+</div>
+<!-- Main Content Layout -->
+<main class="max-w-screen-2xl mx-auto px-8 mt-20 pb-20">
+<div class="flex flex-col lg:flex-row gap-20">
+<!-- Left Column (65%) -->
+<div class="lg:w-[65%] space-y-24">
+<!-- Banking Setup -->
+<section id="banking">
+<h2 class="text-3xl font-headline mb-8 border-b-2 border-primary-container inline-block pb-2">Banking Setup</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-8 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
+<h3 class="font-bold text-primary mb-2 font-headline">TD Canada Trust</h3>
+<p class="text-sm text-on-surface-variant mb-4">No-fee student accounts for 4 years plus a $100 welcome bonus.</p>
+<span class="text-[10px] font-bold text-secondary uppercase">Best for GIC</span>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
+<h3 class="font-bold text-primary mb-2 font-headline">RBC Royal Bank</h3>
+<p class="text-sm text-on-surface-variant mb-4">Excellent credit card options for newcomers with no credit history.</p>
+<span class="text-[10px] font-bold text-secondary uppercase">Best Credit Limits</span>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
+<h3 class="font-bold text-primary mb-2 font-headline">Scotiabank</h3>
+<p class="text-sm text-on-surface-variant mb-4">SCENE+ rewards for movies and groceries. High ATM density.</p>
+<span class="text-[10px] font-bold text-secondary uppercase">Best Rewards</span>
+</div>
+</div>
+</section>
+<!-- Housing & Neighborhoods -->
+<section id="housing">
+<h2 class="text-3xl font-headline mb-8 border-b-2 border-primary-container inline-block pb-2">Housing &amp; Neighbourhoods</h2>
+<div class="space-y-6">
+<div class="group relative overflow-hidden rounded-xl bg-surface-container-low aspect-[21/9]">
+<img alt="The Annex Neighbourhood" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Victorian houses in The Annex, Toronto, with lush green trees and soft afternoon sunlight reflecting on brick walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6s0hFQfz18oshFprzm72wGjmVJ-HJafMY3yDb50rrR-PGzPEVrZ86w7RpWxoQk5Hy7hEKVmFctVoabtquhVHQiU54BgD8KTLK71Ze35Wz2X4jyBaiU6duTVMChanhzXcmo3neoBIcngTrOf9PZbvJgkhsKYtYp7SAFR0uXkw2c3NjvR_wQsnS_FwStPA7XAUMB5U9vw54Id4yM_Lf986J_8C6AcUMZewPO2pVGBpTCxOz-FBzxASF5EJQvZN213dXGdXbH_SCwwry"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<div>
+<h4 class="text-white text-xl font-headline">The Annex</h4>
+<p class="text-white/80 text-sm">Closest to UofT. Vibrant, historic, and student-centric.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 bg-surface-container-lowest rounded-xl">
+<h4 class="font-bold mb-2 font-headline">Scarborough</h4>
+<p class="text-sm text-on-surface-variant">Affordable housing options. Incredible culinary diversity and home to UTSC.</p>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl">
+<h4 class="font-bold mb-2 font-headline">North York</h4>
+<p class="text-sm text-on-surface-variant">Modern condos, great subway access, and home to York University campus.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Top Universities -->
+<section id="universities">
+<h2 class="text-3xl font-headline mb-8 border-b-2 border-primary-container inline-block pb-2">Top Universities</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-xl hover:translate-x-2 transition-transform cursor-pointer">
+<div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center text-primary font-bold text-xl">UofT</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg font-headline">University of Toronto</h4>
+<p class="text-sm text-on-surface-variant">St. George, Scarborough, and Mississauga campuses.</p>
+</div>
+<span class="material-symbols-outlined text-primary-dim">arrow_forward</span>
+</div>
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-xl hover:translate-x-2 transition-transform cursor-pointer">
+<div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center text-primary font-bold text-xl">YU</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg font-headline">York University</h4>
+<p class="text-sm text-on-surface-variant">Canada's third-largest university, known for law and business.</p>
+</div>
+<span class="material-symbols-outlined text-primary-dim">arrow_forward</span>
+</div>
+<div class="flex items-center gap-6 p-6 bg-surface-container-low rounded-xl hover:translate-x-2 transition-transform cursor-pointer">
+<div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center text-primary font-bold text-xl">TMU</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg font-headline">Toronto Metropolitan University</h4>
+<p class="text-sm text-on-surface-variant">Located in the heart of downtown Toronto near Dundas Square.</p>
+</div>
+<span class="material-symbols-outlined text-primary-dim">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Jobs & Transit -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div id="jobs">
+<h2 class="text-2xl font-headline mb-6">Jobs &amp; Permits</h2>
+<ul class="space-y-4">
+<li class="flex gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" data-weight="fill">check_circle</span>
+                                Off-campus work up to 20 hours/week.
+                            </li>
+<li class="flex gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" data-weight="fill">check_circle</span>
+                                Post-Graduation Work Permit (PGWP) eligibility.
+                            </li>
+<li class="flex gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" data-weight="fill">check_circle</span>
+                                High demand in Tech, Finance, and Healthcare.
+                            </li>
+</ul>
+</div>
+<div id="transit">
+<h2 class="text-2xl font-headline mb-6">Transit</h2>
+<div class="p-6 bg-tertiary-container rounded-xl">
+<p class="font-bold text-on-tertiary-container mb-2 font-headline">TTC &amp; Presto</p>
+<p class="text-sm text-on-tertiary-container/80 mb-4">One card for Subway, Streetcars, and Buses. Monthly student passes save $30+.</p>
+<button class="text-xs font-bold uppercase tracking-wider text-primary border-b border-primary">Buy Presto Card</button>
+</div>
+</div>
+</section>
+<!-- Community -->
+<section id="community">
+<h2 class="text-3xl font-headline mb-8 border-b-2 border-primary-container inline-block pb-2">Community</h2>
+<div class="flex flex-wrap gap-4">
+<span class="px-6 py-2 bg-surface-container-highest rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant">#UofTStudents</span>
+<span class="px-6 py-2 bg-surface-container-highest rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant">#LifeInToronto</span>
+<span class="px-6 py-2 bg-surface-container-highest rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant">#InternationalScholars</span>
+<span class="px-6 py-2 bg-surface-container-highest rounded-full text-xs font-bold uppercase tracking-widest text-on-surface-variant">#TorontoEats</span>
+</div>
+</section>
+</div>
+<!-- Right Column (Sticky Sidebar) -->
+<aside class="lg:w-[35%]">
+<div class="sticky top-28 space-y-8">
+<!-- Premium Guide CTA -->
+<div class="p-10 bg-primary text-on-primary rounded-xl grain-overlay overflow-hidden relative shadow-2xl shadow-primary/20">
+<div class="relative z-10">
+<h3 class="text-2xl font-headline mb-4">The Ultimate Toronto Guide</h3>
+<p class="text-sm opacity-90 mb-8 leading-relaxed">150+ pages of insider knowledge on finding rent, securing co-ops, and hidden student gems.</p>
+<div class="flex items-center justify-between">
+<span class="text-3xl font-headline">$9.99</span>
+<button class="bg-on-primary text-primary px-8 py-3 rounded-full font-bold text-sm hover:bg-primary-container hover:text-on-primary-container transition-colors">Download Now</button>
+</div>
+</div>
+<div class="absolute -right-10 -bottom-10 opacity-10">
+<span class="material-symbols-outlined text-[160px]" style="font-variation-settings: 'FILL' 1;">book</span>
+</div>
+</div>
+<!-- Email Signup -->
+<div class="p-10 bg-secondary-container rounded-xl">
+<h3 class="text-xl font-headline text-on-secondary-container mb-4">Free Toronto Checklist</h3>
+<p class="text-sm text-on-secondary-container/80 mb-6 italic">A 12-step PDF to get you from the airport to your first lecture.</p>
+<div class="space-y-4">
+<input class="w-full bg-white/50 border-0 border-b-2 border-secondary focus:ring-0 text-on-secondary-container placeholder-on-secondary-container/50 font-label" placeholder="Email address" type="email"/>
+<button class="w-full bg-secondary text-on-secondary py-3 rounded-full font-bold text-sm hover:opacity-90 transition-all">Get Free Checklist</button>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="p-8 border-l border-outline-variant/30">
+<p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-6 font-label">Quick Navigation</p>
+<ul class="space-y-4">
+<li><a class="text-sm text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#banking"><span class="w-1.5 h-1.5 bg-primary-container rounded-full"></span> Banking Comparison</a></li>
+<li><a class="text-sm text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#housing"><span class="w-1.5 h-1.5 bg-primary-container rounded-full"></span> Neighborhood Guide</a></li>
+<li><a class="text-sm text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#universities"><span class="w-1.5 h-1.5 bg-primary-container rounded-full"></span> Top Universities</a></li>
+<li><a class="text-sm text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#jobs"><span class="w-1.5 h-1.5 bg-primary-container rounded-full"></span> Work Permits</a></li>
+<li><a class="text-sm text-on-surface hover:text-primary transition-colors flex items-center gap-2" href="#transit"><span class="w-1.5 h-1.5 bg-primary-container rounded-full"></span> Transit &amp; TTC</a></li>
+</ul>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Related Cities -->
+<section class="bg-surface-container py-24">
+<div class="max-w-screen-2xl mx-auto px-8">
+<h2 class="text-3xl font-headline mb-12 text-center">Explore More Canadian Cities</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Vancouver -->
+<div class="bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="h-48 overflow-hidden">
+<img alt="Vancouver" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Stunning aerial view of Vancouver city skyline nestled between the blue ocean and snow-capped mountains at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZRhdpBEmzi1zx74cAgIuzrSx86UHSqzv2bL6CbbLRo3NCKNj9PeX62gFvl2pUwqhgIXbgDY0TvkfzkXU9DkLljcGA7eLvwWq69yY1rbt4I1AsSaH0f4cHBxfvV1Mxy9M9XhKN0H0kkV0xMkWDbMRUMM8x8JGO65npy-Qbr7FygLOqAGEdOmHQ7yL7hhMK2eWKvvrEkccMNqA1RMyLdI5iipBDEy7oENOZmSklDMt8k5ozGaXiDdDtnrEFggjqGyr4UZ13yv75jdtf"/>
+</div>
+<div class="p-8">
+<h3 class="text-xl font-headline mb-2">Vancouver</h3>
+<p class="text-sm text-on-surface-variant mb-6">Mountain views and mild winters. Perfect for nature lovers.</p>
+<a class="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-2" href="#">Explore City <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<!-- Montreal -->
+<div class="bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="h-48 overflow-hidden">
+<img alt="Montreal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Charming cobblestone streets of Old Montreal with historic European-style architecture and hanging flower baskets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVO-zSVBA9KcwY5BVCxUPJ_TUZxvazn4UGU38y5B-5chZjuQha55maqrdZP5KOj7q72E6NFp5_bngUgypAQPcv22679JitBMM3pch4qBNpQjRlGSiwdWAQc7fRoAGEx2sGhDXNLdzPHb4TQFBuvQ4WyGIT2lD85W49GxcdGvyLC-YoQ0tdNMcj_QZ6J9BtBk1bQnJR4_acXhL26izNJ8shFq6Qp06_Z6oBXAYshU7SzCrbsAig7XsZGBZbx8FgT5tveqLghDRwJKxb"/>
+</div>
+<div class="p-8">
+<h3 class="text-xl font-headline mb-2">Montreal</h3>
+<p class="text-sm text-on-surface-variant mb-6">The cultural heart of Canada. Bilingual and vibrant.</p>
+<a class="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-2" href="#">Explore City <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+<!-- Ottawa -->
+<div class="bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+<div class="h-48 overflow-hidden">
+<img alt="Ottawa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Majestic Parliament Hill in Ottawa with Gothic architecture against a clear blue sky during summer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWdcHa7EAdAPHbUEJw970kxGY0Tpd8AMawLEBEd1b1RkkAvqf4kTKsuGpXXhDkJfvYl58ym036y9fsn34Ep38CpPko2HsyABevbMlGszlsca8RT0IJ3-lZI7KJ2cziqkkbxm52NjlzwAfYDXth-rXVv64IIhUAqy0xG6ueUNvg4FL62L-LHEiz-pZSXmb3AzWVfqd4BXuVozlQUueVfmVqcAuxZFKCLXdDkTNnk-srBcskGdoMEY1FCB74byenyLaRkXNyDVh5KVC2"/>
+</div>
+<div class="p-8">
+<h3 class="text-xl font-headline mb-2">Ottawa</h3>
+<p class="text-sm text-on-surface-variant mb-6">The nation's capital. High quality of life and great parks.</p>
+<a class="text-xs font-bold text-primary uppercase tracking-widest flex items-center gap-2" href="#">Explore City <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-[#eeeeea] dark:bg-stone-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-10 py-12 border-t border-stone-200/10 max-w-screen-2xl mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="font-noto-serif italic text-stone-800 dark:text-stone-200 text-xl font-headline">StudenzBit</span>
+<p class="font-plus-jakarta-sans text-[10px] uppercase tracking-widest text-stone-500 mt-2">© 2024 StudenzBit. The Scholarly Sanctuary.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-plus-jakarta-sans text-xs uppercase tracking-widest text-stone-500 hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors" href="#">Privacy Policy</a>
+<a class="font-plus-jakarta-sans text-xs uppercase tracking-widest text-stone-500 hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors" href="#">Terms of Service</a>
+<a class="font-plus-jakarta-sans text-xs uppercase tracking-widest text-stone-500 hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors" href="#">Support</a>
+<a class="font-plus-jakarta-sans text-xs uppercase tracking-widest text-stone-500 hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

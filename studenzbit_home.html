@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudenzBit | The Scholarly Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#d9eaa3",
+              "outline-variant": "#b0b3ae",
+              "tertiary-container": "#fdf2e7",
+              "on-primary-fixed": "#4f292a",
+              "on-surface-variant": "#5d605c",
+              "outline": "#797b78",
+              "surface-bright": "#faf9f6",
+              "surface-dim": "#d9dbd6",
+              "primary": "#805353",
+              "on-error": "#fff7f6",
+              "error": "#a73b21",
+              "inverse-on-surface": "#9d9d9a",
+              "surface-container-high": "#e7e9e4",
+              "surface": "#faf9f6",
+              "error-container": "#fd795a",
+              "primary-fixed": "#fec3c3",
+              "secondary-dim": "#4a5821",
+              "primary-container": "#fec3c3",
+              "surface-container": "#eeeeea",
+              "tertiary-fixed-dim": "#eee4d9",
+              "on-tertiary-container": "#625b53",
+              "on-surface": "#303330",
+              "on-error-container": "#6e1400",
+              "tertiary-fixed": "#fdf2e7",
+              "inverse-surface": "#0d0f0d",
+              "error-dim": "#791903",
+              "secondary-fixed": "#d9eaa3",
+              "on-secondary-fixed": "#37440e",
+              "tertiary-dim": "#59524a",
+              "on-tertiary-fixed": "#4f4941",
+              "secondary": "#56652c",
+              "on-secondary": "#f2ffc7",
+              "surface-variant": "#e1e3de",
+              "tertiary": "#655e56",
+              "surface-container-highest": "#e1e3de",
+              "on-tertiary-fixed-variant": "#6c655d",
+              "primary-dim": "#734748",
+              "on-secondary-container": "#495720",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#653c3c",
+              "primary-fixed-dim": "#efb5b5",
+              "on-secondary-fixed-variant": "#536129",
+              "background": "#faf9f6",
+              "surface-container-low": "#f4f4f0",
+              "on-tertiary": "#fff8f2",
+              "surface-tint": "#805353",
+              "on-primary-fixed-variant": "#704545",
+              "secondary-fixed-dim": "#cbdc96",
+              "on-primary": "#fff7f6",
+              "on-background": "#303330",
+              "inverse-primary": "#fec3c3"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #faf9f6; color: #303330; }
+      .font-serif { font-family: 'Noto Serif', serif; }
+      .grainy {
+        position: relative;
+      }
+      .grainy::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.02;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-xl no-border bg-stone-100/50 dark:bg-stone-800/50">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<a class="font-serif italic text-2xl text-[#805353] dark:text-[#fec3c3]" href="#">StudenzBit</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#805353] dark:text-[#fec3c3] font-bold border-b-2 border-[#805353] pb-1 font-serif italic text-lg tracking-tight" href="#">Destinations</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#805353] transition-colors font-serif italic text-lg tracking-tight" href="#">Tech Hub</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#805353] transition-colors font-serif italic text-lg tracking-tight" href="#">Student Toolkit</a>
+<a class="text-stone-600 dark:text-stone-400 font-medium hover:text-[#805353] transition-colors font-serif italic text-lg tracking-tight" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface hover:opacity-80 transition-opacity">search</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-all">Sign In</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="grainy min-height-[819px] flex flex-col items-center justify-center text-center px-6 py-32 bg-primary-container/20">
+<div class="max-w-4xl mx-auto">
+<h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-on-background leading-tight tracking-tight mb-8">
+                    Your Guide to <br/> <span class="italic text-primary">Studying Abroad</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant font-light max-w-2xl mx-auto mb-12">
+                    A curated editorial space for the global scholar. Navigate visa complexity, tech essentials, and city living with tactile precision.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-medium transition-all hover:scale-105">Explore Destinations</button>
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-full font-medium transition-all hover:scale-105">View Toolkit</button>
+</div>
+</div>
+</section>
+<!-- Interactive Map Section -->
+<section class="py-28 bg-background overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-20">
+<h2 class="font-serif text-4xl text-on-background mb-4">Choose Your Canvas</h2>
+<p class="font-body text-on-surface-variant">Click on a territory to explore localized tuition and living insights.</p>
+</div>
+<!-- Map Container -->
+<div class="relative w-full aspect-[21/9] mb-20 bg-surface-container rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" data-alt="Minimalist flat illustrated world map in pastel tones of cream, olive and dusty rose with high-end aesthetic" data-location="World Map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZQ0uOE9vSjjPWJoLobY4cx3eIsf9B8MnmwiYhV4hPliUjbAmzIvKbd30K7INSDWdc8pIUFlFdD2zVC-JsTNTnzbxHH3ItWrWeZ3qs3dFwXIts_it9XuhbHZx8EbuTb2yZ92-9uJ4Gva3o364jykBhXJi7c-hkDc-fTVNo0nJ9JwrU_OdldySdJnF2x1v1KzXWKgQW0eA8JFuAAq8E8gAaShvNzZXebMoeaqwRv-jvwziPbCK8MOd16Al61lNIPZNkP0cvaY0nnoF8"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-on-surface/40 font-serif italic text-2xl">Interactive World Atlas</span>
+</div>
+</div>
+<!-- Destination Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Canada -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all hover:bg-surface-container-lowest group cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="font-serif italic text-3xl text-primary">Canada</span>
+<span class="material-symbols-outlined text-on-surface-variant">north_east</span>
+</div>
+<div class="space-y-3 font-body text-sm text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>Cities</span>
+<span class="font-semibold text-on-surface">15+ Major Hubs</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>Avg Tuition</span>
+<span class="font-semibold text-on-surface">$20,000 CAD</span>
+</div>
+<div class="flex justify-between">
+<span>Avg Rent</span>
+<span class="font-semibold text-on-surface">$1,200 CAD/mo</span>
+</div>
+</div>
+</div>
+<!-- USA -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all hover:bg-surface-container-lowest group cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="font-serif italic text-3xl text-primary">USA</span>
+<span class="material-symbols-outlined text-on-surface-variant">north_east</span>
+</div>
+<div class="space-y-3 font-body text-sm text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>Cities</span>
+<span class="font-semibold text-on-surface">50+ States</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>Avg Tuition</span>
+<span class="font-semibold text-on-surface">$35,000 USD</span>
+</div>
+<div class="flex justify-between">
+<span>Avg Rent</span>
+<span class="font-semibold text-on-surface">$1,800 USD/mo</span>
+</div>
+</div>
+</div>
+<!-- Australia -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all hover:bg-surface-container-lowest group cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<span class="font-serif italic text-3xl text-primary">Australia</span>
+<span class="material-symbols-outlined text-on-surface-variant">north_east</span>
+</div>
+<div class="space-y-3 font-body text-sm text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>Cities</span>
+<span class="font-semibold text-on-surface">8 Education Zones</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>Avg Tuition</span>
+<span class="font-semibold text-on-surface">$30,000 AUD</span>
+</div>
+<div class="flex justify-between">
+<span>Avg Rent</span>
+<span class="font-semibold text-on-surface">$1,500 AUD/mo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech Hub Section -->
+<section class="py-28 bg-surface-container">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex items-end justify-between mb-16">
+<div class="max-w-xl">
+<span class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-4 block">Modern Essentials</span>
+<h2 class="font-serif text-5xl text-on-background">Tech for Students</h2>
+</div>
+<a class="font-body text-primary font-semibold hover:underline flex items-center gap-2" href="#">
+                        View Hub <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Phones -->
+<div class="bg-tertiary-container p-10 rounded-xl flex flex-col justify-between aspect-[4/5]">
+<div class="material-symbols-outlined text-5xl text-on-tertiary-container mb-8">smartphone</div>
+<div>
+<h3 class="font-serif text-2xl mb-2">Smartphones</h3>
+<p class="font-body text-on-tertiary-container/80 text-sm leading-relaxed">International unlocked devices for seamless roaming.</p>
+</div>
+</div>
+<!-- Laptops -->
+<div class="bg-primary-container/30 p-10 rounded-xl flex flex-col justify-between aspect-[4/5]">
+<div class="material-symbols-outlined text-5xl text-on-primary-container mb-8">laptop_mac</div>
+<div>
+<h3 class="font-serif text-2xl mb-2">Laptops</h3>
+<p class="font-body text-on-primary-container/80 text-sm leading-relaxed">High-performance machines tailored for study and work.</p>
+</div>
+</div>
+<!-- SIM -->
+<div class="bg-secondary-container/50 p-10 rounded-xl flex flex-col justify-between aspect-[4/5]">
+<div class="material-symbols-outlined text-5xl text-on-secondary-container mb-8">sim_card</div>
+<div>
+<h3 class="font-serif text-2xl mb-2">SIM &amp; Data</h3>
+<p class="font-body text-on-secondary-container/80 text-sm leading-relaxed">Local plans and eSIM solutions for global connectivity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Student Toolkit Section -->
+<section class="py-28 bg-[#2d2f2c] text-[#f4f4f0]">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-serif text-5xl mb-6">Student Toolkit</h2>
+<p class="font-body text-outline-variant font-light max-w-xl mx-auto">Foundational documents and roadmaps designed to accelerate your transition into a new academic landscape.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Tool 1 -->
+<div class="bg-[#363835] p-6 rounded-lg flex flex-col justify-between min-h-[220px]">
+<div>
+<span class="text-primary font-serif italic text-sm mb-2 block">Professional</span>
+<h4 class="font-body font-semibold text-lg mb-4 leading-tight">Resume Template for Academics</h4>
+</div>
+<div class="flex items-center justify-between mt-8">
+<span class="font-body text-lg">$14.99</span>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-medium hover:opacity-90">Get it</button>
+</div>
+</div>
+<!-- Tool 2 -->
+<div class="bg-[#363835] p-6 rounded-lg flex flex-col justify-between min-h-[220px]">
+<div>
+<span class="text-primary font-serif italic text-sm mb-2 block">Finance</span>
+<h4 class="font-body font-semibold text-lg mb-4 leading-tight">Banking &amp; Credit Guide</h4>
+</div>
+<div class="flex items-center justify-between mt-8">
+<span class="font-body text-lg">Free</span>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-medium hover:opacity-90">Get it</button>
+</div>
+</div>
+<!-- Tool 3 -->
+<div class="bg-[#363835] p-6 rounded-lg flex flex-col justify-between min-h-[220px]">
+<div>
+<span class="text-primary font-serif italic text-sm mb-2 block">Career</span>
+<h4 class="font-body font-semibold text-lg mb-4 leading-tight">Job Search Roadmap</h4>
+</div>
+<div class="flex items-center justify-between mt-8">
+<span class="font-body text-lg">$24.99</span>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-medium hover:opacity-90">Get it</button>
+</div>
+</div>
+<!-- Tool 4 -->
+<div class="bg-[#363835] p-6 rounded-lg flex flex-col justify-between min-h-[220px]">
+<div>
+<span class="text-primary font-serif italic text-sm mb-2 block">Legal</span>
+<h4 class="font-body font-semibold text-lg mb-4 leading-tight">Lease Agreement Checklist</h4>
+</div>
+<div class="flex items-center justify-between mt-8">
+<span class="font-body text-lg">$9.99</span>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-medium hover:opacity-90">Get it</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="bg-stone-100 dark:bg-stone-950 w-full py-12 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<a class="font-serif italic text-xl text-[#805353] dark:text-[#fec3c3]" href="#">StudenzBit</a>
+<p class="font-sans text-sm tracking-wide text-stone-500 mt-4 leading-relaxed">
+                    Crafting intentional experiences for the modern international student. Your journey, refined.
+                </p>
+</div>
+<div class="space-y-4">
+<h5 class="font-body font-bold text-on-surface">Explore</h5>
+<ul class="space-y-2 font-sans text-sm tracking-wide">
+<li><a class="text-stone-500 dark:text-stone-500 hover:text-[#805353] hover:underline transition-all" href="#">Destinations</a></li>
+<li><a class="text-stone-500 dark:text-stone-500 hover:text-[#805353] hover:underline transition-all" href="#">Tech Hub</a></li>
+<li><a class="text-stone-500 dark:text-stone-500 hover:text-[#805353] hover:underline transition-all" href="#">Student Toolkit</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-body font-bold text-on-surface">Company</h5>
+<ul class="space-y-2 font-sans text-sm tracking-wide">
+<li><a class="text-stone-500 dark:text-stone-500 hover:text-[#805353] hover:underline transition-all" href="#">Blog</a></li>
+<li><a class="text-stone-500 dark:text-stone-500 hover:text-[#805353] hover:underline transition-all" href="#">Privacy</a></li>
+<li><a class="text-stone-500 dark:text-stone-500 hover:text-[#805353] hover:underline transition-all" href="#">Terms</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-body font-bold text-on-surface">Social</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">camera_alt</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-outline-variant/10">
+<p class="font-sans text-sm tracking-wide text-stone-500">
+                © 2024 StudenzBit. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

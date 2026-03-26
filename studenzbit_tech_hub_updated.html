@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tech Hub | StudenzBit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=DM+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e1e3de",
+              "inverse-surface": "#0d0f0d",
+              "on-surface": "#303330",
+              "secondary-container": "#d9eaa3",
+              "secondary-fixed-dim": "#cbdc96",
+              "error-container": "#fd795a",
+              "on-background": "#303330",
+              "inverse-primary": "#fec3c3",
+              "on-error-container": "#6e1400",
+              "on-primary-fixed": "#4f292a",
+              "on-primary-container": "#653c3c",
+              "on-secondary-fixed": "#37440e",
+              "tertiary-dim": "#59524a",
+              "inverse-on-surface": "#9d9d9a",
+              "primary-fixed": "#fec3c3",
+              "on-tertiary-fixed": "#4f4941",
+              "surface-bright": "#faf9f6",
+              "tertiary-container": "#fdf2e7",
+              "surface-container": "#eeeeea",
+              "secondary": "#56652c",
+              "primary": "#805353",
+              "tertiary-fixed": "#fdf2e7",
+              "on-tertiary-container": "#625b53",
+              "error": "#a73b21",
+              "on-secondary": "#f2ffc7",
+              "surface-tint": "#805353",
+              "outline": "#797b78",
+              "on-primary": "#fff7f6",
+              "on-surface-variant": "#5d605c",
+              "on-error": "#fff7f6",
+              "surface": "#F9F6F2",
+              "primary-fixed-dim": "#efb5b5",
+              "outline-variant": "#b0b3ae",
+              "tertiary": "#655e56",
+              "primary-dim": "#734748",
+              "on-tertiary-fixed-variant": "#6c655d",
+              "on-primary-fixed-variant": "#704545",
+              "secondary-fixed": "#d9eaa3",
+              "error-dim": "#791903",
+              "surface-variant": "#e1e3de",
+              "surface-container-high": "#e7e9e4",
+              "secondary-dim": "#4a5821",
+              "tertiary-fixed-dim": "#eee4d9",
+              "on-secondary-fixed-variant": "#536129",
+              "surface-container-low": "#f4f4f0",
+              "surface-dim": "#d9dbd6",
+              "surface-container-lowest": "#ffffff",
+              "background": "#F9F6F2",
+              "brand-accent": "#7B3F3F",
+              "hero-bg": "#F5EDE0",
+              "card-warm-white": "#FDFCFB",
+              "card-border": "#E2DDD6",
+              "on-tertiary": "#fff8f2",
+              "on-secondary-container": "#495720",
+              "primary-container": "#fec3c3"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"],
+              "dm": ["DM Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F9F6F2;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 150px 150px;
+            opacity: 0.98;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.015;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<div class="grain-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 px-8 py-4 bg-[#F9F6F2]/80 backdrop-blur-xl shadow-[0px_20px_40px_rgba(48,51,48,0.02)]">
+<div class="flex justify-between items-center max-w-[1440px] mx-auto px-12">
+<div class="text-2xl font-serif italic text-[#303330]">StudenzBit</div>
+<div class="hidden md:flex items-center gap-10 font-['Noto_Serif'] font-medium text-sm tracking-tight">
+<a class="text-[#5d605c] hover:text-[#303330] transition-colors" href="#">Destinations</a>
+<a class="text-[#805353] font-bold border-b-2 border-[#805353] pb-1" href="#">Tech Hub</a>
+<a class="text-[#5d605c] hover:text-[#303330] transition-colors" href="#">Student Toolkit</a>
+<a class="text-[#5d605c] hover:text-[#303330] transition-colors" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4 text-[#805353]">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-80 transition-opacity" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto pt-32 pb-20 px-12">
+<!-- Header Section -->
+<header class="mb-16">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant font-semibold">Modern Essentials</span>
+<h1 class="font-headline text-5xl md:text-7xl text-on-surface mt-4 mb-6 tracking-tight">Tech for Students</h1>
+<p class="max-w-xl text-on-surface-variant text-lg leading-relaxed">Curated hardware and software guides designed to simplify the digital transition for international scholars.</p>
+<div class="flex flex-wrap gap-3 mt-12">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-medium transition-transform active:scale-95">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container text-on-surface-variant text-sm font-medium hover:bg-surface-container-high transition-colors">Smartphones</button>
+<button class="px-6 py-2 rounded-full bg-surface-container text-on-surface-variant text-sm font-medium hover:bg-surface-container-high transition-colors">Laptops</button>
+<button class="px-6 py-2 rounded-full bg-surface-container text-on-surface-variant text-sm font-medium hover:bg-surface-container-high transition-colors">SIM &amp; Data</button>
+<button class="px-6 py-2 rounded-full bg-surface-container text-on-surface-variant text-sm font-medium hover:bg-surface-container-high transition-colors">Accessories</button>
+</div>
+</header>
+<!-- Hero Card -->
+<section class="mb-24">
+<div class="bg-[#F5EDE0] rounded-[2.5rem] p-12 md:p-20 flex flex-col md:flex-row items-center gap-16 overflow-hidden">
+<div class="flex-1 space-y-8">
+<span class="inline-block px-4 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-bold tracking-widest uppercase">Editor's Pick</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface leading-[1.1]">The International Student Tech Checklist</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">Everything you need to set up your digital life in a new country, from bank-ready smartphones to global data plans.</p>
+<a class="group flex items-center gap-3 text-primary font-bold text-sm tracking-wide" href="#">
+                        Read the Guide 
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="flex-1 relative flex justify-center">
+<div class="relative w-full max-w-md">
+<!-- SVG Illustration -->
+<svg class="w-full h-auto" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="transparent" height="300" width="400"></rect>
+<!-- Laptop -->
+<rect fill="#FDFCFB" height="140" rx="8" stroke="#805353" stroke-width="1.5" width="220" x="80" y="80"></rect>
+<rect fill="#FDFCFB" height="110" opacity="0.4" rx="2" stroke="#805353" stroke-width="1" width="190" x="95" y="95"></rect>
+<path d="M70 220 H310 L320 235 H60 Z" fill="#FDFCFB" stroke="#805353" stroke-width="1.5"></path>
+<!-- Smartphone -->
+<rect fill="#FDFCFB" height="110" rx="10" stroke="#805353" stroke-width="1.5" transform="rotate(5 310 195)" width="60" x="280" y="140"></rect>
+<rect fill="#FDFCFB" height="90" opacity="0.4" rx="4" stroke="#805353" stroke-width="1" transform="rotate(5 310 195)" width="40" x="290" y="150"></rect>
+<!-- SIM Card -->
+<path d="M230 240 H260 V270 H240 L230 260 Z" fill="#FDFCFB" stroke="#805353" stroke-width="1.5" transform="rotate(-15 245 255)"></path>
+<rect fill="#805353" height="15" opacity="0.2" rx="1" transform="rotate(-15 245 255)" width="12" x="240" y="250"></rect>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Cards -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+<!-- Smartphones -->
+<div class="bg-surface-container-low p-10 rounded-[2rem] flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-500">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-6">Connectivity</span>
+<h3 class="font-headline text-3xl mb-4">Smartphones</h3>
+<ul class="text-on-surface-variant space-y-3 mb-12 flex-grow">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> eSIM Compatibility</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Unlocked Global Bands</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Long Battery Life</li>
+</ul>
+<a class="text-primary font-bold text-sm flex items-center gap-2" href="#">Explore Phones <span class="material-symbols-outlined text-xs" data-icon="east">east</span></a>
+</div>
+<!-- Laptops -->
+<div class="bg-primary-container/30 p-10 rounded-[2rem] flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-500">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-6">Productivity</span>
+<h3 class="font-headline text-3xl mb-4 text-[#805353]">Laptops</h3>
+<ul class="text-on-surface-variant space-y-3 mb-12 flex-grow">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Lightweight Portability</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> All-Day Performance</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> High-Res Displays</li>
+</ul>
+<a class="text-primary font-bold text-sm flex items-center gap-2" href="#">Explore Laptops <span class="material-symbols-outlined text-xs" data-icon="east">east</span></a>
+</div>
+<!-- SIM & Data -->
+<div class="bg-secondary-container/30 p-10 rounded-[2rem] flex flex-col h-full hover:translate-y-[-4px] transition-transform duration-500">
+<span class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-6">Stay Connected</span>
+<h3 class="font-headline text-3xl mb-4 text-secondary">SIM &amp; Data</h3>
+<ul class="text-on-surface-variant space-y-3 mb-12 flex-grow">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> No-Contract Plans</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> International Roaming</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-secondary rounded-full"></span> Student Discounts</li>
+</ul>
+<a class="text-secondary font-bold text-sm flex items-center gap-2" href="#">Explore SIM Plans <span class="material-symbols-outlined text-xs" data-icon="east">east</span></a>
+</div>
+</section>
+<!-- Comparison Section -->
+<section class="mb-32">
+<div class="text-center mb-16">
+<h2 class="font-headline text-4xl mb-4">Mac vs Windows</h2>
+<p class="text-on-surface-variant uppercase tracking-widest text-xs font-bold">The ultimate showdown for academia</p>
+</div>
+<div class="relative flex flex-col md:flex-row gap-8">
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center w-16 h-16 bg-surface-container-lowest rounded-full shadow-xl border-4 border-[#F9F6F2] italic font-serif text-primary">VS</div>
+<!-- MacBook Column -->
+<div class="flex-1 bg-surface-container-low p-12 rounded-[2rem]">
+<div class="mb-10 text-center">
+<span class="material-symbols-outlined text-5xl text-primary mb-4" data-icon="laptop_mac">laptop_mac</span>
+<h4 class="font-headline text-2xl">MacBook Air</h4>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant">Price</span>
+<span class="font-semibold">From $999</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant">Battery</span>
+<span class="font-semibold">18+ Hours</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant">Best For</span>
+<span class="font-semibold">Creative &amp; Portability</span>
+</div>
+<div class="flex justify-between pb-4">
+<span class="text-on-surface-variant">Resale Value</span>
+<span class="font-semibold text-secondary">Exceptional</span>
+</div>
+</div>
+</div>
+<!-- Windows Column -->
+<div class="flex-1 bg-surface-container-high/40 p-12 rounded-[2rem]">
+<div class="mb-10 text-center">
+<span class="material-symbols-outlined text-5xl text-on-surface-variant mb-4" data-icon="laptop_windows">laptop_windows</span>
+<h4 class="font-headline text-2xl">Windows Ultra</h4>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant">Price</span>
+<span class="font-semibold">From $699</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant">Battery</span>
+<span class="font-semibold">12-15 Hours</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-4">
+<span class="text-on-surface-variant">Best For</span>
+<span class="font-semibold">Versatility &amp; Software</span>
+</div>
+<div class="flex justify-between pb-4">
+<span class="text-on-surface-variant">Resale Value</span>
+<span class="font-semibold text-error">Moderate</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Picks Grid -->
+<section class="mb-32">
+<h2 class="font-headline text-4xl mb-12">Quick Picks</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Product 1 -->
+<div class="group bg-[#FDFCFB] border border-[#E2DDD6] p-6 rounded-2xl flex flex-col">
+<div class="aspect-square rounded-xl bg-[#F5EDE0] mb-6 overflow-hidden flex items-center justify-center p-8">
+<svg class="w-full h-full" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="80" rx="8" stroke="#7B3F3F" stroke-width="2" width="40" x="30" y="10"></rect>
+<rect fill="#FDFCFB" height="60" opacity="0.3" rx="2" stroke="#7B3F3F" stroke-width="1" width="30" x="35" y="18"></rect>
+<circle cx="50" cy="83" fill="#7B3F3F" opacity="0.4" r="3"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold uppercase text-secondary">Available Now</span>
+<span class="text-xs text-on-surface-variant">🇺🇸 Global</span>
+</div>
+<h5 class="font-dm font-bold text-on-surface mb-1">iPhone 16 Pro</h5>
+<p class="text-sm text-on-surface-variant mb-4 font-dm">Pro performance for global roaming.</p>
+<p class="text-base font-bold text-[#7B3F3F] mb-4">$999.00</p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<a class="text-[#7B3F3F] text-xs font-bold hover:underline" href="#">View Deal →</a>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="group bg-[#FDFCFB] border border-[#E2DDD6] p-6 rounded-2xl flex flex-col">
+<div class="aspect-square rounded-xl bg-[#FDF2E7] mb-6 overflow-hidden flex items-center justify-center p-8">
+<svg class="w-full h-full" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="35" rx="3" stroke="#7B3F3F" stroke-width="2" width="60" x="20" y="30"></rect>
+<path d="M15 65 H85 L88 72 H12 Z" fill="white" stroke="#7B3F3F" stroke-width="2"></path>
+<rect fill="#FDFCFB" height="25" opacity="0.3" rx="1" stroke="#7B3F3F" stroke-width="1" width="50" x="25" y="35"></rect>
+</svg>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold uppercase text-secondary">Best Seller</span>
+<span class="text-xs text-on-surface-variant">🇨🇦 Canada</span>
+</div>
+<h5 class="font-dm font-bold text-on-surface mb-1">MacBook Air M3</h5>
+<p class="text-sm text-on-surface-variant mb-4 font-dm">Ultra-portable student favorite.</p>
+<p class="text-base font-bold text-[#7B3F3F] mb-4">$1,099.00</p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<a class="text-[#7B3F3F] text-xs font-bold hover:underline" href="#">View Deal →</a>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="group bg-[#FDFCFB] border border-[#E2DDD6] p-6 rounded-2xl flex flex-col">
+<div class="aspect-square rounded-xl bg-[#E7F0E0] mb-6 overflow-hidden flex items-center justify-center p-8">
+<svg class="w-full h-full" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="70" rx="6" stroke="#7B3F3F" stroke-width="2" width="36" x="32" y="15"></rect>
+<circle cx="42" cy="25" fill="#7B3F3F" opacity="0.4" r="3"></circle>
+<circle cx="58" cy="25" fill="#7B3F3F" opacity="0.4" r="3"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold uppercase text-secondary">Budget King</span>
+<span class="text-xs text-on-surface-variant">🇬🇧 UK</span>
+</div>
+<h5 class="font-dm font-bold text-on-surface mb-1">Samsung Galaxy A55</h5>
+<p class="text-sm text-on-surface-variant mb-4 font-dm">Reliable features, wallet-friendly.</p>
+<p class="text-base font-bold text-[#7B3F3F] mb-4">$449.00</p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<a class="text-[#7B3F3F] text-xs font-bold hover:underline" href="#">View Deal →</a>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="group bg-[#FDFCFB] border border-[#E2DDD6] p-6 rounded-2xl flex flex-col">
+<div class="aspect-square rounded-xl bg-[#F5EDE0] mb-6 overflow-hidden flex items-center justify-center p-8">
+<svg class="w-full h-full" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect fill="white" height="30" rx="2" stroke="#7B3F3F" stroke-width="2" width="50" x="25" y="35"></rect>
+<path d="M20 65 H80 V70 H20 Z" fill="white" stroke="#7B3F3F" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold uppercase text-secondary">Reliable</span>
+<span class="text-xs text-on-surface-variant">🇦🇺 Australia</span>
+</div>
+<h5 class="font-dm font-bold text-on-surface mb-1">Lenovo IdeaPad 5</h5>
+<p class="text-sm text-on-surface-variant mb-4 font-dm">The essential Windows workhorse.</p>
+<p class="text-base font-bold text-[#7B3F3F] mb-4">$599.00</p>
+<div class="mt-auto pt-4 flex flex-col gap-3">
+<a class="text-[#7B3F3F] text-xs font-bold hover:underline" href="#">View Deal →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Table Section -->
+<section class="mb-32">
+<h2 class="font-headline text-4xl mb-12">Which SIM Should You Get?</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-xs uppercase tracking-widest text-on-surface-variant font-bold border-b border-surface-container-highest">
+<th class="py-6 px-4">Carrier</th>
+<th class="py-6 px-4">Country</th>
+<th class="py-6 px-4">Cost</th>
+<th class="py-6 px-4">Data</th>
+<th class="py-6 px-4">Best For</th>
+<th class="py-6 px-4">Rating</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-bold">Rogers</td>
+<td class="py-6 px-4">Canada</td>
+<td class="py-6 px-4">$45/mo</td>
+<td class="py-6 px-4">60GB</td>
+<td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Speed</span></td>
+<td class="py-6 px-4 text-primary">★★★★☆</td>
+</tr>
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-bold">Telus</td>
+<td class="py-6 px-4">Canada</td>
+<td class="py-6 px-4">$50/mo</td>
+<td class="py-6 px-4">100GB</td>
+<td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Coverage</span></td>
+<td class="py-6 px-4 text-primary">★★★★★</td>
+</tr>
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-bold">Verizon</td>
+<td class="py-6 px-4">USA</td>
+<td class="py-6 px-4">$60/mo</td>
+<td class="py-6 px-4">Unlimited</td>
+<td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Reliability</span></td>
+<td class="py-6 px-4 text-primary">★★★★★</td>
+</tr>
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-bold">T-Mobile</td>
+<td class="py-6 px-4">USA</td>
+<td class="py-6 px-4">$50/mo</td>
+<td class="py-6 px-4">Unlimited</td>
+<td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Student Value</span></td>
+<td class="py-6 px-4 text-primary">★★★★☆</td>
+</tr>
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-bold">Optus</td>
+<td class="py-6 px-4">Australia</td>
+<td class="py-6 px-4">$35/mo</td>
+<td class="py-6 px-4">40GB</td>
+<td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Budget</span></td>
+<td class="py-6 px-4 text-primary">★★★☆☆</td>
+</tr>
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 font-bold">Telstra</td>
+<td class="py-6 px-4">Australia</td>
+<td class="py-6 px-4">$55/mo</td>
+<td class="py-6 px-4">80GB</td>
+<td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Rural Access</span></td>
+<td class="py-6 px-4 text-primary">★★★★★</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- CTA Banner -->
+<section>
+<div class="bg-on-surface text-surface py-24 px-12 rounded-[3rem] text-center">
+<h2 class="font-headline text-5xl mb-6">Not Sure Where to Start?</h2>
+<p class="text-surface-variant max-w-lg mx-auto mb-12 text-lg">Download our free 12-page comprehensive tech guide specifically tailored for students moving abroad this year.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-10 py-4 bg-primary text-on-primary font-bold rounded-full hover:bg-primary-dim transition-colors">Download Free Checklist</button>
+<button class="px-10 py-4 border border-surface text-surface font-bold rounded-full hover:bg-surface hover:text-on-surface transition-all">Browse All Picks →</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 mt-20 bg-[#eeeeea]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-end w-full max-w-[1440px] mx-auto">
+<div>
+<div class="font-serif italic text-lg text-[#303330] mb-4">StudenzBit</div>
+<p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#5d605c]">© 2024 StudenzBit. Designed for the Global Mind.</p>
+</div>
+<div class="flex flex-wrap gap-8 justify-start md:justify-end font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest">
+<a class="text-[#5d605c] hover:text-[#805353] transition-colors hover:underline underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-[#5d605c] hover:text-[#805353] transition-colors hover:underline underline-offset-4" href="#">Terms of Service</a>
+<a class="text-[#5d605c] hover:text-[#805353] transition-colors hover:underline underline-offset-4" href="#">Accessibility</a>
+<a class="text-[#5d605c] hover:text-[#805353] transition-colors hover:underline underline-offset-4" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

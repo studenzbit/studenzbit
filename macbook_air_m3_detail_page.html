@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MacBook Air M3 - StudenzBit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@700&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary-dim": "#734748",
+                "error": "#a73b21",
+                "surface-container-highest": "#e1e3de",
+                "on-surface": "#2C2C2C",
+                "on-error": "#fff7f6",
+                "error-dim": "#791903",
+                "primary-fixed": "#fec3c3",
+                "primary-container": "#fec3c3",
+                "inverse-surface": "#0d0f0d",
+                "on-secondary-fixed-variant": "#536129",
+                "secondary-dim": "#4a5821",
+                "secondary-fixed-dim": "#cbdc96",
+                "surface-container-low": "#f4f4f0",
+                "surface": "#F0EDF8",
+                "on-tertiary-container": "#625b53",
+                "on-tertiary-fixed": "#4f4941",
+                "secondary-fixed": "#d9eaa3",
+                "outline-variant": "#b0b3ae",
+                "on-background": "#2C2C2C",
+                "surface-tint": "#805353",
+                "outline": "#797b78",
+                "surface-variant": "#e1e3de",
+                "background": "#F0EDF8",
+                "tertiary-fixed-dim": "#eee4d9",
+                "surface-dim": "#d9dbd6",
+                "on-tertiary": "#fff8f2",
+                "tertiary-dim": "#59524a",
+                "on-tertiary-fixed-variant": "#6c655d",
+                "surface-bright": "#F0EDF8",
+                "on-primary": "#fff7f6",
+                "on-secondary-container": "#495720",
+                "on-surface-variant": "#5d605c",
+                "on-primary-fixed-variant": "#704545",
+                "on-secondary": "#f2ffc7",
+                "surface-container-lowest": "#ffffff",
+                "tertiary": "#655e56",
+                "on-secondary-fixed": "#37440e",
+                "tertiary-container": "#fdf2e7",
+                "inverse-on-surface": "#9d9d9a",
+                "primary-fixed-dim": "#efb5b5",
+                "on-primary-container": "#653c3c",
+                "secondary-container": "#d9eaa3",
+                "secondary": "#56652c",
+                "inverse-primary": "#fec3c3",
+                "tertiary-fixed": "#fdf2e7",
+                "surface-container": "#eeeeea",
+                "primary": "#805353",
+                "on-error-container": "#6e1400",
+                "error-container": "#fd795a",
+                "on-primary-fixed": "#4f292a",
+                "surface-container-high": "#e7e9e4",
+                "charcoal": "#2C2C2C",
+                "lavender-card": "#E8E3F5",
+                "dark-band": "#2F2D2B"
+              },
+              fontFamily: {
+                "headline": ["Playfair Display", "Noto Serif"],
+                "body": ["DM Sans", "Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+    </script>
+<style>.warm-grain {
+    position: relative
+    }
+.warm-grain::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    pointer-events: none;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC7UhYfx6sNh0UaajyvsEkXs18paZ4UcgAmv5D19W6qYgJPxGR1LIraY9j4UO-yknhDwtlUGURqBVsckTd6Ss24Pbkb222x4PHUFc3vwSC4-bPard7E63YNbc7RPSXYZbCMwmUYT1hzP5F8w1sULmis6DRU9DcrA8rTZfcepBOHhSXEkYGAq2jgYy86Qsu3JcbhGlZj4O79K-SIJWdmn6r50PHB04_8rHTKGMm9wkVg3_tvG4_RNfm5tUYNTcKIkv2FR5Na6RXICKgM);
+    z-index: 1
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }</style>
+</head>
+<body class="bg-background font-body text-charcoal warm-grain">
+<!-- Top Navigation (Shared Component) -->
+<header class="bg-[#faf9f6]/80 backdrop-blur-xl dark:bg-[#303330]/80 font-['Noto_Serif'] antialiased tracking-tight docked full-width top-0 sticky z-50 shadow-[0px_20px_40px_rgba(48,51,48,0.04)]">
+<nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif italic text-[#805353] dark:text-[#fec3c3]">StudenzBit</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Destinations</a>
+<a class="text-[#805353] dark:text-[#fec3c3] border-b-2 border-[#805353] pb-1 font-bold" href="#">Tech Hub</a>
+<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Student Toolkit</a>
+<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-[#805353] cursor-pointer hover:bg-[#eeeeea] p-2 rounded-full transition-all">search</span>
+<button class="bg-[#805353] text-[#fff7f6] px-6 py-2 rounded-full text-sm font-medium hover:scale-95 transition-transform duration-200">Sign In</button>
+</div>
+</nav>
+</header>
+<main class="relative z-10 max-w-7xl mx-auto px-8 pt-8 pb-20">
+<!-- Breadcrumb -->
+<nav class="mb-12 flex items-center gap-2 text-sm text-on-surface-variant font-medium">
+<a class="hover:text-primary" href="#">Tech Hub</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<a class="hover:text-primary" href="#">Laptops</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-charcoal font-semibold">MacBook Air M3</span>
+</nav>
+<!-- Product Hero -->
+<section class="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 items-start mb-24">
+<!-- Hero Left: Content -->
+<div class="space-y-8">
+<div>
+<span class="inline-block text-[10px] tracking-[0.2em] font-bold uppercase mb-4 text-on-surface-variant opacity-70">LAPTOPS</span>
+<h1 class="text-6xl md:text-7xl font-headline leading-[1.1] mb-6">MacBook Air M3</h1>
+<p class="text-xl md:text-2xl font-medium text-charcoal/80 mb-4 italic">The best laptop for most students</p>
+<div class="flex items-center gap-3 mb-8">
+<div class="flex text-[#D4AF37]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<span class="text-sm font-bold text-charcoal">4.8</span>
+<span class="text-sm text-on-surface-variant">(243 reviews)</span>
+</div>
+</div>
+<div class="prose prose-lg max-w-2xl text-on-surface-variant leading-relaxed">
+<p>The M3 MacBook Air is the ultimate campus companion. Combining a fanless design that stays silent in quiet libraries with an 18-hour battery life that survives a full day of lectures and late-night study sessions. For international students navigating new systems, the Apple ecosystem offers unparalleled stability and local support across global borders.</p>
+</div>
+<div class="flex flex-wrap gap-4 items-center">
+<div class="flex -space-x-1">
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-surface-container text-xs border border-white shadow-sm" title="Canada">🇨🇦</span>
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-surface-container text-xs border border-white shadow-sm" title="USA">🇺🇸</span>
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-surface-container text-xs border border-white shadow-sm" title="Australia">🇦🇺</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-[#d9eaa3] text-[#495720] px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Best Battery</span>
+<span class="bg-[#fec3c3] text-[#704545] px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Lightest Build</span>
+<span class="bg-[#fdf2e7] text-[#625b53] px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Best for Design</span>
+<span class="bg-[#E8E3F5] text-[#585380] px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider">Editor's Pick</span>
+</div>
+</div>
+<!-- Quick Specs Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6 py-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">monitor</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Display</p>
+<p class="text-sm font-semibold">13.6" Liquid Retina</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">memory</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Chip</p>
+<p class="text-sm font-semibold">Apple M3 Chip</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">battery_charging_full</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Battery</p>
+<p class="text-sm font-semibold">Up to 18 hours</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">flex_wrap</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">RAM</p>
+<p class="text-sm font-semibold">8GB to 24GB</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">hard_drive</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Storage</p>
+<p class="text-sm font-semibold">256GB to 2TB</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl">weight</span>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Weight</p>
+<p class="text-sm font-semibold">1.24 kg</p>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<p class="text-2xl font-headline mb-6">From $1,299 <span class="text-sm font-body font-bold text-on-surface-variant">CAD</span></p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-charcoal text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-black transition-colors">
+                            Buy on Amazon 🇨🇦
+                        </button>
+<button class="border-2 border-charcoal text-charcoal px-8 py-4 rounded-full font-bold hover:bg-charcoal hover:text-white transition-all">
+                            Check Education Deal
+                        </button>
+</div>
+</div>
+</div>
+<!-- Hero Right: Image -->
+<div class="sticky top-32">
+<div class="bg-lavender-card aspect-[4/5] rounded-[2rem] flex items-center justify-center p-12 relative overflow-hidden group">
+<img alt="MacBook Air M3 minimalist view" class="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist flat lay of a sleek silver MacBook Air M3 on a soft lavender background with editorial lighting and clean shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2Th9Suy3d4uL1xOmBb2vbDCohouSYZOoytAIU8Cw-yXgFhZp7xNsyYZX1YEMWU4F5aZvzIq_24EOYsXfXaEn-VUec6mjKR8YYlLrpQQUM1bM4nP-yvej_YKt0eggPfZwCQnS-V7RR5_E1gARiCAJ8cpuwKomZw7rnble6JgXBvVsdedyr_h-m4MXQwWjAmU7sKaoAIRHNCmPDdliRMRvwgTI9JUiup7yXkRO9i2EsFL2l154-KVYt5LFu_wT6CtA4VWljsrNJyAx0"/>
+</div>
+<div class="flex gap-4 mt-8 justify-center">
+<div class="w-20 h-20 rounded-xl bg-surface-container-low p-2 cursor-pointer border-2 border-primary">
+<img alt="Thumb 1" class="w-full h-full object-cover rounded-lg" data-alt="Close up of MacBook Air M3 hinge and ultra-thin profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANg_DzQLY4vGUh7HM4GEiZGCN2hKNvI9v83avD1LZYAqSELjZH8K0VCqU-xSpEHxXfoT6N_tX1Ac7CRER3-C81ssIw9vHcxsTHTb3PfjdQ8nqnzASAAAu6g8lHxfB1Wtlo61o96NYG1XYZfhcEJC6RJ7yGAY9JMuiBmyowPMWrUhNZ7S7-oOjLNBoTH49Jb-fPr8UddJ2eKJGjXYAgotGBngnNTn0abVvVnW4SEKdABxBbaxKeSBYPev3d7cExbbY60oPnjazhTyx_"/>
+</div>
+<div class="w-20 h-20 rounded-xl bg-surface-container-low p-2 cursor-pointer border-2 border-transparent hover:border-outline">
+<img alt="Thumb 2" class="w-full h-full object-cover rounded-lg" data-alt="Close up of Apple M3 chip keyboard and trackpad detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg9P7CRFA7pL4nlJOVcul5w6X8FeBqydKR8QYAEjV9mD5vP1w7c5vD8ub-gcYFK6CTDM9phluFBBj9JChzZ19X15BSFdnhGJs4KB3ojoHkGRWMSN4TePe8S64Megj8uBEXJ6yssmX0wEeAaSUjpudFQa4UgIdv7RGNvOFHdGNpBKAgn58J7eA9tqL9HLz86d3kYG_snyc9bWHySIIiVk0Va1xeA7V0OsT_QpD1-h7-bldhk5wvBm1Ui8Orxc0I_mV3fwdvSqYkz2Yk"/>
+</div>
+<div class="w-20 h-20 rounded-xl bg-surface-container-low p-2 cursor-pointer border-2 border-transparent hover:border-outline">
+<img alt="Thumb 3" class="w-full h-full object-cover rounded-lg" data-alt="MacBook Air M3 shown half closed in artistic side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxTaoqUyBLAF8I-WfL9DiBXA4fbZMPld6SSbzIJRpHJMsSPt6SYp8AppjJnJFNZoCeHsHoQjiy1aIL7gcrkqvT_l8WwYovnUUObQ5c-pXDLKgtyP0Qs_X3gwz1bvpsYaWAT2d1sBQPb9xYchmbyW_Hw7pS0xZ_htSMr8dFyAjWC4iY9KsN4mbqdLp9txVYaUE0klf33KEHuRAssiVNEfCy-gJxZCE8x6o6CW710EldHwv24dJMwEObkjbpQp_L2L_Yc1JUBgKGWDhS"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Full Specs Table -->
+<section class="mb-32">
+<h2 class="text-4xl font-headline mb-12">Detailed Specifications</h2>
+<div class="bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<tbody>
+<tr class="bg-surface-container-lowest border-b border-surface-container">
+<td class="py-6 px-8 font-bold text-on-surface-variant w-1/3">Processor</td>
+<td class="py-6 px-8">Apple M3 chip (8-core CPU, up to 10-core GPU, 16-core Neural Engine)</td>
+</tr>
+<tr class="bg-background/40 border-b border-surface-container">
+<td class="py-6 px-8 font-bold text-on-surface-variant">Memory</td>
+<td class="py-6 px-8">8GB, 16GB, or 24GB unified memory</td>
+</tr>
+<tr class="bg-surface-container-lowest border-b border-surface-container">
+<td class="py-6 px-8 font-bold text-on-surface-variant">Storage</td>
+<td class="py-6 px-8">256GB, 512GB, 1TB, or 2TB SSD</td>
+</tr>
+<tr class="bg-background/40 border-b border-surface-container">
+<td class="py-6 px-8 font-bold text-on-surface-variant">Display</td>
+<td class="py-6 px-8">13.6-inch Liquid Retina display with True Tone (2560 x 1664)</td>
+</tr>
+<tr class="bg-surface-container-lowest border-b border-surface-container">
+<td class="py-6 px-8 font-bold text-on-surface-variant">Connectivity</td>
+<td class="py-6 px-8">MagSafe 3 charging port; 3.5mm headphone jack; Two Thunderbolt / USB 4 ports</td>
+</tr>
+<tr class="bg-background/40 border-b border-surface-container">
+<td class="py-6 px-8 font-bold text-on-surface-variant">Weight</td>
+<td class="py-6 px-8">1.24 kg (2.7 pounds)</td>
+</tr>
+<tr class="bg-surface-container-lowest">
+<td class="py-6 px-8 font-bold text-on-surface-variant">Operating System</td>
+<td class="py-6 px-8">macOS Sonoma</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Student Reviews -->
+<section class="mb-32">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-4xl font-headline mb-2">Student Stories</h2>
+<p class="text-on-surface-variant">Honest takes from international students across the globe.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-1 hover:underline">
+                    View all reviews <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Review 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-surface-container-high/50 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Anika" class="w-full h-full object-cover" data-alt="Portrait of a young smiling student in a library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkEh_gQbic-qwMrBrEhxXp27nP_Cq9Lfe9KYes_EYGOvUh8igIHNWuEAOWxDYWnu1K5zJORoeUSuzQ82fREeifI8SCu9_h3-bSZRd_8vhKdWXIitvXfIF6E9L4QfvN2hl03oD4dxAic-RhIikAhJuFeQFRwohmUwgEHl83QSrgLt5pB5jdh_wPjFPaQel977oepJzFYkZTcKA0iUg8o8UkasdQ1coGTq6di_r4ntd9ptHUHEBlrJwq6JiC1mOqZzIcvy9CCWBwXtKH"/>
+</div>
+<div>
+<p class="font-bold">Anika R.</p>
+<p class="text-xs text-on-surface-variant">University of Toronto 🇨🇦</p>
+</div>
+<div class="ml-auto text-xs font-bold text-on-surface-variant opacity-50">🇮🇳</div>
+</div>
+<p class="text-on-surface-variant italic leading-relaxed mb-6">"Moving from Mumbai to Toronto was a big change. I needed something reliable. The battery life on the M3 is insane—I can literally go two days without charging."</p>
+<div class="mt-auto flex gap-1 text-[#D4AF37]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-surface-container-high/50 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="James" class="w-full h-full object-cover" data-alt="Young man with glasses in a modern coworking space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZvgEHU-9MciPQBdulhOsC2C684RNj_Az0KNx7rErl0M9niT3zGiEk9PJod3rcKENBfakXNaiu1rnnD3JplzYnC6D5WKQ3wuCi5jSQ2MykeNotve9uRU8rscWzhDgcoiab0IDSzvoVxLrIdWir7kn0Bffe3yn1hz_eG5aRudLsk0zl_ppYbWSRY4SngojXEmjaOrqFMfjyXDvSk4G6Z7mTCjZ1XAqVqnQg5DMqJiy3h6vMn7H22TTM5CMkftq1gmUkkA5SzkB0YdwC"/>
+</div>
+<div>
+<p class="font-bold">James L.</p>
+<p class="text-xs text-on-surface-variant">Stanford University 🇺🇸</p>
+</div>
+<div class="ml-auto text-xs font-bold text-on-surface-variant opacity-50">🇨🇳</div>
+</div>
+<p class="text-on-surface-variant italic leading-relaxed mb-6">"As a CS student, I was worried about the 8GB RAM. For web dev and daily tasks, it's remarkably efficient. The portability is a game-changer when biking between classes."</p>
+<div class="mt-auto flex gap-1 text-[#D4AF37]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-sm border border-surface-container-high/50 flex flex-col h-full">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Fatima" class="w-full h-full object-cover" data-alt="Professional young woman sitting in a bright cafe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQG9b6wXsr4rXADZCKnyXLWV__9ymotmBc1H7EWCX9XqyiizzE-Dm5SubYp1h8acKcnDH9HhG0Bs2rr43k58J_8Sj_HlmkHbI9RuqkKK_p4MRlaZvbskm1QpHN68UBQZTYq5GNAe2BSnw6yjLNNRoNYApKVdPjMswx0vi9xBwId5mOse3l3ZeucjNHXOmFBU5pgFq5Bt4YkWPQbTABsuUwczXWrXjgKaGClEPR9NbeZ5WuZl6BuDIVDkhE-I1_XtQlYVNA6udDY_RT"/>
+</div>
+<div>
+<p class="font-bold">Fatima S.</p>
+<p class="text-xs text-on-surface-variant">Uni of Melbourne 🇦🇺</p>
+</div>
+<div class="ml-auto text-xs font-bold text-on-surface-variant opacity-50">🇵🇰</div>
+</div>
+<p class="text-on-surface-variant italic leading-relaxed mb-6">"The midnight color is beautiful. Best of all, the resale value in Australia for Macs is quite high, which makes it a great investment for a 3-year degree."</p>
+<div class="mt-auto flex gap-1 text-[#D4AF37]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Table -->
+<section class="mb-32">
+<h2 class="text-4xl font-headline mb-12">How it Stacks Up</h2>
+<div class="overflow-x-auto">
+<table class="w-full min-w-[800px] border-separate border-spacing-x-4">
+<thead>
+<tr>
+<th class="py-6 px-4"></th>
+<th class="py-6 px-8 bg-lavender-card rounded-t-3xl text-center">
+<p class="text-[10px] tracking-widest font-bold uppercase mb-2">Our Pick</p>
+<p class="font-headline text-xl">MacBook Air M3</p>
+</th>
+<th class="py-6 px-8 text-center text-on-surface-variant">
+<p class="font-headline text-xl">Dell XPS 13</p>
+</th>
+<th class="py-6 px-8 text-center text-on-surface-variant">
+<p class="font-headline text-xl">Lenovo IdeaPad 5</p>
+</th>
+</tr>
+</thead>
+<tbody class="text-center font-medium">
+<tr class="bg-surface-container-lowest/50">
+<td class="py-8 px-4 text-left font-bold border-b border-surface-container">Battery Life</td>
+<td class="py-8 px-8 bg-lavender-card font-bold border-b border-surface-container">Up to 18 Hours</td>
+<td class="py-8 px-8 border-b border-surface-container">Up to 12 Hours</td>
+<td class="py-8 px-8 border-b border-surface-container">Up to 9 Hours</td>
+</tr>
+<tr>
+<td class="py-8 px-4 text-left font-bold border-b border-surface-container">Weight</td>
+<td class="py-8 px-8 bg-lavender-card font-bold border-b border-surface-container">1.24 kg</td>
+<td class="py-8 px-8 border-b border-surface-container">1.17 kg</td>
+<td class="py-8 px-8 border-b border-surface-container">1.39 kg</td>
+</tr>
+<tr class="bg-surface-container-lowest/50">
+<td class="py-8 px-4 text-left font-bold border-b border-surface-container">Fanless?</td>
+<td class="py-8 px-8 bg-lavender-card font-bold border-b border-surface-container">Yes (Silent)</td>
+<td class="py-8 px-8 border-b border-surface-container">No</td>
+<td class="py-8 px-8 border-b border-surface-container">No</td>
+</tr>
+<tr>
+<td class="py-8 px-4 text-left font-bold rounded-bl-3xl">Start Price</td>
+<td class="py-8 px-8 bg-lavender-card rounded-b-3xl font-bold text-2xl">$1,299 CAD</td>
+<td class="py-8 px-8">$1,499 CAD</td>
+<td class="py-8 px-8">$899 CAD</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Buy Guide Strip -->
+<section class="mb-32">
+<div class="bg-dark-band rounded-[2.5rem] p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-12">
+<div class="max-w-md">
+<h2 class="text-3xl font-headline mb-4">Where to Buy</h2>
+<p class="text-white/70 mb-8">We've tracked down the best reliable retailers and current education discounts for international students.</p>
+<div class="grid grid-cols-1 gap-4">
+<a class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors" href="#">
+<span class="flex items-center gap-3">🇨🇦 <span class="font-bold">Amazon Canada</span></span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors" href="#">
+<span class="flex items-center gap-3">🇺🇸 <span class="font-bold">B&amp;H Photo Video</span></span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors" href="#">
+<span class="flex items-center gap-3">🇦🇺 <span class="font-bold">JB Hi-Fi Australia</span></span>
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="bg-[#d9eaa3] p-8 rounded-3xl text-charcoal max-w-sm border-l-8 border-primary-dim">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-dim">lightbulb</span>
+<p class="font-bold uppercase text-xs tracking-wider">Student Tip</p>
+</div>
+<p class="text-sm font-medium leading-relaxed mb-6">Always check the <strong>Apple Education Store</strong> first. You can often save up to $150 and sometimes get a free pair of AirPods or a gift card during the "Back to School" season (usually July–September).</p>
+<a class="text-primary-dim font-bold text-sm underline underline-offset-4" href="#">Learn how to verify UNiDAYS →</a>
+</div>
+</div>
+</section>
+<!-- Related Products -->
+<section class="mb-32">
+<h2 class="text-4xl font-headline mb-12">Also Worth Considering</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Related 1 -->
+<a class="group block" href="#">
+<div class="bg-surface-container-low aspect-video rounded-3xl mb-4 overflow-hidden">
+<img alt="MacBook Pro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="The powerful MacBook Pro displayed on a clean oak desk with minimalist accessories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_lkjEni_AedKEkj-MI6wWdDtbIH2z6d8NVKppQqk8pj0rUGT_Q4ws7es6FD3PTQ-PW_clEI9ZQIHfAwgxVS-s10dxCcNQzkLbUfyufR95qPgsne6Mu01U3huCnwVXVQaohj2n-sC_ckHM-mHqT62hLGhAigXkj7dkEhT7NFYWNFIjclsKkp-AoCT4sIx4OoalmFKYwzb7ddd0SaFUINAsmou0a-W3aFnS__lE8I4UxWLJ8yfK1bKbREBAoXiaT2IDDEbi8Jo28fUF"/>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">More Power</p>
+<h3 class="font-headline text-xl mb-2">MacBook Pro M3 Pro</h3>
+<p class="text-sm text-on-surface-variant">For students doing heavy video editing or 3D modeling.</p>
+</a>
+<!-- Related 2 -->
+<a class="group block" href="#">
+<div class="bg-surface-container-low aspect-video rounded-3xl mb-4 overflow-hidden">
+<img alt="Dell XPS" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High-end Windows laptop Dell XPS 13 with edge-to-edge display on a marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnt_QEKSp4QAxJ1V_uXSSuvpeN8Tg1kPojzhv1behIn5IME5rFKEHoADxBH3lehFMPSxosLzamRQg1fsDhiymQBFs2c2QCVfVJrlWYDzeTqdTIexrqnXjDY4YcdONXU_k7WijVCMf-DA65fkbJPUfZ66s1djgPPz5g48bx5b2ZXXHH3QA746JCNM1Hz18JkyN03e6cQxeE7lNflWnMQdZsmJTbQ5oLdQArI7IicduOj493Su3xTcp6VtbqUO4lnDlrMoiYg1vZdDub"/>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Windows Pick</p>
+<h3 class="font-headline text-xl mb-2">Dell XPS 13</h3>
+<p class="text-sm text-on-surface-variant">The best alternative for those who prefer the Windows ecosystem.</p>
+</a>
+<!-- Related 3 -->
+<a class="group block" href="#">
+<div class="bg-surface-container-low aspect-video rounded-3xl mb-4 overflow-hidden">
+<img alt="Lenovo IdeaPad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Affordable Lenovo IdeaPad 5 laptop in a study-at-home setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAanS1PZJ8om8YQHHCLYAc2QLjYBoV0PdS4MM72X17sJlihbx3wXpOZMqBl43JFVQImFaJ_AlCUogeif-vWkU0C-kx0HzKcU9-CA6xdTsNVByidmLU6um8rIA7nrwa7yUJ0ewTyKjUxiojiUiSLIiaA501Dw1cmXLhWTrODe85P5HQyIMVK-1WppNDfSY57dkuJqvv5NwrDFJVxCnFRTtJOrV5xd2gvH2lUYn6S8O7_g5HAzuV-iASUYzhf7oWHj4SRlL_HqTcAsTHM"/>
+</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Budget Friendly</p>
+<h3 class="font-headline text-xl mb-2">Lenovo IdeaPad 5</h3>
+<p class="text-sm text-on-surface-variant">Exceptional value for general coursework and streaming.</p>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#eeeeea] dark:bg-[#303330] full-width rounded-t-[2rem] font-['Plus_Jakarta_Sans'] text-sm">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-7xl mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-serif italic text-[#805353]">StudenzBit</div>
+<p class="text-[#5d605c] leading-relaxed">The Scholarly Sanctuary for international students building their future abroad.</p>
+</div>
+<div>
+<h4 class="font-bold text-[#805353] mb-6">Explore</h4>
+<ul class="space-y-4">
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Destinations</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Tech Hub</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Student Toolkit</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#805353] mb-6">Company</h4>
+<ul class="space-y-4">
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">About Us</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Privacy Policy</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Terms of Service</a></li>
+<li><a class="text-[#5d605c] hover:text-[#805353] hover:translate-x-1 transition-transform inline-block" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#805353] mb-6">Newsletter</h4>
+<p class="text-[#5d605c] mb-4">Tech tips for students, monthly.</p>
+<div class="flex gap-2">
+<input class="bg-white border-none rounded-full px-4 py-2 w-full focus:ring-2 ring-[#805353]" placeholder="Email" type="email"/>
+<button class="bg-[#805353] text-white p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-black/5 text-center text-[#5d605c] opacity-60">
+            © 2024 StudenzBit. The Scholarly Sanctuary.
+        </div>
+</footer>
+</body></html>
