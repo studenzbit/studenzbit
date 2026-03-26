@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Study in Canada | StudenzBit</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-container": "#625b53",
+              "tertiary-fixed": "#fdf2e7",
+              "secondary-fixed": "#d9eaa3",
+              "on-secondary-container": "#495720",
+              "tertiary-dim": "#59524a",
+              "surface-bright": "#faf9f6",
+              "on-tertiary-fixed-variant": "#6c655d",
+              "background": "#faf9f6",
+              "outline-variant": "#b0b3ae",
+              "surface-container": "#eeeeea",
+              "inverse-primary": "#fec3c3",
+              "on-error-container": "#6e1400",
+              "on-surface": "#303330",
+              "on-primary-fixed": "#4f292a",
+              "secondary-fixed-dim": "#cbdc96",
+              "primary-container": "#fec3c3",
+              "error-container": "#fd795a",
+              "on-secondary-fixed": "#37440e",
+              "on-primary-fixed-variant": "#704545",
+              "inverse-on-surface": "#9d9d9a",
+              "on-background": "#303330",
+              "surface-container-high": "#e7e9e4",
+              "on-error": "#fff7f6",
+              "inverse-surface": "#0d0f0d",
+              "secondary-dim": "#4a5821",
+              "on-tertiary": "#fff8f2",
+              "tertiary-fixed-dim": "#eee4d9",
+              "on-tertiary-fixed": "#4f4941",
+              "error": "#a73b21",
+              "tertiary-container": "#fdf2e7",
+              "surface": "#faf9f6",
+              "error-dim": "#791903",
+              "surface-variant": "#e1e3de",
+              "surface-container-low": "#f4f4f0",
+              "surface-tint": "#805353",
+              "on-secondary-fixed-variant": "#536129",
+              "primary-dim": "#734748",
+              "surface-dim": "#d9dbd6",
+              "primary": "#805353",
+              "primary-fixed": "#fec3c3",
+              "on-primary-container": "#653c3c",
+              "on-secondary": "#f2ffc7",
+              "secondary": "#56652c",
+              "secondary-container": "#d9eaa3",
+              "on-surface-variant": "#5d605c",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e1e3de",
+              "tertiary": "#655e56",
+              "primary-fixed-dim": "#efb5b5",
+              "on-primary": "#fff7f6",
+              "outline": "#797b78",
+              "sage-bg": "#EDF4ED",
+              "charcoal": "#2F2D2B"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #EDF4ED; }
+        .serif-text { font-family: 'Noto Serif', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .map-dot::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: currentColor;
+            opacity: 0.4;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.4; }
+            70% { transform: scale(3); opacity: 0; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f6]/80 dark:bg-[#1c1c1a]/80 backdrop-blur-xl no-border shadow-sm shadow-black/5">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-serif text-2xl italic font-bold text-[#303330] dark:text-[#faf9f6]">StudenzBit</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#5d605c] dark:text-[#b0b3ae] font-medium hover:text-[#303330] dark:hover:text-[#faf9f6] transition-colors" href="#">Resources</a>
+<a class="text-[#5d605c] dark:text-[#b0b3ae] font-medium hover:text-[#303330] dark:hover:text-[#faf9f6] transition-colors" href="#">Community</a>
+<a class="text-[#5d605c] dark:text-[#b0b3ae] font-medium hover:text-[#303330] dark:hover:text-[#faf9f6] transition-colors" href="#">Advisors</a>
+<a class="text-[#5d605c] dark:text-[#b0b3ae] font-medium hover:text-[#303330] dark:hover:text-[#faf9f6] transition-colors" href="#">Mentorship</a>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-lowest px-4 py-2 rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-40" placeholder="Search destination..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-medium hover:opacity-80 transition-opacity duration-300 active:scale-95">Sign In</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Breadcrumb -->
+<div class="max-w-screen-2xl mx-auto px-8 py-6">
+<nav class="flex text-sm font-medium tracking-wide text-on-surface-variant space-x-2">
+<a class="hover:text-primary transition-colors" href="#">Destinations</a>
+<span>→</span>
+<span class="text-on-surface">Canada</span>
+</nav>
+</div>
+<!-- Hero Section -->
+<section class="max-w-screen-2xl mx-auto px-8 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="text-6xl mb-4">🇨🇦</div>
+<h1 class="serif-text text-6xl md:text-7xl font-bold leading-tight tracking-tight text-on-surface">
+                    Study in Canada
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-xl leading-relaxed">
+                    A world leader in higher education and quality of life. From research-intensive universities to direct pathways for permanent residency, Canada offers international students a safe, inclusive, and thriving environment.
+                </p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-surface-container-lowest text-on-surface border border-outline-variant/10 px-5 py-2 rounded-full text-sm font-medium shadow-sm">96 Universities</span>
+<span class="bg-surface-container-lowest text-on-surface border border-outline-variant/10 px-5 py-2 rounded-full text-sm font-medium shadow-sm">3-Year Work Permit (PGWP)</span>
+<span class="bg-surface-container-lowest text-on-surface border border-outline-variant/10 px-5 py-2 rounded-full text-sm font-medium shadow-sm">CAD $20k–$41k avg tuition</span>
+<span class="bg-surface-container-lowest text-on-surface border border-outline-variant/10 px-5 py-2 rounded-full text-sm font-medium shadow-sm">150,000+ Int'l Students</span>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden aspect-[4/3] shadow-2xl shadow-black/5">
+<img class="w-full h-full object-cover" data-alt="Stunning aerial view of the Vancouver skyline at dusk with mountains in the background and soft purple sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL-I6MSukNocpvKfq-bfN0jovIw9n5JysM6WRHOEaaIgXl04h-KHk0hlEJsbPvJ3xMnL1IgUKLyrYXi6V8bZtoZah-H9nC7CKnVnnXvIfJpEUKMueRweqjJhAWE1_5nf0gReKJRtFILOpZQoeUPA44hx-MEu09ytUaM8ZLCWiOstY1EKOmw9Jsd6EgiIJC7OLV9jzaHRDKTksQvVX2jl3_i5g3o96KSG_dSXqKxJQ2vbJdmmiigIQNMlAssuATdtF4mBR8HZTlgWUo"/>
+</div>
+</section>
+<!-- Interactive Canada Map -->
+<section class="w-full bg-surface-container-low/50 py-20 my-20">
+<div class="max-w-screen-xl mx-auto px-8 text-center mb-12">
+<h2 class="serif-text text-3xl font-bold mb-4">Geographic Landscape</h2>
+<p class="text-on-surface-variant">Click on a hub to explore local academic opportunities.</p>
+</div>
+<div class="max-w-screen-xl mx-auto px-8 relative">
+<div class="aspect-[21/9] bg-[#e8eee8] rounded-3xl relative overflow-hidden border border-outline-variant/10">
+<img class="w-full h-full object-cover opacity-60 grayscale-[20%]" data-alt="Minimalist illustrated map of Canada showing province borders in soft neutral tones on a sage green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-nBHqTUq2HXgBY7E4o7SJSqSlCGAUzLwUZSCPpfSUgZAK0NKT2V0dRJcZnyBXpB95yexHFvJjQXoQk_lqK-0EN4-DoFzEUDr-7wMl5R03FpXaNICuB7ZTZgzyUab_OLVewD3eI3k5rzYuT3kx2I7qeT9c0jm2JcAq_GWzRT4N0TdnmTZ8WYJlqV07ETcNhx-t7CiTRGsm9qWO1ko379vqnZRlOuTuWxlhkcNcNabM3T4WsxrvAobTwy3tXr4PtoWtF0KQEEUg2Eon"/>
+<!-- Map Pulsing Dots -->
+<div class="absolute inset-0">
+<!-- Toronto -->
+<div class="absolute top-[80%] left-[80%] flex flex-col items-center">
+<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
+<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Toronto</span>
+</div>
+<!-- Vancouver -->
+<div class="absolute top-[75%] left-[15%] flex flex-col items-center">
+<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
+<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Vancouver</span>
+</div>
+<!-- Montreal -->
+<div class="absolute top-[78%] left-[85%] flex flex-col items-center">
+<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
+<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Montreal</span>
+</div>
+<!-- Calgary -->
+<div class="absolute top-[73%] left-[22%] flex flex-col items-center">
+<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
+<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Calgary</span>
+</div>
+<!-- Ottawa -->
+<div class="absolute top-[77%] left-[82%] flex flex-col items-center">
+<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
+<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Ottawa</span>
+</div>
+<!-- Edmonton -->
+<div class="absolute top-[68%] left-[23%] flex flex-col items-center">
+<div class="map-dot w-3 h-3 bg-primary rounded-full relative"></div>
+<span class="text-[10px] font-bold mt-1 uppercase tracking-widest text-on-surface">Edmonton</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- City Cards Grid -->
+<section class="max-w-screen-2xl mx-auto px-8 py-20">
+<h2 class="serif-text text-4xl font-bold mb-12">Choose Your City</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Toronto -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/5 group hover:shadow-md transition-shadow">
+<h3 class="serif-text italic text-2xl font-bold mb-1">Toronto</h3>
+<p class="text-on-surface-variant text-sm mb-6">Ontario</p>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Rent</div>
+<div class="font-bold text-sm">$2.4k</div>
+</div>
+<div class="text-center border-x border-outline-variant/20">
+<div class="text-xs text-on-surface-variant">Tuition</div>
+<div class="font-bold text-sm">$35k</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Pop.</div>
+<div class="font-bold text-sm">2.9M</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">The financial heart of Canada. Multi-cultural, high-energy, and home to top-tier global institutions.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform" href="studenzbit_toronto_detail.html">Explore City <span class="ml-2">→</span></a>
+</div>
+<!-- Vancouver -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/5 group hover:shadow-md transition-shadow">
+<h3 class="serif-text italic text-2xl font-bold mb-1">Vancouver</h3>
+<p class="text-on-surface-variant text-sm mb-6">British Columbia</p>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Rent</div>
+<div class="font-bold text-sm">$2.6k</div>
+</div>
+<div class="text-center border-x border-outline-variant/20">
+<div class="text-xs text-on-surface-variant">Tuition</div>
+<div class="font-bold text-sm">$32k</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Pop.</div>
+<div class="font-bold text-sm">675k</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Pacific beauty meets tech innovation. Ideal for outdoor enthusiasts and creative minds.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform" href="#">Explore City <span class="ml-2">→</span></a>
+</div>
+<!-- Montreal -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/5 group hover:shadow-md transition-shadow">
+<h3 class="serif-text italic text-2xl font-bold mb-1">Montreal</h3>
+<p class="text-on-surface-variant text-sm mb-6">Quebec</p>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Rent</div>
+<div class="font-bold text-sm">$1.7k</div>
+</div>
+<div class="text-center border-x border-outline-variant/20">
+<div class="text-xs text-on-surface-variant">Tuition</div>
+<div class="font-bold text-sm">$25k</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Pop.</div>
+<div class="font-bold text-sm">1.8M</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">A bilingual hub of art, culture, and world-class AI research. European charm in North America.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform" href="#">Explore City <span class="ml-2">→</span></a>
+</div>
+<!-- Calgary -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/5 group hover:shadow-md transition-shadow">
+<h3 class="serif-text italic text-2xl font-bold mb-1">Calgary</h3>
+<p class="text-on-surface-variant text-sm mb-6">Alberta</p>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Rent</div>
+<div class="font-bold text-sm">$1.6k</div>
+</div>
+<div class="text-center border-x border-outline-variant/20">
+<div class="text-xs text-on-surface-variant">Tuition</div>
+<div class="font-bold text-sm">$22k</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Pop.</div>
+<div class="font-bold text-sm">1.3M</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Clean, safe, and close to the Rockies. The gateway to Canada's booming energy and tech sectors.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform" href="#">Explore City <span class="ml-2">→</span></a>
+</div>
+<!-- Ottawa -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/5 group hover:shadow-md transition-shadow">
+<h3 class="serif-text italic text-2xl font-bold mb-1">Ottawa</h3>
+<p class="text-on-surface-variant text-sm mb-6">Ontario</p>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Rent</div>
+<div class="font-bold text-sm">$1.9k</div>
+</div>
+<div class="text-center border-x border-outline-variant/20">
+<div class="text-xs text-on-surface-variant">Tuition</div>
+<div class="font-bold text-sm">$28k</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Pop.</div>
+<div class="font-bold text-sm">1M</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">The nation's capital. A perfect mix of political heritage, academic rigor, and green spaces.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform" href="#">Explore City <span class="ml-2">→</span></a>
+</div>
+<!-- Edmonton -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/5 group hover:shadow-md transition-shadow">
+<h3 class="serif-text italic text-2xl font-bold mb-1">Edmonton</h3>
+<p class="text-on-surface-variant text-sm mb-6">Alberta</p>
+<div class="grid grid-cols-3 gap-2 mb-6">
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Rent</div>
+<div class="font-bold text-sm">$1.4k</div>
+</div>
+<div class="text-center border-x border-outline-variant/20">
+<div class="text-xs text-on-surface-variant">Tuition</div>
+<div class="font-bold text-sm">$20k</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-on-surface-variant">Pop.</div>
+<div class="font-bold text-sm">1M</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">Affordable living meets academic excellence. A resilient economy with strong community roots.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center group-hover:translate-x-1 transition-transform" href="#">Explore City <span class="ml-2">→</span></a>
+</div>
+</div>
+</section>
+<!-- Why Canada Strip -->
+<section class="w-full bg-[#F5EDE0] py-24">
+<div class="max-w-screen-2xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">school</span>
+<h4 class="serif-text text-xl font-bold">Education</h4>
+<p class="text-sm text-on-tertiary-container leading-relaxed">Access prestigious degrees recognized globally for quality and research innovation.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">work</span>
+<h4 class="serif-text text-xl font-bold">Work</h4>
+<p class="text-sm text-on-tertiary-container leading-relaxed">Work part-time while studying and secure a 3-year PGWP upon graduation.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">map</span>
+<h4 class="serif-text text-xl font-bold">Path to PR</h4>
+<p class="text-sm text-on-tertiary-container leading-relaxed">Clear immigration pathways for skilled graduates via Express Entry and PNP.</p>
+</div>
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-weight="fill">health_and_safety</span>
+<h4 class="serif-text text-xl font-bold">Healthcare</h4>
+<p class="text-sm text-on-tertiary-container leading-relaxed">High-quality, accessible healthcare services for residents and students.</p>
+</div>
+</div>
+</section>
+<!-- Visa Overview Card -->
+<section class="max-w-screen-xl mx-auto px-8 py-24">
+<div class="bg-surface-container-lowest p-12 md:p-16 rounded-3xl border border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+<div>
+<h2 class="serif-text text-3xl font-bold mb-2">Study Permit — What You Need to Know</h2>
+<p class="text-on-surface-variant">The essential checklist for your Canadian journey.</p>
+</div>
+<a class="mt-4 md:mt-0 px-8 py-3 bg-primary/5 text-primary border border-primary/20 rounded-full font-bold text-sm hover:bg-primary/10 transition-colors" href="#">Full visa guide →</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary font-bold">payments</span>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-1">Fees</h5>
+<p class="text-on-surface-variant text-sm">Study permit fee is approximately CAD $150. Other costs include medical exams and police certificates if required.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary font-bold">schedule</span>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-1">Processing Time</h5>
+<p class="text-on-surface-variant text-sm">Varies by country, typically 8 to 16 weeks. SDS processing is available for certain countries in 20 days.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary font-bold">fingerprint</span>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-1">Biometrics</h5>
+<p class="text-on-surface-variant text-sm">You must give your fingerprints and photo (biometrics) at an official collection point after applying.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary font-bold">account_balance</span>
+</div>
+<div>
+<h5 class="font-bold text-lg mb-1">Financial Proof</h5>
+<p class="text-on-surface-variant text-sm">Proof of tuition plus living expenses (approx. CAD $20,635 per year outside Quebec) is mandatory.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="w-full bg-charcoal py-24">
+<div class="max-w-screen-2xl mx-auto px-8 text-center">
+<h2 class="serif-text text-4xl md:text-5xl font-bold text-surface-bright mb-6">Ready to Plan Your Move?</h2>
+<p class="text-outline-variant text-lg max-w-2xl mx-auto mb-10">Get the StudenzBit Canada Launchpad Bundle: Visa assistance, university matching, and a community of 5,000+ current students.</p>
+<button class="bg-[#e5989b] text-charcoal px-12 py-4 rounded-full font-bold text-lg hover:opacity-90 transition-opacity">Get the Bundle →</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#eeeeea] dark:bg-[#121211] w-full py-20 px-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 items-start max-w-screen-2xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-serif text-xl font-bold text-[#303330] dark:text-[#faf9f6] mb-4">StudenzBit</div>
+<p class="font-sans text-sm tracking-wide text-[#5d605c] dark:text-[#b0b3ae]">Editorial excellence for international journeys.</p>
+</div>
+<div>
+<h6 class="font-bold text-[#303330] dark:text-[#faf9f6] mb-6">Company</h6>
+<ul class="space-y-3">
+<li><a class="text-[#5d605c] dark:text-[#b0b3ae] text-sm hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors duration-200" href="#">About</a></li>
+<li><a class="text-[#5d605c] dark:text-[#b0b3ae] text-sm hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors duration-200" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-[#303330] dark:text-[#faf9f6] mb-6">Legal</h6>
+<ul class="space-y-3">
+<li><a class="text-[#5d605c] dark:text-[#b0b3ae] text-sm hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors duration-200" href="#">Privacy Policy</a></li>
+<li><a class="text-[#5d605c] dark:text-[#b0b3ae] text-sm hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors duration-200" href="#">Terms</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-[#303330] dark:text-[#faf9f6] mb-6">Contact</h6>
+<ul class="space-y-3">
+<li><a class="text-[#5d605c] dark:text-[#b0b3ae] text-sm hover:text-[#805353] dark:hover:text-[#fec3c3] transition-colors duration-200" href="#">Support</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-outline-variant/10 text-center">
+<p class="font-sans text-xs text-[#5d605c] dark:text-[#b0b3ae]">© 2024 StudenzBit. Editorial excellence for international journeys.</p>
+</div>
+</footer>
+</body></html>
