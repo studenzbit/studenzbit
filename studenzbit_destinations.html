@@ -191,7 +191,7 @@
 </div>
 </div>
 <div class="hidden mt-6" id="canada-city-panel-wrap">
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/10 p-6" id="canada-city-panel"></div>
+<div id="canada-city-panel"></div>
 </div>
 </div>
 <div class="hidden rounded-xl p-10 md:p-14 text-center max-w-2xl mx-auto" id="coming-soon-usa" style="background:#ebf2f7;">
@@ -366,13 +366,134 @@
     const DEFAULT_FILL = "#c8c3bb";
     const DEFAULT_STROKE = "#b0aba3";
     const canadaCities = [
-      { key: "toronto", label: "Toronto", rent: "$2,200/mo", neighborhoods: ["Kensington Market", "The Annex", "Scarborough"], weather: "Cold winters (-5°C) · Warm summers (25°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "studenzbit_toronto_detail.html" },
-      { key: "vancouver", label: "Vancouver", rent: "$2,500/mo", neighborhoods: ["Kitsilano", "Commercial Drive", "Burnaby"], weather: "Mild rainy winters (5°C) · Warm summers (22°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" },
-      { key: "montreal", label: "Montreal", rent: "$1,200/mo", neighborhoods: ["Plateau", "Mile End", "Côte-des-Neiges"], weather: "Very cold winters (-15°C) · Hot summers (28°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" },
-      { key: "calgary", label: "Calgary", rent: "$1,690/mo", neighborhoods: ["Beltline", "Kensington", "Forest Lawn"], weather: "Cold winters (-10°C) · Warm summers (23°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" },
-      { key: "ottawa", label: "Ottawa", rent: "$1,800/mo", neighborhoods: ["Sandy Hill", "Centretown", "Gatineau"], weather: "Cold winters (-12°C) · Warm summers (26°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" },
-      { key: "edmonton", label: "Edmonton", rent: "$1,400/mo", neighborhoods: ["Whyte Ave", "Oliver", "Glenora"], weather: "Very cold winters (-18°C) · Warm summers (23°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" }
+      { key: "toronto", label: "Toronto" },
+      {
+        key: "vancouver",
+        label: "Vancouver",
+        rich: {
+          costLevel: "High",
+          costEst: "Est. $2,500 CAD/mo",
+          densityLevel: "High",
+          densitySub: "120,000+ International",
+          safety: "8.9/10",
+          transitLevel: "Excellent",
+          transitSub: "TransLink &amp; SkyTrain",
+          description: "Vancouver is one of the most beautiful student cities in the world. Nestled between mountains and ocean, it offers world-class universities, a thriving tech industry, and Canada's mildest climate.",
+          universities: [
+            { name: "UBC", tag: "#34 Global" },
+            { name: "Simon Fraser University", tag: "Top Research" },
+            { name: "Langara College", tag: "Top Applied" }
+          ],
+          guideTitle: "The Ultimate Vancouver Guide",
+          guideBlurb: "Coastal living, transit tips, and the best neighbourhoods for students.",
+          href: "canada.html"
+        }
+      },
+      {
+        key: "montreal",
+        label: "Montreal",
+        rich: {
+          costLevel: "Medium",
+          costEst: "Est. $1,200 CAD/mo",
+          densityLevel: "Very High",
+          densitySub: "100,000+ International",
+          safety: "8.5/10",
+          transitLevel: "Excellent",
+          transitSub: "STM Metro &amp; Bus",
+          description: "Montreal is Canada's most affordable major student city. Bilingual, creative, and culturally rich — it's home to some of Canada's top universities at a fraction of Toronto's cost.",
+          universities: [
+            { name: "McGill University", tag: "#46 Global" },
+            { name: "Université de Montréal", tag: "Top Research" },
+            { name: "Concordia University", tag: "Top Innovation" }
+          ],
+          guideTitle: "The Ultimate Montreal Guide",
+          guideBlurb: "Affordable rent, French immersion, and campus life on a budget.",
+          href: "canada.html"
+        }
+      },
+      {
+        key: "calgary",
+        label: "Calgary",
+        rich: {
+          costLevel: "Medium",
+          costEst: "Est. $1,690 CAD/mo",
+          densityLevel: "Medium",
+          densitySub: "45,000+ International",
+          safety: "9.0/10",
+          transitLevel: "Good",
+          transitSub: "CTrain & Bus",
+          description: "Calgary is Canada's fastest growing city — a hub for energy, tech, and entrepreneurship. With low taxes, a booming job market, and the Rockies on its doorstep, it's ideal for ambitious students.",
+          universities: [
+            { name: "University of Calgary", tag: "Top Research" },
+            { name: "Mount Royal University", tag: "Top Teaching" },
+            { name: "SAIT", tag: "Top Applied" }
+          ],
+          guideTitle: "The Ultimate Calgary Guide",
+          guideBlurb: "Career paths, Stampede City culture, and mountain weekend getaways.",
+          href: "canada.html"
+        }
+      },
+      {
+        key: "ottawa",
+        label: "Ottawa",
+        rich: {
+          costLevel: "Medium",
+          costEst: "Est. $1,800 CAD/mo",
+          densityLevel: "Medium",
+          densitySub: "50,000+ International",
+          safety: "9.1/10",
+          transitLevel: "Good",
+          transitSub: "OC Transpo &amp; LRT",
+          description: "Ottawa is Canada's capital and one of its safest cities. Government, tech, and policy jobs are abundant for graduates, and the bilingual environment makes it uniquely valuable for students.",
+          universities: [
+            { name: "University of Ottawa", tag: "Top Bilingual" },
+            { name: "Carleton University", tag: "Top Journalism" },
+            { name: "Algonquin College", tag: "Top Applied" }
+          ],
+          guideTitle: "The Ultimate Ottawa Guide",
+          guideBlurb: "Government, tech opportunities, bilingual life, and student-friendly spots.",
+          href: "canada.html"
+        }
+      },
+      {
+        key: "edmonton",
+        label: "Edmonton",
+        rich: {
+          costLevel: "Low",
+          costEst: "Est. $1,400 CAD/mo",
+          densityLevel: "Medium",
+          densitySub: "40,000+ International",
+          safety: "8.2/10",
+          transitLevel: "Good",
+          transitSub: "ETS &amp; LRT",
+          description: "Edmonton is Alberta's capital and Canada's most affordable major city for students. A growing tech and healthcare sector, combined with the University of Alberta's global reputation, makes it an underrated gem.",
+          universities: [
+            { name: "University of Alberta", tag: "#111 Global" },
+            { name: "MacEwan University", tag: "Top Teaching" },
+            { name: "NAIT", tag: "Top Applied" }
+          ],
+          guideTitle: "The Ultimate Edmonton Guide",
+          guideBlurb: "Low cost of living, campus community, and Alberta's northern hub.",
+          href: "canada.html"
+        }
+      }
     ];
+
+    function richCostClass(level) {
+      if (level === "High") return "text-primary";
+      if (level === "Medium") return "text-secondary";
+      return "text-tertiary";
+    }
+
+    function richDensityClass(level) {
+      if (level === "Very High") return "text-secondary";
+      if (level === "High") return "text-primary";
+      return "text-tertiary";
+    }
+
+    function richTransitClass(level) {
+      return level === "Excellent" ? "text-primary" : "text-secondary";
+    }
 
     const mapShell = container.parentElement;
     const tooltip = document.createElement("div");
@@ -429,37 +550,60 @@
 
     function renderCanadaPanel() {
       const city = canadaCities.find((c) => c.key === selectedCity);
-      if (!city || !city.neighborhoods) return;
-      const hoodPills = city.neighborhoods
-        .map(
-          (n) =>
-            `<span style="display:inline-block;background:#f5ede0;color:#7b3f3f;font-size:11px;padding:4px 10px;border-radius:20px;">${n}</span>`
-        )
+      if (!city || !city.rich) return;
+      const r = city.rich;
+      const uniRows = r.universities
+        .map((u, i) => {
+          const border = i < 2 ? "border-b border-surface-container pb-3" : "pb-1";
+          return `<li class="flex items-center justify-between ${border}"><span class="font-medium">${u.name}</span><span class="text-xs text-on-surface-variant font-bold">${u.tag}</span></li>`;
+        })
         .join("");
+      const cc = richCostClass(r.costLevel);
+      const dc = richDensityClass(r.densityLevel);
+      const tc = richTransitClass(r.transitLevel);
       panelEl.innerHTML = `
-        <div class="flex flex-col">
-          <h4 class="font-headline text-2xl italic text-on-surface mb-6">${city.label}</h4>
-          <div class="space-y-5 text-sm mb-8">
-            <div>
-              <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-2">Avg Rent</p>
-              <p class="font-semibold text-on-surface">${city.rent}</p>
-            </div>
-            <div>
-              <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-2">Top Neighbourhoods</p>
-              <div class="flex flex-wrap gap-2">${hoodPills}</div>
-            </div>
-            <div>
-              <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-2">Weather Summary</p>
-              <p class="font-medium text-on-surface leading-relaxed">${city.weather}</p>
-            </div>
-            <div>
-              <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-2">Work Permit Hours</p>
-              <p class="font-medium text-on-surface leading-relaxed">${city.workPermit}</p>
-            </div>
-          </div>
-          <a class="inline-block font-semibold text-white no-underline mt-auto bg-[#7b3f3f] hover:bg-[#5a2d2d] py-[10px] px-6 rounded-lg transition-colors duration-200 ease-in-out" href="${city.href}">Explore ${city.label} in Detail →</a>
-        </div>
-      `;
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-surface-container-low p-12 rounded-xl">
+<div class="lg:col-span-7">
+<h3 class="font-headline text-6xl text-on-surface mb-8">${city.label}</h3>
+<div class="grid grid-cols-2 gap-8 mb-10">
+<div>
+<p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Cost of Living</p>
+<p class="text-2xl font-semibold ${cc}">${r.costLevel}</p>
+<p class="text-sm text-on-surface-variant">${r.costEst}</p>
+</div>
+<div>
+<p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Student Density</p>
+<p class="text-2xl font-semibold ${dc}">${r.densityLevel}</p>
+<p class="text-sm text-on-surface-variant">${r.densitySub}</p>
+</div>
+<div>
+<p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Safety Rating</p>
+<p class="text-2xl font-semibold text-tertiary">${r.safety}</p>
+<p class="text-sm text-on-surface-variant">Global Safety Index</p>
+</div>
+<div>
+<p class="text-xs uppercase tracking-[0.2em] text-on-surface-variant mb-2">Transit</p>
+<p class="text-2xl font-semibold ${tc}">${r.transitLevel}</p>
+<p class="text-sm text-on-surface-variant">${r.transitSub}</p>
+</div>
+</div>
+<p class="text-lg leading-relaxed text-on-surface-variant mb-8">${r.description}</p>
+</div>
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-white p-8 rounded-xl" style="border:1px solid #e2ddd6;border-radius:12px;">
+<h4 class="font-label text-xs font-bold uppercase tracking-widest mb-6">Top Universities</h4>
+<ul class="space-y-4">${uniRows}</ul>
+</div>
+<div class="p-8 rounded-xl flex flex-col items-center text-center" style="background:#f5ede0;border:1px solid #e2ddd6;">
+<div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background:#edd5d5;">
+<span class="material-symbols-outlined scale-125" style="color:#7b3f3f;">map</span>
+</div>
+<h4 class="font-headline text-2xl text-on-surface mb-2">${r.guideTitle}</h4>
+<p class="text-sm text-on-surface-variant mb-6">${r.guideBlurb}</p>
+<a class="block w-full text-center font-semibold text-white no-underline py-4 rounded-lg bg-[#7b3f3f] hover:bg-[#5a2d2d] transition-colors duration-200 ease-in-out" href="${r.href}">Explore ${city.label} in Detail →</a>
+</div>
+</div>
+</div>`;
     }
 
     function renderCanadaPills() {
