@@ -366,12 +366,12 @@
     const DEFAULT_FILL = "#c8c3bb";
     const DEFAULT_STROKE = "#b0aba3";
     const canadaCities = [
-      { key: "toronto", label: "Toronto", rent: "$2,200/mo", tuition: "$20k-$41k", pop: "150,000+", href: "studenzbit_toronto_detail.html", cta: "Explore Toronto ->" },
-      { key: "vancouver", label: "Vancouver", rent: "$2,500/mo", tuition: "$18k-$38k", pop: "120,000+", href: "canada.html", cta: "Explore Vancouver ->" },
-      { key: "montreal", label: "Montreal", rent: "$1,200/mo", tuition: "$8k-$20k", pop: "100,000+", href: "canada.html", cta: "Explore Montreal ->" },
-      { key: "calgary", label: "Calgary", rent: "$1,690/mo", tuition: "$18k-$35k", pop: "45,000+", href: "canada.html", cta: "Explore Calgary ->" },
-      { key: "ottawa", label: "Ottawa", rent: "$1,800/mo", tuition: "$20k-$38k", pop: "50,000+", href: "canada.html", cta: "Explore Ottawa ->" },
-      { key: "edmonton", label: "Edmonton", rent: "$1,400/mo", tuition: "$16k-$32k", pop: "40,000+", href: "canada.html", cta: "Explore Edmonton ->" }
+      { key: "toronto", label: "Toronto", rent: "$2,200/mo", neighborhoods: ["Kensington Market", "The Annex", "Scarborough"], weather: "Cold winters (-5°C) · Warm summers (25°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "studenzbit_toronto_detail.html" },
+      { key: "vancouver", label: "Vancouver", rent: "$2,500/mo", neighborhoods: ["Kitsilano", "Commercial Drive", "Burnaby"], weather: "Mild rainy winters (5°C) · Warm summers (22°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" },
+      { key: "montreal", label: "Montreal", rent: "$1,200/mo", neighborhoods: ["Plateau", "Mile End", "Côte-des-Neiges"], weather: "Very cold winters (-15°C) · Hot summers (28°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" },
+      { key: "calgary", label: "Calgary", rent: "$1,690/mo", neighborhoods: ["Beltline", "Kensington", "Forest Lawn"], weather: "Cold winters (-10°C) · Warm summers (23°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" },
+      { key: "ottawa", label: "Ottawa", rent: "$1,800/mo", neighborhoods: ["Sandy Hill", "Centretown", "Gatineau"], weather: "Cold winters (-12°C) · Warm summers (26°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" },
+      { key: "edmonton", label: "Edmonton", rent: "$1,400/mo", neighborhoods: ["Whyte Ave", "Oliver", "Glenora"], weather: "Very cold winters (-18°C) · Warm summers (23°C)", workPermit: "Up to 20 hrs/week on campus · Full-time on co-op", href: "canada.html" }
     ];
 
     const mapShell = container.parentElement;
@@ -429,15 +429,36 @@
 
     function renderCanadaPanel() {
       const city = canadaCities.find((c) => c.key === selectedCity);
-      if (!city) return;
+      if (!city || !city.neighborhoods) return;
+      const hoodPills = city.neighborhoods
+        .map(
+          (n) =>
+            `<span style="display:inline-block;background:#f5ede0;color:#7b3f3f;font-size:11px;padding:4px 10px;border-radius:20px;">${n}</span>`
+        )
+        .join("");
       panelEl.innerHTML = `
-        <h4 class="font-headline text-2xl italic text-on-surface mb-4">${city.label}</h4>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 text-sm">
-          <div><div class="text-on-surface-variant text-xs uppercase tracking-widest mb-1">Avg Rent</div><div class="font-semibold">${city.rent}</div></div>
-          <div><div class="text-on-surface-variant text-xs uppercase tracking-widest mb-1">Avg Tuition</div><div class="font-semibold">${city.tuition}</div></div>
-          <div><div class="text-on-surface-variant text-xs uppercase tracking-widest mb-1">Student Pop</div><div class="font-semibold">${city.pop}</div></div>
+        <div class="flex flex-col">
+          <h4 class="font-headline text-2xl italic text-on-surface mb-6">${city.label}</h4>
+          <div class="space-y-5 text-sm mb-8">
+            <div>
+              <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-2">Avg Rent</p>
+              <p class="font-semibold text-on-surface">${city.rent}</p>
+            </div>
+            <div>
+              <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-2">Top Neighbourhoods</p>
+              <div class="flex flex-wrap gap-2">${hoodPills}</div>
+            </div>
+            <div>
+              <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-2">Weather Summary</p>
+              <p class="font-medium text-on-surface leading-relaxed">${city.weather}</p>
+            </div>
+            <div>
+              <p class="text-on-surface-variant text-xs uppercase tracking-widest mb-2">Work Permit Hours</p>
+              <p class="font-medium text-on-surface leading-relaxed">${city.workPermit}</p>
+            </div>
+          </div>
+          <a class="inline-block font-semibold text-white no-underline mt-auto bg-[#7b3f3f] hover:bg-[#5a2d2d] py-[10px] px-6 rounded-lg transition-colors duration-200 ease-in-out" href="${city.href}">Explore ${city.label} in Detail →</a>
         </div>
-        <a class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary text-primary text-sm font-bold hover:bg-primary hover:text-on-primary transition-colors" href="${city.href}">${city.cta}</a>
       `;
     }
 
