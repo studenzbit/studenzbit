@@ -641,7 +641,25 @@
 </div>
 <h4 class="font-headline text-2xl text-on-surface mb-2">${r.guideTitle}</h4>
 <p class="text-sm text-on-surface-variant mb-6">${r.guideBlurb}</p>
-<a class="block w-full text-center font-semibold text-white no-underline py-4 rounded-lg bg-[#7b3f3f] hover:bg-[#5a2d2d] transition-colors duration-200 ease-in-out" href="${r.href}">Explore ${city.label} in Detail →</a>
+<a href="canada.html" style="
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 24px;
+  background: #7b3f3f;
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 16px;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+" onmouseover="this.style.background='#5a2d2d'"
+  onmouseout="this.style.background='#7b3f3f'">
+  Explore ${city.label} in Detail →
+</a>
 </div>
 </div>
 </div>`;
