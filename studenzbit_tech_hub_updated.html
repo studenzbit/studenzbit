@@ -353,8 +353,22 @@
 <!-- Table Section -->
 <section class="mb-32">
 <h2 class="font-headline text-4xl mb-12">Which SIM Should You Get?</h2>
+<div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">
+  <button onclick="filterSIM('canada')" id="tab-canada" style="
+    padding: 8px 20px; border-radius: 20px; border: 1.5px solid #7b3f3f;
+    background: #7b3f3f; color: white; font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 600; cursor: pointer;">🇨🇦 Canada</button>
+  <button onclick="filterSIM('usa')" id="tab-usa" style="
+    padding: 8px 20px; border-radius: 20px; border: 1.5px solid #e2ddd6;
+    background: white; color: #2c2c2c; font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 600; cursor: pointer;">🇺🇸 USA</button>
+  <button onclick="filterSIM('australia')" id="tab-australia" style="
+    padding: 8px 20px; border-radius: 20px; border: 1.5px solid #e2ddd6;
+    background: white; color: #2c2c2c; font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 600; cursor: pointer;">🇦🇺 Australia</button>
+</div>
 <div class="overflow-x-auto">
-<table class="w-full text-left">
+<table id="sim-table" class="w-full text-left">
 <thead>
 <tr class="text-xs uppercase tracking-widest text-on-surface-variant font-bold border-b border-surface-container-highest">
 <th class="py-6 px-4">Carrier</th>
@@ -366,7 +380,7 @@
 </tr>
 </thead>
 <tbody class="text-sm">
-<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors" data-country="canada">
 <td class="py-6 px-4 font-bold">Rogers</td>
 <td class="py-6 px-4">Canada</td>
 <td class="py-6 px-4">$45-$65/mo</td>
@@ -374,7 +388,7 @@
 <td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Coverage</span></td>
 <td class="py-6 px-4 text-primary">★★★★★</td>
 </tr>
-<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors" data-country="canada">
 <td class="py-6 px-4 font-bold">Bell</td>
 <td class="py-6 px-4">Canada</td>
 <td class="py-6 px-4">$45-$65/mo</td>
@@ -382,7 +396,7 @@
 <td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Network Quality</span></td>
 <td class="py-6 px-4 text-primary">★★★★★</td>
 </tr>
-<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors" data-country="canada">
 <td class="py-6 px-4 font-bold">Fido / Virgin</td>
 <td class="py-6 px-4">Canada</td>
 <td class="py-6 px-4">$35-$45/mo</td>
@@ -390,7 +404,7 @@
 <td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Student Budget</span></td>
 <td class="py-6 px-4 text-primary">★★★★☆</td>
 </tr>
-<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors" data-country="canada">
 <td class="py-6 px-4 font-bold">Koodo</td>
 <td class="py-6 px-4">Canada</td>
 <td class="py-6 px-4">$35-$50/mo</td>
@@ -398,7 +412,7 @@
 <td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Flexibility</span></td>
 <td class="py-6 px-4 text-primary">★★★★☆</td>
 </tr>
-<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors" data-country="usa">
 <td class="py-6 px-4 font-bold">T-Mobile</td>
 <td class="py-6 px-4">USA</td>
 <td class="py-6 px-4">$45-$55/mo</td>
@@ -406,7 +420,7 @@
 <td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">International Roaming</span></td>
 <td class="py-6 px-4 text-primary">★★★★★</td>
 </tr>
-<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors" data-country="usa">
 <td class="py-6 px-4 font-bold">Verizon</td>
 <td class="py-6 px-4">USA</td>
 <td class="py-6 px-4">$60-$70/mo</td>
@@ -414,7 +428,7 @@
 <td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Coverage &amp; Reliability</span></td>
 <td class="py-6 px-4 text-primary">★★★★★</td>
 </tr>
-<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors" data-country="australia">
 <td class="py-6 px-4 font-bold">Optus</td>
 <td class="py-6 px-4">Australia</td>
 <td class="py-6 px-4">$35-$45 AUD/mo</td>
@@ -422,7 +436,7 @@
 <td class="py-6 px-4"><span class="bg-surface-container px-3 py-1 rounded-full text-[10px]">Budget</span></td>
 <td class="py-6 px-4 text-primary">★★★★☆</td>
 </tr>
-<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors">
+<tr class="border-b border-surface-container hover:bg-surface-container-low transition-colors" data-country="australia">
 <td class="py-6 px-4 font-bold">Telstra</td>
 <td class="py-6 px-4">Australia</td>
 <td class="py-6 px-4">$55-$65 AUD/mo</td>
@@ -432,6 +446,29 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div id="sim-coming-soon" style="
+  display: none;
+  background: #f5ede0;
+  border: 1px solid #e2ddd6;
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #7b3f3f;
+  margin-top: 12px;
+  font-weight: 500;
+"></div>
+<div style="margin-top: 16px; text-align: right;">
+  <a href="studenzbit_blog.html" style="
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #7b3f3f;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1.5px solid #7b3f3f;
+    padding-bottom: 2px;
+  ">Read the Full SIM &amp; Data Guide →</a>
 </div>
 </section>
 <!-- CTA Banner -->
@@ -461,4 +498,32 @@
 </div>
 </div>
 </footer>
+<script>
+function filterSIM(country) {
+  const rows = document.querySelectorAll('#sim-table tr[data-country]');
+  rows.forEach(row => {
+    row.style.display = row.dataset.country === country ? '' : 'none';
+  });
+  document.querySelectorAll('[id^="tab-"]').forEach(btn => {
+    btn.style.background = 'white';
+    btn.style.color = '#2c2c2c';
+    btn.style.borderColor = '#e2ddd6';
+  });
+  const active = document.getElementById('tab-' + country);
+  active.style.background = '#7b3f3f';
+  active.style.color = 'white';
+  active.style.borderColor = '#7b3f3f';
+
+  const banner = document.getElementById('sim-coming-soon');
+  if (country === 'canada') {
+    banner.style.display = 'none';
+  } else {
+    banner.style.display = 'block';
+    banner.innerHTML = country === 'usa'
+      ? '🚧 Full USA carrier guide coming soon — we\'re researching the best plans for international students.'
+      : '🚧 Full Australia carrier guide coming soon — we\'re researching the best plans for international students.';
+  }
+}
+filterSIM('canada');
+</script>
 </body></html>
