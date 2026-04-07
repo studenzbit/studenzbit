@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudenzBit | The International Student Smartphone Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=DM+Sans:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f4f4f0",
+                        "surface-container-high": "#e7e9e4",
+                        "surface": "#faf9f6",
+                        "primary-container": "#fec3c3",
+                        "surface-container-highest": "#e1e3de",
+                        "surface-bright": "#faf9f6",
+                        "on-primary-fixed-variant": "#704545",
+                        "outline-variant": "#b0b3ae",
+                        "primary-fixed-dim": "#efb5b5",
+                        "on-tertiary": "#fff8f2",
+                        "on-background": "#303330",
+                        "error-container": "#fd795a",
+                        "inverse-primary": "#fec3c3",
+                        "tertiary": "#655e56",
+                        "on-primary-container": "#653c3c",
+                        "on-secondary-container": "#495720",
+                        "tertiary-container": "#fdf2e7",
+                        "on-error": "#fff7f6",
+                        "on-secondary": "#f2ffc7",
+                        "inverse-on-surface": "#9d9d9a",
+                        "primary-dim": "#734748",
+                        "error-dim": "#791903",
+                        "on-surface": "#303330",
+                        "secondary": "#56652c",
+                        "background": "#faf9f6",
+                        "on-tertiary-fixed-variant": "#6c655d",
+                        "on-secondary-fixed": "#37440e",
+                        "surface-dim": "#d9dbd6",
+                        "surface-variant": "#e1e3de",
+                        "tertiary-dim": "#59524a",
+                        "primary-fixed": "#fec3c3",
+                        "surface-tint": "#805353",
+                        "secondary-fixed": "#d9eaa3",
+                        "on-secondary-fixed-variant": "#536129",
+                        "error": "#a73b21",
+                        "on-primary-fixed": "#4f292a",
+                        "on-tertiary-container": "#625b53",
+                        "on-error-container": "#6e1400",
+                        "tertiary-fixed-dim": "#eee4d9",
+                        "secondary-dim": "#4a5821",
+                        "on-surface-variant": "#5d605c",
+                        "secondary-container": "#d9eaa3",
+                        "secondary-fixed-dim": "#cbdc96",
+                        "outline": "#797b78",
+                        "surface-container": "#eeeeea",
+                        "inverse-surface": "#0d0f0d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#fff7f6",
+                        "primary": "#805353",
+                        "on-tertiary-fixed": "#4f4941",
+                        "tertiary-fixed": "#fdf2e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Cormorant Garamond", "serif"],
+                        "body": ["DM Sans", "sans-serif"],
+                        "label": ["DM Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "DM Sans", sans-serif;
+    background-color: #faf9f6
+    }
+.font-serif {
+    font-family: "Cormorant Garamond", serif
+    }
+.grainy {
+    position: relative
+    }
+.grainy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBefqLrso-zua7GDC82amuhbmd_kaxuS7jEz1Ll19gx0X5diSHwA5n3IWi4pkhxHRhsilw2DbxQnht-VNXTsPKYdPFXN_8cRFmLat2apz01aA5ecPoRHIij-18U-FMll1Dwg1yLypOngNOuHKyDDTr3Z2LwF__7sQc77sDrSarQ-D-GAt-k9MbU6Fv3b_bC2WYv37246qbAs7R21WSgZMPVrFZMq8ypzSNXNdY6t8b8_z3a7MHe6zlgXdjMRpFGEeo317hoAspsM8q2);
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1
+    }</style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-4 max-w-7xl mx-auto bg-[#faf9f6]/80 dark:bg-stone-900/80 backdrop-blur-xl rounded-xl mt-4 mx-4">
+<div class="text-2xl font-serif italic text-[#303330] dark:text-[#faf9f6]">StudenzBit</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors duration-300 font-body text-sm tracking-widest uppercase" href="#">Destinations</a>
+<a class="text-[#805353] dark:text-[#fec3c3] font-bold border-b-2 border-[#805353] font-body text-sm tracking-widest uppercase" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
+<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors duration-300 font-body text-sm tracking-widest uppercase" href="#">Student Toolkit</a>
+<a class="text-[#5d605c] dark:text-[#b0b3ae] hover:text-[#805353] transition-colors duration-300 font-body text-sm tracking-widest uppercase" href="#">Blog</a>
+</div>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+</nav>
+<main class="pt-32 grainy">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-24 lg:mb-40 flex flex-col items-start">
+<span class="text-on-surface-variant font-body text-xs tracking-[0.3em] uppercase mb-6">Student Tech Guide</span>
+<h1 class="text-6xl md:text-8xl font-serif leading-tight mb-8 max-w-4xl text-on-surface">The International Student Smartphone Guide</h1>
+<p class="text-xl md:text-2xl font-body text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                Moving to a new country means a new carrier, new SIM, new everything. Here's exactly what to buy — and what to avoid — based on your budget and destination.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-full font-body font-medium hover:opacity-90 transition-all flex items-center gap-2" href="#recommendations">
+                    Jump to Recommendations <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="border border-outline px-8 py-4 rounded-full font-body font-medium text-on-surface hover:bg-surface-container-low transition-all flex items-center gap-2" href="sim_guide.html">
+                    Read the SIM Guide <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Featured Editorial Image -->
+<section class="max-w-7xl mx-auto px-4 mb-24 lg:mb-40">
+<div class="w-full h-[614px] rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover grayscale-[20%] opacity-90" data-alt="A minimalist overhead shot of a modern smartphone, a travel passport, and a pair of earphones on a clean beige surface with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVWR9R536efrUZdu4t7yQfwL3Orb8r-eTMq3swM_Ee2InVhVYoJ_hxCP5hlgjFgJsnLMm6OhM80yJxy9hdXGNO9-_EajnaJOS-iE583ykcIYs8pmfwqM2OLFn2sJXnIlpiUArbN39n1IH4lwFBf6QdAaN3Zji9FvaKrrwLwX2pyEqfkZcLRCXO3s_Eud62rf7x5Ff-1XNJVCjALf4votFu1j0tGw-aXKuqsaMPtxTcyZ35aLzMV0Vt9WaYiXpdTo-dka3Kfos-cG8F"/>
+</div>
+</section>
+<!-- Editorial Content: The Network Trap -->
+<section class="max-w-7xl mx-auto px-8 mb-32 grid md:grid-cols-12 gap-12 items-start">
+<div class="md:col-span-7">
+<h2 class="text-4xl md:text-5xl font-serif mb-8 text-on-surface">The Network Trap</h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p>When you land in a new country, the flashy kiosks at the airport often promise "free" flagship phones with a simple 24-month contract. For an international student, this is often a gilded cage. Carrier-locked phones restrict your ability to switch to cheaper local MVNOs or use your home SIM when visiting family.</p>
+<p>The smartest financial move isn't the subsidized monthly payment; it's the freedom of an unlocked device that works as well in London as it does in Delhi or Toronto.</p>
+</div>
+</div>
+<div class="md:col-span-5 pt-12">
+<div class="bg-primary-container p-12 rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-6">format_quote</span>
+<p class="text-2xl font-serif italic text-on-primary-container leading-snug">
+                        "As an international student, your phone is your lifeline. Don't let a two-year contract dictate your mobility in a world where flexibility is your greatest asset."
+                    </p>
+<p class="mt-8 font-body text-sm font-bold text-on-primary-container tracking-wider uppercase">— Julian Vance, Student Tech Advisor</p>
+</div>
+</div>
+</section>
+<!-- Unlocked vs Contract Comparison -->
+<section class="max-w-7xl mx-auto px-8 mb-40">
+<div class="grid md:grid-cols-2 gap-px bg-outline-variant/20 rounded-xl overflow-hidden">
+<!-- Unlocked Column -->
+<div class="bg-surface-container-lowest p-12">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">lock_open</span>
+</div>
+<h3 class="text-3xl font-serif">Unlocked Freedom</h3>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<div>
+<p class="font-bold font-body">Dual-SIM Capability</p>
+<p class="text-on-surface-variant">Keep your home number active for bank OTPs while using a local data SIM.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<div>
+<p class="font-bold font-body">No Credit History Needed</p>
+<p class="text-on-surface-variant">Skip the lengthy credit checks that international students often fail in their first month.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary mt-1">check_circle</span>
+<div>
+<p class="font-bold font-body">Higher Resale Value</p>
+<p class="text-on-surface-variant">Unlocked phones are easier to sell globally when it's time for an upgrade.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Contract Column -->
+<div class="bg-surface-container-low p-12">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-error-container/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-error">lock</span>
+</div>
+<h3 class="text-3xl font-serif">Contract Constraints</h3>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error mt-1">cancel</span>
+<div>
+<p class="font-bold font-body">Locked Frequency Bands</p>
+<p class="text-on-surface-variant">Carrier-specific models may lack the radio bands used in other continents.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error mt-1">cancel</span>
+<div>
+<p class="font-bold font-body">Early Termination Fees</p>
+<p class="text-on-surface-variant">Moving unexpectedly? Be prepared to pay hundreds in exit penalties.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error mt-1">cancel</span>
+<div>
+<p class="font-bold font-body">Padded Monthly Costs</p>
+<p class="text-on-surface-variant">You'll often pay 20-30% more per month than a SIM-only prepaid plan.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Recommendations Grid -->
+<section class="max-w-7xl mx-auto px-8 mb-40" id="recommendations">
+<div class="mb-16">
+<h2 class="text-5xl font-serif mb-4">Top Picks for 2024</h2>
+<p class="text-on-surface-variant font-body">Carefully curated for global compatibility and student budgets.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- iPhone 17 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col h-full hover:bg-surface-container transition-colors group">
+<div class="mb-8 aspect-square bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek close-up of a titanium-finish smartphone back showing a sophisticated triple lens camera system on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg2AjYbZCIJ0pbLkvi5yApjdq1qPc0NcS8OO2nk88XQUAxjuo9nr5RTnhZbnbBYOaLRUbYpp8CVObnqfRKvqxNC3U1ytYT4TBnkRTuhOuBerU7KnWRhkj2okcUYZU1N3c-w7YVZ78ugELTeOLNYc1yAxkJJcl6Gzp_Gm99arEyQMeB_NYuwy7xgpGSywHbKCgTpmYB6eMW1JD5K3GkYYcpa5HKU-MmwiN8ajcYqjsPkLXlHNXqCQ1RJqNtOTALDLZ29LUgXOg3kiRc"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-bold tracking-widest text-primary uppercase mb-1">Premium</p>
+<h3 class="text-2xl font-serif">iPhone 17</h3>
+</div>
+<div class="flex gap-1">
+<span class="text-xs">🇺🇸</span><span class="text-xs">🇨🇦</span><span class="text-xs">🇦🇺</span>
+</div>
+</div>
+<ul class="text-sm space-y-2 text-on-surface-variant font-body mb-8">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">signal_cellular_alt</span> Global 5G Bands</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">sim_card</span> Dual eSIM Support</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">security</span> 6-Year Updates</li>
+</ul>
+</div>
+<a class="text-primary font-bold font-body flex items-center gap-2 group" href="#">
+                        View Deal <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Google Pixel 10 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col h-full hover:bg-surface-container transition-colors group">
+<div class="mb-8 aspect-square bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern minimalist smartphone with a unique horizontal camera bar on a soft sage green background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg82QJZrTdyn4M4gklMMJvI59DcUUbBslh2mjERW-VhVZFCsTo8rknWnfNSl5t6c4pRktiOTXr4ocg3nAaTWzynK3gOQSYxZ50NK4ndy4r1fG69wXftcIFj_grWsYi5mXSmMS15ZFUbsvfIaUDPrAZv0e8ROoEXxx_pHalxddehYB4641p0s0qlAKdkDlipXN7CrRmFLZAlUknNoQl6DFN6yu3cmUdVdtpQs4u3YfjL5JBqMTrmQDwSQMN7xJBP0mLZnjz_7TxVLh4"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-bold tracking-widest text-primary uppercase mb-1">Best Value</p>
+<h3 class="text-2xl font-serif">Google Pixel 10</h3>
+</div>
+<div class="flex gap-1">
+<span class="text-xs">🇬🇧</span><span class="text-xs">🇪🇺</span><span class="text-xs">🇺🇸</span>
+</div>
+</div>
+<ul class="text-sm space-y-2 text-on-surface-variant font-body mb-8">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">translate</span> Real-time Live Translate</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">camera</span> Best-in-class Photo</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">update</span> 7 Years Support</li>
+</ul>
+</div>
+<a class="text-primary font-bold font-body flex items-center gap-2 group" href="#">
+                        View Deal <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Samsung A35 -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col h-full hover:bg-surface-container transition-colors group">
+<div class="mb-8 aspect-square bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant and colorful budget-friendly smartphone with multiple cameras displayed on a bright pop-art style background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_xKCdGWJ8FtYgtKC04ZUC8ViEI1DOvZDmQ5wJ9ovDFT5KorwpsZDpcKWfHiGmiKINK4uynpju5WaBHITyVyEZ7HHIRbefio6_AgFhI5VzNN_ff7l2IGin_QYH9A6xnrDJAcpTGqccIn087QrwHv1XhadhG9x9b0WJ6eioAcaOBx2kqjkVrWWeEucM4Sw1RNe_zkwyg_QvZqT30hIGn8BbtCF2AF_P_eOICJrD-HC3n_Odkcu4uuPgmnQaGDU3AJzXrDxxQADYIzqC"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-bold tracking-widest text-primary uppercase mb-1">Budget Pick</p>
+<h3 class="text-2xl font-serif">Galaxy A35</h3>
+</div>
+<div class="flex gap-1">
+<span class="text-xs">🇮🇳</span><span class="text-xs">🇦🇺</span><span class="text-xs">🇲🇾</span>
+</div>
+</div>
+<ul class="text-sm space-y-2 text-on-surface-variant font-body mb-8">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">battery_charging_full</span> 2-Day Battery Life</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">sd_storage</span> Expandable Storage</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">water_drop</span> IP67 Resistance</li>
+</ul>
+</div>
+<a class="text-primary font-bold font-body flex items-center gap-2 group" href="#">
+                        View Deal <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Refurbished -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col h-full hover:bg-surface-container transition-colors group">
+<div class="mb-8 aspect-square bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A stack of professionally cleaned and boxed recycled smartphones signifying high-quality refurbished technology" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyx5mfi5Sw8Q_DZ8KNZyVeyA5uVVeeptX5mBvsyq2AVG8aq0CHHqRdC814AKj7NyIGs9niaRomVT3d-nXAaVH0Tdu554QaGieev6YlWLyhQipQpQVoi211QFSrWByOdVHpMF0KeT3UZQza0Dssw-PqtvcDV5A2lf9uwGoaTftW3cagKpXijZ02F9BfZ-kp34dlhn0Y_gfQQ3KDUkxUxDYpWR70LINbBSQY-wVJyYQexlZFZYqLlfwOLcV1GcbCkqqV0pgf2cLWH0PB"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-xs font-bold tracking-widest text-primary uppercase mb-1">Smart Choice</p>
+<h3 class="text-2xl font-serif">Refurbished</h3>
+</div>
+<div class="flex gap-1">
+<span class="text-xs">🌎</span>
+</div>
+</div>
+<ul class="text-sm space-y-2 text-on-surface-variant font-body mb-8">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">eco</span> Sustainable Option</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">verified</span> Certified Testing</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-base">savings</span> 40% Cheaper</li>
+</ul>
+</div>
+<a class="text-primary font-bold font-body flex items-center gap-2 group" href="#">
+                        View Deals <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="max-w-7xl mx-auto px-8 mb-40">
+<div class="relative bg-tertiary-container rounded-xl p-12 md:p-20 overflow-hidden text-center flex flex-col items-center">
+<div class="relative z-10">
+<h2 class="text-4xl md:text-6xl font-serif mb-8 text-on-tertiary-container">Next Step: Get Your SIM</h2>
+<p class="text-xl font-body text-on-tertiary-container/80 max-w-2xl mx-auto mb-12">
+                        Now that you've picked your device, learn how to secure the cheapest data plans in your destination country without a contract.
+                    </p>
+<a class="inline-flex items-center gap-3 bg-on-tertiary-container text-tertiary-container px-10 py-5 rounded-full font-body font-bold hover:opacity-90 transition-all group" href="sim_guide.html">
+                        Explore SIM &amp; Data Guide <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Decorative element -->
+<div class="absolute bottom-0 right-0 opacity-10">
+<span class="material-symbols-outlined text-[300px] leading-none">sim_card</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#eeeeea] dark:bg-stone-800">
+<div class="text-lg font-serif italic text-[#303330]">StudenzBit</div>
+<div class="flex flex-wrap justify-center gap-8 text-sm tracking-wide font-sans">
+<a class="text-[#5d605c] hover:text-[#805353] underline decoration-dotted" href="#">Destinations</a>
+<a class="text-[#5d605c] hover:text-[#805353] underline decoration-dotted" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
+<a class="text-[#5d605c] hover:text-[#805353] underline decoration-dotted" href="#">Student Toolkit</a>
+<a class="text-[#5d605c] hover:text-[#805353] underline decoration-dotted" href="#">Blog</a>
+</div>
+<p class="text-[#5d605c] text-sm tracking-wide">© 2024 StudenzBit. All rights reserved.</p>
+</footer>
+</body></html>

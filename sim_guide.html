@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudenzBit | The International Student SIM &amp; Data Guide</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#eeeeea",
+                    "on-secondary": "#f2ffc7",
+                    "primary": "#805353",
+                    "on-secondary-fixed-variant": "#536129",
+                    "error": "#a73b21",
+                    "surface": "#faf9f6",
+                    "background": "#faf9f6",
+                    "surface-container-low": "#f4f4f0",
+                    "tertiary-fixed-dim": "#eee4d9",
+                    "secondary-fixed-dim": "#cbdc96",
+                    "tertiary-container": "#fdf2e7",
+                    "surface-container-high": "#e7e9e4",
+                    "primary-container": "#fec3c3",
+                    "on-surface-variant": "#5d605c",
+                    "secondary-container": "#d9eaa3",
+                    "on-secondary-container": "#495720",
+                    "on-error": "#fff7f6",
+                    "on-tertiary-fixed-variant": "#6c655d",
+                    "primary-fixed-dim": "#efb5b5",
+                    "surface-dim": "#d9dbd6",
+                    "outline": "#797b78",
+                    "on-primary-fixed": "#4f292a",
+                    "on-tertiary": "#fff8f2",
+                    "on-background": "#303330",
+                    "surface-container-highest": "#e1e3de",
+                    "primary-dim": "#734748",
+                    "tertiary-fixed": "#fdf2e7",
+                    "on-primary-container": "#653c3c",
+                    "outline-variant": "#b0b3ae",
+                    "error-dim": "#791903",
+                    "on-tertiary-fixed": "#4f4941",
+                    "secondary-dim": "#4a5821",
+                    "secondary-fixed": "#d9eaa3",
+                    "inverse-primary": "#fec3c3",
+                    "error-container": "#fd795a",
+                    "primary-fixed": "#fec3c3",
+                    "on-surface": "#303330",
+                    "secondary": "#56652c",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#704545",
+                    "surface-bright": "#faf9f6",
+                    "on-error-container": "#6e1400",
+                    "on-primary": "#fff7f6",
+                    "on-tertiary-container": "#625b53",
+                    "inverse-surface": "#0d0f0d",
+                    "surface-variant": "#e1e3de",
+                    "surface-tint": "#805353",
+                    "tertiary-dim": "#59524a",
+                    "tertiary": "#655e56",
+                    "inverse-on-surface": "#9d9d9a",
+                    "on-secondary-fixed": "#37440e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #faf9f6; color: #303330; }
+        .font-serif-italic { font-family: 'Noto Serif', serif; font-style: italic; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#faf9f6]/80 backdrop-blur-xl shadow-sm dark:bg-[#303330]/80 dark:shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif italic text-[#805353] dark:text-[#fec3c3]">StudenzBit</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-[#5d605c] hover:text-[#805353] transition-colors duration-300 dark:text-[#b0b3ae] dark:hover:text-[#fec3c3] font-sans text-sm tracking-wide" href="#">Destinations</a>
+<a class="text-[#805353] font-bold border-b-2 border-[#805353] pb-1 dark:text-[#fec3c3] dark:border-[#fec3c3] font-sans text-sm tracking-wide" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
+<a class="text-[#5d605c] hover:text-[#805353] transition-colors duration-300 dark:text-[#b0b3ae] dark:hover:text-[#fec3c3] font-sans text-sm tracking-wide" href="#">Student Toolkit</a>
+<a class="text-[#5d605c] hover:text-[#805353] transition-colors duration-300 dark:text-[#b0b3ae] dark:hover:text-[#fec3c3] font-sans text-sm tracking-wide" href="#">Blog</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer">search</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer md:hidden">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-8 max-w-7xl mx-auto mb-28">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-3/5">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-[10px] font-bold tracking-[0.2em] mb-6 uppercase">STUDENT TECH GUIDE</span>
+<h1 class="text-5xl md:text-7xl font-serif italic text-on-surface leading-[1.1] mb-8 tracking-tight">
+                        The International Student SIM &amp; Data Guide
+                    </h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-xl mb-12 font-light">
+                        Don't land in a new country without a data plan. Here's exactly what to set up — before you board the plane.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-medium hover:opacity-90 transition-all flex items-center gap-2">
+                            Best Plans by Country <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-medium hover:bg-surface-dim transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> eSIM Setup Guide
+                        </button>
+</div>
+</div>
+<div class="md:w-2/5 w-full">
+<div class="aspect-[4/5] rounded-xl overflow-hidden relative shadow-2xl">
+<img alt="Student traveling" class="object-cover w-full h-full grayscale-[20%] sepia-[10%]" data-alt="Minimalist overhead shot of a person holding a modern smartphone and a passport on a clean wooden table with soft morning sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm7bKETxggqMTEYsca4_XW_1tkpC23eDXssLWiiJJ_Nf8Wg9zh1FjjIvCA-vQPELQJ3WynNaEd5ZqaxanGXhmI-JsILxfqi2rppx3HSS9_wMIP7zjOsQCc3QXjEbPDqDmlP_3p6UJ2Ijtkq1uEzTeG4-OqUl0c5jg9-BUcYqjS6yMdl7WgRmhiSeM8DROdgjS_8a7-Ql9wtHwlkB6TZd0tifLRo4Y-3lrgloLXkP8N4hnpv736UovXBbvwULm01Oqp-2_MIN7ToVkT"/>
+<div class="absolute inset-0 bg-primary/5"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: eSIM vs Physical SIM -->
+<section class="bg-surface-container-low py-28">
+<div class="px-8 max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">FIRST DECISION</span>
+<h2 class="text-4xl md:text-5xl font-serif italic mt-4 text-on-surface">eSIM or Physical SIM — What Should You Get?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- eSIM Card -->
+<div class="bg-[#edf4ed] p-10 rounded-xl flex flex-col h-full transform hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-8">
+<div class="bg-white/60 backdrop-blur-md p-3 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl">e_mobiledata</span>
+</div>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">✅ Recommended</span>
+</div>
+<h3 class="text-2xl font-serif italic mb-6">eSIM Card</h3>
+<div class="space-y-6 flex-grow">
+<div>
+<h4 class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2">Pros</h4>
+<p class="text-sm leading-relaxed text-on-surface">Set up before you land · No airport SIM hunting · Switch plans easily · Instant activation</p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2">Cons</h4>
+<p class="text-sm leading-relaxed text-on-surface-variant">Requires newer phone (iPhone XS+, most Android 2020+) · Some budget carriers don't offer it</p>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-secondary/10">
+<h4 class="text-xs font-bold text-secondary uppercase tracking-widest mb-4">Setup Guide</h4>
+<ul class="space-y-3">
+<li class="text-sm flex items-center gap-3">
+<span class="w-5 h-5 flex items-center justify-center bg-white rounded-full text-[10px] font-bold">1</span>
+                                    Download Airalo app →
+                                </li>
+<li class="text-sm flex items-center gap-3">
+<span class="w-5 h-5 flex items-center justify-center bg-white rounded-full text-[10px] font-bold">2</span>
+                                    Buy Canada/USA/Australia plan →
+                                </li>
+<li class="text-sm flex items-center gap-3">
+<span class="w-5 h-5 flex items-center justify-center bg-white rounded-full text-[10px] font-bold">3</span>
+                                    Install before departure →
+                                </li>
+<li class="text-sm flex items-center gap-3">
+<span class="w-5 h-5 flex items-center justify-center bg-white rounded-full text-[10px] font-bold">4</span>
+                                    Activate on landing
+                                </li>
+</ul>
+</div>
+</div>
+<!-- Physical SIM Card -->
+<div class="bg-[#f5ede0] p-10 rounded-xl flex flex-col h-full transform hover:-translate-y-1 transition-transform duration-300">
+<div class="flex justify-between items-start mb-8">
+<div class="bg-white/60 backdrop-blur-md p-3 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-3xl">sim_card</span>
+</div>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">⚠️ Fine but less convenient</span>
+</div>
+<h3 class="text-2xl font-serif italic mb-6">Physical SIM Card</h3>
+<div class="space-y-6 flex-grow">
+<div>
+<h4 class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2">Pros</h4>
+<p class="text-sm leading-relaxed text-on-surface">Works on all phones · Available at carrier stores · Easy to understand</p>
+</div>
+<div>
+<h4 class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest mb-2">Cons</h4>
+<p class="text-sm leading-relaxed text-on-surface-variant">Need to find a store on Day 1 · Airport prices can be higher</p>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-primary/10">
+<h4 class="text-xs font-bold text-primary uppercase tracking-widest mb-4">Where to get</h4>
+<div class="space-y-4">
+<p class="text-sm italic text-on-surface-variant">
+                                    "Rogers/Bell/Fido kiosks at Toronto Pearson · T-Mobile stores in USA · Optus/Telstra at Sydney Airport"
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Checklist -->
+<section class="bg-[#fbf3e4] py-32 overflow-hidden relative">
+<div class="absolute inset-0 opacity-20 pointer-events-none mix-blend-multiply" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnmyWbDgkHLzik6Ucf0tFx9KBHMdd3z9FSIhsZBRC0TvWWCL73Dwzd_hsYqtb7vaTMtLFYHxLJUkRRd0JZ8ycuVNb6aU7r9Re8SMfJuC1Q704NpF-STmrZpM288ADaB-KWbIJnjXdIStxdN8N0_Vv2Qjp4YG3U_LwSnQv4MFtHP0vgAm0MksD48mAwFnRGEwPpqLsjwqQVYflycipDeAncCwkipfCsPXBZmtFQcbUpupo-LMIzcNu70Kkb1XeJg5DHMcTAsjV-bt69');"></div>
+<div class="px-8 max-w-7xl mx-auto relative z-10">
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="md:w-1/2">
+<span class="text-[10px] font-bold tracking-[0.2em] text-on-surface-variant uppercase">DO THIS BEFORE YOU FLY</span>
+<h2 class="text-4xl md:text-6xl font-serif italic mt-6 leading-tight text-on-surface">3 Things to Set Up Before You Board</h2>
+<div class="mt-12 space-y-12">
+<div class="flex gap-8 group">
+<span class="text-6xl font-serif italic text-primary/20 group-hover:text-primary/40 transition-colors">01</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Check if your phone supports eSIM</h4>
+<p class="text-on-surface-variant leading-relaxed">Settings → General → About → look for eSIM or Digital SIM. Most modern flagships since 2019 are compatible.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<span class="text-6xl font-serif italic text-primary/20 group-hover:text-primary/40 transition-colors">02</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Unlock your phone</h4>
+<p class="text-on-surface-variant leading-relaxed">Call your home carrier and ask them to unlock it. Most do it free if you've completed your contract or paid off the device.</p>
+</div>
+</div>
+<div class="flex gap-8 group">
+<span class="text-6xl font-serif italic text-primary/20 group-hover:text-primary/40 transition-colors">03</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Set up an eSIM plan</h4>
+<p class="text-on-surface-variant leading-relaxed">Airalo is the most popular for students. Buy a 30-day plan for ~$15–25 to bridge the gap until you get a local contract.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 w-full">
+<div class="relative">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="aspect-square rounded-xl overflow-hidden shadow-sm">
+<img alt="Person boarding plane" class="object-cover w-full h-full" data-alt="Dreamy warm-toned photograph of a focused traveler sitting in a sun-drenched airport terminal looking at their phone with a calm expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKyHES6CORXHnsW8ySZ84vO1L615K8cCCWscPk0Fq6sV4AodesjyFQt-UTqf0wc_2Tn7sTaHNe_mxQ3jhgDwUSOcIiqTG8xZhEoU9sDWKPIykn0U4QVblAK8Sw-HMy0vuaARgTBTPGcRr1pRkeRbpoe8Tpiivy2aWnQqDfBme0Gcv31sNy2m4hLnjHnA8maULLLw_QnI-WhwCvWF7nfDb5qakXtsw45-WqtPoOg4IolchTRMzDfBxzhX4-kVqeboRX2UbHp22Z3od4"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Best Carriers by Country -->
+<section class="py-28 bg-surface">
+<div class="px-8 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">BEST PLANS</span>
+<h2 class="text-4xl md:text-5xl font-serif italic mt-4 text-on-surface">Which SIM Should You Get?</h2>
+</div>
+<!-- Tabs -->
+<div class="flex justify-center mb-12">
+<div class="inline-flex bg-surface-container-low p-1.5 rounded-full">
+<button class="px-6 py-2.5 bg-[#7b3f3f] text-white rounded-full text-sm font-medium transition-all">🇨🇦 Canada</button>
+<button class="px-6 py-2.5 text-on-surface-variant hover:text-primary text-sm font-medium transition-all">🇺🇸 USA</button>
+<button class="px-6 py-2.5 text-on-surface-variant hover:text-primary text-sm font-medium transition-all">🇦🇺 Australia</button>
+</div>
+</div>
+<!-- Table Content (Canada Active) -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant/30">
+<th class="pb-6 pt-0 font-serif italic text-xl">Carrier</th>
+<th class="pb-6 pt-0 font-serif italic text-xl">Best Student Plan</th>
+<th class="pb-6 pt-0 font-serif italic text-xl">Price (Est.)</th>
+<th class="pb-6 pt-0 font-serif italic text-xl text-right">Verdict</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr>
+<td class="py-8 font-bold">Rogers / Fido</td>
+<td class="py-8 text-on-surface-variant">20GB 5G Data + Unlimited Talk/Text</td>
+<td class="py-8 text-on-surface-variant">$45 - $55 / mo</td>
+<td class="py-8 text-right"><span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold">Reliable Coverage</span></td>
+</tr>
+<tr>
+<td class="py-8 font-bold">Bell / Virgin Plus</td>
+<td class="py-8 text-on-surface-variant">30GB 5G Data (Member Benefits)</td>
+<td class="py-8 text-on-surface-variant">$50 - $60 / mo</td>
+<td class="py-8 text-right"><span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-xs font-bold">Great Perks</span></td>
+</tr>
+<tr>
+<td class="py-8 font-bold">Public Mobile</td>
+<td class="py-8 text-on-surface-variant">10GB 4G Data (No-frills)</td>
+<td class="py-8 text-on-surface-variant">$34 / mo</td>
+<td class="py-8 text-right"><span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold">Budget King</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Section 5: Prepaid vs Postpaid -->
+<section class="bg-surface-container-low py-28">
+<div class="px-8 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">HOW TO BUY</span>
+<h2 class="text-4xl md:text-5xl font-serif italic mt-4 text-on-surface">Prepaid or Postpaid — What's Right for You?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-[#edf4ed] p-10 rounded-xl border border-secondary/5">
+<h3 class="text-2xl font-serif italic mb-6">Prepaid</h3>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                No contract · Pay upfront monthly
+                            </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                No credit check required ✅
+                            </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                                Easy to cancel or switch anytime
+                            </li>
+</ul>
+<div class="p-4 bg-white/40 rounded-lg">
+<p class="text-sm font-bold text-on-surface">Verdict: ✅ Best option for your first 3–6 months until you build credit.</p>
+</div>
+</div>
+<div class="bg-[#f5ede0] p-10 rounded-xl border border-primary/5">
+<h3 class="text-2xl font-serif italic mb-6">Postpaid</h3>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-sm">info</span>
+                                Monthly bill after usage
+                            </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-sm">warning</span>
+                                Usually requires credit check ⚠️
+                            </li>
+<li class="flex items-start gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+                                Often includes cheaper "bundled" phones
+                            </li>
+</ul>
+<div class="p-4 bg-white/40 rounded-lg">
+<p class="text-sm font-bold text-on-surface">Verdict: ⚠️ Wait until you have a local bank account and credit history.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Top eSIM Picks -->
+<section class="py-28 bg-surface">
+<div class="px-8 max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">RECOMMENDED ESIM PROVIDERS</span>
+<h2 class="text-4xl md:text-5xl font-serif italic mt-4 text-on-surface">Best eSIM Apps for International Students</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Airalo -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-md transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">rocket_launch</span>
+</div>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">⭐ Most Popular</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Airalo</h3>
+<p class="text-2xl font-serif italic text-primary mb-4">~$18 <span class="text-xs text-on-surface-variant font-sans">for 10GB</span></p>
+<p class="text-sm text-on-surface-variant mb-8">Works in 200+ countries. The gold standard for temporary travel data.</p>
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm group-hover:gap-3 transition-all" href="#">Get Airalo <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Holafly -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-md transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">all_inclusive</span>
+</div>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">💸 Unlimited Data</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Holafly</h3>
+<p class="text-2xl font-serif italic text-secondary mb-4">~$27 <span class="text-xs text-on-surface-variant font-sans">for unlimited</span></p>
+<p class="text-sm text-on-surface-variant mb-8">Great for heavy users and students who need constant connection.</p>
+<a class="inline-flex items-center gap-2 text-secondary font-bold text-sm group-hover:gap-3 transition-all" href="#">Get Holafly <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Nomad -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/20 hover:shadow-md transition-all group">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 bg-on-surface-variant/10 rounded-xl flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">savings</span>
+</div>
+<span class="bg-on-surface-variant/10 text-on-surface-variant px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">🎯 Budget Pick</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Nomad</h3>
+<p class="text-2xl font-serif italic text-on-surface-variant mb-4">~$14 <span class="text-xs text-on-surface-variant font-sans">for 5GB</span></p>
+<p class="text-sm text-on-surface-variant mb-8">Competitive pricing for smaller data bundles across Europe and Asia.</p>
+<a class="inline-flex items-center gap-2 text-on-surface-variant font-bold text-sm group-hover:gap-3 transition-all" href="#">Get Nomad <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Bottom CTA -->
+<section class="bg-[#2c2c2c] py-24 text-white">
+<div class="px-8 max-w-4xl mx-auto text-center">
+<h2 class="text-3xl md:text-5xl font-serif italic mb-6">Now that you're connected — what phone should you get?</h2>
+<p class="text-lg text-white/70 mb-12 font-light">We've picked the best smartphones for international students at every budget.</p>
+<div class="flex flex-col items-center gap-8">
+<a class="bg-white text-[#2c2c2c] px-10 py-4 rounded-full font-bold hover:bg-stone-200 transition-all" href="smartphone_guide.html">Read the Smartphone Guide →</a>
+<a class="text-white/50 hover:text-white text-sm tracking-widest uppercase font-bold flex items-center gap-2 transition-colors" href="studenzbit_tech_hub_updated.html">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Back to Tech Hub
+                    </a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#eeeeea] dark:bg-[#303330] w-full py-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 max-w-7xl mx-auto text-left">
+<div class="space-y-6">
+<div class="text-xl font-serif italic text-[#805353] dark:text-[#fec3c3]">StudenzBit</div>
+<p class="text-sm font-sans tracking-wide text-[#5d605c] dark:text-stone-300 leading-relaxed">
+                    © 2024 StudenzBit. The Scholarly Sanctuary.
+                </p>
+</div>
+<div>
+<h5 class="text-[#805353] dark:text-[#fec3c3] font-bold mb-6 text-sm uppercase tracking-widest">Resources</h5>
+<ul class="space-y-4">
+<li><a class="text-sm text-[#5d605c] dark:text-[#b0b3ae] hover:opacity-70 transition-opacity" href="#">Destinations</a></li>
+<li><a class="text-sm text-[#5d605c] dark:text-[#b0b3ae] hover:opacity-70 transition-opacity" href="studenzbit_tech_hub_updated.html">Tech Hub</a></li>
+<li><a class="text-sm text-[#5d605c] dark:text-[#b0b3ae] hover:opacity-70 transition-opacity" href="#">Student Toolkit</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[#805353] dark:text-[#fec3c3] font-bold mb-6 text-sm uppercase tracking-widest">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-sm text-[#5d605c] dark:text-[#b0b3ae] hover:opacity-70 transition-opacity" href="#">Blog</a></li>
+<li><a class="text-sm text-[#5d605c] dark:text-[#b0b3ae] hover:opacity-70 transition-opacity" href="#">Privacy</a></li>
+<li><a class="text-sm text-[#5d605c] dark:text-[#b0b3ae] hover:opacity-70 transition-opacity" href="#">Terms</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[#805353] dark:text-[#fec3c3] font-bold mb-6 text-sm uppercase tracking-widest">Newsletter</h5>
+<div class="flex items-center border-b border-outline-variant/30 pb-2">
+<input class="bg-transparent border-none text-sm w-full focus:ring-0 placeholder:text-outline-variant" placeholder="Email address" type="email"/>
+<button class="material-symbols-outlined text-primary">arrow_right_alt</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

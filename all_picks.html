@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudenzBit | All Picks</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d9dbd6",
+                    "on-secondary-container": "#495720",
+                    "primary": "#805353",
+                    "inverse-primary": "#fec3c3",
+                    "on-tertiary-fixed-variant": "#6c655d",
+                    "on-secondary-fixed": "#37440e",
+                    "on-primary-fixed-variant": "#704545",
+                    "on-background": "#303330",
+                    "tertiary-dim": "#59524a",
+                    "secondary-fixed-dim": "#cbdc96",
+                    "inverse-on-surface": "#9d9d9a",
+                    "on-primary-fixed": "#4f292a",
+                    "tertiary-container": "#fdf2e7",
+                    "primary-dim": "#734748",
+                    "tertiary": "#655e56",
+                    "on-tertiary": "#fff8f2",
+                    "on-secondary": "#f2ffc7",
+                    "on-tertiary-container": "#625b53",
+                    "on-secondary-fixed-variant": "#536129",
+                    "surface-container-high": "#e7e9e4",
+                    "surface-variant": "#e1e3de",
+                    "surface-tint": "#805353",
+                    "tertiary-fixed-dim": "#eee4d9",
+                    "outline-variant": "#b0b3ae",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#fec3c3",
+                    "surface-container-low": "#f4f4f0",
+                    "secondary": "#56652c",
+                    "primary-fixed-dim": "#efb5b5",
+                    "inverse-surface": "#0d0f0d",
+                    "secondary-dim": "#4a5821",
+                    "surface-bright": "#faf9f6",
+                    "secondary-fixed": "#d9eaa3",
+                    "on-tertiary-fixed": "#4f4941",
+                    "on-primary": "#fff7f6",
+                    "outline": "#797b78",
+                    "on-error": "#fff7f6",
+                    "surface": "#faf9f6",
+                    "on-error-container": "#6e1400",
+                    "error-container": "#fd795a",
+                    "surface-container": "#eeeeea",
+                    "surface-container-highest": "#e1e3de",
+                    "tertiary-fixed": "#fdf2e7",
+                    "primary-fixed": "#fec3c3",
+                    "error": "#a73b21",
+                    "background": "#faf9f6",
+                    "on-primary-container": "#653c3c",
+                    "on-surface": "#303330",
+                    "secondary-container": "#d9eaa3",
+                    "on-surface-variant": "#5d605c",
+                    "error-dim": "#791903"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #faf9f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #303330;
+        }
+        .serif {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 rounded-b-xl bg-[#faf9f6]/80 dark:bg-[#303330]/80 backdrop-blur-xl tonal-shift">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-serif text-[#303330] dark:text-stone-100">StudenzBit</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#805353] dark:text-[#fec3c3] font-bold border-b-2 border-[#805353] pb-1 hover:text-[#805353] transition-colors duration-300" href="#">Destinations</a>
+<a class="text-[#5d605c] dark:text-stone-400 font-sans text-sm hover:text-[#805353] transition-colors duration-300" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
+<a class="text-[#5d605c] dark:text-stone-400 font-sans text-sm hover:text-[#805353] transition-colors duration-300" href="#">Student Toolkit</a>
+<a class="text-[#5d605c] dark:text-stone-400 font-sans text-sm hover:text-[#805353] transition-colors duration-300" href="#">Blog</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-[#5d605c] cursor-pointer">search</span>
+<span class="material-symbols-outlined text-[#5d605c] cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-6">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-widest uppercase">
+                    STUDENT TECH GUIDE
+                </span>
+<h1 class="text-5xl md:text-7xl font-headline font-bold tracking-tight text-on-surface leading-tight">
+                    Every Product <br/><span class="italic">We Recommend</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl font-body leading-relaxed">
+                    Hand-picked for international students — no sponsored garbage, no generic lists. Just what actually works, at every budget.
+                </p>
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-[4/3] rounded-full overflow-hidden shadow-2xl">
+<img alt="Tech Workspace" class="w-full h-full object-cover" data-alt="Minimalist workspace with a laptop, smartphone, and coffee on a clean light wood table with natural sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGo0yQL0mRiOexiUT0zE7ufpogo3Awhc0YPJhTFnsdnbPolAYE9dcBXNk5MUW6lLo9zabB7-ViWrXLm66gPuu4Ig1IX3u48NX2vSe7V-dW2BSFgZ_xwsDc-7-tVLQmcDPQc6VP-hhG_8_JIdeJ3PUghdcyoPNuy-wIObrzrDh33KtD8bkGOHe2wA7MCFTAFnh6liikghM3_Q5sPAzl8Le-Nqp3fyD_mePd2bubmIlMjAaAPg3pWa4xfF67JXmQKe5I6o5tPUGp49Uv"/>
+</div>
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest p-6 rounded-xl shadow-lg border border-outline-variant/10 max-w-[200px]">
+<p class="text-xs font-bold text-primary mb-2 italic">EDITOR'S NOTE</p>
+<p class="text-sm font-body text-on-surface-variant">"We test for global compatibility so you don't have to."</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Filter Bar -->
+<section class="max-w-7xl mx-auto px-6 mb-16 space-y-4">
+<!-- Category -->
+<div class="flex flex-wrap items-center gap-3">
+<span class="text-xs font-bold text-on-surface-variant w-20 uppercase tracking-tighter">Category</span>
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold transition-all">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Smartphones</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Laptops</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">SIM &amp; Data</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Accessories</button>
+</div>
+<!-- Country -->
+<div class="flex flex-wrap items-center gap-3">
+<span class="text-xs font-bold text-on-surface-variant w-20 uppercase tracking-tighter">Country</span>
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold transition-all">Global</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Canada</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">USA</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Australia</button>
+</div>
+<!-- Budget -->
+<div class="flex flex-wrap items-center gap-3">
+<span class="text-xs font-bold text-on-surface-variant w-20 uppercase tracking-tighter">Budget</span>
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold transition-all">All</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Budget Under $500</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Mid-Range $500–$1,000</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Premium $1,000+</button>
+</div>
+</section>
+<!-- Product Grid -->
+<main class="max-w-7xl mx-auto px-6 mb-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-primary-container text-on-primary-container px-3 py-1 rounded-full uppercase">💎 Premium</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">iPhone 17</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">The ultimate flagship with global frequency support for every carrier worldwide.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$1,129</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Smartphone</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full uppercase">⭐ Most Popular</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Google Pixel 10</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">Best-in-class camera and pure Android experience with deep AI integration.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$799</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Smartphone</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full uppercase">💸 Best Value</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Google Pixel 9a</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">All the core Pixel features at a fraction of the cost. Perfect for student budgets.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$499</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Smartphone</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-container text-on-surface-variant px-3 py-1 rounded-full uppercase">🎯 Budget Pick</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Samsung Galaxy A35</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">Reliable performance and great battery life for everyday student tasks.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$399</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Smartphone</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full uppercase">⭐ Most Popular</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">MacBook Air M5</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">The gold standard for portability and power. Silent, fast, and lasts all day.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$1,299</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">CAN / USA</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Laptop</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Product Card 6 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full uppercase">💸 Best Value</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">MacBook Air M4</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">Incredible performance per dollar. Still faster than most new PC laptops.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$1,099</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">CAN / USA</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Laptop</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Product Card 7 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full uppercase">🎮 For Everything</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">HP Pavilion 15</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">A versatile workhorse that handles gaming and intense research with ease.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$999</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Australia</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Laptop</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Product Card 8 -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-container text-on-surface-variant px-3 py-1 rounded-full uppercase">🎯 Budget Pick</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Lenovo IdeaPad Flex 5</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">2-in-1 flexibility for note-taking and streaming on a budget.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$649</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Laptop</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- SIM Section Start -->
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full uppercase">⭐ Most Popular</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Airalo eSIM</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">Instant connectivity upon landing. No more searching for kiosks.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$14</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">SIM</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full uppercase">💸 Unlimited Data</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Holafly eSIM</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">Never worry about data caps again. Truly unlimited roaming.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$27</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">SIM</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full uppercase">💸 Best Value</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Fido 50GB</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">Massive data bucket at a student-friendly monthly price point.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$35/mo</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Canada</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">SIM</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-container text-on-surface-variant px-3 py-1 rounded-full uppercase">🎯 Most Flexible</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Koodo 40GB</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">No long-term contracts. Change or cancel your plan anytime.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$40/mo</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Canada</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">SIM</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full uppercase">⭐ Most Popular</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">T-Mobile Unlimited</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">The choice for students in the USA wanting nationwide 5G coverage.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$50/mo</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">USA</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">SIM</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full uppercase">💸 Best Value</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Optus 40GB</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">High-speed data with great coverage across Australian cities.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$35/mo</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Australia</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">SIM</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-surface-container text-on-surface-variant px-3 py-1 rounded-full uppercase">🎯 Must Have</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Anker 65W Charger</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">One charger for everything. Compact, powerful, and universally compatible.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$35</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Accessory</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="group bg-surface-container-lowest border border-outline-variant/20 rounded-xl p-8 transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full">
+<div class="mb-4">
+<span class="text-xs font-bold bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full uppercase">⭐ Most Popular</span>
+</div>
+<h3 class="text-2xl font-headline font-bold text-on-surface mb-3">Anker 26,800mAh Power Bank</h3>
+<p class="text-on-surface-variant text-sm font-body leading-relaxed mb-6 flex-grow">Charge your phone 5+ times. Essential for long travel days.</p>
+<div class="mb-6">
+<p class="text-2xl font-bold text-primary">$65</p>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Global</span>
+<span class="text-[10px] px-2 py-1 bg-surface-container-low rounded-md text-on-surface-variant font-bold uppercase">Accessory</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-bold transition-all hover:bg-primary-dim flex items-center justify-center gap-2">
+                    View Deal <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom CTA Section -->
+<section class="bg-[#303330] py-24 px-6 overflow-hidden relative">
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center relative z-10">
+<h2 class="text-4xl md:text-5xl font-headline font-bold text-tertiary-fixed mb-6 leading-tight">
+                Not sure where to start?
+            </h2>
+<p class="text-lg text-surface-dim max-w-2xl mb-12 font-body">
+                Read our full, deep-dive guides to understand the technical nuances of each category before you spend a dime.
+            </p>
+<div class="flex flex-col md:flex-row gap-4 w-full justify-center">
+<a class="px-8 py-4 rounded-full border border-tertiary-fixed text-tertiary-fixed font-bold hover:bg-tertiary-fixed hover:text-[#303330] transition-all flex items-center justify-center gap-2" href="smartphone_guide.html">
+                    Read Smartphone Guide <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="px-8 py-4 rounded-full border border-tertiary-fixed text-tertiary-fixed font-bold hover:bg-tertiary-fixed hover:text-[#303330] transition-all flex items-center justify-center gap-2" href="laptop_guide.html">
+                    Read Laptop Guide <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+<a class="px-8 py-4 rounded-full border border-tertiary-fixed text-tertiary-fixed font-bold hover:bg-tertiary-fixed hover:text-[#303330] transition-all flex items-center justify-center gap-2" href="sim_guide.html">
+                    Read SIM Guide <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Decorative abstract shape -->
+<div class="absolute -right-24 -bottom-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-12 px-8 bg-[#eeeeea] dark:bg-[#303330] tonal-shift">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+<p class="font-sans text-xs tracking-wide uppercase text-[#5d605c]">© 2024 StudenzBit. The Scholarly Sanctuary.</p>
+<div class="flex space-x-8">
+<a class="text-[#5d605c] font-sans text-xs uppercase tracking-wide hover:text-[#805353] underline underline-offset-4 transition-all duration-200" href="#">Instagram</a>
+<a class="text-[#5d605c] font-sans text-xs uppercase tracking-wide hover:text-[#805353] underline underline-offset-4 transition-all duration-200" href="#">LinkedIn</a>
+<a class="text-[#5d605c] font-sans text-xs uppercase tracking-wide hover:text-[#805353] underline underline-offset-4 transition-all duration-200" href="#">Newsletter</a>
+</div>
+</div>
+</footer>
+</body></html>
