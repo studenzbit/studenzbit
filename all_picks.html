@@ -96,22 +96,85 @@
         }
     </style>
 </head>
-<body class="bg-background text-on-surface">
+<body class="bg-background text-on-surface" style="padding-top: 72px;">
 <!-- TopNavBar (Shared Component) -->
-<nav class="fixed top-0 w-full z-50 rounded-b-xl bg-[#faf9f6]/80 dark:bg-[#303330]/80 backdrop-blur-xl tonal-shift">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-<div class="text-2xl font-serif text-[#303330] dark:text-stone-100">StudenzBit</div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-[#805353] dark:text-[#fec3c3] font-bold border-b-2 border-[#805353] pb-1 hover:text-[#805353] transition-colors duration-300" href="#">Destinations</a>
-<a class="text-[#5d605c] dark:text-stone-400 font-sans text-sm hover:text-[#805353] transition-colors duration-300" href="studenzbit_tech_hub_updated.html">Tech Hub</a>
-<a class="text-[#5d605c] dark:text-stone-400 font-sans text-sm hover:text-[#805353] transition-colors duration-300" href="#">Student Toolkit</a>
-<a class="text-[#5d605c] dark:text-stone-400 font-sans text-sm hover:text-[#805353] transition-colors duration-300" href="#">Blog</a>
-</div>
-<div class="flex items-center space-x-4">
-<span class="material-symbols-outlined text-[#5d605c] cursor-pointer">search</span>
-<span class="material-symbols-outlined text-[#5d605c] cursor-pointer" data-icon="account_circle">account_circle</span>
-</div>
-</div>
+<nav style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2ddd6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  z-index: 1000;
+  box-sizing: border-box;
+">
+  <!-- Logo -->
+  <a href="studenzbit_home.html" style="text-decoration: none;">
+    <span style="
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: normal;
+      color: #2c2c2c;
+      letter-spacing: -0.3px;
+    ">StudenzBit</span>
+  </a>
+
+  <!-- Nav links -->
+  <div style="display: flex; align-items: center; gap: 36px;">
+    <a href="studenzbit_destinations.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c2c2c;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    ">Destinations</a>
+    <a href="studenzbit_tech_hub_updated.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c2c2c;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    ">Tech Hub</a>
+    <a href="studenzbit_student_toolkit_updated.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c2c2c;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    ">Student Toolkit</a>
+    <a href="studenzbit_blog.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c2c2c;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    ">Blog</a>
+    <a href="all_picks.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #7b3f3f;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border: 1.5px solid #7b3f3f;
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    " onmouseover="this.style.background='#7b3f3f';this.style.color='white'"
+       onmouseout="this.style.background='transparent';this.style.color='#7b3f3f'">
+      All Picks
+    </a>
+  </div>
 </nav>
 <!-- Hero Section -->
 <header class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
