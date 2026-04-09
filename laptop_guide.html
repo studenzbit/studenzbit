@@ -168,33 +168,27 @@
   </div>
 </nav>
 <main class="pt-32">
-<!-- Hero Section -->
-<section class="max-w-7xl mx-auto px-8 mb-28">
-<div class="flex flex-col md:flex-row items-center gap-16">
-<div class="md:w-3/5">
-<span class="uppercase tracking-[0.2em] text-[0.7rem] font-bold text-on-surface-variant mb-6 block">STUDENT TECH GUIDE</span>
-<h1 class="noto-serif text-5xl md:text-7xl italic leading-tight text-on-surface mb-8">The International Student Laptop Guide</h1>
-<p class="plus-jakarta-sans text-lg text-on-surface-variant max-w-xl leading-relaxed mb-10">
-                        Your laptop is your most important tool as a student. Here's exactly what to buy — and what to avoid — based on your budget, degree, and destination.
-                    </p>
-<div class="flex flex-wrap gap-4">
-<a class="bg-primary text-on-primary px-8 py-4 rounded-full font-semibold hover:opacity-90 transition-all flex items-center gap-2" href="#recommendations">
-                            Jump to Recommendations <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</a>
-<a class="border border-primary text-primary px-8 py-4 rounded-full font-semibold hover:bg-primary/5 transition-all flex items-center gap-2" href="#comparison">
-                            Mac vs Windows <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
-</a>
-</div>
-</div>
-<div class="md:w-2/5 relative">
-<div class="aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-high relative">
-<img alt="Modern minimalist workspace" class="w-full h-full object-cover grayscale-[20%] mix-blend-multiply opacity-90" data-alt="Modern minimalist workspace with a sleek laptop, a coffee cup, and soft sunlight filtering through a window on a warm beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARd4zvVofQ_hJv3YppdQU6azN0eh3KQpuTLLmct3si2Az3N5S6N0D5IYYmxx6pPsNCKtPzSCH2GH8-8zT8ZsDpdtowPSqGQLy53yRsXmFyM3JI233I5X5W09DuQY9iOlHReIr_hHAfKZ5bTX8O3xm93uq3pquai2YOf8hp7Lt5IzrPv9GXAb9rwEU8sYIOB-LkzgTRjOFxJwBXqCkFti1ogq1nbn2f9vx0N3-4hYvq8cP6J4bUj2T5u5LDv6qbsrle2ppSmZEN65b2"/>
-</div>
-<div class="absolute -bottom-6 -left-6 bg-primary-container p-6 rounded-xl hidden md:block max-w-[200px]">
-<p class="plus-jakarta-sans text-sm font-bold text-on-primary-container leading-tight">Trusted by 5,000+ students navigating tech abroad.</p>
-</div>
-</div>
-</div>
+<section style="
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 80px 48px;
+  background: #f9f6f2;
+  min-height: 500px;
+">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="laptop_hero.png" alt="International student with laptop" style="width: 100%; max-width: 500px; height: auto; border-radius: 16px; object-fit: cover;">
+  </div>
+  <div>
+    <p style="font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #8c8479; text-transform: uppercase; margin-bottom: 16px;">STUDENT TECH GUIDE</p>
+    <h1 style="font-family: Georgia, serif; font-size: 48px; font-weight: normal; color: #2c2c2c; line-height: 1.15; letter-spacing: -0.5px; margin-bottom: 20px;">The International Student Laptop Guide</h1>
+    <p style="font-family: 'DM Sans', sans-serif; font-size: 16px; color: #8c8479; line-height: 1.7; margin-bottom: 32px; max-width: 480px;">Your laptop is your most important tool as a student. Here's exactly what to buy — and what to avoid — based on your budget, degree, and destination.</p>
+    <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+      <a href="#recommendations" style="display: inline-flex; align-items: center; gap: 8px; background: #7b3f3f; color: white; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 8px; text-decoration: none; transition: background 0.2s ease;" onmouseover="this.style.background='#5a2d2d'" onmouseout="this.style.background='#7b3f3f'">Jump to Recommendations →</a>
+      <a href="#comparison" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #7b3f3f; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 8px; border: 1.5px solid #7b3f3f; text-decoration: none; transition: all 0.2s ease;" onmouseover="this.style.background='#7b3f3f';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='#7b3f3f'">Mac vs Windows →</a>
+    </div>
+  </div>
 </section>
 <!-- The Big Decision Section -->
 <section class="bg-surface-container py-28" id="comparison">
@@ -273,57 +267,164 @@
 </div>
 </div>
 </section>
+<section class="max-w-7xl mx-auto px-8 mb-12">
+<div style="background:#fbf3e4; border-left:4px solid #7b3f3f; border-radius:12px; padding:18px 20px; color:#5d605c;">
+💡 Tip: If your program involves engineering software like AutoCAD, SolidWorks, or MATLAB — check whether it runs on Mac before buying. Some engineering tools are Windows-only or significantly better on Windows.
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 mb-20">
+<p class="uppercase tracking-[0.2em] text-[0.7rem] font-bold text-on-surface-variant mb-4 block">DON'T GET CONFUSED</p>
+<h2 class="noto-serif text-4xl md:text-5xl italic text-on-surface mb-10">The Only Specs That Actually Matter</h2>
+<div class="grid md:grid-cols-2 gap-8">
+  <div style="background:#fff; border:1px solid #e2ddd6; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-4">RAM</h3>
+    <p class="mb-2"><strong>Minimum:</strong> 8GB · <strong>Recommended:</strong> 16GB</p>
+    <p class="mb-2"><strong>Why:</strong> Running multiple tabs, Zoom, and documents needs at least 16GB in 2026</p>
+    <p><strong>Watch out for:</strong> High RAM with slow processor — balance matters</p>
+  </div>
+  <div style="background:#fff; border:1px solid #e2ddd6; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-4">Storage (SSD)</h3>
+    <p class="mb-2"><strong>Minimum:</strong> 256GB · <strong>Recommended:</strong> 512GB</p>
+    <p class="mb-2"><strong>Why:</strong> OS + apps take ~100GB, you need room for files and projects</p>
+    <p><strong>Watch out for:</strong> HDD drives — always get SSD, it's 10x faster</p>
+  </div>
+  <div style="background:#fff; border:1px solid #e2ddd6; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-4">Battery Life</h3>
+    <p class="mb-2"><strong>Minimum:</strong> 8 hours · <strong>Recommended:</strong> 12+ hours real-world</p>
+    <p class="mb-2"><strong>Why:</strong> Lectures, libraries, cafes — you won't always have a power outlet</p>
+    <p><strong>Watch out for:</strong> Manufacturer claims are 30% higher than real-world usage</p>
+  </div>
+  <div style="background:#fff; border:1px solid #e2ddd6; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-4">Display</h3>
+    <p class="mb-2"><strong>Minimum:</strong> 1080p Full HD · <strong>Recommended:</strong> 1440p or Retina</p>
+    <p class="mb-2"><strong>Why:</strong> You'll stare at this 8+ hours a day — your eyes will thank you</p>
+    <p><strong>Watch out for:</strong> 4K on a 13" screen — you won't notice the difference</p>
+  </div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 mb-12">
+<div style="background:#fbf3e4; border-left:4px solid #7b3f3f; border-radius:12px; padding:18px 20px; color:#5d605c;">
+💡 Tip: Don't buy a laptop with less than 16GB RAM in 2026. 8GB feels fine at first but struggles with multiple browser tabs, video calls, and assignments open simultaneously. Future-proof yourself.
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 mb-16">
+<p class="uppercase tracking-[0.2em] text-[0.7rem] font-bold text-on-surface-variant mb-4 block">FIND YOUR RANGE</p>
+<h2 class="noto-serif text-4xl md:text-5xl italic text-on-surface mb-10">What Can You Get at Each Budget?</h2>
+<div class="grid md:grid-cols-3 gap-6">
+  <div style="background:#ebf2f7; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-4">Budget — Under $800</h3>
+    <p class="mb-2"><strong>Products:</strong> Lenovo IdeaPad Flex 5 ($649) · HP Pavilion 15 ($699) · Acer Aspire 5 ($549)</p>
+    <p class="mb-2"><strong>What you get:</strong> Solid for notes, documents, browsing, light coding</p>
+    <p class="mb-2"><strong>What you miss:</strong> Premium build, long battery, great display</p>
+    <p><strong>Best for:</strong> Arts, business, humanities students</p>
+  </div>
+  <div style="background:#edf4ed; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-2">Mid-Range — $800–$1,300</h3>
+    <p class="text-sm font-bold text-[#4a7a4a] mb-3">⭐ Sweet Spot</p>
+    <p class="mb-2"><strong>Products:</strong> MacBook Air M4 ($1,099) · Dell XPS 13 ($999) · ASUS ZenBook 14 ($899)</p>
+    <p class="mb-2"><strong>What you get:</strong> Premium build, long battery, 4–5 years of performance</p>
+    <p class="mb-2"><strong>What you miss:</strong> The absolute cutting edge</p>
+    <p><strong>Best for:</strong> Most students — this is the sweet spot</p>
+  </div>
+  <div style="background:#f5ede0; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-4">Premium — $1,300+</h3>
+    <p class="mb-2"><strong>Products:</strong> MacBook Air M5 ($1,299) · MacBook Pro M4 ($1,599) · Dell XPS 15 ($1,499)</p>
+    <p class="mb-2"><strong>What you get:</strong> Best-in-class everything — battery, display, performance, longevity</p>
+    <p><strong>Best for:</strong> Design, video editing, heavy coding, students keeping laptops 5+ years</p>
+  </div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 mb-12">
+<div style="background:#fbf3e4; border-left:4px solid #7b3f3f; border-radius:12px; padding:18px 20px; color:#5d605c;">
+💡 Tip: Check the Apple Education Store (apple.com/education) and Dell University Portal before buying. Apple offers up to $200 off MacBooks for students with a valid university email. Never pay full price.
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 mb-24">
+<p class="uppercase tracking-[0.2em] text-[0.7rem] font-bold text-on-surface-variant mb-4 block">SAVE MONEY SMARTLY</p>
+<h2 class="noto-serif text-4xl md:text-5xl italic text-on-surface mb-10">Should You Buy New or Refurbished?</h2>
+<div class="grid md:grid-cols-2 gap-8">
+  <div style="background:#f5ede0; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-4">Buy New</h3>
+    <p class="mb-2">Full manufacturer warranty (1–3 years)</p>
+    <p class="mb-2">Latest model, perfect condition</p>
+    <p class="mb-2"><strong>Best for:</strong> MacBooks — resale value justifies buying new</p>
+    <p><strong>Verdict:</strong> ✅ Recommended for MacBooks</p>
+  </div>
+  <div style="background:#edf4ed; border-radius:12px; padding:22px;">
+    <h3 class="noto-serif text-2xl mb-4">Certified Refurbished</h3>
+    <p class="mb-2">Usually 1-year warranty from seller</p>
+    <p class="mb-2">Like new — tested and certified</p>
+    <p class="mb-2">20–40% cheaper than new</p>
+    <p class="mb-2"><strong>Where to buy:</strong> Apple Certified Refurbished (apple.com/shop/refurbished), Best Buy Open-Box, Amazon Renewed</p>
+    <p class="mb-2"><strong>Best for:</strong> Windows laptops — save $200–400</p>
+    <p><strong>Verdict:</strong> ✅ Great option for Windows laptops</p>
+  </div>
+</div>
+</section>
 <!-- Bento Recommendations Section -->
-<section class="py-28 max-w-7xl mx-auto px-8" id="recommendations">
+<section class="py-20 max-w-7xl mx-auto px-8" id="recommendations">
 <div class="mb-16">
-<span class="uppercase tracking-[0.2em] text-[0.7rem] font-bold text-on-surface-variant mb-4 block">RECOMMENDATIONS</span>
-<h2 class="noto-serif text-4xl md:text-5xl italic text-on-surface">Curated Student Toolkits</h2>
+<span class="uppercase tracking-[0.2em] text-[0.7rem] font-bold text-on-surface-variant mb-4 block">TOP PICKS FOR 2026</span>
+<h2 class="noto-serif text-4xl md:text-5xl italic text-on-surface">Our Top Laptop Picks for International Students</h2>
+<p class="text-on-surface-variant mt-4">Every recommendation based on battery life, build quality, student use case, and value over 3+ years.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-8 h-auto">
-<!-- Large Card: Creative/Business -->
-<div class="md:col-span-4 bg-surface-container-low p-10 rounded-xl flex flex-col justify-between">
-<div>
-<h3 class="noto-serif text-2xl font-bold mb-4">The Creative Powerhouse</h3>
-<p class="text-on-surface-variant mb-6">Designed for students in Marketing, Architecture, or Computer Science who need reliable multitasking.</p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="bg-surface-container-highest px-3 py-1 rounded-full text-xs font-semibold">MacBook Pro 14"</span>
-<span class="bg-surface-container-highest px-3 py-1 rounded-full text-xs font-semibold">M3 Chip</span>
-<span class="bg-surface-container-highest px-3 py-1 rounded-full text-xs font-semibold">16GB RAM</span>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="bg-surface-container-low p-8 rounded-xl flex flex-col h-full">
+    <div class="mb-3"><span style="background:#fbf3e4; border-radius:999px; padding:6px 10px; font-size:11px; font-weight:700;">⭐ Most Popular</span></div>
+    <h3 class="noto-serif text-3xl mb-2">MacBook Air M5</h3>
+    <p class="font-bold text-primary mb-4">$1,299</p>
+    <p class="text-on-surface-variant mb-4">Lightweight, ultra-powered, all-day battery. The unanimous student favourite for a reason — buy it once, use it through graduation and beyond.</p>
+    <p class="text-sm text-on-surface-variant mb-5">13.6&quot; Liquid Retina · M5 chip · 16GB RAM · 18hr battery</p>
+    <img src="laptop_macair_m5.png" alt="MacBook Air M5" style="width:100%; height:220px; object-fit:contain; border-radius:10px; margin-bottom:16px;">
+    <a class="text-primary font-bold" href="#">View Deal →</a>
+  </div>
+  <div class="bg-surface-container-low p-8 rounded-xl flex flex-col h-full">
+    <div class="mb-3"><span style="background:#edf4ed; border-radius:999px; padding:6px 10px; font-size:11px; font-weight:700;">💸 Best Value</span></div>
+    <h3 class="noto-serif text-3xl mb-2">MacBook Air M4</h3>
+    <p class="font-bold text-primary mb-4">$1,099</p>
+    <p class="text-on-surface-variant mb-4">MacBook quality without the M5 price tag. Near-identical performance for most students — the smart buy if you're budget-conscious but want Apple quality.</p>
+    <p class="text-sm text-on-surface-variant mb-5">13.6&quot; Liquid Retina · M4 chip · 16GB RAM · 18hr battery</p>
+    <img src="laptop_macair_m4.png" alt="MacBook Air M4" style="width:100%; height:220px; object-fit:contain; border-radius:10px; margin-bottom:16px;">
+    <a class="text-primary font-bold" href="#">View Deal →</a>
+  </div>
+  <div class="bg-surface-container-low p-8 rounded-xl flex flex-col h-full">
+    <div class="mb-3"><span style="background:#ebf2f7; border-radius:999px; padding:6px 10px; font-size:11px; font-weight:700;">🎮 For Everything</span></div>
+    <h3 class="noto-serif text-3xl mb-2">HP Pavilion 15</h3>
+    <p class="font-bold text-primary mb-4">$999</p>
+    <p class="text-on-surface-variant mb-4">The dependable Windows workhorse. More ports, better gaming, and solid performance for students who need Windows-specific software.</p>
+    <p class="text-sm text-on-surface-variant mb-5">15.6&quot; FHD · Intel Core i7 · 16GB RAM · 512GB SSD · 10hr battery</p>
+    <img src="laptop_hp_pavilion.png" alt="HP Pavilion 15" style="width:100%; height:220px; object-fit:contain; border-radius:10px; margin-bottom:16px;">
+    <a class="text-primary font-bold" href="#">View Deal →</a>
+  </div>
+  <div class="bg-surface-container-low p-8 rounded-xl flex flex-col h-full">
+    <div class="mb-3"><span style="background:#f0edf8; border-radius:999px; padding:6px 10px; font-size:11px; font-weight:700;">🎯 Budget Pick</span></div>
+    <h3 class="noto-serif text-3xl mb-2">Lenovo IdeaPad Flex 5</h3>
+    <p class="font-bold text-primary mb-4">$649</p>
+    <p class="text-on-surface-variant mb-4">Solid Windows performance at the lowest price point. Perfect for humanities, business, and students who need a reliable laptop without financial stress.</p>
+    <p class="text-sm text-on-surface-variant mb-5">14&quot; FHD Touch · AMD Ryzen 5 · 8GB RAM · 256GB SSD · 8hr battery</p>
+    <img src="laptop_lenovo_flex.png" alt="Lenovo IdeaPad Flex 5" style="width:100%; height:220px; object-fit:contain; border-radius:10px; margin-bottom:16px;">
+    <a class="text-primary font-bold" href="#">View Deal →</a>
+  </div>
 </div>
+</section>
+<section class="max-w-7xl mx-auto px-8 mb-16">
+<div style="background:#f5ede0; border:1px solid #e2ddd6; border-radius:12px; padding:24px;">
+  <h3 class="noto-serif text-3xl mb-6">🛡️ PROTECT YOUR LAPTOP</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:10px; padding:18px;"><p style="font-weight:700; margin-bottom:8px;">AppleCare+</p><p style="font-size:13px; color:#8c8479; line-height:1.6;">Covers accidental damage and repairs. $4–9/month or ~$249 upfront. Worth it for MacBooks — repairs without AppleCare can cost $500+.</p></div>
+    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:10px; padding:18px;"><p style="font-weight:700; margin-bottom:8px;">Carrier / Credit Card Insurance</p><p style="font-size:13px; color:#8c8479; line-height:1.6;">Some credit cards like Amex Cobalt offer extended warranty and purchase protection on electronics. Check your card benefits before paying separately.</p></div>
+    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:10px; padding:18px;"><p style="font-weight:700; margin-bottom:8px;">A Good Case</p><p style="font-size:13px; color:#8c8479; line-height:1.6;">Seriously underrated. A $30 sleeve or hardshell case prevents 80% of laptop damage. Don't skip this. Your laptop is going in a bag every single day.</p></div>
+  </div>
+  <p style="font-size:12px; color:#7b3f3f; margin-top:16px; font-weight:600;">⚠️ Laptop theft happens in libraries and cafes — never leave your laptop unattended, even for 2 minutes.</p>
 </div>
-<img alt="Laptop on desk" class="rounded-lg h-48 object-cover mt-4" data-alt="High-end laptop displayed on a clean wooden desk with a minimalist desk lamp and architectural sketches nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk-0dcTZrA7_BuD82ypBSBjOC2l-DKb8JK2ufrGfYnW6LiIR-8hASBWyPYGUbHLO-tX28upf8-vdhdS3jmAgfnH4olvd_qXjRZITCWrCvVzfyuWB6l4198UR2vbft_71nWI6LaxMR6ujReZ6paczYOvqMNMjDcQV6DNZpbW1GGVH3hMDzafAIlfnTlaxqv78YpLByFEnFFjiyxRjPU_q69cqyympNF8TZndq1IRUKej_meYcpzeR_7lYgO65ot9w2Pm5GRN_I0GqZV"/>
-</div>
-<!-- Vertical Card: Budget -->
-<div class="md:col-span-2 md:row-span-2 bg-[#fdf2e7] p-10 rounded-xl flex flex-col">
-<h3 class="noto-serif text-2xl font-bold mb-4">Budget King</h3>
-<p class="text-on-surface-variant mb-8">Best value for humanities, business, and general study without breaking the bank.</p>
-<div class="flex-grow space-y-6">
-<div class="p-4 bg-white/50 rounded-lg">
-<p class="font-bold text-sm">MacBook Air M1/M2</p>
-<p class="text-xs text-on-surface-variant">The absolute standard for most students. Incredible battery.</p>
-</div>
-<div class="p-4 bg-white/50 rounded-lg">
-<p class="font-bold text-sm">ASUS Vivobook 15</p>
-<p class="text-xs text-on-surface-variant">Great screen for the price, excellent port selection.</p>
-</div>
-</div>
-<div class="mt-8 pt-8 border-t border-on-surface-variant/10">
-<p class="text-xs font-bold uppercase tracking-widest mb-2">Student Tip</p>
-<p class="text-sm italic">"Always check the Apple Education Store or Dell University portal for 10% student discounts before buying."</p>
-</div>
-</div>
-<!-- Small Card: Engineering -->
-<div class="md:col-span-2 bg-surface-container-low p-10 rounded-xl">
-<h3 class="noto-serif text-xl font-bold mb-3">STEM &amp; Engineering</h3>
-<p class="text-sm text-on-surface-variant">Must run CAD, MATLAB, or heavy simulations.</p>
-<p class="mt-4 font-bold text-primary">Dell XPS 15 or Lenovo Legion</p>
-</div>
-<!-- Small Card: Portability -->
-<div class="md:col-span-2 bg-primary-container p-10 rounded-xl">
-<h3 class="noto-serif text-xl font-bold mb-3 text-on-primary-container">Ultra-Portable</h3>
-<p class="text-sm text-on-primary-container/80">For those always on the move between campus and cafes.</p>
-<p class="mt-4 font-bold text-on-primary-container">iPad Pro with Magic Keyboard</p>
-</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 mb-20">
+<div style="background:#fbf3e4; padding:48px; border-radius:16px; margin:40px 0;">
+  <h3 class="noto-serif text-4xl mb-6">Buy for Your Degree. Not Your Classmate's Setup.</h3>
+  <p class="text-on-surface-variant mb-4">You'll walk into your first lecture and see MacBook Pros, gaming laptops, and setups that cost $3,000. Here's what nobody says out loud — most of those students are in debt or got it as a gift.</p>
+  <p class="text-on-surface-variant mb-4">Your job is to study, not to have the best setup in the room. A $700 Windows laptop running at full speed beats a $1,500 laptop you're stressed about paying off every month.</p>
+  <p class="text-on-surface-variant mb-8">Buy what you need for your degree. Upgrade when you're earning. The laptop doesn't make the student — the student makes the student.</p>
+  <p style="color:#7b3f3f; font-style:italic; font-size:24px;">"The best laptop is the one that doesn't stress your finances."</p>
 </div>
 </section>
 <!-- Newsletter / CTA -->
@@ -331,11 +432,12 @@
 <div class="bg-inverse-surface rounded-xl p-12 md:p-20 text-center relative overflow-hidden">
 <div class="relative z-10">
 <h2 class="noto-serif text-3xl md:text-5xl text-surface mb-6">Need a custom recommendation?</h2>
-<p class="plus-jakarta-sans text-surface/70 mb-10 max-w-xl mx-auto">Join 12,000+ students in our weekly newsletter for the best tech deals and student life hacks abroad.</p>
-<form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+<p class="plus-jakarta-sans text-surface/70 mb-10 max-w-xl mx-auto">Stay updated on the best student tech deals.</p>
+<div class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
 <input class="flex-grow px-6 py-4 rounded-full bg-surface-container-lowest text-on-surface border-none focus:ring-2 focus:ring-primary" placeholder="Your university email" type="email"/>
-<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold hover:opacity-90 transition-all" type="submit">Subscribe</button>
-</form>
+<a class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold hover:opacity-90 transition-all inline-block text-center" href="sim_guide.html">Read the SIM &amp; Data Guide →</a>
+</div>
+<p class="mt-6"><a class="text-surface/80 hover:text-surface" href="studenzbit_tech_hub_updated.html">← Back to Tech Hub</a></p>
 </div>
 <!-- Abstract background element -->
 <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
