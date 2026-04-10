@@ -174,15 +174,15 @@
 <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
                 Navigating international student life with precision. Expert-led guides for your journey across borders, campuses, and careers.
             </p>
-<div class="mt-10 flex flex-wrap gap-3 overflow-x-auto pb-2 scrollbar-hide">
-<button class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-medium transition-colors">All</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Canada</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">USA</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Australia</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Career</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Finance</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Tech</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high text-sm font-medium transition-colors">Student Life</button>
+<div class="mt-10 flex flex-wrap gap-3 overflow-x-auto pb-2 scrollbar-hide" aria-hidden="true">
+<span class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-medium transition-colors">All</span>
+<span class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium transition-colors">Canada</span>
+<span class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium transition-colors">USA</span>
+<span class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium transition-colors">Australia</span>
+<span class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium transition-colors">Career</span>
+<span class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium transition-colors">Finance</span>
+<span class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium transition-colors">Tech</span>
+<span class="px-6 py-2 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium transition-colors">Student Life</span>
 </div>
 </header>
 <!-- Featured Article -->
@@ -213,15 +213,35 @@
 <section class="mb-24">
 <div class="flex justify-between items-end mb-10">
 <h3 class="font-headline text-3xl font-bold">Latest Dispatches</h3>
-<a class="text-primary font-label text-sm font-bold uppercase tracking-wider" href="studenzbit_blog.html">View All</a>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-surface-container-low rounded-16px p-5 md:p-6 mb-10 border border-outline-variant/20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<input id="blog-search" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full px-5 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none text-sm" placeholder="Search by title keyword" type="text"/>
+<select id="blog-category" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full px-5 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none text-sm">
+<option value="all">All</option>
+<option value="canada">Canada</option>
+<option value="usa">USA</option>
+<option value="australia">Australia</option>
+<option value="career">Career</option>
+<option value="finance">Finance</option>
+<option value="tech">Tech</option>
+<option value="student-life">Student Life</option>
+<option value="featured">Featured</option>
+</select>
+<select id="blog-sort" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full px-5 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none text-sm">
+<option value="newest">Newest First</option>
+<option value="oldest">Oldest First</option>
+<option value="popular">Popular</option>
+</select>
+</div>
+</div>
+<div id="dispatches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Card 1 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="finance canada featured" data-date="2026-04-08" data-popularity="94">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
 <div class="p-8">
 <span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">FINANCE · CANADA</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">5 Banks Every International Student Should Know About in Canada</h4>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">5 Banks Every International Student Should Know About in Canada</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>TD, RBC, Scotiabank - which one is actually best for you?</span>
 <span>·</span>
@@ -231,11 +251,11 @@
 </div>
 </article>
 <!-- Card 2 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="tech featured" data-date="2026-04-02" data-popularity="88">
 <div class="h-4 bg-[#fec3c3] p-0"></div>
 <div class="p-8">
-<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">TECH • GLOBAL</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Mac vs Windows: What Students Actually Say After 1 Year</h4>
+<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">TECH · FEATURED</span>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Mac vs Windows: What Students Actually Say After 1 Year</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>We asked 50 international students. Here's what they wish they knew before buying.</span>
 <span>·</span>
@@ -245,11 +265,11 @@
 </div>
 </article>
 <!-- Card 3 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="career canada" data-date="2026-03-26" data-popularity="82">
 <div class="h-4 bg-[#eee4d9] p-0"></div>
 <div class="p-8">
 <span class="text-tertiary font-label text-[10px] font-bold tracking-widest mb-3 block">CAREER · CANADA</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">How I Got My First Job in Toronto on a Study Permit</h4>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">How I Got My First Job in Toronto on a Study Permit</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>The exact steps, the LinkedIn strategy, and the one email template that worked.</span>
 <span>·</span>
@@ -259,11 +279,11 @@
 </div>
 </article>
 <!-- Card 4 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="finance canada student-life" data-date="2026-03-18" data-popularity="78">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
 <div class="p-8">
-<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">CANADA</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">The Honest Cost of Living in Vancouver in 2026</h4>
+<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">FINANCE · CANADA</span>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">The Honest Cost of Living in Vancouver in 2026</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>Rent, groceries, transit, and the hidden costs nobody warns you about.</span>
 <span>·</span>
@@ -273,11 +293,11 @@
 </div>
 </article>
 <!-- Card 5 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="tech canada usa australia featured" data-date="2026-03-10" data-popularity="96">
 <div class="h-4 bg-[#fec3c3] p-0"></div>
 <div class="p-8">
-<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">TECH • GLOBAL</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">eSIM vs Local SIM: Which Should You Get Before Landing?</h4>
+<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">TECH · FEATURED</span>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">eSIM vs Local SIM: Which Should You Get Before Landing?</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>Don't wait until you land. Here's the exact eSIM setup that works in Canada, USA and Australia.</span>
 <span>·</span>
@@ -287,11 +307,11 @@
 </div>
 </article>
 <!-- Card 6 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="australia student-life" data-date="2026-03-01" data-popularity="73">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
 <div class="p-8">
-<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">AUSTRALIA</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Student Housing in Sydney: What I Wish I Knew</h4>
+<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">STUDENT LIFE · AUSTRALIA</span>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Student Housing in Sydney: What I Wish I Knew</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>The suburbs, the scams, and the Facebook groups that actually have real listings.</span>
 <span>·</span>
@@ -301,11 +321,11 @@
 </div>
 </article>
 <!-- Card 7 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="career canada featured" data-date="2026-02-22" data-popularity="92">
 <div class="h-4 bg-[#eee4d9] p-0"></div>
 <div class="p-8">
 <span class="text-tertiary font-label text-[10px] font-bold tracking-widest mb-3 block">CAREER · CANADA</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">How to Write a Canadian Resume (With Template)</h4>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">How to Write a Canadian Resume (With Template)</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>Canadian resumes are different. No photos, no DOB, different formatting. Here's exactly what to do.</span>
 <span>·</span>
@@ -315,11 +335,11 @@
 </div>
 </article>
 <!-- Card 8 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="usa student-life featured" data-date="2026-02-15" data-popularity="90">
 <div class="h-4 bg-[#fec3c3] p-0"></div>
 <div class="p-8">
-<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">USA</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">US Student Visa F-1: The Complete 2026 Guide</h4>
+<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">STUDENT LIFE · USA</span>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">US Student Visa F-1: The Complete 2026 Guide</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>From DS-160 to SEVIS, port of entry to OPT - everything in one place.</span>
 <span>·</span>
@@ -329,11 +349,11 @@
 </div>
 </article>
 <!-- Card 9 -->
-<article class="bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500">
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="finance canada" data-date="2026-02-05" data-popularity="84">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
 <div class="p-8">
 <span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">FINANCE · CANADA</span>
-<h4 class="font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Building Credit in Canada as an International Student</h4>
+<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Building Credit in Canada as an International Student</h4>
 <div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
 <span>You have zero credit history. Here's how to build it fast - starting from day one.</span>
 <span>·</span>
@@ -343,6 +363,63 @@
 </div>
 </article>
 </div>
+<script>
+  (function () {
+    const searchInput = document.getElementById("blog-search");
+    const categorySelect = document.getElementById("blog-category");
+    const sortSelect = document.getElementById("blog-sort");
+    const grid = document.getElementById("dispatches-grid");
+    if (!searchInput || !categorySelect || !sortSelect || !grid) return;
+
+    const cards = Array.from(grid.querySelectorAll(".blog-card"));
+    const originalIndex = new Map(cards.map((card, idx) => [card, idx]));
+
+    function applyFilters() {
+      const q = searchInput.value.trim().toLowerCase();
+      const cat = categorySelect.value;
+      const sort = sortSelect.value;
+
+      cards.forEach((card) => {
+        const title = (card.querySelector(".blog-title")?.textContent || "").toLowerCase();
+        const categories = (card.dataset.category || "").toLowerCase().split(/\s+/).filter(Boolean);
+        const matchesSearch = q === "" || title.includes(q);
+        const matchesCategory = cat === "all" || categories.includes(cat);
+        const show = matchesSearch && matchesCategory;
+
+        card.style.transition = "opacity 220ms ease, transform 220ms ease";
+        if (show) {
+          card.style.display = "";
+          requestAnimationFrame(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+            card.style.pointerEvents = "auto";
+          });
+        } else {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(6px)";
+          card.style.pointerEvents = "none";
+          setTimeout(() => {
+            if (card.style.opacity === "0") card.style.display = "none";
+          }, 220);
+        }
+      });
+
+      const visible = cards.filter((c) => c.style.display !== "none");
+      visible.sort((a, b) => {
+        if (sort === "oldest") return a.dataset.date.localeCompare(b.dataset.date);
+        if (sort === "popular") return Number(b.dataset.popularity || 0) - Number(a.dataset.popularity || 0);
+        if (sort === "newest") return b.dataset.date.localeCompare(a.dataset.date);
+        return originalIndex.get(a) - originalIndex.get(b);
+      });
+      visible.forEach((card) => grid.appendChild(card));
+    }
+
+    searchInput.addEventListener("input", applyFilters);
+    categorySelect.addEventListener("change", applyFilters);
+    sortSelect.addEventListener("change", applyFilters);
+    applyFilters();
+  })();
+</script>
 </section>
 <!-- Newsletter Strip -->
 <section class="mb-24">
