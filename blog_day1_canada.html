@@ -8,22 +8,32 @@
   <style>
     .blog-wrap { max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
     @media (min-width: 768px) { .blog-wrap { padding-left: 48px; padding-right: 48px; } }
-    .char-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-    @media (min-width: 768px) { .char-grid { grid-template-columns: 1fr 1fr; } }
+    .char-grid { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: stretch; }
+    @media (min-width: 768px) { .char-grid { grid-template-columns: 1fr 44px 1fr; gap: 24px; } }
     .res-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 640px) { .res-grid { grid-template-columns: 1fr 1fr; } }
     .res-card { background: #fff; border: 1px solid #e2ddd6; border-radius: 12px; padding: 20px; text-decoration: none; color: inherit; display: block; transition: transform 0.2s ease; }
     .res-card:hover { transform: translateY(-4px); }
-    .cmp-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid #e2ddd6; }
-    .cmp-table { width: 100%; border-collapse: collapse; font-family: 'DM Sans', sans-serif; font-size: 14px; }
-    .cmp-table th, .cmp-table td { border: 1px solid #e2ddd6; padding: 14px 18px; vertical-align: top; }
-    .cmp-table thead th { background: #7b3f3f; color: #fff; font-weight: 600; }
-    .cmp-table tbody tr:nth-child(odd) td { background: #fff; }
-    .cmp-table tbody tr:nth-child(even) td { background: #faf8f5; }
-    .cmp-table td:first-child { font-weight: 600; background: #faf8f5 !important; }
+    .chapter-divider { display: grid; grid-template-columns: 180px 1fr; align-items: center; gap: 32px; }
+    @media (max-width: 700px) {
+      .chapter-divider { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    }
+    .whats-next-cta { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; }
+    @media (max-width: 640px) {
+      .whats-next-cta { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    }
   </style>
 </head>
 <body style="margin:0; padding:0; padding-top:72px; background:#f9f6f2; font-family:'DM Sans',sans-serif; color:#2c2c2c;">
+<div id="progress-bar" style="position:fixed; top:0; left:0; height:3px; width:0%; background:#7b3f3f; z-index:9999; transition:width 0.1s ease;"></div>
+<script>
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = docHeight <= 0 ? 0 : Math.min(100, (scrollTop / docHeight) * 100);
+    document.getElementById('progress-bar').style.width = progress + '%';
+  });
+</script>
 
 <!-- TopNavBar -->
 <nav style="position:fixed; top:0; left:0; right:0; height:72px; background:#ffffff; border-bottom:1px solid #e2ddd6; display:flex; align-items:center; justify-content:space-between; padding:0 48px; z-index:1000; box-sizing:border-box;">
@@ -50,6 +60,8 @@
       <span>8 min read</span>
       <span>·</span>
       <span>Arrival · Canada</span>
+      <span>·</span>
+      <span>April 2026</span>
     </div>
   </div>
 </section>
@@ -64,6 +76,7 @@
         <p style="font-size:12px; color:#8c8479; margin:4px 0;">Mumbai → Toronto</p>
         <p style="font-size:13px; color:#7b3f3f; font-style:italic; margin-top:8px;">&quot;I&apos;ll figure it out when I get there.&quot;</p>
       </div>
+      <div style="display:flex; align-items:center; justify-content:center; font-family:Georgia,serif; font-size:22px; font-weight:bold; color:#7b3f3f; background:#f5ede0; border:2px solid #e2ddd6; border-radius:50%; width:44px; height:44px; flex-shrink:0; align-self:center; margin:0 auto;">VS</div>
       <div style="background:#f0edf8; border-radius:12px; padding:20px; text-align:center;">
         <img src="Priya_Normal.png" alt="Priya" style="height:100px; width:auto; margin-bottom:12px;">
         <p style="font-family:Georgia,serif; font-size:18px; font-weight:600; color:#2c2c2c; margin:0;">Priya</p>
@@ -77,7 +90,7 @@
 
 <!-- THE SETUP -->
 <section class="blog-wrap" style="padding:40px 48px; max-width:720px;">
-  <p style="font-size:11px; letter-spacing:0.14em; color:#8c8479; font-weight:700; text-transform:uppercase; margin:0 0 12px;">THE SETUP</p>
+  <span style="display:inline-block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.14em; padding:5px 14px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:16px; text-transform:uppercase;">✈️ The Setup</span>
   <div style="font-family:Georgia,'Cormorant Garamond',serif; font-size:18px; color:#2c2c2c; line-height:1.8;">
     <p style="margin:0 0 1em;">Flight AC044 from Delhi touches down at Toronto Pearson International Airport at 6:47am.</p>
     <p style="margin:0 0 1em;">Both Arjun and Priya are on it.</p>
@@ -88,11 +101,14 @@
 
 <!-- ARJUN -->
 <section class="blog-wrap" style="max-width:720px; padding:0 48px 24px;">
-  <div style="background:#fbf3e4; border-left:4px solid #7b3f3f; border-radius:0 8px 8px 0; padding:16px 20px; margin-bottom:24px; display:flex; align-items:center; gap:14px;">
-    <img src="Arjun_Confused.png" alt="" style="height:56px; width:auto;">
+<div style="background:rgba(255,200,150,0.08); border-left:4px solid #D4A876; padding:32px 40px; margin:32px 0; border-radius:0 16px 16px 0;">
+  <div class="chapter-divider" style="background:#fbf3e4; border-left:5px solid #D4A876; border-radius:0 16px 16px 0; padding:28px 36px; margin:0 0 32px 0; min-height:180px;">
+    <img src="Arjun_Sad2.png" alt="" style="height:140px; width:auto; object-fit:contain;">
     <div>
-      <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#7b3f3f; text-transform:uppercase; margin:0;">Arjun&apos;s Story</p>
-      <p style="font-size:16px; font-family:Georgia,serif; color:#2c2c2c; margin:4px 0 0;">Mumbai → Toronto</p>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.14em; color:#7b3f3f; text-transform:uppercase; margin:0 0 8px;">🧳 Chapter One</p>
+      <p style="font-family:Georgia,serif; font-size:32px; color:#2c2c2c; margin:0 0 8px; line-height:1.2;">Arjun&apos;s Story</p>
+      <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#8c8479; margin:0 0 10px;">Mumbai → Toronto</p>
+      <p style="font-family:Georgia,serif; font-size:15px; color:#7b3f3f; font-style:italic; margin:0;">&quot;I&apos;ll figure it out when I get there.&quot;</p>
     </div>
   </div>
   <div style="font-size:16px; line-height:1.8; color:#2c2c2c;">
@@ -121,56 +137,54 @@
     <p style="margin:0 0 1em;">It&apos;s December. It&apos;s -6°C. He&apos;s wearing a hoodie under a thin jacket he bought in Mumbai. He shivers the entire time they load the bags.</p>
     <p style="margin:0 0 1em;">Arjun arrives at his residence at 11:30am. Four hours and forty-seven minutes from landing.</p>
     <p style="margin:0 0 1em;">He sits on the floor of his empty room, still cold, completely drained, and stares at the ceiling.</p>
-    <p style="margin:0 0 1em;">&apos;Why did nobody tell me any of this? At least I made it...&apos;</p>
     <p style="margin:0;">He goes to sleep.</p>
+    <blockquote style="border-left:4px solid #D4A876; margin:32px 0; padding:16px 24px; background:rgba(255,200,150,0.08); border-radius:0 8px 8px 0;">
+      <p style="font-family:Georgia,serif; font-size:22px; color:#2c2c2c; font-style:italic; line-height:1.5; margin:0 0 8px 0;">&quot;Why did nobody tell me any of this? At least I made it...&quot;</p>
+      <cite style="font-family:'DM Sans',sans-serif; font-size:12px; color:#8c8479; font-style:normal;">— Arjun, 11:30am, Day 1</cite>
+    </blockquote>
   </div>
-</section>
 
-<!-- WHAT ARJUN SHOULD HAVE DONE -->
-<div class="blog-wrap" style="max-width:720px; margin:32px auto;">
-  <div style="background:#f9f6f2; border:1px solid #e2ddd6; border-left:4px solid #c4a0a0; border-radius:0 12px 12px 0; padding:24px;">
+  <div style="background:#fff5f5; border-left:4px solid #c0392b; border-radius:0 12px 12px 0; padding:24px; margin:24px 0;">
     <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
       <img src="Arjun_Idea.png" alt="" style="height:48px; width:auto;">
-      <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#7b3f3f; text-transform:uppercase; margin:0;">⚠️ What Arjun Should Have Done</p>
+      <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#c0392b; text-transform:uppercase; margin:0;">⚠️ What Arjun Should Have Done</p>
     </div>
-    <ul style="margin:0; padding-left:20px; font-size:14px; line-height:1.8; color:#2c2c2c;">
-      <li>Print your documents — LOA, LOI, Confirmation of Enrollment, proof of funds. One printed folder. Black and white is fine. Don&apos;t rely on cloud storage at a foreign airport on two bars of WiFi.</li>
-      <li>Check your study permit expiry date before you walk away from the immigration counter. The officer can extend it right there if you ask politely.</li>
-      <li>Complete ArriveCAN before you fly — 10 minutes on your phone the night before saves you a 25-minute paper queue on arrival.</li>
-      <li>Understand that &quot;first month free&quot; is not free — postpaid plans continue billing unless you call and cancel. Set a calendar reminder for Day 25.</li>
-      <li>Pack a winter jacket, gloves, and beanie in your carry-on — not your checked bag. Canada in December is not cold. It&apos;s a different category of cold.</li>
-      <li>Pre-book your airport pickup — if someone is collecting you, tell them immigration takes 45–90 minutes. Coordinate properly.</li>
+    <ul style="list-style:none; padding:0; margin:0;">
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#c0392b; font-size:14px; margin-top:2px; flex-shrink:0;">✗</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Print your documents — LOA, LOI, Confirmation of Enrollment, proof of funds. One printed folder. Black and white is fine. Don&apos;t rely on cloud storage at a foreign airport on two bars of WiFi.</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#c0392b; font-size:14px; margin-top:2px; flex-shrink:0;">✗</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Check your study permit expiry date before you walk away from the immigration counter. The officer can extend it right there if you ask politely.</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#c0392b; font-size:14px; margin-top:2px; flex-shrink:0;">✗</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Complete ArriveCAN before you fly — 10 minutes on your phone the night before saves you a 25-minute paper queue on arrival.</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#c0392b; font-size:14px; margin-top:2px; flex-shrink:0;">✗</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Understand that &quot;first month free&quot; is not free — postpaid plans continue billing unless you call and cancel. Set a calendar reminder for Day 25.</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#c0392b; font-size:14px; margin-top:2px; flex-shrink:0;">✗</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Pack a winter jacket, gloves, and beanie in your carry-on — not your checked bag. Canada in December is not cold. It&apos;s a different category of cold.</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:0; align-items:flex-start;"><span style="color:#c0392b; font-size:14px; margin-top:2px; flex-shrink:0;">✗</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Pre-book your airport pickup — if someone is collecting you, tell them immigration takes 45–90 minutes. Coordinate properly.</span></li>
     </ul>
   </div>
-</div>
 
-<!-- STUDY PERMIT TIP -->
-<div class="blog-wrap" style="max-width:720px; margin:24px auto;">
-  <div style="background:#fff8f0; border:1px solid #e2ddd6; border-left:4px solid #7b3f3f; border-radius:0 12px 12px 0; padding:24px;">
-    <p style="font-size:13px; font-weight:700; color:#7b3f3f; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 12px;">💡 Study Permit Expiry — Don&apos;t Skip This</p>
+  <div style="background:#f0f4ff; border-left:4px solid #4a7ab5; border-radius:0 12px 12px 0; padding:24px; margin:24px 0;">
+    <p style="font-size:13px; font-weight:700; color:#4a7ab5; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 12px;">💡 Study Permit Expiry — Don&apos;t Skip This</p>
     <div style="font-size:14px; line-height:1.8; color:#2c2c2c;">
       <p style="margin:0 0 1em;">If your program ends in December, your Letter of Completion and official transcripts won&apos;t arrive until January — universities close for Christmas. If your study permit expired in December, you cannot apply for the PGWP. You&apos;d need to first renew your permit, adding weeks of delay and stress.</p>
       <p style="margin:0 0 1em;">At the immigration counter, ask the officer to set your study permit expiry 90 days after your program end date. Most will do it without hesitation if you explain why.</p>
       <p style="margin:0;">To apply for PGWP you need all four at the same time: Active Study Permit + Letter of Completion + Official Transcripts + Language Test Scores.</p>
     </div>
   </div>
-</div>
 
-<!-- SKIP SERVICE CANADA -->
-<div class="blog-wrap" style="max-width:720px; margin:24px auto;">
-  <div style="background:#f5ede0; border:1px solid #e2ddd6; border-left:4px solid #c4a0a0; border-radius:0 12px 12px 0; padding:24px;">
-    <p style="font-size:13px; font-weight:700; color:#7b3f3f; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 12px;">💡 Skip Service Canada at the Airport</p>
+  <div style="background:#f0f4ff; border-left:4px solid #4a7ab5; border-radius:0 12px 12px 0; padding:24px; margin:24px 0;">
+    <p style="font-size:13px; font-weight:700; color:#4a7ab5; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 12px;">💡 Skip Service Canada at the Airport</p>
     <p style="font-size:14px; line-height:1.8; color:#2c2c2c; margin:0;">The Service Canada desk at Pearson helps you get your SIN number on arrival. After a 14-hour flight and 90-minute immigration process, that queue is the last place you want to be. Rest first. Get your SIN on Day 2 when you&apos;re rested and have your documents properly organised.</p>
   </div>
 </div>
+</section>
 
 <!-- PRIYA -->
 <section class="blog-wrap" style="max-width:720px; padding:48px 48px 24px;">
-  <div style="background:#f0edf8; border-left:4px solid #7b3f3f; border-radius:0 8px 8px 0; padding:16px 20px; margin-bottom:24px; display:flex; align-items:center; gap:14px;">
-    <img src="Priya_Happy.png" alt="" style="height:56px; width:auto;">
+<div style="background:rgba(150,180,255,0.06); border-left:4px solid #7BA7BC; padding:32px 40px; margin:32px 0; border-radius:0 16px 16px 0;">
+  <div class="chapter-divider" style="background:#f0edf8; border-left:5px solid #7BA7BC; border-radius:0 16px 16px 0; padding:28px 36px; margin:0 0 32px 0; min-height:180px;">
+    <img src="Priya_Happy.png" alt="" style="height:140px; width:auto; object-fit:contain;">
     <div>
-      <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#7b3f3f; text-transform:uppercase; margin:0;">Priya&apos;s Story</p>
-      <p style="font-size:16px; font-family:Georgia,serif; color:#2c2c2c; margin:4px 0 0;">Delhi → Toronto</p>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.14em; color:#7b3f3f; text-transform:uppercase; margin:0 0 8px;">🌟 Chapter Two</p>
+      <p style="font-family:Georgia,serif; font-size:32px; color:#2c2c2c; margin:0 0 8px; line-height:1.2;">Priya&apos;s Story</p>
+      <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#8c8479; margin:0 0 10px;">Delhi → Toronto</p>
+      <p style="font-family:Georgia,serif; font-size:15px; color:#7b3f3f; font-style:italic; margin:0;">&quot;I did my research. With StudenzBit.&quot;</p>
     </div>
   </div>
   <div style="font-size:16px; line-height:1.8; color:#2c2c2c;">
@@ -185,20 +199,21 @@
     <p style="margin:0 0 1em;">She&apos;s wearing all three by the time the Uber arrives.</p>
     <p style="margin:0 0 1em;">The same carrier saleswoman approaches her at the arrivals hall with the laminated deal sheet.</p>
     <p style="margin:0 0 1em;">&apos;No thank you,&apos; says Priya, without breaking stride. &apos;I&apos;m sorting my SIM next week.&apos;</p>
+    <blockquote style="border-left:4px solid #7BA7BC; margin:32px 0; padding:16px 24px; background:rgba(150,180,255,0.06); border-radius:0 8px 8px 0;">
+      <p style="font-family:Georgia,serif; font-size:22px; color:#2c2c2c; font-style:italic; line-height:1.5; margin:0 0 8px 0;">&quot;No thank you. I&apos;m sorting my SIM next week.&quot;</p>
+      <cite style="font-family:'DM Sans',sans-serif; font-size:12px; color:#8c8479; font-style:normal;">— Priya, Arrivals Hall</cite>
+    </blockquote>
     <p style="margin:0 0 1em;">She climbs into the Uber at 8:04am.</p>
     <p style="margin:0 0 1em;">She arrives at her residence at 8:22am. Same chaotic airport. Same freezing December morning. Same city.</p>
     <p style="margin:0 0 1em;">Completely different experience.</p>
     <p style="margin:0 0 1em;">She unpacks her essentials, checks the first item off her StudenzBit arrival checklist, pulls up the Day 2 task list, and closes her eyes.</p>
     <p style="margin:0;">Ready for what comes next.</p>
   </div>
-</section>
 
-<!-- PRIYA TIP -->
-<div class="blog-wrap" style="max-width:720px; margin:24px auto;">
-  <div style="background:#f0edf8; border:1px solid #e2ddd6; border-left:4px solid #7b3f3f; border-radius:0 12px 12px 0; padding:24px;">
+  <div style="background:#f0faf4; border-left:4px solid #27ae60; border-radius:0 12px 12px 0; padding:24px; margin:24px 0 0;">
     <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
       <img src="Priya_Idea.png" alt="" style="height:48px; width:auto;">
-      <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#7b3f3f; text-transform:uppercase; margin:0;">💡 Priya&apos;s Tip</p>
+      <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; color:#27ae60; text-transform:uppercase; margin:0;">✅ Priya&apos;s Tip</p>
     </div>
     <div style="font-size:14px; line-height:1.8; color:#2c2c2c;">
       <p style="margin:0 0 1em;">The $68 Uber feels like a lot on Day 1. It is. But you&apos;ve just flown 14 hours, you have two suitcases, and you&apos;ve never taken transit in this city before. This is not the day to figure out the UP Express.</p>
@@ -207,54 +222,55 @@
     </div>
   </div>
 </div>
+</section>
 
 <!-- COMPARISON TABLE -->
 <section class="blog-wrap" style="padding:32px 48px 40px;">
   <h2 style="font-family:Georgia,serif; font-size:28px; font-weight:400; color:#2c2c2c; margin:0 0 20px;">The Comparison</h2>
-  <div class="cmp-table-wrap">
-    <table class="cmp-table">
+  <div style="overflow-x:auto; margin:32px 0; border-radius:12px; border:1px solid #e2ddd6;">
+    <table style="width:100%; border-collapse:collapse; font-family:'DM Sans',sans-serif; font-size:14px;">
       <thead>
         <tr>
-          <th scope="col"></th>
-          <th scope="col">Arjun 🧳</th>
-          <th scope="col">Priya 🌟</th>
+          <th style="background:#2c2c2c; color:#f5ede0; padding:14px 18px; text-align:left; font-weight:600; border-right:1px solid #3d3a36;">Metric</th>
+          <th style="background:#D4A876; color:#2c2c2c; padding:14px 18px; text-align:center; font-weight:600; border-right:1px solid rgba(0,0,0,0.1);">🧳 Arjun</th>
+          <th style="background:#7BA7BC; color:white; padding:14px 18px; text-align:center; font-weight:600;">🌟 Priya</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Time from landing to residence</td>
-          <td>4 hrs 47 mins</td>
-          <td>2 hrs 10 mins</td>
+        <tr style="background:white;">
+          <td style="padding:14px 18px; font-weight:600; color:#2c2c2c; border:1px solid #e2ddd6;">Time from landing to residence</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; color:#2c2c2c;">4 hrs 47 mins</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; background:#f0faf4; color:#27ae60; font-weight:600;">✓ 2 hrs 10 mins</td>
         </tr>
-        <tr>
-          <td>Documents at immigration</td>
-          <td>Scrambling on slow airport WiFi</td>
-          <td>Printed folder, ready before asked</td>
+        <tr style="background:#faf8f5;">
+          <td style="padding:14px 18px; font-weight:600; color:#2c2c2c; border:1px solid #e2ddd6;">Documents at immigration</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; color:#c0392b;">Scrambling on slow WiFi</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; background:#f0faf4; color:#27ae60; font-weight:600;">✓ Printed folder, ready</td>
         </tr>
-        <tr>
-          <td>Declaration process</td>
-          <td>25-min paper queue</td>
-          <td>ArriveCAN kiosk — 3 minutes</td>
+        <tr style="background:white;">
+          <td style="padding:14px 18px; font-weight:600; color:#2c2c2c; border:1px solid #e2ddd6;">Declaration process</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; color:#c0392b;">25-min paper queue</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; background:#f0faf4; color:#27ae60; font-weight:600;">✓ ArriveCAN — 3 mins</td>
         </tr>
-        <tr>
-          <td>Phone plan situation</td>
-          <td>Signed postpaid deal he didn&apos;t understand</td>
-          <td>Declined — sorting it properly next week</td>
+        <tr style="background:#faf8f5;">
+          <td style="padding:14px 18px; font-weight:600; color:#2c2c2c; border:1px solid #e2ddd6;">Phone plan situation</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; color:#c0392b;">Signed postpaid deal he didn&apos;t understand</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; background:#f0faf4; color:#27ae60; font-weight:600;">✓ Declined — sorting it properly</td>
         </tr>
-        <tr>
-          <td>Body temperature on arrival</td>
-          <td>Freezing</td>
-          <td>Warm — jacket in carry-on</td>
+        <tr style="background:white;">
+          <td style="padding:14px 18px; font-weight:600; color:#2c2c2c; border:1px solid #e2ddd6;">Body temperature</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; color:#c0392b;">🥶 Freezing</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; background:#f0faf4; color:#27ae60; font-weight:600;">✓ 🧥 Warm — jacket in carry-on</td>
         </tr>
-        <tr>
-          <td>Stress level</td>
-          <td>😰😰😰😰</td>
-          <td>😊😊</td>
+        <tr style="background:#faf8f5;">
+          <td style="padding:14px 18px; font-weight:600; color:#2c2c2c; border:1px solid #e2ddd6;">Stress level</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6;">😰😰😰😰</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; background:#f0faf4;">😊😊</td>
         </tr>
-        <tr>
-          <td>Overall experience</td>
-          <td>Chaotic but survivable</td>
-          <td>Confident and smooth</td>
+        <tr style="background:white;">
+          <td style="padding:14px 18px; font-weight:600; color:#2c2c2c; border:1px solid #e2ddd6;">Overall experience</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; color:#c0392b;">Chaotic but survivable</td>
+          <td style="padding:14px 18px; text-align:center; border:1px solid #e2ddd6; background:#f0faf4; color:#27ae60; font-weight:600;">✓ Confident &amp; smooth</td>
         </tr>
       </tbody>
     </table>
@@ -269,27 +285,32 @@
     <p style="font-size:16px; line-height:1.8; margin:0 0 20px;">That&apos;s the thing about arriving in a new country — nobody gives you the manual. Nobody tells you that Google Drive fails on two bars of airport WiFi. Nobody tells you that &apos;first month free&apos; doesn&apos;t mean &apos;auto-cancelled.&apos; Nobody tells you that December in Toronto is a different species of cold.</p>
     <p style="font-size:16px; line-height:1.8; margin:0 0 24px;">Priya didn&apos;t get lucky. She got prepared.</p>
     <p style="font-size:14px; font-weight:700; margin:0 0 12px;">Here&apos;s what to take away from Day 1:</p>
-    <ul style="margin:0; padding-left:20px; font-size:14px; line-height:1.8; color:#2c2c2c;">
-      <li>Sort a temporary SIM before you land — check if your visa office (VFS Global etc.) provides a free one</li>
-      <li>Print your LOA, LOI, and Confirmation of Enrollment — never rely on cloud storage at a foreign airport</li>
-      <li>Check your study permit expiry date before leaving the counter — ask for 90 days past your program end date</li>
-      <li>Complete ArriveCAN 72 hours before your flight — skip the declaration queue entirely</li>
-      <li>Pack your winter jacket, gloves, and beanie in your carry-on — not your checked bag</li>
-      <li>Pre-book your airport transfer and coordinate pickup times properly</li>
-      <li>Skip Service Canada at the airport — get your SIN on Day 2 when you&apos;re rested</li>
-      <li>If anyone offers you a &quot;free&quot; postpaid phone plan at the airport — read every word before signing</li>
+    <ul style="list-style:none; padding:0; margin:0; font-size:14px; line-height:1.8; color:#2c2c2c;">
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#27ae60; font-size:14px; margin-top:2px; flex-shrink:0;">✓</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Sort a temporary SIM before you land — check if your visa office (VFS Global etc.) provides a free one</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#27ae60; font-size:14px; margin-top:2px; flex-shrink:0;">✓</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Print your LOA, LOI, and Confirmation of Enrollment — never rely on cloud storage at a foreign airport</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#27ae60; font-size:14px; margin-top:2px; flex-shrink:0;">✓</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Check your study permit expiry date before leaving the counter — ask for 90 days past your program end date</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#27ae60; font-size:14px; margin-top:2px; flex-shrink:0;">✓</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Complete ArriveCAN 72 hours before your flight — skip the declaration queue entirely</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#27ae60; font-size:14px; margin-top:2px; flex-shrink:0;">✓</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Pack your winter jacket, gloves, and beanie in your carry-on — not your checked bag</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#27ae60; font-size:14px; margin-top:2px; flex-shrink:0;">✓</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Pre-book your airport transfer and coordinate pickup times properly</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:10px; align-items:flex-start;"><span style="color:#27ae60; font-size:14px; margin-top:2px; flex-shrink:0;">✓</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">Skip Service Canada at the airport — get your SIN on Day 2 when you&apos;re rested</span></li>
+      <li style="display:flex; gap:10px; margin-bottom:0; align-items:flex-start;"><span style="color:#27ae60; font-size:14px; margin-top:2px; flex-shrink:0;">✓</span><span style="font-size:14px; color:#2c2c2c; line-height:1.7;">If anyone offers you a &quot;free&quot; postpaid phone plan at the airport — read every word before signing</span></li>
     </ul>
   </div>
 </section>
 
 <!-- WHAT HAPPENS NEXT -->
 <section class="blog-wrap" style="margin:40px auto;">
-  <div style="background:#2c2c2c; border-radius:16px; padding:36px; text-align:center;">
-    <h2 style="font-family:Georgia,serif; font-size:24px; font-weight:400; color:#f5ede0; margin:0;">What Happens Next?</h2>
-    <p style="font-family:'DM Sans',sans-serif; font-size:15px; color:#c4bdb6; line-height:1.8; max-width:560px; margin:16px auto 0;">Both Arjun and Priya need to open a bank account within their first three days.</p>
-    <p style="font-family:'DM Sans',sans-serif; font-size:15px; color:#c4bdb6; line-height:1.8; max-width:560px; margin:12px auto 0;">Arjun will walk in twice before he figures out what documents to bring. The second time, he&apos;ll wait 45 minutes only to find out he&apos;s missing one thing.</p>
-    <p style="font-family:'DM Sans',sans-serif; font-size:15px; color:#c4bdb6; line-height:1.8; max-width:560px; margin:12px auto 0;">Priya already knows exactly which bank, which branch, and what to bring.</p>
-    <a href="#" style="display:inline-block; margin-top:20px; color:#edd5d5; font-weight:600; font-size:14px; border-bottom:1.5px solid #edd5d5; padding-bottom:2px; text-decoration:none;">Read Post 2: &apos;We Both Tried to Open a Bank Account on Day 3.&apos; →</a>
+  <div class="whats-next-cta" style="background:#2c2c2c; border-radius:16px; padding:36px;">
+    <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+      <img src="Arjun_Sad.png" alt="" style="height:56px; width:auto; border-radius:50%; border:2px solid #D4A876;">
+      <img src="Priya_Idea.png" alt="" style="height:56px; width:auto; border-radius:50%; border:2px solid #7BA7BC;">
+    </div>
+    <div>
+      <p style="font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.14em; color:#8c8479; text-transform:uppercase; margin:0 0 10px;">What Happens Next?</p>
+      <p style="font-family:Georgia,serif; font-size:22px; color:#f5ede0; line-height:1.4; margin:0 0 8px;">Arjun walked into the bank twice. Priya was done in one visit.</p>
+      <p style="font-family:'DM Sans',sans-serif; font-size:14px; color:#8c8479; margin:0 0 20px;">Both need a bank account within 3 days. One of them knows exactly which documents to bring.</p>
+      <a href="#" style="display:inline-block; background:#7b3f3f; color:white; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; padding:12px 24px; border-radius:8px; text-decoration:none; transition:background 0.2s ease;" onmouseover="this.style.background='#5a2d2d'" onmouseout="this.style.background='#7b3f3f'">Read Post 2 →</a>
+    </div>
   </div>
 </section>
 
