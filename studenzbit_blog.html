@@ -85,7 +85,29 @@
 .grain-overlay {
     background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAdLYgL-M--NMQsPu1GsRb8W8pzkT8wr_yi0IHqJEy1zx2DXJ6VEkeIoO01bJxxsVDcHFmn8tP14agKLvA_mR6krSPb4ed-gxsU83PzLs73FjHmMUbVtgwPnscxqnU0K0HMlI6rSEoL8A5f8E0SaD7LYtRak0D86Pl-Wfyd2GpVRE0v2t-koaMKOhBCsDBqm2D-w5XI4RAD3Yv4FXXTdsBLHJ0bO2pPuPg-88robj4K5T2pv_7zKj_Y6WL08w8qevpODaasncEwxXMG);
     opacity: 0.03
-    }</style>
+    }
+.blog-filter {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1.5px solid #e2ddd6;
+  background: white;
+  color: #2c2c2c;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.blog-filter.active {
+  background: #7b3f3f;
+  color: white;
+  border-color: #7b3f3f;
+}
+.blog-filter:hover:not(.active) {
+  border-color: #7b3f3f;
+  color: #7b3f3f;
+}</style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container" style="padding-top: 72px;">
 <div class="fixed inset-0 pointer-events-none grain-overlay z-[100]"></div>
@@ -301,188 +323,197 @@
 <h3 class="font-headline text-3xl font-bold">Latest Dispatches</h3>
 </div>
 <div class="bg-surface-container-low rounded-16px p-5 md:p-6 mb-10 border border-outline-variant/20">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
 <input id="blog-search" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full px-5 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none text-sm" placeholder="Search by title keyword" type="text"/>
-<select id="blog-category" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full px-5 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none text-sm">
-<option value="all">All</option>
-<option value="canada">Canada</option>
-<option value="usa">USA</option>
-<option value="australia">Australia</option>
-<option value="career">Career</option>
-<option value="finance">Finance</option>
-<option value="tech">Tech</option>
-<option value="student-life">Student Life</option>
-<option value="featured">Featured</option>
-</select>
 <select id="blog-sort" class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full px-5 py-3 text-on-surface focus:ring-2 focus:ring-primary outline-none text-sm">
 <option value="newest">Newest First</option>
 <option value="oldest">Oldest First</option>
 <option value="popular">Popular</option>
 </select>
 </div>
+<div id="blog-filters" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px;">
+  <button type="button" onclick="filterBlog('all')" class="blog-filter active" data-filter="all">All</button>
+  <button type="button" onclick="filterBlog('canada')" class="blog-filter" data-filter="canada">🇨🇦 Canada</button>
+  <button type="button" onclick="filterBlog('usa')" class="blog-filter" data-filter="usa">🇺🇸 USA</button>
+  <button type="button" onclick="filterBlog('australia')" class="blog-filter" data-filter="australia">🇦🇺 Australia</button>
+  <button type="button" onclick="filterBlog('arrival')" class="blog-filter" data-filter="arrival">✈️ Arrival</button>
+  <button type="button" onclick="filterBlog('housing')" class="blog-filter" data-filter="housing">🏠 Housing</button>
+  <button type="button" onclick="filterBlog('finance')" class="blog-filter" data-filter="finance">💰 Finance</button>
+  <button type="button" onclick="filterBlog('banking')" class="blog-filter" data-filter="banking">🏦 Banking</button>
+  <button type="button" onclick="filterBlog('career')" class="blog-filter" data-filter="career">💼 Career</button>
+  <button type="button" onclick="filterBlog('resume')" class="blog-filter" data-filter="resume">📄 Resume</button>
+  <button type="button" onclick="filterBlog('tech')" class="blog-filter" data-filter="tech">💻 Tech</button>
+  <button type="button" onclick="filterBlog('immigration')" class="blog-filter" data-filter="immigration">🛂 Immigration</button>
+  <button type="button" onclick="filterBlog('pgwp')" class="blog-filter" data-filter="pgwp">📋 PGWP</button>
+  <button type="button" onclick="filterBlog('student-life')" class="blog-filter" data-filter="student-life">🎓 Student Life</button>
+  <button type="button" onclick="filterBlog('mental-health')" class="blog-filter" data-filter="mental-health">🧠 Mental Health</button>
+  <button type="button" onclick="filterBlog('arjun-priya')" class="blog-filter" data-filter="arjun-priya">📖 Arjun &amp; Priya</button>
+</div>
 </div>
 <div id="dispatches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Card 0 — Arjun & Priya Day 1 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada student-life featured" data-date="2026-04-15" data-popularity="98">
+<!-- Card 0 — Day 1 -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada arrival arjun-priya" data-date="2026-04-15" data-popularity="98">
 <div class="h-4 bg-[#f5ede0] p-0"></div>
 <div class="p-8">
-<span class="text-primary-dim font-label text-[10px] font-bold tracking-widest mb-3 block">ARRIVAL · CANADA</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Day 1 in Canada: One of Us Was Ready. One of Us Really Wasn&apos;t.</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>Same flight. Same destination. Two completely different first days. Here&apos;s what nobody tells you before you land.</span>
-<span>·</span>
-<span>8 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">ARRIVAL · CANADA</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">How to Arrive in Canada as an International Student</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">Day 1 in Canada: One of Us Was Ready. One of Us Really Wasn&apos;t.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">Same flight. Same destination. Two completely different first days. Here&apos;s what nobody tells you before you land.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">8 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="blog_day1_canada.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 1 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="finance canada featured" data-date="2026-04-08" data-popularity="94">
+<!-- Card 1 — Bank Account Post 2 -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada finance banking arjun-priya" data-date="2026-04-14" data-popularity="97">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
 <div class="p-8">
-<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">FINANCE · CANADA</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">5 Banks Every International Student Should Know About in Canada</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>TD, RBC, Scotiabank - which one is actually best for you?</span>
-<span>·</span>
-<span>5 min read</span>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">FINANCE · CANADA</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">How to Open a Bank Account in Canada</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">We Both Tried to Open a Bank Account on Day 3. Here&apos;s What Happened.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">Documents, wait times, and what actually works when you walk into the branch cold.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">9 min read</p>
+<a class="text-primary font-bold text-sm inline-flex items-center" href="blog_bank_account.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
+</article>
+<!-- Card 2 — 5 Banks -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada finance banking" data-date="2026-04-08" data-popularity="94">
+<div class="h-4 bg-[#d9eaa3] p-0"></div>
+<div class="p-8">
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">FINANCE · CANADA</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">Best Banks for International Students Canada</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">5 Banks Every International Student Should Know About in Canada</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">TD, RBC, Scotiabank — which one is actually best for you?</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">5 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 2 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="tech featured" data-date="2026-04-02" data-popularity="88">
+<!-- Card 3 — Mac vs Windows -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="tech laptops" data-date="2026-04-02" data-popularity="88">
 <div class="h-4 bg-[#fec3c3] p-0"></div>
 <div class="p-8">
-<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">TECH · FEATURED</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Mac vs Windows: What Students Actually Say After 1 Year</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>We asked 50 international students. Here's what they wish they knew before buying.</span>
-<span>·</span>
-<span>7 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">TECH · GLOBAL</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">Mac vs Windows for Students 2026</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">Mac vs Windows: What Students Actually Say After 1 Year</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">We asked 50 international students. Here&apos;s what they wish they knew before buying.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">7 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 3 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="career canada" data-date="2026-03-26" data-popularity="82">
+<!-- Card 4 — First Job Toronto -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada career" data-date="2026-03-26" data-popularity="82">
 <div class="h-4 bg-[#eee4d9] p-0"></div>
 <div class="p-8">
-<span class="text-tertiary font-label text-[10px] font-bold tracking-widest mb-3 block">CAREER · CANADA</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">How I Got My First Job in Toronto on a Study Permit</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>The exact steps, the LinkedIn strategy, and the one email template that worked.</span>
-<span>·</span>
-<span>6 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">CAREER · CANADA</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">How to Get Your First Job in Canada on a Study Permit</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">How I Got My First Job in Toronto on a Study Permit</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">The exact steps, the LinkedIn strategy, and the one email template that worked.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">6 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 4 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="finance canada student-life" data-date="2026-03-18" data-popularity="78">
+<!-- Card 5 — Vancouver COL -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada housing student-life" data-date="2026-03-18" data-popularity="78">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
 <div class="p-8">
-<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">FINANCE · CANADA</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">The Honest Cost of Living in Vancouver in 2026</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>Rent, groceries, transit, and the hidden costs nobody warns you about.</span>
-<span>·</span>
-<span>4 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">CANADA · HOUSING</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">Cost of Living in Vancouver for Students 2026</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">The Honest Cost of Living in Vancouver in 2026</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">Rent, groceries, transit, and the hidden costs nobody warns you about.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">4 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 5 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="tech canada usa australia featured" data-date="2026-03-10" data-popularity="96">
+<!-- Card 6 — eSIM -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="tech" data-date="2026-03-10" data-popularity="96">
 <div class="h-4 bg-[#fec3c3] p-0"></div>
 <div class="p-8">
-<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">TECH · FEATURED</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">eSIM vs Local SIM: Which Should You Get Before Landing?</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>Don't wait until you land. Here's the exact eSIM setup that works in Canada, USA and Australia.</span>
-<span>·</span>
-<span>3 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">TECH · GLOBAL</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">eSIM vs Local SIM Card for International Students</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">eSIM vs Local SIM: Which Should You Get Before Landing?</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">Don&apos;t wait until you land. Here&apos;s the exact eSIM setup that works in Canada, USA and Australia.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">3 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 6 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="australia student-life" data-date="2026-03-01" data-popularity="73">
+<!-- Card 7 — Sydney housing -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="australia housing" data-date="2026-03-01" data-popularity="73">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
 <div class="p-8">
-<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">STUDENT LIFE · AUSTRALIA</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Student Housing in Sydney: What I Wish I Knew</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>The suburbs, the scams, and the Facebook groups that actually have real listings.</span>
-<span>·</span>
-<span>5 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">AUSTRALIA · HOUSING</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">Student Housing in Sydney Australia</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">Student Housing in Sydney: What I Wish I Knew</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">The suburbs, the scams, and the Facebook groups that actually have real listings.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">5 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 7 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="career canada featured" data-date="2026-02-22" data-popularity="92">
+<!-- Card 8 — Canadian resume -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada career resume" data-date="2026-02-22" data-popularity="92">
 <div class="h-4 bg-[#eee4d9] p-0"></div>
 <div class="p-8">
-<span class="text-tertiary font-label text-[10px] font-bold tracking-widest mb-3 block">CAREER · CANADA</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">How to Write a Canadian Resume (With Template)</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>Canadian resumes are different. No photos, no DOB, different formatting. Here's exactly what to do.</span>
-<span>·</span>
-<span>8 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">CAREER · CANADA</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">How to Write a Canadian Resume</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">How to Write a Canadian Resume (With Template)</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">Canadian resumes are different. No photos, no DOB, different formatting. Here&apos;s exactly what to do.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">8 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 8 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="usa student-life featured" data-date="2026-02-15" data-popularity="90">
+<!-- Card 9 — F-1 -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="usa immigration" data-date="2026-02-15" data-popularity="90">
 <div class="h-4 bg-[#fec3c3] p-0"></div>
 <div class="p-8">
-<span class="text-primary font-label text-[10px] font-bold tracking-widest mb-3 block">STUDENT LIFE · USA</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">US Student Visa F-1: The Complete 2026 Guide</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>From DS-160 to SEVIS, port of entry to OPT - everything in one place.</span>
-<span>·</span>
-<span>10 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">USA · IMMIGRATION</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">US Student Visa F-1 Guide 2026</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">US Student Visa F-1: The Complete 2026 Guide</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">From DS-160 to SEVIS, port of entry to OPT — everything in one place.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">10 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
-<!-- Card 9 -->
-<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="finance canada" data-date="2026-02-05" data-popularity="84">
+<!-- Card 10 — Building credit -->
+<article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada finance banking credit" data-date="2026-02-05" data-popularity="84">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
 <div class="p-8">
-<span class="text-secondary font-label text-[10px] font-bold tracking-widest mb-3 block">FINANCE · CANADA</span>
-<h4 class="blog-title font-headline text-xl text-on-surface leading-snug mb-4 group-hover:text-primary transition-colors">Building Credit in Canada as an International Student</h4>
-<div class="flex items-center gap-2 text-xs text-on-surface-variant mb-6">
-<span>You have zero credit history. Here's how to build it fast - starting from day one.</span>
-<span>·</span>
-<span>6 min read</span>
-</div>
+<span style="display:block; background:#f5ede0; color:#7b3f3f; font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6; margin-bottom:10px; text-transform:uppercase;">FINANCE · CANADA</span>
+<p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.1em; color:#7b3f3f; text-transform:uppercase; margin:0 0 5px 0;">How to Build Credit in Canada as an International Student</p>
+<p class="blog-title font-headline text-xl text-on-surface leading-snug group-hover:text-primary transition-colors" style="font-family:Georgia,serif; font-size:15px; color:#2c2c2c; line-height:1.4; margin:0 0 8px 0;">Building Credit in Canada as an International Student</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:13px; color:#8c8479; margin:0 0 12px 0;">You have zero credit history. Here&apos;s how to build it fast — starting from day one.</p>
+<p style="font-family:'DM Sans',sans-serif; font-size:11px; color:#8c8479; margin:0 0 12px 0;">6 min read</p>
 <a class="text-primary font-bold text-sm inline-flex items-center" href="the_ultimate_first_week_guide_article.html">Read <span class="material-symbols-outlined text-sm ml-1">arrow_right_alt</span></a>
 </div>
 </article>
 </div>
 <script>
+  function filterBlog(category) {
+    window.__blogCategoryFilter = category;
+    document.querySelectorAll(".blog-filter").forEach(function (btn) {
+      btn.classList.toggle("active", btn.getAttribute("data-filter") === category);
+    });
+    if (typeof window.__blogApplyFilters === "function") window.__blogApplyFilters();
+  }
+
   (function () {
     const searchInput = document.getElementById("blog-search");
-    const categorySelect = document.getElementById("blog-category");
     const sortSelect = document.getElementById("blog-sort");
     const grid = document.getElementById("dispatches-grid");
-    if (!searchInput || !categorySelect || !sortSelect || !grid) return;
+    if (!searchInput || !sortSelect || !grid) return;
+
+    window.__blogCategoryFilter = "all";
 
     const cards = Array.from(grid.querySelectorAll(".blog-card"));
     const originalIndex = new Map(cards.map((card, idx) => [card, idx]));
 
     function applyFilters() {
       const q = searchInput.value.trim().toLowerCase();
-      const cat = categorySelect.value;
+      const cat = window.__blogCategoryFilter || "all";
       const sort = sortSelect.value;
 
       cards.forEach((card) => {
-        const title = (card.querySelector(".blog-title")?.textContent || "").toLowerCase();
+        const inner = card.querySelector(".p-8");
+        const searchText = (inner ? inner.textContent : "").toLowerCase();
         const categories = (card.dataset.category || "").toLowerCase().split(/\s+/).filter(Boolean);
-        const matchesSearch = q === "" || title.includes(q);
+        const matchesSearch = q === "" || searchText.includes(q);
         const matchesCategory = cat === "all" || categories.includes(cat);
         const show = matchesSearch && matchesCategory;
 
@@ -514,8 +545,9 @@
       visible.forEach((card) => grid.appendChild(card));
     }
 
+    window.__blogApplyFilters = applyFilters;
+
     searchInput.addEventListener("input", applyFilters);
-    categorySelect.addEventListener("change", applyFilters);
     sortSelect.addEventListener("change", applyFilters);
     applyFilters();
   })();
