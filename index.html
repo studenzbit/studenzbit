@@ -1,16 +1,611 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StudenzBit</title>
-  <link rel="canonical" href="https://studenzbit.com/">
-  <meta http-equiv="refresh" content="0; url=/studenzbit_home.html">
-  <script>
-    window.location.replace("/studenzbit_home.html");
-  </script>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StudenzBit | The Scholarly Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#d9eaa3",
+              "outline-variant": "#b0b3ae",
+              "tertiary-container": "#fdf2e7",
+              "on-primary-fixed": "#4f292a",
+              "on-surface-variant": "#5d605c",
+              "outline": "#797b78",
+              "surface-bright": "#faf9f6",
+              "surface-dim": "#d9dbd6",
+              "primary": "#805353",
+              "on-error": "#fff7f6",
+              "error": "#a73b21",
+              "inverse-on-surface": "#9d9d9a",
+              "surface-container-high": "#e7e9e4",
+              "surface": "#faf9f6",
+              "error-container": "#fd795a",
+              "primary-fixed": "#fec3c3",
+              "secondary-dim": "#4a5821",
+              "primary-container": "#fec3c3",
+              "surface-container": "#eeeeea",
+              "tertiary-fixed-dim": "#eee4d9",
+              "on-tertiary-container": "#625b53",
+              "on-surface": "#303330",
+              "on-error-container": "#6e1400",
+              "tertiary-fixed": "#fdf2e7",
+              "inverse-surface": "#0d0f0d",
+              "error-dim": "#791903",
+              "secondary-fixed": "#d9eaa3",
+              "on-secondary-fixed": "#37440e",
+              "tertiary-dim": "#59524a",
+              "on-tertiary-fixed": "#4f4941",
+              "secondary": "#56652c",
+              "on-secondary": "#f2ffc7",
+              "surface-variant": "#e1e3de",
+              "tertiary": "#655e56",
+              "surface-container-highest": "#e1e3de",
+              "on-tertiary-fixed-variant": "#6c655d",
+              "primary-dim": "#734748",
+              "on-secondary-container": "#495720",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#653c3c",
+              "primary-fixed-dim": "#efb5b5",
+              "on-secondary-fixed-variant": "#536129",
+              "background": "#faf9f6",
+              "surface-container-low": "#f4f4f0",
+              "on-tertiary": "#fff8f2",
+              "surface-tint": "#805353",
+              "on-primary-fixed-variant": "#704545",
+              "secondary-fixed-dim": "#cbdc96",
+              "on-primary": "#fff7f6",
+              "on-background": "#303330",
+              "inverse-primary": "#fec3c3"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #faf9f6; color: #303330; }
+      .font-serif { font-family: 'Noto Serif', serif; }
+      .grainy {
+        position: relative;
+      }
+      .grainy::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.02;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
 </head>
-<body>
-  <p>Redirecting to <a href="/studenzbit_home.html">StudenzBit Home</a>...</p>
-</body>
-</html>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container" style="padding-top: 72px;">
+<!-- Top Navigation Bar -->
+<nav style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2ddd6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  z-index: 1000;
+  box-sizing: border-box;
+">
+  <!-- Logo -->
+  <a href="/" style="text-decoration: none;">
+    <span style="
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: normal;
+      color: #2c2c2c;
+      letter-spacing: -0.3px;
+    ">StudenzBit</span>
+  </a>
+
+  <!-- Nav links -->
+  <div style="display: flex; align-items: center; gap: 36px;">
+    <a href="studenzbit_destinations.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c2c2c;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    ">Destinations</a>
+    <a href="studenzbit_tech_hub_updated.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c2c2c;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    ">Tech Hub</a>
+    <a href="studenzbit_student_toolkit_updated.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c2c2c;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    ">Student Toolkit</a>
+    <a href="studenzbit_blog.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #2c2c2c;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    ">Blog</a>
+    <a href="all_picks.html" style="
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #7b3f3f;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      border: 1.5px solid #7b3f3f;
+      padding: 6px 16px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    " onmouseover="this.style.background='#7b3f3f';this.style.color='white'"
+       onmouseout="this.style.background='transparent';this.style.color='#7b3f3f'">
+      All Picks
+    </a>
+  </div>
+</nav>
+<main class="pt-24" style="padding-top: 72px;">
+<!-- Hero Section -->
+<section class="grainy min-height-[819px] flex flex-col items-center justify-center text-center px-6 py-32 bg-primary-container/20">
+<div class="max-w-4xl mx-auto">
+<h1 class="font-serif text-5xl md:text-7xl lg:text-8xl text-on-background leading-tight tracking-tight mb-8">
+                    Your Guide to <br/> <span class="italic text-primary">Studying Abroad</span>
+</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant font-light max-w-2xl mx-auto mb-12">
+                    A curated editorial space for the global scholar. Navigate visa complexity, tech essentials, and city living with tactile precision.
+                </p>
+<div class="flex flex-col md:flex-row gap-4 justify-center">
+<a class="bg-primary text-on-primary px-10 py-4 rounded-full font-medium transition-all hover:scale-105" href="studenzbit_destinations.html">Explore Destinations</a>
+<a class="bg-secondary-container text-on-secondary-container px-10 py-4 rounded-full font-medium transition-all hover:scale-105" href="studenzbit_student_toolkit_updated.html">View Toolkit</a>
+</div>
+</div>
+</section>
+<!-- Interactive Map Section -->
+<section class="py-28 bg-background overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-20">
+<h2 class="font-serif text-4xl text-on-background mb-4">Where Will You Study?</h2>
+<p class="font-body text-on-surface-variant">Pick a country and discover what student life really looks like — rent, tuition, jobs, and the stuff nobody tells you before you land.</p>
+</div>
+<!-- Map Container -->
+<div class="relative w-full aspect-[21/9] mb-20 overflow-hidden group" id="home-world-map-shell" style="background: #dedad4; border-radius: 16px;">
+<div class="w-full h-full" id="home-world-map"></div>
+</div>
+<!-- Destination Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Canada -->
+<a class="block bg-surface-container-low p-8 rounded-xl transition-all hover:bg-surface-container-lowest group cursor-pointer no-underline text-inherit hover:-translate-y-1" href="canada.html" style="transition: all 0.2s ease;">
+<div class="flex justify-between items-start mb-6">
+<span class="font-serif italic text-3xl text-primary">Canada</span>
+<span class="material-symbols-outlined text-on-surface-variant">north_east</span>
+</div>
+<div class="space-y-3 font-body text-sm text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span class="shrink-0">Institutions</span>
+<span class="font-semibold text-on-surface text-right">1,500 Universities &amp; Colleges</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span>Avg Tuition</span>
+<span class="font-semibold text-on-surface text-right">$20,000–$68,000 CAD/yr</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span>Avg Rent</span>
+<span class="font-semibold text-on-surface text-right">$1,250–$2,500 CAD/mo</span>
+</div>
+<div class="flex justify-between gap-4">
+<span>Int'l Students</span>
+<span class="font-semibold text-on-surface text-right">900,000+</span>
+</div>
+</div>
+</a>
+<!-- USA -->
+<a class="block bg-surface-container-low p-8 rounded-xl transition-all hover:bg-surface-container-lowest group cursor-pointer no-underline text-inherit hover:-translate-y-1" href="usa.html" style="transition: all 0.2s ease;">
+<div class="flex justify-between items-start mb-6">
+<span class="font-serif italic text-3xl text-primary">USA</span>
+<span class="material-symbols-outlined text-on-surface-variant">north_east</span>
+</div>
+<div class="space-y-3 font-body text-sm text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span class="shrink-0">Institutions</span>
+<span class="font-semibold text-on-surface text-right">4,000+ Colleges &amp; Universities</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span>Cities</span>
+<span class="font-semibold text-on-surface text-right">50+ Cities</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span>Avg Tuition</span>
+<span class="font-semibold text-on-surface text-right">$25,000–$70,000 USD/yr</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span>Avg Rent</span>
+<span class="font-semibold text-on-surface text-right">$1,250–$2,800 USD/mo</span>
+</div>
+<div class="flex justify-between gap-4">
+<span>Int'l Students</span>
+<span class="font-semibold text-on-surface text-right">1,000,000+</span>
+</div>
+</div>
+</a>
+<!-- Australia -->
+<a class="block bg-surface-container-low p-8 rounded-xl transition-all hover:bg-surface-container-lowest group cursor-pointer no-underline text-inherit hover:-translate-y-1" href="australia.html" style="transition: all 0.2s ease;">
+<div class="flex justify-between items-start mb-6">
+<span class="font-serif italic text-3xl text-primary">Australia</span>
+<span class="material-symbols-outlined text-on-surface-variant">north_east</span>
+</div>
+<div class="space-y-3 font-body text-sm text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span class="shrink-0">Institutions</span>
+<span class="font-semibold text-on-surface text-right">1,100 Universities &amp; Colleges</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span>Avg Tuition</span>
+<span class="font-semibold text-on-surface text-right">$20,000–$55,000 AUD/yr</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2 gap-4">
+<span>Avg Rent</span>
+<span class="font-semibold text-on-surface text-right">$1,400–$2,200 AUD/mo</span>
+</div>
+<div class="flex justify-between gap-4">
+<span>Int'l Students</span>
+<span class="font-semibold text-on-surface text-right">600,000+</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Tech Hub Section -->
+<section class="py-28 bg-surface-container">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex items-end justify-between mb-16">
+<div class="max-w-xl">
+<span class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-4 block">Modern Essentials</span>
+<h2 class="font-serif text-5xl text-on-background">Tech for Students</h2>
+</div>
+<a class="font-body text-primary font-semibold hover:underline flex items-center gap-2" href="all_picks.html">
+                        View Hub <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Phones -->
+<a class="bg-tertiary-container p-10 rounded-xl flex flex-col justify-between aspect-[4/5] block no-underline text-inherit cursor-pointer hover:-translate-y-1" href="smartphone_guide.html" style="transition: all 0.2s ease;">
+<div>
+<img src="tech_smartphones.png" alt="Smartphones" style="width: 100%; height: 180px; object-fit: contain; object-position: center; border-radius: 8px; margin-bottom: 16px; background: transparent;"/>
+<div class="material-symbols-outlined text-5xl text-on-tertiary-container mb-8">smartphone</div>
+</div>
+<div>
+<h3 class="font-serif text-2xl mb-2">Smartphones</h3>
+<p class="font-body text-on-tertiary-container/80 text-sm leading-relaxed">International unlocked devices for seamless roaming.</p>
+</div>
+</a>
+<!-- Laptops -->
+<a class="bg-primary-container/30 p-10 rounded-xl flex flex-col justify-between aspect-[4/5] block no-underline text-inherit cursor-pointer hover:-translate-y-1" href="laptop_guide.html" style="transition: all 0.2s ease;">
+<div>
+<img src="tech_laptops.png" alt="Laptops" style="width: 100%; height: 180px; object-fit: contain; object-position: center; border-radius: 8px; margin-bottom: 16px; background: transparent;"/>
+<div class="material-symbols-outlined text-5xl text-on-primary-container mb-8">laptop_mac</div>
+</div>
+<div>
+<h3 class="font-serif text-2xl mb-2">Laptops</h3>
+<p class="font-body text-on-primary-container/80 text-sm leading-relaxed">High-performance machines tailored for study and work.</p>
+</div>
+</a>
+<!-- SIM -->
+<a class="bg-secondary-container/50 p-10 rounded-xl flex flex-col justify-between aspect-[4/5] block no-underline text-inherit cursor-pointer hover:-translate-y-1" href="sim_guide.html" style="transition: all 0.2s ease;">
+<div>
+<img src="tech_sim.png" alt="SIM &amp; Data" style="width: 100%; height: 180px; object-fit: contain; object-position: center; border-radius: 8px; margin-bottom: 16px; background: transparent;"/>
+<div class="material-symbols-outlined text-5xl text-on-secondary-container mb-8">sim_card</div>
+</div>
+<div>
+<h3 class="font-serif text-2xl mb-2">SIM &amp; Data</h3>
+<p class="font-body text-on-secondary-container/80 text-sm leading-relaxed">Local plans and eSIM solutions for global connectivity.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Student Toolkit Section -->
+<section class="py-28 bg-[#2F2D2B] text-[#f4f4f0]">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<h2 class="font-serif text-5xl mb-6">Student Toolkit</h2>
+<p class="font-body text-outline-variant font-light max-w-xl mx-auto">We know the feeling — new country, blank slate, no idea where to start. These guides are everything we wished someone had handed us on Day 1.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Tool 1 -->
+<div class="bg-[#EDF4ED] p-6 rounded-lg flex flex-col items-center h-full min-h-[220px] cursor-pointer hover:-translate-y-1" style="transition: all 0.2s ease;">
+<span class="text-primary font-serif italic text-sm mb-3 block w-full text-left pl-3">Professional</span>
+<div class="flex-1 w-full flex items-center justify-center min-h-0 py-2">
+<div class="w-full max-w-[280px] mx-auto flex-shrink-0" style="height: 160px; overflow: hidden; border-radius: 8px;">
+<img src="toolkit_resume.png" alt="Resume toolkit" style="width: 100%; height: 140px; object-fit: cover; object-position: center 10%; border-radius: 8px; margin: 8px 0 12px 0; display: block;"/>
+</div>
+</div>
+<a class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 mt-auto inline-block w-fit" href="job_search_roadmap_detail.html">Get it</a>
+</div>
+<!-- Tool 2 -->
+<div class="bg-[#EDF4ED] p-6 rounded-lg flex flex-col items-center h-full min-h-[220px] cursor-pointer hover:-translate-y-1" style="transition: all 0.2s ease;">
+<span class="text-primary font-serif italic text-sm mb-3 block w-full text-left pl-3">Finance</span>
+<div class="flex-1 w-full flex items-center justify-center min-h-0 py-2">
+<div class="w-full max-w-[280px] mx-auto flex-shrink-0" style="height: 160px; overflow: hidden; border-radius: 8px;">
+<img src="toolkit_banking.png" alt="Banking toolkit" style="width: 100%; height: 140px; object-fit: cover; object-position: center 10%; border-radius: 8px; margin: 8px 0 12px 0; display: block;"/>
+</div>
+</div>
+<a class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 mt-auto inline-block w-fit" href="studenzbit_student_toolkit_updated.html">Get it</a>
+</div>
+<!-- Tool 3 -->
+<div class="bg-[#EDF4ED] p-6 rounded-lg flex flex-col items-center h-full min-h-[220px] cursor-pointer hover:-translate-y-1" style="transition: all 0.2s ease;">
+<span class="text-primary font-serif italic text-sm mb-3 block w-full text-left pl-3">Career</span>
+<div class="flex-1 w-full flex items-center justify-center min-h-0 py-2">
+<div class="w-full max-w-[280px] mx-auto flex-shrink-0" style="height: 160px; overflow: hidden; border-radius: 8px;">
+<img src="toolkit_jobs.png" alt="Job search toolkit" style="width: 100%; height: 140px; object-fit: cover; object-position: center 10%; border-radius: 8px; margin: 8px 0 12px 0; display: block;"/>
+</div>
+</div>
+<a class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 mt-auto inline-block w-fit" href="job_search_roadmap_detail.html">Get it</a>
+</div>
+<!-- Tool 4 -->
+<div class="bg-[#EDF4ED] p-6 rounded-lg flex flex-col items-center h-full min-h-[220px] cursor-pointer hover:-translate-y-1" style="transition: all 0.2s ease;">
+<span class="text-primary font-serif italic text-sm mb-3 block w-full text-left pl-3">Legal</span>
+<div class="flex-1 w-full flex items-center justify-center min-h-0 py-2">
+<div class="w-full max-w-[280px] mx-auto flex-shrink-0" style="height: 160px; overflow: hidden; border-radius: 8px;">
+<img src="toolkit_lease.png" alt="Lease toolkit" style="width: 100%; height: 140px; object-fit: cover; object-position: center 10%; border-radius: 8px; margin: 8px 0 12px 0; display: block;"/>
+</div>
+</div>
+<a class="bg-primary text-on-primary px-4 py-2 rounded-full text-sm font-medium hover:opacity-90 mt-auto inline-block w-fit" href="studenzbit_student_toolkit_updated.html">Get it</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Preview Section -->
+<section class="bg-[#f9f6f2] text-[#2c2c2c]" style="padding: 80px 0;">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16 max-w-2xl mx-auto">
+<h2 class="font-serif text-5xl mb-6">What Students Are Reading</h2>
+<p class="font-body text-[#5d605c] font-light text-lg leading-relaxed">Real guides, honest takes, and the stuff nobody tells you — straight from the StudenzBit journal.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+<a class="bg-white flex flex-col h-full cursor-pointer hover:-translate-y-1 no-underline text-inherit" href="studenzbit_blog.html" style="border: 1px solid #e2ddd6; border-radius: 12px; padding: 24px; transition: all 0.2s ease;">
+<span class="inline-block self-start text-[11px] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full mb-4" style="color: #7b3f3f; background: #f5ede0;">FINANCE · CANADA</span>
+<h3 class="font-serif text-xl leading-snug text-[#2c2c2c] mb-3 line-clamp-2">5 Banks Every International Student Should Know About in Canada</h3>
+<p class="font-body text-sm text-[#5d605c] mb-4 line-clamp-1 leading-relaxed">TD, RBC, Scotiabank — which one is actually best for you?</p>
+<span class="font-body text-xs text-[#7f7668] mb-4">5 min read</span>
+<span class="font-body text-sm font-semibold mt-auto pt-2" style="color: #7b3f3f;">Read →</span>
+</a>
+<a class="bg-white flex flex-col h-full cursor-pointer hover:-translate-y-1 no-underline text-inherit" href="studenzbit_blog.html" style="border: 1px solid #e2ddd6; border-radius: 12px; padding: 24px; transition: all 0.2s ease;">
+<span class="inline-block self-start text-[11px] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full mb-4" style="color: #7b3f3f; background: #f5ede0;">CAREER · CANADA</span>
+<h3 class="font-serif text-xl leading-snug text-[#2c2c2c] mb-3 line-clamp-2">How I Got My First Job in Toronto on a Study Permit</h3>
+<p class="font-body text-sm text-[#5d605c] mb-4 line-clamp-1 leading-relaxed">The exact steps, the LinkedIn strategy, and the one email that worked.</p>
+<span class="font-body text-xs text-[#7f7668] mb-4">6 min read</span>
+<span class="font-body text-sm font-semibold mt-auto pt-2" style="color: #7b3f3f;">Read →</span>
+</a>
+<a class="bg-white flex flex-col h-full cursor-pointer hover:-translate-y-1 no-underline text-inherit" href="studenzbit_blog.html" style="border: 1px solid #e2ddd6; border-radius: 12px; padding: 24px; transition: all 0.2s ease;">
+<span class="inline-block self-start text-[11px] font-semibold tracking-wider uppercase px-3 py-1.5 rounded-full mb-4" style="color: #7b3f3f; background: #f5ede0;">TECH · GLOBAL</span>
+<h3 class="font-serif text-xl leading-snug text-[#2c2c2c] mb-3 line-clamp-2">eSIM vs Local SIM: Which Should You Get Before Landing?</h3>
+<p class="font-body text-sm text-[#5d605c] mb-4 line-clamp-1 leading-relaxed">Don't wait until you land. Here's the exact setup that works.</p>
+<span class="font-body text-xs text-[#7f7668] mb-4">3 min read</span>
+<span class="font-body text-sm font-semibold mt-auto pt-2" style="color: #7b3f3f;">Read →</span>
+</a>
+</div>
+<div class="text-center">
+<a class="inline-block font-body text-sm font-medium no-underline border-[1.5px] border-[#7b3f3f] text-[#7b3f3f] bg-transparent hover:bg-[#7b3f3f] hover:text-white" href="studenzbit_blog.html" style="padding: 12px 32px; border-radius: 8px; transition: all 0.2s ease;">Read All Articles →</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer style="background: #2c2c2c; color: #f5ede0; padding: 60px 48px 32px; font-family: 'DM Sans', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <!-- Top row: Logo + 3 columns -->
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;">
+
+      <!-- Brand column -->
+      <div>
+        <div style="font-family: Georgia, serif; font-size: 22px; font-style: italic; color: #f5ede0; margin-bottom: 12px;">StudenzBit</div>
+        <p style="font-size: 13px; color: #8c8479; line-height: 1.7; max-width: 260px;">Your guide to studying abroad. City guides, tech picks, and student resources for Canada, USA and Australia.</p>
+        <a href="mailto:studenzbit@gmail.com" style="display: block; margin-top: 14px; font-size: 13px; color: #7b3f3f; text-decoration: none;">studenzbit@gmail.com</a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/studenz_bit?igsh=czZndGxjMjNubHVy&amp;utm_source=qr" target="_blank"
+           style="display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 13px; color: #8c8479; text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8c8479" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="#8c8479" stroke="none"/>
+          </svg>
+          @studenz_bit
+        </a>
+      </div>
+
+      <!-- Explore column 1 -->
+      <div>
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #8c8479; margin-bottom: 16px; text-transform: uppercase;">Explore</div>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="/" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Home</a></li>
+          <li><a href="studenzbit_destinations.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Destinations</a></li>
+          <li><a href="canada.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Canada</a></li>
+          <li><a href="usa.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">USA</a></li>
+          <li><a href="australia.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Australia</a></li>
+          <li><a href="studenzbit_blog.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Explore column 2 -->
+      <div>
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #8c8479; margin-bottom: 16px; text-transform: uppercase;">Tech &amp; Tools</div>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="studenzbit_tech_hub_updated.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Tech Hub</a></li>
+          <li><a href="smartphone_guide.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Smartphones</a></li>
+          <li><a href="laptop_guide.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Laptops</a></li>
+          <li><a href="sim_guide.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">SIM &amp; Data</a></li>
+          <li><a href="all_picks.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">All Picks</a></li>
+          <li><a href="studenzbit_student_toolkit_updated.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Student Toolkit</a></li>
+        </ul>
+      </div>
+
+      <!-- Company column -->
+      <div>
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #8c8479; margin-bottom: 16px; text-transform: uppercase;">Company</div>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="#" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">About Us</a></li>
+          <li><a href="#" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Privacy Policy</a></li>
+          <li><a href="#" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div style="border-top: 1px solid #3d3a36; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+      <p style="font-size: 12px; color: #8c8479; margin: 0;">© 2026 StudenzBit. Your guide to studying abroad.</p>
+      <p style="font-size: 12px; color: #8c8479; margin: 0;">studenzbit.com</p>
+    </div>
+
+  </div>
+</footer>
+<script>
+(() => {
+  const container = document.getElementById("home-world-map");
+  const mapShell = document.getElementById("home-world-map-shell");
+  if (!container || !mapShell) return;
+
+  const FILL = {
+    124: "#C9898A",
+    840: "#D4B896",
+    36: "#8BB88B",
+    784: "#B8A9D4",
+    356: "#D4C4A8",
+    554: "#A8C4B8",
+  };
+  const DEFAULT_FILL = "#c8c3bb";
+  const STROKE = "#b0aba3";
+  const HIGHLIGHT_IDS = new Set([124, 840, 36, 784, 356, 554]);
+
+  function fillFor(d) {
+    return FILL[+d.id] || DEFAULT_FILL;
+  }
+
+  function hoverFill(hex) {
+    const c = d3.rgb(hex);
+    if (!c || !Number.isFinite(c.r)) return hex;
+    const k = 0.85;
+    return d3.rgb(Math.round(c.r * k), Math.round(c.g * k), Math.round(c.b * k)).formatHex();
+  }
+
+  function tooltipLabel(d) {
+    const id = +d.id;
+    if (id === 124) return "Canada 🇨🇦";
+    if (id === 840) return "United States 🇺🇸";
+    if (id === 36) return "Australia 🇦🇺";
+    if (id === 784) return "UAE 🇦🇪";
+    if (id === 356) return "India 🇮🇳";
+    if (id === 554) return "New Zealand 🇳🇿";
+    const p = d.properties || {};
+    return p.name || p.NAME || p.name_long || p.admin || "Country";
+  }
+
+  const tooltip = document.createElement("div");
+  tooltip.style.cssText =
+    "position:absolute;z-index:100;pointer-events:none;display:none;" +
+    "background:#ffffff;color:#7b3f3f;font-family:'DM Sans',sans-serif;font-size:11px;" +
+    "padding:6px 14px;border-radius:8px;border:1px solid #e2ddd6;" +
+    "box-shadow:0 2px 8px rgba(0,0,0,0.1);";
+  mapShell.appendChild(tooltip);
+
+  let width = 0;
+  let height = 0;
+
+  async function initMap() {
+    const rect = container.getBoundingClientRect();
+    width = Math.max(320, Math.floor(rect.width));
+    height = Math.max(120, Math.floor(rect.height));
+    container.innerHTML = "";
+
+    const svg = d3.select(container).append("svg")
+      .attr("viewBox", `0 0 ${width} ${height}`)
+      .attr("width", "100%")
+      .attr("height", "100%")
+      .style("cursor", "default");
+
+    const g = svg.append("g");
+
+    const world = await d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json");
+    const collection = topojson.feature(world, world.objects.countries);
+    const countries = collection.features;
+    const projection = d3.geoNaturalEarth1().fitSize([width, height], collection);
+    const path = d3.geoPath(projection);
+
+    g.selectAll("path.country")
+      .data(countries)
+      .enter()
+      .append("path")
+      .attr("class", "country")
+      .attr("d", path)
+      .attr("fill", (d) => fillFor(d))
+      .attr("stroke", STROKE)
+      .attr("stroke-width", 0.5)
+      .style("cursor", "default")
+      .on("mouseenter", function (event, d) {
+        tooltip.textContent = tooltipLabel(d);
+        tooltip.style.display = "block";
+        if (HIGHLIGHT_IDS.has(+d.id)) {
+          d3.select(this).attr("fill", hoverFill(fillFor(d)));
+        }
+      })
+      .on("mousemove", function (event) {
+        const r = mapShell.getBoundingClientRect();
+        tooltip.style.left = `${event.clientX - r.left + 12}px`;
+        tooltip.style.top = `${event.clientY - r.top + 12}px`;
+      })
+      .on("mouseleave", function (event, d) {
+        tooltip.style.display = "none";
+        d3.select(this).attr("fill", fillFor(d));
+      })
+      .on("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+      });
+  }
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => initMap(), 150);
+  });
+  initMap();
+})();
+</script>
+</body></html>
