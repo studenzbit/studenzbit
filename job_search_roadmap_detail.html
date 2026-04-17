@@ -30,7 +30,92 @@
     }
 .tilted-element {
     transform: rotatey(-15deg) rotatex(10deg)
-    }</style>
+    }
+.nav-links { display: flex; }
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  color: inherit;
+}
+
+.mobile-nav-dropdown {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 1px solid #e2ddd6;
+  z-index: 1000;
+}
+
+.mobile-nav-dropdown a {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #2c2c2c;
+  text-decoration: none;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-dropdown a:hover {
+  background: #f5ede0;
+}
+
+.mobile-nav-dropdown.open {
+  max-height: 400px;
+}
+
+@media (max-width: 768px) {
+  nav[style*="height:72px"] { padding: 0 24px !important; }
+  .nav-links { display: none !important; }
+  .hamburger-btn { display: block; }
+  .mobile-nav-dropdown { display: flex; }
+
+  .footer-columns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  .footer-columns > div {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+  }
+
+  footer,
+  .site-footer,
+  .footer-inner {
+    overflow: hidden;
+    padding: 40px 24px !important;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .footer-bottom-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+}
+
+</style>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -131,7 +216,7 @@
   </a>
 
   <!-- Nav links -->
-  <div style="display: flex; align-items: center; gap: 36px;">
+  <div style="display: flex; align-items: center; gap: 36px;" class="nav-links">
     <a href="studenzbit_destinations.html" style="
       font-family: 'DM Sans', -apple-system, sans-serif;
       font-size: 14px;
@@ -180,7 +265,18 @@
       All Picks
     </a>
   </div>
+  <button class="hamburger-btn" type="button" aria-label="Toggle navigation">☰</button>
+
 </nav>
+
+<div class="mobile-nav-dropdown" aria-label="Mobile Navigation">
+  <a href="/studenzbit_destinations.html">Destinations</a>
+  <a href="/studenzbit_tech_hub_updated.html">Tech Hub</a>
+  <a href="/studenzbit_student_toolkit_updated.html">Student Toolkit</a>
+  <a href="/studenzbit_blog.html">Blog</a>
+  <a href="/all_picks.html">All Picks</a>
+</div>
+
 <main class="relative z-10 pt-32 pb-24 max-w-screen-2xl mx-auto px-8" style="padding-top: 72px;">
 <!-- Breadcrumb -->
 <nav class="mb-12 flex items-center space-x-2 text-on-surface-variant text-xs tracking-wider uppercase">
@@ -475,11 +571,11 @@
 </div>
 </main>
 <!-- Footer -->
-<footer style="background: #2c2c2c; color: #f5ede0; padding: 60px 48px 32px; font-family: 'DM Sans', sans-serif;">
-  <div style="max-width: 1200px; margin: 0 auto;">
+<footer class="site-footer" style="background: #2c2c2c; color: #f5ede0; padding: 60px 48px 32px; font-family: 'DM Sans', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;" class="footer-inner">
 
     <!-- Top row: Logo + 3 columns -->
-    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;">
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;" class="footer-columns">
 
       <!-- Brand column -->
       <div>
@@ -537,11 +633,32 @@
     </div>
 
     <!-- Bottom bar -->
-    <div style="border-top: 1px solid #3d3a36; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+    <div style="border-top: 1px solid #3d3a36; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;" class="footer-bottom-row">
       <p style="font-size: 12px; color: #8c8479; margin: 0;">© 2026 StudenzBit. Your guide to studying abroad.</p>
       <p style="font-size: 12px; color: #8c8479; margin: 0;">studenzbit.com</p>
     </div>
 
   </div>
 </footer>
+
+<script>
+(function () {
+  const hamburger = document.querySelector('.hamburger-btn');
+  const mobileNav = document.querySelector('.mobile-nav-dropdown');
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.textContent = isOpen ? '✕' : '☰';
+  });
+
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.textContent = '☰';
+    });
+  });
+})();
+</script>
+
 </body></html>

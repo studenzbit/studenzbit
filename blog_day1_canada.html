@@ -33,7 +33,92 @@
     @media (max-width: 640px) {
       .whats-next-cta { grid-template-columns: 1fr; justify-items: center; text-align: center; }
     }
-  </style>
+  
+.nav-links { display: flex; }
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  color: inherit;
+}
+
+.mobile-nav-dropdown {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 1px solid #e2ddd6;
+  z-index: 1000;
+}
+
+.mobile-nav-dropdown a {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #2c2c2c;
+  text-decoration: none;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-dropdown a:hover {
+  background: #f5ede0;
+}
+
+.mobile-nav-dropdown.open {
+  max-height: 400px;
+}
+
+@media (max-width: 768px) {
+  nav[style*="height:72px"] { padding: 0 24px !important; }
+  .nav-links { display: none !important; }
+  .hamburger-btn { display: block; }
+  .mobile-nav-dropdown { display: flex; }
+
+  .footer-columns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  .footer-columns > div {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+  }
+
+  footer,
+  .site-footer,
+  .footer-inner {
+    overflow: hidden;
+    padding: 40px 24px !important;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .footer-bottom-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+}
+
+</style>
 </head>
 <body style="margin:0; padding:0; padding-top:72px; background:#f9f6f2; font-family:'DM Sans',sans-serif; color:#2c2c2c;">
 <div id="progress-bar" style="position:fixed; top:0; left:0; height:3px; width:0%; background:#7b3f3f; z-index:9999; transition:width 0.1s ease;"></div>
@@ -51,14 +136,25 @@
   <a href="/" style="text-decoration:none;">
     <span style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-style:italic; font-weight:normal; color:#2c2c2c; letter-spacing:-0.3px;">StudenzBit</span>
   </a>
-  <div style="display:flex; align-items:center; gap:36px; flex-wrap:wrap;">
+  <div style="display:flex; align-items:center; gap:36px; flex-wrap:wrap;" class="nav-links">
     <a href="studenzbit_destinations.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Destinations</a>
     <a href="studenzbit_tech_hub_updated.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Tech Hub</a>
     <a href="studenzbit_student_toolkit_updated.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Student Toolkit</a>
     <a href="studenzbit_blog.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Blog</a>
     <a href="all_picks.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#7b3f3f; text-decoration:none; border:1.5px solid #7b3f3f; padding:6px 16px; border-radius:20px;" onmouseover="this.style.background='#7b3f3f';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='#7b3f3f'">All Picks</a>
   </div>
+  <button class="hamburger-btn" type="button" aria-label="Toggle navigation">☰</button>
+
 </nav>
+
+<div class="mobile-nav-dropdown" aria-label="Mobile Navigation">
+  <a href="/studenzbit_destinations.html">Destinations</a>
+  <a href="/studenzbit_tech_hub_updated.html">Tech Hub</a>
+  <a href="/studenzbit_student_toolkit_updated.html">Student Toolkit</a>
+  <a href="/studenzbit_blog.html">Blog</a>
+  <a href="/all_picks.html">All Picks</a>
+</div>
+
 
 <!-- HERO -->
 <section style="background:#f9f6f2; padding:60px 48px 40px;">
@@ -349,9 +445,9 @@
 </section>
 
 <!-- Footer -->
-<footer style="background: #2c2c2c; color: #f5ede0; padding: 60px 48px 32px; font-family: 'DM Sans', sans-serif;">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;">
+<footer class="site-footer" style="background: #2c2c2c; color: #f5ede0; padding: 60px 48px 32px; font-family: 'DM Sans', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;" class="footer-inner">
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;" class="footer-columns">
       <div>
         <div style="font-family: Georgia, serif; font-size: 22px; font-style: italic; color: #f5ede0; margin-bottom: 12px;">StudenzBit</div>
         <p style="font-size: 13px; color: #8c8479; line-height: 1.7; max-width: 260px;">Your guide to studying abroad. City guides, tech picks, and student resources for Canada, USA and Australia.</p>
@@ -392,11 +488,32 @@
         </ul>
       </div>
     </div>
-    <div style="border-top: 1px solid #3d3a36; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+    <div style="border-top: 1px solid #3d3a36; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;" class="footer-bottom-row">
       <p style="font-size: 12px; color: #8c8479; margin: 0;">© 2026 StudenzBit. Your guide to studying abroad.</p>
       <p style="font-size: 12px; color: #8c8479; margin: 0;">studenzbit.com</p>
     </div>
   </div>
 </footer>
+
+<script>
+(function () {
+  const hamburger = document.querySelector('.hamburger-btn');
+  const mobileNav = document.querySelector('.mobile-nav-dropdown');
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.textContent = isOpen ? '✕' : '☰';
+  });
+
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.textContent = '☰';
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
