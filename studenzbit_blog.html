@@ -116,6 +116,78 @@
 .blog-filter:hover:not(.active) {
   border-color: #7b3f3f;
   color: #7b3f3f;
+}
+.story-carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 8px 4px 16px 4px;
+  max-width: min(100%, 910px);
+}
+.story-carousel::-webkit-scrollbar {
+  display: none;
+}
+.story-card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 260px;
+  height: 260px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  padding: 18px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.story-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+.story-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #7b3f3f;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+.story-title {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2c2c2c;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.story-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #7b3f3f;
+  margin-top: auto;
+  text-decoration: none;
+}
+.story-card:hover .story-cta {
+  text-decoration: underline;
+}
+@media (max-width: 1024px) {
+  .story-carousel { max-width: min(100%, 500px); }
+}
+@media (max-width: 640px) {
+  .story-carousel { max-width: min(100%, 286px); }
+  .story-card { width: 220px; height: 220px; }
 }</style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container" style="padding-top: 72px;">
@@ -295,50 +367,31 @@
     </div>
 
     <!-- Episode list -->
-    <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:14px;">
+    <div class="story-carousel" aria-label="Arjun and Priya story posts">
 
-      <!-- Post 1 — live -->
-      <a href="blog_day1_canada.html" style="text-decoration:none;">
-        <div style="background:white; border:1px solid #e2ddd6; border-radius:10px; padding:18px; transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-          <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.12em; color:#7b3f3f; text-transform:uppercase; margin:0 0 8px 0;">Post 1 · Arrival</p>
-          <p style="font-family:Georgia,serif; font-size:14px; color:#2c2c2c; margin:0 0 8px 0; line-height:1.4;">Day 1 in Canada: One of Us Was Ready. One of Us Really Wasn&apos;t.</p>
-          <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#7b3f3f; margin:0; font-weight:600;">Read now →</p>
-        </div>
+      <a href="/blog_day1_canada.html" class="story-card">
+        <p class="story-tag">POST 1 · ARRIVAL</p>
+        <p class="story-title">Day 1 in Canada: One of Us Was Ready. One of Us Really Wasn't.</p>
+        <span class="story-cta">Read now →</span>
       </a>
 
-      <!-- Post 2 — live -->
-      <a href="blog_day2_canada.html" style="text-decoration:none;">
-        <div style="background:white; border:1px solid #e2ddd6; border-radius:10px; padding:18px; transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-          <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.12em; color:#7b3f3f; text-transform:uppercase; margin:0 0 8px 0;">Post 2 · Tech · Arrival</p>
-          <p style="font-family:Georgia,serif; font-size:14px; color:#2c2c2c; margin:0 0 8px 0; line-height:1.4;">Day 2 in Canada: SIN Number, SIM Card, and the Mistakes That Follow You to Day 3.</p>
-          <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#7b3f3f; margin:0; font-weight:600;">Read now →</p>
-        </div>
+      <a href="/blog_day2_canada.html" class="story-card">
+        <p class="story-tag">POST 2 · TECH · ARRIVAL</p>
+        <p class="story-title">Day 2 in Canada: SIN Number, SIM Card, and the Mistakes That Follow You to Day 3.</p>
+        <span class="story-cta">Read now →</span>
       </a>
 
-      <!-- Post 3 — live -->
-      <a href="blog_day3_canada.html" style="text-decoration:none;">
-        <div style="background:white; border:1px solid #e2ddd6; border-radius:10px; padding:18px; transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-          <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.12em; color:#7b3f3f; text-transform:uppercase; margin:0 0 8px 0;">Post 3 · Finance</p>
-          <p style="font-family:Georgia,serif; font-size:14px; color:#2c2c2c; margin:0 0 8px 0; line-height:1.4;">We Both Tried to Open a Bank Account on Day 3. Here&apos;s What Happened.</p>
-          <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#7b3f3f; margin:0; font-weight:600;">Read now →</p>
-        </div>
+      <a href="/blog_day3_canada.html" class="story-card">
+        <p class="story-tag">POST 3 · FINANCE</p>
+        <p class="story-title">We Both Tried to Open a Bank Account on Day 3. Here's What Happened.</p>
+        <span class="story-cta">Read now →</span>
       </a>
 
-      <!-- Post 4 — live -->
-      <a href="blog_day4_canada.html" style="text-decoration:none;">
-        <div style="background:white; border:1px solid #e2ddd6; border-radius:10px; padding:18px; transition:transform 0.2s ease;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
-          <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.12em; color:#7b3f3f; text-transform:uppercase; margin:0 0 8px 0;">Post 4 · Setup</p>
-          <p style="font-family:Georgia,serif; font-size:14px; color:#2c2c2c; margin:0 0 8px 0; line-height:1.4;">Day 4: Mattress, Kitchen &amp; Your First Grocery Shop</p>
-          <p style="font-family:'DM Sans',sans-serif; font-size:12px; color:#7b3f3f; margin:0; font-weight:600;">Read now →</p>
-        </div>
+      <a href="/blog_day4_canada.html" class="story-card">
+        <p class="story-tag">POST 4 · SETUP</p>
+        <p class="story-title">Day 4: Mattress, Kitchen &amp; Your First Grocery Shop</p>
+        <span class="story-cta">Read now →</span>
       </a>
-
-      <!-- Post 5 — coming soon -->
-      <div style="background:#faf8f5; border:1px solid #e2ddd6; border-radius:10px; padding:18px; opacity:0.7;">
-        <p style="font-family:'DM Sans',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.12em; color:#8c8479; text-transform:uppercase; margin:0 0 8px 0;">Post 5 · Transit · Coming Soon</p>
-        <p style="font-family:Georgia,serif; font-size:14px; color:#8c8479; margin:0 0 8px 0; line-height:1.4;">The PRESTO Playbook: Uber vs Transit in Your First Week</p>
-        <span style="display:inline-block; background:#f5ede0; color:#7b3f3f; font-size:10px; font-weight:700; padding:3px 10px; border-radius:20px; border:1px solid #e2ddd6;">COMING SOON</span>
-      </div>
 
     </div>
 
