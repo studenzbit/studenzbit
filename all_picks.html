@@ -321,8 +321,7 @@
 <!-- Country -->
 <div class="flex flex-wrap items-center gap-3">
 <span class="text-xs font-bold text-on-surface-variant w-20 uppercase tracking-tighter">Country</span>
-<button data-filter-group="country" data-filter-value="global" class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold transition-all">Global</button>
-<button data-filter-group="country" data-filter-value="canada" class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Canada</button>
+<button data-filter-group="country" data-filter-value="canada" class="px-6 py-2 rounded-full bg-primary text-on-primary text-sm font-semibold transition-all">Canada</button>
 <button data-filter-group="country" data-filter-value="usa" class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">USA</button>
 <button data-filter-group="country" data-filter-value="australia" class="px-6 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface text-sm font-medium hover:bg-surface-container-low transition-all">Australia</button>
 </div>
@@ -768,7 +767,7 @@
     }
   });
 
-  const state = { category: 'all', country: 'global', budget: 'all' };
+  const state = { category: 'all', country: 'canada', budget: 'all' };
 
   function setActiveButton(group, value) {
     document.querySelectorAll(`[data-filter-group="${group}"]`).forEach((btn) => {
@@ -793,8 +792,7 @@
   }
 
   function countryMatch(cardCountry, filterCountry) {
-    if (filterCountry === 'global') return cardCountry === 'global';
-    if (cardCountry === 'global') return false;
+    if (cardCountry === 'global') return true;
     if (cardCountry === 'can / usa') return filterCountry === 'canada' || filterCountry === 'usa';
     return cardCountry === filterCountry;
   }
