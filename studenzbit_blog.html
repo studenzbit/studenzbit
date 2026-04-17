@@ -117,6 +117,12 @@
   border-color: #7b3f3f;
   color: #7b3f3f;
 }
+.story-carousel-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
 .story-carousel {
   display: flex;
   gap: 16px;
@@ -129,6 +135,28 @@
 }
 .story-carousel::-webkit-scrollbar {
   display: none;
+}
+.story-nav {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid #e2ddd6;
+  background: #fff;
+  color: #7b3f3f;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+.story-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.14);
+  border-color: #7b3f3f;
 }
 .story-card {
   scroll-snap-align: start;
@@ -186,8 +214,10 @@
   .story-carousel { max-width: min(100%, 500px); }
 }
 @media (max-width: 640px) {
+  .story-carousel-wrap { gap: 6px; }
   .story-carousel { max-width: min(100%, 286px); }
   .story-card { width: 220px; height: 220px; }
+  .story-nav { width: 36px; height: 36px; font-size: 16px; }
 }</style>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container" style="padding-top: 72px;">
@@ -367,33 +397,63 @@
     </div>
 
     <!-- Episode list -->
-    <div class="story-carousel" aria-label="Arjun and Priya story posts">
+    <div class="story-carousel-wrap">
+      <button class="story-nav" type="button" aria-label="Scroll story cards left" data-story-nav="left">&#x2039;</button>
+      <div class="story-carousel" aria-label="Arjun and Priya story posts" id="story-carousel">
 
-      <a href="/blog_day1_canada.html" class="story-card">
-        <p class="story-tag">POST 1 · ARRIVAL</p>
-        <p class="story-title">Day 1 in Canada: One of Us Was Ready. One of Us Really Wasn't.</p>
-        <span class="story-cta">Read now →</span>
-      </a>
+        <a href="/blog_day1_canada.html" class="story-card">
+          <p class="story-tag">POST 1 · ARRIVAL</p>
+          <p class="story-title">Day 1 in Canada: One of Us Was Ready. One of Us Really Wasn't.</p>
+          <span class="story-cta">Read now →</span>
+        </a>
 
-      <a href="/blog_day2_canada.html" class="story-card">
-        <p class="story-tag">POST 2 · TECH · ARRIVAL</p>
-        <p class="story-title">Day 2 in Canada: SIN Number, SIM Card, and the Mistakes That Follow You to Day 3.</p>
-        <span class="story-cta">Read now →</span>
-      </a>
+        <a href="/blog_day2_canada.html" class="story-card">
+          <p class="story-tag">POST 2 · TECH · ARRIVAL</p>
+          <p class="story-title">Day 2 in Canada: SIN Number, SIM Card, and the Mistakes That Follow You to Day 3.</p>
+          <span class="story-cta">Read now →</span>
+        </a>
 
-      <a href="/blog_day3_canada.html" class="story-card">
-        <p class="story-tag">POST 3 · FINANCE</p>
-        <p class="story-title">We Both Tried to Open a Bank Account on Day 3. Here's What Happened.</p>
-        <span class="story-cta">Read now →</span>
-      </a>
+        <a href="/blog_day3_canada.html" class="story-card">
+          <p class="story-tag">POST 3 · FINANCE</p>
+          <p class="story-title">We Both Tried to Open a Bank Account on Day 3. Here's What Happened.</p>
+          <span class="story-cta">Read now →</span>
+        </a>
 
-      <a href="/blog_day4_canada.html" class="story-card">
-        <p class="story-tag">POST 4 · SETUP</p>
-        <p class="story-title">Day 4: Mattress, Kitchen &amp; Your First Grocery Shop</p>
-        <span class="story-cta">Read now →</span>
-      </a>
+        <a href="/blog_day4_canada.html" class="story-card">
+          <p class="story-tag">POST 4 · SETUP</p>
+          <p class="story-title">Day 4: Mattress, Kitchen &amp; Your First Grocery Shop</p>
+          <span class="story-cta">Read now →</span>
+        </a>
 
+      </div>
+      <button class="story-nav" type="button" aria-label="Scroll story cards right" data-story-nav="right">&#x203A;</button>
     </div>
+
+    <script>
+      (function () {
+        const carousel = document.getElementById('story-carousel');
+        if (!carousel) return;
+        const leftBtn = document.querySelector('[data-story-nav="left"]');
+        const rightBtn = document.querySelector('[data-story-nav="right"]');
+        const getStep = () => {
+          const card = carousel.querySelector('.story-card');
+          if (!card) return 0;
+          const styles = window.getComputedStyle(carousel);
+          const gap = parseFloat(styles.columnGap || styles.gap || '16') || 16;
+          return (card.getBoundingClientRect().width + gap) * 2;
+        };
+        if (leftBtn) {
+          leftBtn.addEventListener('click', function () {
+            carousel.scrollBy({ left: -getStep(), behavior: 'smooth' });
+          });
+        }
+        if (rightBtn) {
+          rightBtn.addEventListener('click', function () {
+            carousel.scrollBy({ left: getStep(), behavior: 'smooth' });
+          });
+        }
+      })();
+    </script>
 
   </div>
 </section>
