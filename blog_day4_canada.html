@@ -39,6 +39,22 @@
     .aff-grid-2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
     @media (min-width: 640px) { .aff-grid-2 { grid-template-columns: 1fr 1fr; } }
     .aff-card { background: #fff; border: 1px solid #e2ddd6; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
+    .blog-character-img {
+      display: block;
+      width: 100%;
+      max-width: 320px;
+      height: 220px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      margin: 1.5rem auto;
+    }
+    @media (max-width: 768px) {
+      .blog-character-img {
+        max-width: 260px;
+        height: 180px;
+      }
+    }
     .callout-split { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
     .callout-split > * { flex: 1; min-width: 260px; }
   
@@ -255,7 +271,7 @@
       </ul>
     </div>
     <div style="text-align:center; margin-top:16px;">
-      <img src="assets/blog4/blog4_arjun_sad2.png" alt="" style="max-width:100%; height:auto; border-radius:12px; border:1px solid #e2ddd6;">
+      <img src="assets/blog4/blog4_arjun_sad2.png" alt="" class="blog-character-img" style="border:1px solid #e2ddd6;">
     </div>
   </div>
 </div>
@@ -287,7 +303,7 @@
       <p style="font-size:14px; line-height:1.8; color:#2c2c2c; margin:0;">&quot;A mattress is the one thing you use every single night for the next 4–5 years. Do not try to save $30–40 on it. The difference between a $130 foam slab and a $165 spring + foam hybrid is the difference between waking up rested and waking up with a sore back by Week 3. Buy it once. Buy it right.&quot;</p>
     </div>
     <div style="text-align:center; margin-top:16px;">
-      <img src="assets/blog4/blog4_priya_idea.png" alt="" style="max-width:100%; height:auto; border-radius:12px; border:1px solid #e2ddd6;">
+      <img src="assets/blog4/blog4_priya_idea.png" alt="" class="blog-character-img" style="border:1px solid #e2ddd6;">
     </div>
   </div>
 </div>
@@ -324,7 +340,7 @@
 
   <h4 style="font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; color:#7b3f3f; margin:24px 0 12px;">⭐ Our Mattress Picks on Amazon.ca</h4>
   <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-bottom:16px;">
-    <img src="assets/blog4/blog4_arjun_idea.png" alt="" style="height:72px; width:auto; border-radius:8px; border:1px solid #e2ddd6;">
+    <img src="assets/blog4/blog4_arjun_idea.png" alt="" class="blog-character-img" style="border:1px solid #e2ddd6; margin:0;">
     <p style="font-size:14px; color:#8c8479; margin:0; flex:1; min-width:200px;">A quick character moment — Arjun wishes he&apos;d filtered reviews like this on Day 4.</p>
   </div>
   <div class="aff-grid" style="margin-bottom:12px;">
