@@ -125,6 +125,7 @@
 }
 .story-carousel {
   display: flex;
+  align-items: stretch;
   gap: 16px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -162,21 +163,36 @@
   scroll-snap-align: start;
   flex-shrink: 0;
   width: 260px;
-  height: 260px;
   background: #fff;
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
-  padding: 18px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .story-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+.carousel-card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px 12px 0 0;
+  display: block;
+  background-color: #f0ece4;
+}
+.carousel-card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 120px;
 }
 .story-tag {
   font-family: 'DM Sans', sans-serif;
@@ -216,7 +232,7 @@
 @media (max-width: 640px) {
   .story-carousel-wrap { gap: 6px; }
   .story-carousel { max-width: min(100%, 286px); }
-  .story-card { width: 220px; height: 220px; }
+  .story-card { width: 220px; }
   .story-nav { width: 36px; height: 36px; font-size: 16px; }
 }</style>
 </head>
@@ -402,27 +418,39 @@
       <div class="story-carousel" aria-label="Arjun and Priya story posts" id="story-carousel">
 
         <a href="/blog_day1_canada.html" class="story-card">
-          <p class="story-tag">POST 1 · ARRIVAL</p>
-          <p class="story-title">Day 1 in Canada: One of Us Was Ready. One of Us Really Wasn't.</p>
-          <span class="story-cta">Read now →</span>
+          <img src="/assets/carousel/carousel_post1.png" alt="Arjun and Priya arriving at Pearson Airport on Day 1" class="carousel-card-img" onerror="this.style.opacity='0'" />
+          <div class="carousel-card-body">
+            <p class="story-tag">POST 1 · ARRIVAL</p>
+            <p class="story-title">Day 1 in Canada: One of Us Was Ready. One of Us Really Wasn't.</p>
+            <span class="story-cta">Read now →</span>
+          </div>
         </a>
 
         <a href="/blog_day2_canada.html" class="story-card">
-          <p class="story-tag">POST 2 · TECH · ARRIVAL</p>
-          <p class="story-title">Day 2 in Canada: SIN Number, SIM Card, and the Mistakes That Follow You to Day 3.</p>
-          <span class="story-cta">Read now →</span>
+          <img src="/assets/carousel/carousel_post2.png" alt="Arjun confused at a phone store, Priya calmly setting up her SIM" class="carousel-card-img" onerror="this.style.opacity='0'" />
+          <div class="carousel-card-body">
+            <p class="story-tag">POST 2 · TECH · ARRIVAL</p>
+            <p class="story-title">Day 2 in Canada: SIN Number, SIM Card, and the Mistakes That Follow You to Day 3.</p>
+            <span class="story-cta">Read now →</span>
+          </div>
         </a>
 
         <a href="/blog_day3_canada.html" class="story-card">
-          <p class="story-tag">POST 3 · FINANCE</p>
-          <p class="story-title">We Both Tried to Open a Bank Account on Day 3. Here's What Happened.</p>
-          <span class="story-cta">Read now →</span>
+          <img src="/assets/carousel/carousel_post3.png" alt="Arjun waiting frustrated at a bank, Priya completing her account setup" class="carousel-card-img" onerror="this.style.opacity='0'" />
+          <div class="carousel-card-body">
+            <p class="story-tag">POST 3 · FINANCE</p>
+            <p class="story-title">We Both Tried to Open a Bank Account on Day 3. Here's What Happened.</p>
+            <span class="story-cta">Read now →</span>
+          </div>
         </a>
 
         <a href="/blog_day4_canada.html" class="story-card">
-          <p class="story-tag">POST 4 · SETUP</p>
-          <p class="story-title">Day 4: Mattress, Kitchen &amp; Your First Grocery Shop</p>
-          <span class="story-cta">Read now →</span>
+          <img src="/assets/carousel/carousel_post4.png" alt="Arjun carrying a mattress on the TTC, Priya relaxing on her delivered mattress" class="carousel-card-img" onerror="this.style.opacity='0'" />
+          <div class="carousel-card-body">
+            <p class="story-tag">POST 4 · SETUP</p>
+            <p class="story-title">Day 4: Mattress, Kitchen &amp; Your First Grocery Shop</p>
+            <span class="story-cta">Read now →</span>
+          </div>
         </a>
 
       </div>
