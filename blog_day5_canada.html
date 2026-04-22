@@ -54,7 +54,10 @@
     .story-text { font-size:16px; line-height:1.85; }
     .story-kicker { font-family: Georgia, serif; font-size: 22px; line-height: 1.5; color:#2c2c2c; margin:0; }
     .fare-callout { display:grid; gap:8px; background:#fff5f5; border:1px solid #f0d3d3; border-left:4px solid #c0392b; border-radius:10px; padding:16px; margin:16px 0; }
-    .tip-callout { background:#f0f4ff; border-left:4px solid #4a7ab5; border-radius:0 12px 12px 0; padding:18px; margin:16px 0; font-size:15px; line-height:1.75; }
+    .tip-callout { background:#f0f4ff; border-left:4px solid #4a7ab5; border-radius:0 12px 12px 0; padding:18px; margin:16px 0; font-size:15px; line-height:1.75; display:flex; gap:12px; align-items:flex-start; }
+    .tip-callout.warning { background:#fff8e6; border-left:4px solid #e6a800; }
+    .tip-icon { font-size:18px; line-height:1; margin-top:2px; flex-shrink:0; }
+    .tip-content { flex:1; }
     .fare-cards-row { display:flex; flex-direction:row; gap:1.5rem; align-items:stretch; }
     .fare-card { flex:1; background:#fff; border:1px solid #e2ddd6; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
     .fare-card h3 { font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px; line-height:1.25; min-height:100px; }
@@ -310,6 +313,17 @@
       <p class="fare-note">📋 Register through your college — ask your academic advisor or international student office.</p>
     </div>
   </div>
+  <div class="tip-callout warning">
+    <span class="tip-icon">⚠️</span>
+    <div class="tip-content">
+      <strong>GO Transit fares are separate from your TTC monthly pass.</strong>
+      The TTC monthly pass (<strong>$148.50</strong>) covers unlimited TTC rides only —
+      subway, bus, and streetcar within Toronto. It does <em>not</em> include
+      GO Transit trips. Every GO Transit ride is charged separately to your
+      PRESTO card balance, with the loyalty discount applied on top.
+      Always keep a loaded balance on your PRESTO card if you're using GO.
+    </div>
+  </div>
 </section>
 
 <!-- 4.75 VS 3.55 -->
@@ -344,6 +358,16 @@
       <p style="margin:0 0 1em;">Priya also took Uber from the airport. She had just landed in a new country with heavy bags — that was the right call, and she knew it.</p>
       <p style="margin:0 0 1em;">But she'd done her research. She knew that one Uber from Pearson made sense. Ten Ubers a week didn't.</p>
       <p style="margin:0 0 1em;">The next morning, she went and got a PRESTO card — <strong>$6</strong> for the card, loaded <strong>$20</strong>. Her first TTC ride cost <strong>$3.55</strong>.</p>
+      <div class="tip-callout">
+        <span class="tip-icon">📍</span>
+        <div class="tip-content">
+          <strong>Where to get your PRESTO card:</strong>
+          You can pick one up at Pearson Airport when you land, or at any
+          <strong>Shoppers Drug Mart</strong> location — there's one in almost
+          every neighbourhood across Ontario. Just ask at the front checkout.
+          Or order online at prestocard.ca. The card costs <strong>$6</strong>.
+        </div>
+      </div>
       <p style="margin:0 0 1em;">But here's what made the real difference: she understood how PRESTO actually works.</p>
       <div class="tip-callout">⏱️ <strong>One $3.55 tap = 2 hours of unlimited travel.</strong><br>Subway → bus → streetcar → bus again. All on the same fare. Keep moving within 2 hours and you don't pay again.</div>
       <p style="margin:0 0 1em;">Arjun didn't know this. He was tapping <strong>$4.75</strong> every single time he switched from the subway to a connecting bus.</p>
