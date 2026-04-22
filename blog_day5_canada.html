@@ -50,6 +50,39 @@
     .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
     .checklist li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: flex-start; }
     .check-icon { width: 18px; height: 18px; border: 2px solid #7b3f3f; border-radius: 4px; background: #fff; margin-top: 2px; box-sizing: border-box; }
+    .blog-nav-strip { max-width: 900px; margin: 0 auto; padding: 12px 24px 0; }
+    @media (min-width: 768px) { .blog-nav-strip { padding: 12px 48px 0; } }
+    .blog-nav-row { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-size:14px; }
+    .blog-nav-btn { font-weight:600; text-decoration:none; }
+    .blog-nav-prev { color:#7b3f3f; }
+    .blog-nav-next { color:#8c8479; }
+    .blog-hero-image { margin-bottom: 18px; }
+    .carousel-hero-img { width: 100%; border-radius: 14px; border: 1px solid #e2ddd6; display: block; }
+    .character-story { display:grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
+    .story-text { font-size:16px; line-height:1.85; }
+    .story-kicker { font-family: Georgia, serif; font-size: 22px; line-height: 1.5; color:#2c2c2c; margin:0; }
+    .fare-callout { display:grid; gap:8px; background:#fff5f5; border:1px solid #f0d3d3; border-left:4px solid #c0392b; border-radius:10px; padding:16px; margin:16px 0; }
+    .tip-callout { background:#f0f4ff; border-left:4px solid #4a7ab5; border-radius:0 12px 12px 0; padding:18px; margin:16px 0; font-size:15px; line-height:1.75; }
+    .fare-cards-row { display:flex; flex-direction:row; gap:1.5rem; align-items:stretch; }
+    .fare-card { flex:1; background:#fff; border:1px solid #e2ddd6; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    .fare-card h3 { font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px; }
+    .fare-note { font-size:13px; color:#8c8479; margin:10px 0 0; line-height:1.6; }
+    .fare-note.warning { color:#c0392b; }
+    .next-blog-card { background:#2c2c2c; border-radius:16px; padding:36px; }
+    .next-label { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.14em; color:#8c8479; text-transform:uppercase; margin:0 0 10px; }
+    .next-blog-inner { display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center; }
+    .next-avatars { display:flex; flex-direction:column; gap:8px; align-items:center; }
+    .avatar-circle { height:56px; width:56px; object-fit:cover; border-radius:50%; }
+    .next-blog-text h3 { font-family:Georgia,serif; font-size:22px; color:#f5ede0; line-height:1.4; margin:0 0 8px; font-weight:400; }
+    .next-blog-text p { font-family:'DM Sans',sans-serif; font-size:14px; color:#8c8479; margin:0 0 20px; }
+    .btn-read-next { display:inline-block; background:#7b3f3f; color:#fff; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; padding:12px 24px; border-radius:8px; text-decoration:none; }
+    .btn-read-next:hover { background:#5a2d2d; }
+    .next-series-link { display:block; background:#2c2c2c; border-radius:16px; padding:30px; text-decoration:none; }
+    .next-series-link:hover { opacity:0.95; }
+    @media (min-width: 900px) {
+      .character-story.arjun-story { grid-template-columns: 290px 1fr; }
+      .character-story.priya-story { grid-template-columns: 1fr 290px; }
+    }
 
 .nav-links { display: flex; }
 
@@ -133,6 +166,9 @@
     align-items: center !important;
     text-align: center;
   }
+  .fare-cards-row { flex-direction: column; }
+  .next-blog-inner { grid-template-columns: 1fr; text-align:center; }
+  .next-avatars { flex-direction:row; justify-content:center; }
 }
 
 </style>
@@ -172,9 +208,20 @@
   <a href="/all_picks.html">All Picks</a>
 </div>
 
+<!-- Internal blog nav -->
+<div class="blog-nav-strip">
+  <div class="blog-nav-row">
+    <a href="blog_day4_canada.html" class="blog-nav-btn blog-nav-prev">← Day 4: Mattress, Kitchen &amp; First Grocery Shop</a>
+    <a href="blog_6.html" class="blog-nav-btn blog-nav-next">Day 6: Digital Life Setup →</a>
+  </div>
+</div>
+
 <!-- HERO -->
 <section style="background:#f9f6f2; padding:60px 48px 40px;">
   <div class="blog-wrap" style="max-width:820px;">
+    <div class="blog-hero-image">
+      <img src="assets/images/Blog5_C.png" alt="Day 5 Transit — $94 vs $31.50" class="carousel-hero-img">
+    </div>
     <a href="studenzbit_blog.html" style="display:inline-block; color:#7b3f3f; font-size:13px; font-weight:600; text-decoration:none; margin-bottom:14px;">← Back to Blog</a>
     <span style="display:inline-block; background:#f5ede0; color:#7b3f3f; font-size:11px; font-weight:600; letter-spacing:0.08em; border-radius:20px; padding:4px 14px;">Week 1 — The Setup Week</span>
     <h1 style="font-family:Georgia,'Times New Roman',serif; font-size:clamp(28px,5vw,44px); font-weight:400; color:#2c2c2c; line-height:1.2; margin:20px 0 0;">Day 5: Transit &amp; Getting Around</h1>
@@ -203,25 +250,33 @@
 <!-- ARJUN STORY -->
 <section class="blog-wrap" style="max-width:760px; padding:0 48px 26px;">
   <h2 style="font-family:Georgia,serif; font-size:32px; font-weight:400; margin:0 0 16px;">Arjun's Story</h2>
-  <div style="font-size:16px; line-height:1.85;">
-    <p style="margin:0 0 1em;">A friend picked Arjun up from the airport. So technically, no Uber on Day 1.</p>
-    <p style="margin:0 0 1em;">Then reality started. Grocery run. Mattress pickup. Random short trips when it felt too cold or too late. <strong>$8</strong>. <strong>$11</strong>. <strong>$13</strong>. It never looked dangerous in the moment.</p>
-    <p style="margin:0 0 1em;">At TTC gates, he tapped his credit card without thinking. <strong>$4.75</strong> each ride. He assumed tap is tap.</p>
-    <p style="margin:0 0 1em;">On Day 7, he opened his bank app and saw the number: <strong>$94</strong> in Uber charges, plus high TTC taps.</p>
-    <p style="margin:0;"><strong>"That's not one big mistake. That's ten small ones that never felt like mistakes."</strong></p>
-  </div>
-  <div class="char-card" style="max-width:340px; margin:20px 0 0;">
-    <img src="assets/images/Blog5_AConfused.png" alt="Arjun staring at his bank app">
-    <p style="font-size:13px; color:#8c8479; margin:0;">Arjun staring at his bank app. Day 7.</p>
+  <div class="character-story arjun-story">
+    <div class="char-card">
+      <img src="assets/images/Blog5_AConfused.png" alt="Arjun confused at TTC gate">
+      <p style="font-size:13px; color:#8c8479; margin:0;">Arjun staring at his bank app. Day 7.</p>
+    </div>
+    <div class="story-text">
+      <p style="margin:0 0 1em;">Arjun was lucky — a friend picked him up from Pearson Airport. No Uber needed on Day 1.</p>
+      <p style="margin:0 0 1em;">But after that? Every errand meant opening the Uber app and tapping his credit card. Grocery run? Uber. Mattress pickup from a store a little further away? Uber. Anything that felt more than a few blocks? Uber.</p>
+      <p style="margin:0 0 1em;">When he finally tried the TTC, he tapped his credit card at the fare gate. Convenient, he thought. Same thing as PRESTO, right?</p>
+      <p style="margin:0 0 1em;"><strong>Wrong.</strong></p>
+      <div class="fare-callout warning">
+        <span>💳 Credit/debit card tap on TTC: <strong>$4.75/ride</strong></span>
+        <span>🟢 PRESTO card tap: <strong>$3.55/ride</strong></span>
+      </div>
+      <p style="margin:0 0 1em;">Each Uber ride felt small. <strong>$8</strong> here. <strong>$11</strong> there. <strong>$13</strong> for the mattress run. <strong>$9</strong> for groceries.</p>
+      <p style="margin:0 0 1em;">By Day 7, Arjun opened his banking app. <strong>$94 in Uber charges.</strong> Plus <strong>$4.75</strong> TTC taps stacking on top.</p>
+      <p class="story-kicker">That's not one big mistake. That's ten small ones that never felt like mistakes — because he was paying with a credit card and didn't feel the damage until the statement arrived.</p>
+    </div>
   </div>
 </section>
 
 <!-- PRESTO FARE CARDS -->
 <section class="blog-wrap" style="padding:26px 48px;">
   <h2 style="font-family:Georgia,serif; font-size:30px; font-weight:400; margin:0 0 16px;">PRESTO Fare Reference</h2>
-  <div class="split-3">
-    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:14px; padding:18px;">
-      <h3 style="font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px;">Adult / Post-Secondary Student (Full Time)</h3>
+  <div class="fare-cards-row">
+    <div class="fare-card">
+      <h3>Adult / Post-Secondary Student (Full Time)</h3>
       <div class="fare-table-wrap">
         <table class="fare-table">
           <thead>
@@ -234,10 +289,10 @@
           </tbody>
         </table>
       </div>
-      <p style="font-size:13px; color:#c0392b; margin:10px 0 0;">⚠️ TTC Post-Secondary Student fare = same as Adult. No TTC student discount.</p>
+      <p class="fare-note warning">⚠️ TTC Post-Secondary Student fare = same as Adult. No TTC student discount.</p>
     </div>
-    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:14px; padding:18px;">
-      <h3 style="font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px;">Youth (Age 13–19)</h3>
+    <div class="fare-card">
+      <h3>Youth (Age 13–19)</h3>
       <div class="fare-table-wrap">
         <table class="fare-table">
           <thead>
@@ -251,8 +306,8 @@
         </table>
       </div>
     </div>
-    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:14px; padding:18px;">
-      <h3 style="font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px;">GO Transit Loyalty Discount (Full-Time Post-Secondary)</h3>
+    <div class="fare-card">
+      <h3>GO Transit Loyalty Discount (Full-Time Post-Secondary)</h3>
       <div class="fare-table-wrap">
         <table class="fare-table">
           <thead>
@@ -265,7 +320,7 @@
           </tbody>
         </table>
       </div>
-      <p style="font-size:13px; color:#8c8479; margin:10px 0 0;">Register through your college — ask your academic advisor or international student office.</p>
+      <p class="fare-note">📋 Register through your college — ask your academic advisor or international student office.</p>
     </div>
   </div>
 </section>
@@ -297,15 +352,21 @@
 <!-- PRIYA STORY -->
 <section class="blog-wrap" style="max-width:760px; padding:10px 48px 24px;">
   <h2 style="font-family:Georgia,serif; font-size:32px; font-weight:400; margin:0 0 16px;">Priya's Story</h2>
-  <div style="font-size:16px; line-height:1.85;">
-    <p style="margin:0 0 1em;">Priya took an Uber from the airport too — heavy bags, brand new country, and that was calculated.</p>
-    <p style="margin:0 0 1em;">Next morning, she bought a PRESTO card for <strong>$6</strong> and loaded <strong>$20</strong> immediately.</p>
-    <p style="margin:0 0 1em;">She knew the 2-hour transfer window and planned errands around it, stacking multiple stops inside one fare window.</p>
-    <p style="margin:0;">For longer routes, she switched to GO Transit and used the loyalty discount setup for full-time post-secondary riders.</p>
-  </div>
-  <div class="char-card" style="max-width:340px; margin:20px 0 0;">
-    <img src="assets/images/Blog5_PHappy.png" alt="Priya tapping PRESTO">
-    <p style="font-size:13px; color:#8c8479; margin:0;">Priya tapping PRESTO on Day 2.</p>
+  <div class="character-story priya-story">
+    <div class="story-text">
+      <p style="margin:0 0 1em;">Priya also took Uber from the airport. She had just landed in a new country with heavy bags — that was the right call, and she knew it.</p>
+      <p style="margin:0 0 1em;">But she'd done her research. She knew that one Uber from Pearson made sense. Ten Ubers a week didn't.</p>
+      <p style="margin:0 0 1em;">The next morning, she went and got a PRESTO card — <strong>$6</strong> for the card, loaded <strong>$20</strong>. Her first TTC ride cost <strong>$3.55</strong>.</p>
+      <p style="margin:0 0 1em;">But here's what made the real difference: she understood how PRESTO actually works.</p>
+      <div class="tip-callout">⏱️ <strong>One $3.55 tap = 2 hours of unlimited travel.</strong><br>Subway → bus → streetcar → bus again. All on the same fare. Keep moving within 2 hours and you don't pay again.</div>
+      <p style="margin:0 0 1em;">Arjun didn't know this. He was tapping <strong>$4.75</strong> every single time he switched from the subway to a connecting bus.</p>
+      <p style="margin:0 0 1em;">Priya planned her routes to maximize the 2-hour window. She ran multiple errands in one trip. She explored three neighbourhoods on a single <strong>$3.55</strong> tap.</p>
+      <p style="margin:0;">For longer trips — visiting a friend in Mississauga, checking out Oakville — she used GO Transit. And she knew about the loyalty discount.</p>
+    </div>
+    <div class="char-card">
+      <img src="assets/images/Blog5_PHappy.png" alt="Priya tapping PRESTO">
+      <p style="font-size:13px; color:#8c8479; margin:0;">Priya tapping PRESTO on Day 2.</p>
+    </div>
   </div>
 </section>
 
@@ -376,12 +437,30 @@
   </div>
 </section>
 
-<!-- NEXT TEASER -->
+<!-- WHAT HAPPENS NEXT -->
 <section class="blog-wrap" style="padding:0 48px 60px;">
-  <div style="background:#2c2c2c; border-radius:16px; padding:30px;">
-    <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8c8479; margin:0 0 10px;">Next in Series</p>
-    <p style="font-family:Georgia,serif; font-size:24px; line-height:1.45; color:#f5ede0; margin:0;">Next: Day 6 — Arjun's Canadian Apple ID is a mess. His Indian number is locked out of iCloud. Priya set up a clean Canadian digital life on Day 1. Here's the exact playbook. →</p>
+  <div class="next-blog-card">
+    <p class="next-label">What Happens Next?</p>
+    <div class="next-blog-inner">
+      <div class="next-avatars">
+        <img src="assets/images/Arjun_Sad.png" alt="Arjun" class="avatar-circle" style="border:2px solid #D4A876;">
+        <img src="assets/images/Priya_Idea.png" alt="Priya" class="avatar-circle" style="border:2px solid #7BA7BC;">
+      </div>
+      <div class="next-blog-text">
+        <h3>Arjun's Canadian Apple ID is a mess. His Indian number is locked out of iCloud. Priya set up a clean Canadian digital life on Day 2. Here's the exact playbook.</h3>
+        <p>Day 6: Canadian Apple ID fix, Apple Wallet security, and the 15 apps every international student needs in Canada.</p>
+        <a href="blog_6.html" class="btn-read-next">Read Day 6 →</a>
+      </div>
+    </div>
   </div>
+</section>
+
+<!-- NEXT IN SERIES -->
+<section class="blog-wrap" style="padding:0 48px 60px;">
+  <a href="blog_6.html" class="next-series-link">
+    <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8c8479; margin:0 0 10px;">Next in Series</p>
+    <p style="font-family:Georgia,serif; font-size:24px; line-height:1.45; color:#f5ede0; margin:0;">Next: Day 6 — Arjun's Canadian Apple ID is a mess. His Indian number is locked out of iCloud. Priya set up a clean Canadian digital life on Day 2. Here's the exact playbook. →</p>
+  </a>
 </section>
 
 <!-- Footer -->
