@@ -17,6 +17,18 @@
   <url><loc>https://studenzbit.com/blog_day1_canada.html</loc><priority>0.7</priority></url>
   <url><loc>https://studenzbit.com/blog_day2_canada.html</loc><priority>0.7</priority></url>
   <url><loc>https://studenzbit.com/blog_day3_canada.html</loc><priority>0.7</priority></url>
+  <url>
+    <loc>https://studenzbit.com/blog_day5_canada.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://studenzbit.com/blog_day6_canada.html</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url><loc>https://studenzbit.com/blog_bank_account.html</loc><priority>0.7</priority></url>
   <url><loc>https://studenzbit.com/the_ultimate_first_week_guide_article.html</loc><priority>0.7</priority></url>
 

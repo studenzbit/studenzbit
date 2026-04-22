@@ -1,0 +1,9 @@
+# Blog 5 — Day 5: Transit & Getting Around
+# Topics: PRESTO card, TTC fares, GO Transit, Uber vs Lyft, monthly pass, 2-hour transfer rule
+# Audience: International students arriving in Canada, Week 1
+/blog_day5_canada.html
+
+# Blog 6 — Day 6: Digital Life Setup
+# Topics: Canadian Apple ID, Apple Wallet, card skimming, Interac e-Transfer, UNiDAYS, essential apps for international students
+# Audience: International students arriving in Canada, Week 1
+/blog_day6_canada.html
