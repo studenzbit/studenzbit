@@ -50,14 +50,6 @@
     .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
     .checklist li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: flex-start; }
     .check-icon { width: 18px; height: 18px; border: 2px solid #7b3f3f; border-radius: 4px; background: #fff; margin-top: 2px; box-sizing: border-box; }
-    .blog-nav-strip { max-width: 900px; margin: 0 auto; padding: 12px 24px 0; }
-    @media (min-width: 768px) { .blog-nav-strip { padding: 12px 48px 0; } }
-    .blog-nav-row { display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-size:14px; }
-    .blog-nav-btn { font-weight:600; text-decoration:none; }
-    .blog-nav-prev { color:#7b3f3f; }
-    .blog-nav-next { color:#8c8479; }
-    .blog-hero-image { margin-bottom: 18px; }
-    .carousel-hero-img { width: 100%; border-radius: 14px; border: 1px solid #e2ddd6; display: block; }
     .character-story { display:grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
     .story-text { font-size:16px; line-height:1.85; }
     .story-kicker { font-family: Georgia, serif; font-size: 22px; line-height: 1.5; color:#2c2c2c; margin:0; }
@@ -65,7 +57,7 @@
     .tip-callout { background:#f0f4ff; border-left:4px solid #4a7ab5; border-radius:0 12px 12px 0; padding:18px; margin:16px 0; font-size:15px; line-height:1.75; }
     .fare-cards-row { display:flex; flex-direction:row; gap:1.5rem; align-items:stretch; }
     .fare-card { flex:1; background:#fff; border:1px solid #e2ddd6; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
-    .fare-card h3 { font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px; }
+    .fare-card h3 { font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px; line-height:1.25; min-height:100px; }
     .fare-note { font-size:13px; color:#8c8479; margin:10px 0 0; line-height:1.6; }
     .fare-note.warning { color:#c0392b; }
     .next-blog-card { background:#2c2c2c; border-radius:16px; padding:36px; }
@@ -77,8 +69,6 @@
     .next-blog-text p { font-family:'DM Sans',sans-serif; font-size:14px; color:#8c8479; margin:0 0 20px; }
     .btn-read-next { display:inline-block; background:#7b3f3f; color:#fff; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; padding:12px 24px; border-radius:8px; text-decoration:none; }
     .btn-read-next:hover { background:#5a2d2d; }
-    .next-series-link { display:block; background:#2c2c2c; border-radius:16px; padding:30px; text-decoration:none; }
-    .next-series-link:hover { opacity:0.95; }
     @media (min-width: 900px) {
       .character-story.arjun-story { grid-template-columns: 290px 1fr; }
       .character-story.priya-story { grid-template-columns: 1fr 290px; }
@@ -208,26 +198,23 @@
   <a href="/all_picks.html">All Picks</a>
 </div>
 
-<!-- Internal blog nav -->
-<div class="blog-nav-strip">
-  <div class="blog-nav-row">
-    <a href="blog_day4_canada.html" class="blog-nav-btn blog-nav-prev">← Day 4: Mattress, Kitchen &amp; First Grocery Shop</a>
-    <a href="blog_6.html" class="blog-nav-btn blog-nav-next">Day 6: Digital Life Setup →</a>
-  </div>
-</div>
-
 <!-- HERO -->
 <section style="background:#f9f6f2; padding:60px 48px 40px;">
   <div class="blog-wrap" style="max-width:820px;">
-    <div class="blog-hero-image">
-      <img src="assets/images/Blog5_C.png" alt="Day 5 Transit — $94 vs $31.50" class="carousel-hero-img">
-    </div>
     <a href="studenzbit_blog.html" style="display:inline-block; color:#7b3f3f; font-size:13px; font-weight:600; text-decoration:none; margin-bottom:14px;">← Back to Blog</a>
     <span style="display:inline-block; background:#f5ede0; color:#7b3f3f; font-size:11px; font-weight:600; letter-spacing:0.08em; border-radius:20px; padding:4px 14px;">Week 1 — The Setup Week</span>
     <h1 style="font-family:Georgia,'Times New Roman',serif; font-size:clamp(28px,5vw,44px); font-weight:400; color:#2c2c2c; line-height:1.2; margin:20px 0 0;">Day 5: Transit &amp; Getting Around</h1>
     <p style="font-family:Georgia,'Cormorant Garamond',serif; font-size:23px; color:#2c2c2c; line-height:1.55; margin:16px 0 0;">The difference between <strong>$94</strong> and <strong>$31.50</strong> in one week — same city, same destinations</p>
   </div>
 </section>
+
+<!-- Internal blog nav -->
+<div class="blog-wrap" style="margin:0 auto 8px;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-size:14px;">
+    <a href="blog_4.html" style="color:#7b3f3f; font-weight:600; text-decoration:none;">← Day 4</a>
+    <a href="blog_6.html" style="color:#8c8479; font-weight:600; text-decoration:none;">Day 6 →</a>
+  </div>
+</div>
 
 <!-- HOOK -->
 <section class="blog-wrap" style="padding:8px 48px 36px;">
@@ -453,14 +440,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- NEXT IN SERIES -->
-<section class="blog-wrap" style="padding:0 48px 60px;">
-  <a href="blog_6.html" class="next-series-link">
-    <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8c8479; margin:0 0 10px;">Next in Series</p>
-    <p style="font-family:Georgia,serif; font-size:24px; line-height:1.45; color:#f5ede0; margin:0;">Next: Day 6 — Arjun's Canadian Apple ID is a mess. His Indian number is locked out of iCloud. Priya set up a clean Canadian digital life on Day 2. Here's the exact playbook. →</p>
-  </a>
 </section>
 
 <!-- Footer -->
