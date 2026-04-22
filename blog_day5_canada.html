@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MX4V4PVRFT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MX4V4PVRFT');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 5: Transit &amp; Getting Around (PRESTO, TTC, GO) | StudenzBit</title>
+  <meta name="description" content="Day 5 in Canada: PRESTO vs credit card taps, TTC transfer rules, GO loyalty discounts, and how two students spent $94 vs $31.50 in one week.">
+  <meta name="keywords" content="PRESTO card international student, TTC fare Canada, GO Transit student discount, Uber vs Lyft Toronto, Day 5 Canada arrival guide">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+  <style>
+    .blog-wrap { max-width: 900px; margin-left: auto; margin-right: auto; padding-left: 24px; padding-right: 24px; }
+    @media (min-width: 768px) { .blog-wrap { padding-left: 48px; padding-right: 48px; } }
+    .split-2 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 760px) { .split-2 { grid-template-columns: 1fr 1fr; } }
+    .split-3 { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 760px) { .split-3 { grid-template-columns: repeat(3, 1fr); } }
+    .char-card {
+      background: #fff;
+      border: 1px solid #e2ddd6;
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(44, 44, 44, 0.08);
+      padding: 18px;
+      text-align: center;
+    }
+    .char-card img {
+      display: block;
+      width: 100%;
+      max-width: 240px;
+      height: 180px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 12px;
+      margin: 0 auto 12px;
+      border: 1px solid #e2ddd6;
+    }
+    .fare-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid #e2ddd6; }
+    .fare-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .fare-table th { background: #2c2c2c; color: #f5ede0; text-align: left; padding: 10px 12px; }
+    .fare-table td { border: 1px solid #e2ddd6; padding: 10px 12px; background: #fff; }
+    .fare-table tr:nth-child(even) td { background: #faf8f5; }
+    .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .checklist li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: flex-start; }
+    .check-icon { width: 18px; height: 18px; border: 2px solid #7b3f3f; border-radius: 4px; background: #fff; margin-top: 2px; box-sizing: border-box; }
+
+.nav-links { display: flex; }
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  color: inherit;
+}
+
+.mobile-nav-dropdown {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-top: 1px solid #e2ddd6;
+  z-index: 1000;
+}
+
+.mobile-nav-dropdown a {
+  width: 100%;
+  min-height: 48px;
+  padding: 14px 24px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #2c2c2c;
+  text-decoration: none;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-nav-dropdown a:hover {
+  background: #f5ede0;
+}
+
+.mobile-nav-dropdown.open {
+  max-height: 400px;
+}
+
+@media (max-width: 768px) {
+  nav[style*="height:72px"] { padding: 0 24px !important; }
+  .nav-links { display: none !important; }
+  .hamburger-btn { display: block; }
+  .mobile-nav-dropdown { display: flex; }
+
+  .footer-columns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+
+  .footer-columns > div {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: unset !important;
+  }
+
+  footer,
+  .site-footer,
+  .footer-inner {
+    overflow: hidden;
+    padding: 40px 24px !important;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .footer-bottom-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+}
+
+</style>
+</head>
+<body style="margin:0; padding:0; padding-top:72px; background:#f9f6f2; font-family:'DM Sans',sans-serif; color:#2c2c2c;">
+<div id="progress-bar" style="position:fixed; top:0; left:0; height:3px; width:0%; background:#7b3f3f; z-index:9999; transition:width 0.1s ease;"></div>
+<script>
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = docHeight <= 0 ? 0 : Math.min(100, (scrollTop / docHeight) * 100);
+    document.getElementById('progress-bar').style.width = progress + '%';
+  });
+</script>
+
+<!-- TopNavBar -->
+<nav style="position:fixed; top:0; left:0; right:0; height:72px; background:#ffffff; border-bottom:1px solid #e2ddd6; display:flex; align-items:center; justify-content:space-between; padding:0 48px; z-index:1000; box-sizing:border-box;">
+  <a href="/" style="text-decoration:none;">
+    <span style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-style:italic; font-weight:normal; color:#2c2c2c; letter-spacing:-0.3px;">StudenzBit</span>
+  </a>
+  <div style="display:flex; align-items:center; gap:36px; flex-wrap:wrap;" class="nav-links">
+    <a href="studenzbit_destinations.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Destinations</a>
+    <a href="studenzbit_tech_hub_updated.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Tech Hub</a>
+    <a href="studenzbit_student_toolkit_updated.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Student Toolkit</a>
+    <a href="studenzbit_blog.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Blog</a>
+    <a href="all_picks.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#7b3f3f; text-decoration:none; border:1.5px solid #7b3f3f; padding:6px 16px; border-radius:20px;" onmouseover="this.style.background='#7b3f3f';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='#7b3f3f'">All Picks</a>
+  </div>
+  <button class="hamburger-btn" type="button" aria-label="Toggle navigation">☰</button>
+
+</nav>
+
+<div class="mobile-nav-dropdown">
+  <a href="/studenzbit_destinations.html">Destinations</a>
+  <a href="/studenzbit_tech_hub_updated.html">Tech Hub</a>
+  <a href="/studenzbit_student_toolkit_updated.html">Student Toolkit</a>
+  <a href="/studenzbit_blog.html">Blog</a>
+  <a href="/all_picks.html">All Picks</a>
+</div>
+
+<!-- HERO -->
+<section style="background:#f9f6f2; padding:60px 48px 40px;">
+  <div class="blog-wrap" style="max-width:820px;">
+    <a href="studenzbit_blog.html" style="display:inline-block; color:#7b3f3f; font-size:13px; font-weight:600; text-decoration:none; margin-bottom:14px;">← Back to Blog</a>
+    <span style="display:inline-block; background:#f5ede0; color:#7b3f3f; font-size:11px; font-weight:600; letter-spacing:0.08em; border-radius:20px; padding:4px 14px;">Week 1 — The Setup Week</span>
+    <h1 style="font-family:Georgia,'Times New Roman',serif; font-size:clamp(28px,5vw,44px); font-weight:400; color:#2c2c2c; line-height:1.2; margin:20px 0 0;">Day 5: Transit &amp; Getting Around</h1>
+    <p style="font-family:Georgia,'Cormorant Garamond',serif; font-size:23px; color:#2c2c2c; line-height:1.55; margin:16px 0 0;">The difference between <strong>$94</strong> and <strong>$31.50</strong> in one week — same city, same destinations</p>
+  </div>
+</section>
+
+<!-- HOOK -->
+<section class="blog-wrap" style="padding:8px 48px 36px;">
+  <div class="split-2">
+    <div style="background:#fff5f5; border:1px solid #f0d3d3; border-left:4px solid #c0392b; border-radius:14px; padding:20px;">
+      <p style="margin:0 0 8px; font-size:11px; font-weight:700; letter-spacing:0.12em; color:#c0392b; text-transform:uppercase;">Warning Signal</p>
+      <img src="assets/images/Blog5_AConfused.png" alt="Arjun stressed about transit costs" style="display:block; width:100%; max-width:220px; height:160px; object-fit:cover; object-position:top center; border-radius:10px; border:1px solid #e2ddd6; margin:0 0 14px;">
+      <p style="font-family:Georgia,serif; font-size:22px; margin:0 0 4px;">Arjun — <strong>$94</strong></p>
+      <p style="font-size:14px; color:#8c8479; margin:0;">Spent in Week 1</p>
+    </div>
+    <div style="background:#f0faf4; border:1px solid #d6eddc; border-left:4px solid #27ae60; border-radius:14px; padding:20px;">
+      <p style="margin:0 0 8px; font-size:11px; font-weight:700; letter-spacing:0.12em; color:#27ae60; text-transform:uppercase;">Smart Setup</p>
+      <img src="assets/images/Blog5_PHappy.png" alt="Priya confident with transit setup" style="display:block; width:100%; max-width:220px; height:160px; object-fit:cover; object-position:top center; border-radius:10px; border:1px solid #e2ddd6; margin:0 0 14px;">
+      <p style="font-family:Georgia,serif; font-size:22px; margin:0 0 4px;">Priya — <strong>$31.50</strong></p>
+      <p style="font-size:14px; color:#8c8479; margin:0;">Spent in Week 1</p>
+    </div>
+  </div>
+</section>
+
+<!-- ARJUN STORY -->
+<section class="blog-wrap" style="max-width:760px; padding:0 48px 26px;">
+  <h2 style="font-family:Georgia,serif; font-size:32px; font-weight:400; margin:0 0 16px;">Arjun's Story</h2>
+  <div style="font-size:16px; line-height:1.85;">
+    <p style="margin:0 0 1em;">A friend picked Arjun up from the airport. So technically, no Uber on Day 1.</p>
+    <p style="margin:0 0 1em;">Then reality started. Grocery run. Mattress pickup. Random short trips when it felt too cold or too late. <strong>$8</strong>. <strong>$11</strong>. <strong>$13</strong>. It never looked dangerous in the moment.</p>
+    <p style="margin:0 0 1em;">At TTC gates, he tapped his credit card without thinking. <strong>$4.75</strong> each ride. He assumed tap is tap.</p>
+    <p style="margin:0 0 1em;">On Day 7, he opened his bank app and saw the number: <strong>$94</strong> in Uber charges, plus high TTC taps.</p>
+    <p style="margin:0;"><strong>"That's not one big mistake. That's ten small ones that never felt like mistakes."</strong></p>
+  </div>
+  <div class="char-card" style="max-width:340px; margin:20px 0 0;">
+    <img src="assets/images/Blog5_AConfused.png" alt="Arjun staring at his bank app">
+    <p style="font-size:13px; color:#8c8479; margin:0;">Arjun staring at his bank app. Day 7.</p>
+  </div>
+</section>
+
+<!-- PRESTO FARE CARDS -->
+<section class="blog-wrap" style="padding:26px 48px;">
+  <h2 style="font-family:Georgia,serif; font-size:30px; font-weight:400; margin:0 0 16px;">PRESTO Fare Reference</h2>
+  <div class="split-3">
+    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:14px; padding:18px;">
+      <h3 style="font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px;">Adult / Post-Secondary Student (Full Time)</h3>
+      <div class="fare-table-wrap">
+        <table class="fare-table">
+          <thead>
+            <tr><th>Fare</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single tap</td><td><strong>$3.55</strong></td></tr>
+            <tr><td>Weekly pass</td><td><strong>$39.50</strong></td></tr>
+            <tr><td>Monthly pass</td><td><strong>$148.50</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px; color:#c0392b; margin:10px 0 0;">⚠️ TTC Post-Secondary Student fare = same as Adult. No TTC student discount.</p>
+    </div>
+    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:14px; padding:18px;">
+      <h3 style="font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px;">Youth (Age 13–19)</h3>
+      <div class="fare-table-wrap">
+        <table class="fare-table">
+          <thead>
+            <tr><th>Fare</th><th>Price</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single tap</td><td><strong>$2.95</strong></td></tr>
+            <tr><td>Weekly pass</td><td><strong>$31.75</strong></td></tr>
+            <tr><td>Monthly pass</td><td><strong>$123.75</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="background:#fff; border:1px solid #e2ddd6; border-radius:14px; padding:18px;">
+      <h3 style="font-family:Georgia,serif; font-size:20px; font-weight:400; margin:0 0 12px;">GO Transit Loyalty Discount (Full-Time Post-Secondary)</h3>
+      <div class="fare-table-wrap">
+        <table class="fare-table">
+          <thead>
+            <tr><th>Rides/week</th><th>Discount</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Rides 1–30</td><td><strong>40% off</strong></td></tr>
+            <tr><td>Rides 31–40</td><td><strong>95% off</strong></td></tr>
+            <tr><td>Rides 41+</td><td><strong>FREE</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px; color:#8c8479; margin:10px 0 0;">Register through your college — ask your academic advisor or international student office.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4.75 VS 3.55 -->
+<section class="blog-wrap" style="padding:12px 48px 12px;">
+  <div style="background:#fff; border:1px solid #e2ddd6; border-radius:14px; padding:24px;">
+    <div class="split-2">
+      <div style="background:#fff5f5; border:1px solid #f0d3d3; border-radius:10px; padding:16px;">
+        <p style="font-size:15px; margin:0 0 6px;">💳 Credit/debit card tap</p>
+        <p style="font-family:Georgia,serif; font-size:32px; margin:0;"><strong>$4.75</strong></p>
+      </div>
+      <div style="background:#f0faf4; border:1px solid #d6eddc; border-radius:10px; padding:16px;">
+        <p style="font-size:15px; margin:0 0 6px;">🟢 PRESTO card tap</p>
+        <p style="font-family:Georgia,serif; font-size:32px; margin:0;"><strong>$3.55</strong></p>
+      </div>
+    </div>
+    <p style="font-family:Georgia,serif; font-size:24px; line-height:1.4; margin:16px 0 0;">That's <strong>$1.20</strong> wasted. Every. Single. Ride.</p>
+  </div>
+</section>
+
+<!-- 2 HOUR RULE -->
+<section class="blog-wrap" style="padding:20px 48px;">
+  <div style="background:#f0f4ff; border-left:4px solid #4a7ab5; border-radius:0 12px 12px 0; padding:22px;">
+    <p style="font-size:18px; line-height:1.7; margin:0;"><strong>⏱️ One <strong>$3.55</strong> PRESTO tap = 2 hours of unlimited travel.</strong><br>Subway → bus → streetcar → bus again. All on the same fare. Keep moving within 2 hours and you don't pay again.</p>
+  </div>
+</section>
+
+<!-- PRIYA STORY -->
+<section class="blog-wrap" style="max-width:760px; padding:10px 48px 24px;">
+  <h2 style="font-family:Georgia,serif; font-size:32px; font-weight:400; margin:0 0 16px;">Priya's Story</h2>
+  <div style="font-size:16px; line-height:1.85;">
+    <p style="margin:0 0 1em;">Priya took an Uber from the airport too — heavy bags, brand new country, and that was calculated.</p>
+    <p style="margin:0 0 1em;">Next morning, she bought a PRESTO card for <strong>$6</strong> and loaded <strong>$20</strong> immediately.</p>
+    <p style="margin:0 0 1em;">She knew the 2-hour transfer window and planned errands around it, stacking multiple stops inside one fare window.</p>
+    <p style="margin:0;">For longer routes, she switched to GO Transit and used the loyalty discount setup for full-time post-secondary riders.</p>
+  </div>
+  <div class="char-card" style="max-width:340px; margin:20px 0 0;">
+    <img src="assets/images/Blog5_PHappy.png" alt="Priya tapping PRESTO">
+    <p style="font-size:13px; color:#8c8479; margin:0;">Priya tapping PRESTO on Day 2.</p>
+  </div>
+</section>
+
+<!-- TRAP -->
+<section class="blog-wrap" style="padding:4px 48px 20px;">
+  <div style="background:#fff5f5; border-left:4px solid #c0392b; border-radius:0 12px 12px 0; padding:22px;">
+    <p style="font-size:17px; line-height:1.8; margin:0;"><strong>The "It's Just $8" Trap</strong><br>Each ride felt small. <strong>$8</strong>. <strong>$11</strong>. <strong>$13</strong>. By Day 7 — <strong>$94</strong> on Uber.<br>That's not one big mistake. That's ten small ones that never felt like mistakes — paid on a credit card, felt invisible until the statement hit.</p>
+  </div>
+</section>
+
+<!-- UBER VS LYFT TIP -->
+<section class="blog-wrap" style="padding:10px 48px 22px;">
+  <div style="background:#f0faf4; border:1px solid #d6eddc; border-radius:14px; padding:20px; display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start;">
+    <img src="assets/images/Blog5_PIdea.png" alt="Priya idea tip" style="width:110px; height:110px; object-fit:cover; border-radius:12px; border:1px solid #e2ddd6;">
+    <div>
+      <p style="font-size:11px; font-weight:700; letter-spacing:0.1em; color:#27ae60; text-transform:uppercase; margin:0 0 8px;">Pro Tip</p>
+      <p style="font-size:15px; line-height:1.8; margin:0;">Before you book Uber, open Lyft too. Takes 10 seconds. Prices vary by surge, time, and promos — the difference can be <strong>$4–8</strong> on the same route. New users often get Lyft welcome discounts. Never assume one app is always cheaper.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="blog-wrap" style="padding:12px 48px 24px;">
+  <h2 style="font-family:Georgia,serif; font-size:30px; font-weight:400; margin:0 0 14px;">Comparison Table</h2>
+  <div style="overflow-x:auto; border-radius:12px; border:1px solid #e2ddd6;">
+    <table style="width:100%; border-collapse:collapse; font-size:14px;">
+      <thead>
+        <tr>
+          <th style="background:#2c2c2c; color:#f5ede0; padding:12px; text-align:left;">&nbsp;</th>
+          <th style="background:#D4A876; color:#2c2c2c; padding:12px; text-align:center;">Arjun 🧳</th>
+          <th style="background:#7BA7BC; color:white; padding:12px; text-align:center;">Priya 🌟</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:12px; border:1px solid #e2ddd6; font-weight:600; background:#fff;">TTC fare method</td><td style="padding:12px; border:1px solid #e2ddd6; background:#fff;">Credit card — <strong>$4.75</strong></td><td style="padding:12px; border:1px solid #e2ddd6; background:#f0faf4;">PRESTO — <strong>$3.55</strong></td></tr>
+        <tr><td style="padding:12px; border:1px solid #e2ddd6; font-weight:600; background:#faf8f5;">Transfer knowledge</td><td style="padding:12px; border:1px solid #e2ddd6; background:#faf8f5;">Paid every transfer</td><td style="padding:12px; border:1px solid #e2ddd6; background:#eaf6ff;">2 hrs unlimited on one tap</td></tr>
+        <tr><td style="padding:12px; border:1px solid #e2ddd6; font-weight:600; background:#fff;">Long distance</td><td style="padding:12px; border:1px solid #e2ddd6; background:#fff;">Uber (full price)</td><td style="padding:12px; border:1px solid #e2ddd6; background:#f0faf4;">GO Transit + loyalty discount</td></tr>
+        <tr><td style="padding:12px; border:1px solid #e2ddd6; font-weight:600; background:#faf8f5;">Uber vs Lyft habit</td><td style="padding:12px; border:1px solid #e2ddd6; background:#faf8f5;">Uber only</td><td style="padding:12px; border:1px solid #e2ddd6; background:#eaf6ff;">Compared both every time</td></tr>
+        <tr><td style="padding:12px; border:1px solid #e2ddd6; font-weight:600; background:#fff;">Week 1 transit spend</td><td style="padding:12px; border:1px solid #e2ddd6; background:#fff;"><strong>~$94</strong></td><td style="padding:12px; border:1px solid #e2ddd6; background:#f0faf4;"><strong>~$31.50</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MINI VACATION -->
+<section class="blog-wrap" style="padding:12px 48px 24px;">
+  <div style="background:#fdf6e8; border:1px solid #edd9b5; border-radius:16px; padding:28px;">
+    <h2 style="font-family:Georgia,serif; font-size:32px; font-weight:400; margin:0 0 14px;">🌅 You Haven't Started Yet — Enjoy It</h2>
+    <p style="font-size:16px; line-height:1.85; margin:0 0 1em;">Your program hasn't started. You have days — sometimes weeks — before the first lecture. Use them.</p>
+    <p style="font-size:16px; line-height:1.85; margin:0 0 1em;">Get a weekly pass (<strong>$39.50</strong>) — unlimited TTC, no counting taps. Explore. Wander. Take GO Transit somewhere you've never heard of.</p>
+    <p style="font-size:16px; line-height:1.85; margin:0 0 1em;">Once your semester starts and you have a fixed route, get the monthly pass (<strong>$148.50</strong>). No stress. No balance checks. Unlimited. Tap and go.</p>
+    <p style="font-size:16px; line-height:1.85; margin:0;"><strong>Transit Pass Tip:</strong> For your first month — before you have a fixed job or confirmed university schedule — the monthly pass is freedom. Worry-free travel, anytime, anywhere in the TTC network.</p>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="blog-wrap" style="padding:10px 48px 30px;">
+  <div style="background:#fff; border:1px solid #e2ddd6; border-radius:16px; padding:24px;">
+    <h2 style="font-family:Georgia,serif; font-size:30px; font-weight:400; margin:0 0 12px;">Day 5 Checklist</h2>
+    <ul class="checklist">
+      <li><span class="check-icon"></span><span>Get your PRESTO card — Pearson Airport, Shoppers Drug Mart, or prestocard.ca (<strong>$6</strong>)</span></li>
+      <li><span class="check-icon"></span><span>Never tap your credit card on TTC — <strong>$4.75</strong> vs <strong>$3.55</strong> on PRESTO</span></li>
+      <li><span class="check-icon"></span><span>Remember: one tap = 2 hours unlimited. Plan your trips around it</span></li>
+      <li><span class="check-icon"></span><span>Always compare Uber AND Lyft before booking</span></li>
+      <li><span class="check-icon"></span><span>GO Transit loyalty discount — register through your college/university</span></li>
+      <li><span class="check-icon"></span><span>Weekly pass (<strong>$39.50</strong>) for exploring. Monthly pass (<strong>$148.50</strong>) once routine is set</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- NEXT TEASER -->
+<section class="blog-wrap" style="padding:0 48px 60px;">
+  <div style="background:#2c2c2c; border-radius:16px; padding:30px;">
+    <p style="font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#8c8479; margin:0 0 10px;">Next in Series</p>
+    <p style="font-family:Georgia,serif; font-size:24px; line-height:1.45; color:#f5ede0; margin:0;">Next: Day 6 — Arjun's Canadian Apple ID is a mess. His Indian number is locked out of iCloud. Priya set up a clean Canadian digital life on Day 1. Here's the exact playbook. →</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer" style="background: #2c2c2c; color: #f5ede0; padding: 60px 48px 32px; font-family: 'DM Sans', sans-serif;">
+  <div style="max-width: 1200px; margin: 0 auto;" class="footer-inner">
+    <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px;" class="footer-columns">
+      <div>
+        <div style="font-family: Georgia, serif; font-size: 22px; font-style: italic; color: #f5ede0; margin-bottom: 12px;">StudenzBit</div>
+        <p style="font-size: 13px; color: #8c8479; line-height: 1.7; max-width: 260px;">Your guide to studying abroad. City guides, tech picks, and student resources for Canada, USA and Australia.</p>
+        <a href="mailto:studenzbit@gmail.com" style="display: block; margin-top: 14px; font-size: 13px; color: #7b3f3f; text-decoration: none;">studenzbit@gmail.com</a>
+        <a href="https://www.instagram.com/studenz_bit?igsh=czZndGxjMjNubHVy&amp;utm_source=qr" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 13px; color: #8c8479; text-decoration: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8c8479" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="#8c8479" stroke="none"/></svg>
+          @studenz_bit
+        </a>
+      </div>
+      <div>
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #8c8479; margin-bottom: 16px; text-transform: uppercase;">Explore</div>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="/" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Home</a></li>
+          <li><a href="studenzbit_destinations.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Destinations</a></li>
+          <li><a href="canada.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Canada</a></li>
+          <li><a href="usa.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">USA</a></li>
+          <li><a href="australia.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Australia</a></li>
+          <li><a href="studenzbit_blog.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #8c8479; margin-bottom: 16px; text-transform: uppercase;">Tech &amp; Tools</div>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="studenzbit_tech_hub_updated.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Tech Hub</a></li>
+          <li><a href="smartphone_guide.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Smartphones</a></li>
+          <li><a href="laptop_guide.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Laptops</a></li>
+          <li><a href="sim_guide.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">SIM &amp; Data</a></li>
+          <li><a href="all_picks.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">All Picks</a></li>
+          <li><a href="studenzbit_student_toolkit_updated.html" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Student Toolkit</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #8c8479; margin-bottom: 16px; text-transform: uppercase;">Company</div>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li><a href="#" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">About Us</a></li>
+          <li><a href="#" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Privacy Policy</a></li>
+          <li><a href="#" style="font-size: 13px; color: #c4bdb6; text-decoration: none;">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #3d3a36; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;" class="footer-bottom-row">
+      <p style="font-size: 12px; color: #8c8479; margin: 0;">© 2026 StudenzBit. Your guide to studying abroad.</p>
+      <p style="font-size: 12px; color: #8c8479; margin: 0;">studenzbit.com</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const hamburger = document.querySelector('.hamburger-btn');
+  const mobileNav = document.querySelector('.mobile-nav-dropdown');
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.textContent = isOpen ? '✕' : '☰';
+  });
+
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.textContent = '☰';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
