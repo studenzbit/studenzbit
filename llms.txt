@@ -1,9 +1,37 @@
-# Blog 5 — Day 5: Transit & Getting Around
-# Topics: PRESTO card, TTC fares, GO Transit, Uber vs Lyft, monthly pass, 2-hour transfer rule
-# Audience: International students arriving in Canada, Week 1
-/blog_day5_canada.html
+# StudenzBit — AI Discovery Index
+# Audience: International students exploring Canada, USA, and Australia
+# Updated: 2026-04-28
 
-# Blog 6 — Day 6: Digital Life Setup
-# Topics: Canadian Apple ID, Apple Wallet, card skimming, Interac e-Transfer, UNiDAYS, essential apps for international students
-# Audience: International students arriving in Canada, Week 1
+## Story Series — Arjun & Priya (Canada)
+/blog_day1_canada.html
+/blog_day2_canada.html
+/blog_day3_canada.html
+/blog_day4_canada.html
+/blog_day5_canada.html
 /blog_day6_canada.html
+/blog_day7_canada.html
+/blog_day8_canada.html
+
+## Blog & Guides
+/studenzbit_blog.html
+/the_ultimate_first_week_guide_article.html
+/blog_bank_account.html
+
+## Student Toolkit & Tech
+/studenzbit_student_toolkit_updated.html
+/studenzbit_tech_hub_updated.html
+/sim_guide.html
+/laptop_guide.html
+/smartphone_guide.html
+/all_picks.html
+
+## Destinations & Country Hubs
+/studenzbit_destinations.html
+/canada.html
+/usa.html
+/australia.html
+/studenzbit_toronto_detail.html
+
+## Detail Pages
+/macbook_air_m3_detail_page.html
+/job_search_roadmap_detail.html
