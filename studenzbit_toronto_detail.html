@@ -213,6 +213,29 @@ body {
 }
 
 </style>
+
+<style id="mobile-optimization-baseline">
+  html, body { max-width: 100%; overflow-x: hidden; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, video, canvas, svg { max-width: 100%; height: auto; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  iframe { max-width: 100%; }
+  @media (max-width: 768px) {
+    [style*="padding:60px 48px"],
+    [style*="padding: 60px 48px"],
+    [style*="padding:40px 48px"],
+    [style*="padding: 40px 48px"],
+    [style*="padding:0 48px"],
+    [style*="padding: 0 48px"],
+    [style*="padding:10px 48px"],
+    [style*="padding: 10px 48px"],
+    [style*="padding:12px 48px"],
+    [style*="padding: 12px 48px"] {
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+    }
+  }
+</style>
 </head>
 <body class="bg-[#EDF4ED] text-on-surface font-body antialiased" style="padding-top: 72px;">
 <!-- TopNavBar -->
