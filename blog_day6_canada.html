@@ -101,8 +101,10 @@
       border: 1px solid #e2ddd6;
     }
     .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-    .checklist li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: flex-start; }
-    .check-icon { width: 18px; height: 18px; border: 2px solid #7b3f3f; border-radius: 4px; background: #fff; margin-top: 2px; box-sizing: border-box; }
+    .checklist li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: flex-start; cursor: pointer; }
+    .check-icon { width: 20px; height: 20px; border: 2px solid #7b3f3f; border-radius: 4px; background: #fff; margin-top: 2px; box-sizing: border-box; position: relative; }
+    .checklist li.checked .check-icon { background:#7b3f3f; }
+    .checklist li.checked .check-icon::after { content:'✓'; color:#fff; font-size:14px; position:absolute; top:-2px; left:3px; }
     .character-story { display:grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
     .story-text { font-size:16px; line-height:1.85; }
     .tip-callout { background:#f0f4ff; border-left:4px solid #4a7ab5; border-radius:0 12px 12px 0; padding:18px; margin:16px 0; font-size:15px; line-height:1.75; display:flex; gap:12px; align-items:flex-start; }
@@ -506,7 +508,7 @@
 <section class="blog-wrap" style="padding:10px 48px 30px;">
   <div style="background:#fff; border:1px solid #e2ddd6; border-radius:16px; padding:24px;">
     <h2 style="font-family:Georgia,serif; font-size:30px; font-weight:400; margin:0 0 12px;">Day 6 Checklist</h2>
-    <ul class="checklist">
+    <ul class="checklist interactive-checklist">
       <li><span class="check-icon"></span><span>Fix your Apple ID — change country to Canada OR create a fresh Canadian ID</span></li>
       <li><span class="check-icon"></span><span>Update App Store billing address to match</span></li>
       <li><span class="check-icon"></span><span>Add your Canadian debit/credit card to Apple Wallet — tap your phone, not your card</span></li>
@@ -604,6 +606,15 @@
       mobileNav.classList.remove('open');
       hamburger.textContent = '☰';
     });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  document.querySelectorAll('.interactive-checklist li').forEach(function(item){
+    item.addEventListener('click', function(){ item.classList.toggle('checked'); });
   });
 })();
 </script>

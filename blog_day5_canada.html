@@ -108,8 +108,10 @@
     .fare-table td { border: 1px solid #e2ddd6; padding: 10px 12px; background: #fff; }
     .fare-table tr:nth-child(even) td { background: #faf8f5; }
     .checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-    .checklist li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; align-items: flex-start; }
-    .check-icon { width: 18px; height: 18px; border: 2px solid #7b3f3f; border-radius: 4px; background: #fff; margin-top: 2px; box-sizing: border-box; }
+    .checklist li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: flex-start; cursor: pointer; }
+    .check-icon { width: 20px; height: 20px; border: 2px solid #7b3f3f; border-radius: 4px; background: #fff; margin-top: 2px; box-sizing: border-box; position: relative; }
+    .checklist li.checked .check-icon { background:#7b3f3f; }
+    .checklist li.checked .check-icon::after { content:'✓'; color:#fff; font-size:14px; position:absolute; top:-2px; left:3px; }
     .character-story { display:grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
     .story-text { font-size:16px; line-height:1.85; }
     .story-kicker { font-family: Georgia, serif; font-size: 22px; line-height: 1.5; color:#2c2c2c; margin:0; }
@@ -531,7 +533,7 @@
 <section class="blog-wrap" style="padding:10px 48px 30px;">
   <div style="background:#fff; border:1px solid #e2ddd6; border-radius:16px; padding:24px;">
     <h2 style="font-family:Georgia,serif; font-size:30px; font-weight:400; margin:0 0 12px;">Day 5 Checklist</h2>
-    <ul class="checklist">
+    <ul class="checklist interactive-checklist">
       <li><span class="check-icon"></span><span>Get your PRESTO card — Pearson Airport, Shoppers Drug Mart, or prestocard.ca (<strong>$6</strong>)</span></li>
       <li><span class="check-icon"></span><span>Never tap your credit card on TTC — <strong>$4.75</strong> vs <strong>$3.55</strong> on PRESTO</span></li>
       <li><span class="check-icon"></span><span>Remember: one tap = 2 hours unlimited. Plan your trips around it</span></li>
@@ -627,6 +629,15 @@
       mobileNav.classList.remove('open');
       hamburger.textContent = '☰';
     });
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  document.querySelectorAll('.interactive-checklist li').forEach(function(item){
+    item.addEventListener('click', function(){ item.classList.toggle('checked'); });
   });
 })();
 </script>
