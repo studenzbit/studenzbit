@@ -562,6 +562,14 @@
       .footer-inner { grid-template-columns: 1fr; }
     }
   </style>
+
+<style id="mobile-optimization-baseline">
+  html, body { max-width: 100%; overflow-x: hidden; }
+  *, *::before, *::after { box-sizing: border-box; }
+  img, video, canvas, svg { max-width: 100%; height: auto; }
+  table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  iframe { max-width: 100%; }
+</style>
 </head>
 
 <body>
