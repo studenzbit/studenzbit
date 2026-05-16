@@ -853,8 +853,38 @@
 </div>
 </div>
 <div id="dispatches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Card — The Founder's Notes -->
-<article class="blog-card founders-card rounded-16px overflow-hidden" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders_notes_economy.html'">
+<!-- Card — The Founder's Notes (03) -->
+<article class="blog-card founders-card rounded-16px overflow-hidden" data-category="scam-alert" data-date="2026-05-20" data-popularity="52" onclick="window.location.href='founders-notes-03.html'">
+  <div class="founders-content p-8">
+    <span class="founders-series">The Founder&#39;s Notes</span>
+    <hr class="founders-rule" />
+    <p class="founders-title">Two Weeks Free. Then You Are Not the Right Fit.</p>
+    <p class="founders-excerpt">Shop owners who know you are desperate, know you do not know your rights, and are counting on both.</p>
+    <div class="founders-bottom">
+      <span class="founders-date">May 2026</span>
+      <span class="founders-tag">Scam Alert</span>
+    </div>
+    <a class="founders-read" href="founders-notes-03.html" onclick="event.stopPropagation();">Read now <span class="material-symbols-outlined text-sm">arrow_right_alt</span></a>
+  </div>
+  <div class="p-8" style="display:none;">founder scam unpaid training international student SIN identity theft employment standards</div>
+</article>
+<!-- Card — The Founder's Notes (02) -->
+<article class="blog-card founders-card rounded-16px overflow-hidden" data-category="survival" data-date="2026-05-18" data-popularity="51" onclick="window.location.href='founders-notes-02.html'">
+  <div class="founders-content p-8">
+    <span class="founders-series">The Founder&#39;s Notes</span>
+    <hr class="founders-rule" />
+    <p class="founders-title">I Took a Loan for a Car. The Delivery Market Had Other Plans.</p>
+    <p class="founders-excerpt">Eight months of job hunting. A loan from India. A car. And a market nobody warned him about.</p>
+    <div class="founders-bottom">
+      <span class="founders-date">May 2026</span>
+      <span class="founders-tag">Survival</span>
+    </div>
+    <a class="founders-read" href="founders-notes-02.html" onclick="event.stopPropagation();">Read now <span class="material-symbols-outlined text-sm">arrow_right_alt</span></a>
+  </div>
+  <div class="p-8" style="display:none;">founder uber eats doordash debt loan india gig economy canada job hunt survival</div>
+</article>
+<!-- Card — The Founder's Notes (01) -->
+<article class="blog-card founders-card rounded-16px overflow-hidden" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders-notes-01.html'">
   <div class="founders-content p-8">
     <span class="founders-series">The Founder&#39;s Notes</span>
     <hr class="founders-rule" />
@@ -864,7 +894,7 @@
       <span class="founders-date">May 2026</span>
       <span class="founders-tag">Economy</span>
     </div>
-    <a class="founders-read" href="founders_notes_economy.html" onclick="event.stopPropagation();">Read now <span class="material-symbols-outlined text-sm">arrow_right_alt</span></a>
+    <a class="founders-read" href="founders-notes-01.html" onclick="event.stopPropagation();">Read now <span class="material-symbols-outlined text-sm">arrow_right_alt</span></a>
   </div>
   <div class="p-8" style="display:none;">founder economy ferrari canada salary cost of living international student</div>
 </article>
@@ -1422,15 +1452,15 @@
 
 <script>
 (function () {
-  var card = document.querySelector('.founders-card');
-  if (card && window.createBoxRobot) {
+  if (!window.createBoxRobot) return;
+  document.querySelectorAll('.founders-card').forEach(function (card) {
     var robot = createBoxRobot('sm');
     robot.style.position = 'absolute';
     robot.style.top = '14px';
     robot.style.right = '14px';
     robot.style.zIndex = '2';
     card.appendChild(robot);
-  }
+  });
 })();
 </script>
 
