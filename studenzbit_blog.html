@@ -353,26 +353,29 @@
   background: #111111;
   border-width: 3px;
   border-style: solid;
-  border-color: #111111;
+  border-left-color: #1e1e1e;
+  border-right-color: #1e1e1e;
+  border-bottom-color: #1e1e1e;
   border-top-width: 4px;
+  border-top-style: solid;
   border-top-color: #7C3AED;
-  outline: 2px solid #7C3AED;
-  outline-offset: 0;
-  border-radius: 0;
+  border-radius: 1rem;
   position: relative;
   cursor: pointer;
-  padding: 18px 22px 22px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 360px;
   overflow: visible;
   box-sizing: border-box;
-  transition: background-color 150ms ease, border-top-color 150ms ease;
+  transition: background-color 150ms ease, border-left-color 150ms ease, border-right-color 150ms ease, border-bottom-color 150ms ease, border-top-color 150ms ease;
 }
 .founders-card:hover {
-  background: #1a1a18;
-  outline-color: #7C3AED;
-  border-top-color: #9F5BFF;
+  background: #16102a;
+  border-left-color: #7C3AED;
+  border-right-color: #7C3AED;
+  border-bottom-color: #7C3AED;
+  border-top-width: 4px;
+  border-top-color: #7C3AED;
 }
 .founders-content {
   flex: 1;
@@ -454,10 +457,6 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: color 150ms ease;
-}
-.founders-card:hover .founders-read {
-  color: #9F5BFF;
 }
 
 </style>
@@ -856,8 +855,8 @@
 </div>
 <div id="dispatches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Card — The Founder's Notes -->
-<article class="blog-card founders-card" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders_notes_economy.html'">
-  <div class="founders-content">
+<article class="blog-card founders-card rounded-16px" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders_notes_economy.html'">
+  <div class="founders-content p-8">
     <span class="founders-series">The Founder&#39;s Notes</span>
     <hr class="founders-rule" />
     <p class="founders-title">I Grew Up Watching American Farmers Drive Ferraris</p>
