@@ -350,16 +350,42 @@
 }
 
 .founders-card {
-  background: #1a1a18;
-  border: 0.5px solid #2e2e2b;
-  border-radius: 12px;
-  padding: 20px;
+  background: #ffffff;
+  border: 2px solid #111111;
+  border-radius: 0;
   position: relative;
   cursor: pointer;
-  transition: border-color 200ms ease;
+  transition: background 150ms ease;
   overflow: visible;
 }
-.founders-card:hover { border-color: #E8613A; }
+.founders-card:hover { background: #faf8ff; }
+.founders-topbar { height: 4px; background: #7C3AED; }
+.founders-content { padding: 14px 16px 14px; }
+.founders-series {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #7C3AED;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: block; margin-bottom: 8px;
+}
+.founders-title {
+  font-size: 17px; font-weight: 700; color: #111111; line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden; padding-right: 44px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.founders-rule { border: none; border-top: 1px solid #111111; margin: 10px 0; }
+.founders-excerpt {
+  font-size: 13px; color: #444444; line-height: 1.6;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden; font-family: system-ui, -apple-system, sans-serif;
+}
+.founders-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.founders-date { font-size: 11px; color: #888888; font-family: system-ui, -apple-system, sans-serif; }
+.founders-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #7C3AED; border: 1px solid #7C3AED; border-radius: 0; padding: 2px 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
 </style>
 
@@ -758,12 +784,16 @@
 <div id="dispatches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Card — The Founder's Notes -->
 <article class="blog-card founders-card" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders_notes_economy.html'">
-  <span style="display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8613A; border:1px solid #E8613A; border-radius:20px; padding:3px 10px; font-family:system-ui,-apple-system,sans-serif;">The Founder's Notes</span>
-  <p style="font-size:17px; font-weight:600; color:#e8e6df; margin-top:10px; line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; padding-right:42px; font-family:system-ui,-apple-system,sans-serif;">I Grew Up Watching American Farmers Drive Ferraris</p>
-  <p style="font-size:13px; color:#888780; line-height:1.6; margin-top:6px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; padding-right:42px; font-family:system-ui,-apple-system,sans-serif;">At 22, living in Canada, I'm watching six-figure earners stress about groceries. Nobody told me the full picture.</p>
-  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px;">
-    <span style="font-size:11px; color:#5F5E5A; font-family:system-ui,-apple-system,sans-serif;">May 2026</span>
-    <span style="font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8613A; border:1px solid #E8613A; border-radius:20px; padding:3px 10px; font-family:system-ui,-apple-system,sans-serif;">Economy</span>
+  <div class="founders-topbar"></div>
+  <div class="founders-content">
+    <span class="founders-series">The Founder's Notes</span>
+    <p class="founders-title">I Grew Up Watching American Farmers Drive Ferraris</p>
+    <hr class="founders-rule" />
+    <p class="founders-excerpt">At 22, living in Canada, I'm watching six-figure earners stress about groceries. Nobody told me the full picture.</p>
+    <div class="founders-bottom">
+      <span class="founders-date">May 2026</span>
+      <span class="founders-tag">Economy</span>
+    </div>
   </div>
   <div class="p-8" style="display:none;">founder economy ferrari canada salary cost of living international student</div>
 </article>
@@ -1289,8 +1319,8 @@
   if (card && window.createBoxRobot) {
     var robot = createBoxRobot('sm');
     robot.style.position = 'absolute';
-    robot.style.top = '16px';
-    robot.style.right = '16px';
+    robot.style.top = '12px';
+    robot.style.right = '12px';
     card.appendChild(robot);
   }
 })();
