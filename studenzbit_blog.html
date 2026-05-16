@@ -350,7 +350,7 @@
 }
 
 .founders-card {
-  background: #111111;
+  background-color: #111111;
   border-width: 3px;
   border-style: solid;
   border-left-color: #1e1e1e;
@@ -367,21 +367,18 @@
   flex-direction: column;
   overflow: visible;
   box-sizing: border-box;
-  transition: background-color 150ms ease, border-left-color 150ms ease, border-right-color 150ms ease, border-bottom-color 150ms ease, border-top-color 150ms ease;
+  box-shadow: 4px 4px 0px #7C3AED;
+  transition: box-shadow 150ms ease;
 }
 .founders-card:hover {
-  background: #16102a;
-  border-left-color: #7C3AED;
-  border-right-color: #7C3AED;
-  border-bottom-color: #7C3AED;
-  border-top-width: 4px;
-  border-top-color: #7C3AED;
+  box-shadow: 6px 6px 0px #7C3AED;
 }
 .founders-content {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
+  background-color: #111111;
 }
 .founders-series {
   font-size: 10px;
