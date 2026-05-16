@@ -347,6 +347,20 @@
   }
 }
 
+}
+
+.founders-card {
+  background: #1a1a18;
+  border: 0.5px solid #2e2e2b;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 200ms ease;
+  overflow: visible;
+}
+.founders-card:hover { border-color: #E8613A; }
+
 </style>
 
 <style id="mobile-optimization-baseline">
@@ -371,6 +385,7 @@
     }
   }
 </style>
+<script src="js/box-robot.js"></script>
 </head>
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container" style="padding-top: 72px;">
 <div class="fixed inset-0 pointer-events-none grain-overlay z-[100]"></div>
@@ -737,9 +752,21 @@
   <button type="button" onclick="filterBlog('student-life')" class="blog-filter" data-filter="student-life">🎓 Student Life</button>
   <button type="button" onclick="filterBlog('mental-health')" class="blog-filter" data-filter="mental-health">🧠 Mental Health</button>
   <button type="button" onclick="filterBlog('arjun-priya')" class="blog-filter" data-filter="arjun-priya">📖 Arjun &amp; Priya</button>
+  <button type="button" onclick="filterBlog('economy')" class="blog-filter" data-filter="economy">📊 Economy</button>
 </div>
 </div>
 <div id="dispatches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card — The Founder's Notes -->
+<article class="blog-card founders-card" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders_notes_economy.html'">
+  <span style="display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8613A; border:1px solid #E8613A; border-radius:20px; padding:3px 10px; font-family:system-ui,-apple-system,sans-serif;">The Founder's Notes</span>
+  <p style="font-size:17px; font-weight:600; color:#e8e6df; margin-top:10px; line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; padding-right:42px; font-family:system-ui,-apple-system,sans-serif;">I Grew Up Watching American Farmers Drive Ferraris</p>
+  <p style="font-size:13px; color:#888780; line-height:1.6; margin-top:6px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; padding-right:42px; font-family:system-ui,-apple-system,sans-serif;">At 22, living in Canada, I'm watching six-figure earners stress about groceries. Nobody told me the full picture.</p>
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px;">
+    <span style="font-size:11px; color:#5F5E5A; font-family:system-ui,-apple-system,sans-serif;">May 2026</span>
+    <span style="font-size:10px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#E8613A; border:1px solid #E8613A; border-radius:20px; padding:3px 10px; font-family:system-ui,-apple-system,sans-serif;">Economy</span>
+  </div>
+  <div class="p-8" style="display:none;">founder economy ferrari canada salary cost of living international student</div>
+</article>
 <!-- Card Day 8 — Money & GIC -->
 <article class="blog-card bg-surface-container-lowest rounded-16px overflow-hidden group border border-outline-variant/10 hover:shadow-xl transition-all duration-500" data-category="canada finance banking arjun-priya" data-date="2026-04-20" data-popularity="102">
 <div class="h-4 bg-[#d9eaa3] p-0"></div>
@@ -1253,6 +1280,19 @@
       hamburger.textContent = '☰';
     });
   });
+})();
+</script>
+
+<script>
+(function () {
+  var card = document.querySelector('.founders-card');
+  if (card && window.createBoxRobot) {
+    var robot = createBoxRobot('sm');
+    robot.style.position = 'absolute';
+    robot.style.top = '16px';
+    robot.style.right = '16px';
+    card.appendChild(robot);
+  }
 })();
 </script>
 
