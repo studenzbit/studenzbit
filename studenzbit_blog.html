@@ -350,46 +350,114 @@
 }
 
 .founders-card {
-  background: #ffffff;
-  border: 3px solid #111111;
+  background: #111111;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #111111;
+  border-top-width: 4px;
+  border-top-color: #7C3AED;
+  outline: 2px solid #7C3AED;
+  outline-offset: 0;
   border-radius: 0;
   position: relative;
   cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  padding: 18px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
   overflow: visible;
+  box-sizing: border-box;
+  transition: background-color 150ms ease, border-top-color 150ms ease;
 }
 .founders-card:hover {
-  background: #ffffff;
-  border-color: #7C3AED;
-  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.18);
-  transform: translateY(-3px);
+  background: #1a1a18;
+  outline-color: #7C3AED;
+  border-top-color: #9F5BFF;
 }
-.founders-topbar { height: 8px; background: #7C3AED; }
-.founders-content { padding: 14px 16px 14px; }
+.founders-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
 .founders-series {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: #7C3AED;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7C3AED;
   font-family: system-ui, -apple-system, sans-serif;
-  display: block; margin-bottom: 8px;
+  display: block;
+  margin-bottom: 10px;
+  padding-right: 44px;
+}
+.founders-rule {
+  border: none;
+  border-top: 1px solid #2e2e2b;
+  margin: 0 0 12px 0;
+  padding: 0;
+  height: 0;
 }
 .founders-title {
-  font-size: 17px; font-weight: 700; color: #111111; line-height: 1.3;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-  overflow: hidden; padding-right: 44px;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #f0eeea;
+  line-height: 1.3;
+  margin: 0 0 10px 0;
+  padding-right: 44px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.founders-rule { border: none; border-top: 3px solid #111111; margin: 10px 0; }
 .founders-excerpt {
-  font-size: 13px; color: #444444; line-height: 1.6;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-  overflow: hidden; font-family: system-ui, -apple-system, sans-serif;
-}
-.founders-bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
-.founders-date { font-size: 11px; color: #888888; font-family: system-ui, -apple-system, sans-serif; }
-.founders-tag {
-  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: #7C3AED; border: 1px solid #7C3AED; border-radius: 0; padding: 2px 8px;
+  font-size: 13px;
+  color: #888780;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
   font-family: system-ui, -apple-system, sans-serif;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.founders-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.founders-date {
+  font-size: 11px;
+  color: #555553;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.founders-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7C3AED;
+  border: 1px solid #7C3AED;
+  border-radius: 0;
+  padding: 3px 8px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.founders-read {
+  margin-top: auto;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #7C3AED;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 150ms ease;
+}
+.founders-card:hover .founders-read {
+  color: #9F5BFF;
 }
 
 </style>
@@ -789,16 +857,16 @@
 <div id="dispatches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Card — The Founder's Notes -->
 <article class="blog-card founders-card" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders_notes_economy.html'">
-  <div class="founders-topbar"></div>
   <div class="founders-content">
-    <span class="founders-series">The Founder's Notes</span>
-    <p class="founders-title">I Grew Up Watching American Farmers Drive Ferraris</p>
+    <span class="founders-series">The Founder&#39;s Notes</span>
     <hr class="founders-rule" />
-    <p class="founders-excerpt">At 22, living in Canada, I'm watching six-figure earners stress about groceries. Nobody told me the full picture.</p>
+    <p class="founders-title">I Grew Up Watching American Farmers Drive Ferraris</p>
+    <p class="founders-excerpt">At 22, living in Canada for three years, I'm watching six-figure earners stress about groceries. Nobody told me the full picture.</p>
     <div class="founders-bottom">
       <span class="founders-date">May 2026</span>
       <span class="founders-tag">Economy</span>
     </div>
+    <a class="founders-read" href="founders_notes_economy.html" onclick="event.stopPropagation();">Read now <span class="material-symbols-outlined text-sm">arrow_right_alt</span></a>
   </div>
   <div class="p-8" style="display:none;">founder economy ferrari canada salary cost of living international student</div>
 </article>
@@ -1324,8 +1392,9 @@
   if (card && window.createBoxRobot) {
     var robot = createBoxRobot('sm');
     robot.style.position = 'absolute';
-    robot.style.top = '12px';
-    robot.style.right = '12px';
+    robot.style.top = '14px';
+    robot.style.right = '14px';
+    robot.style.zIndex = '2';
     card.appendChild(robot);
   }
 })();
