@@ -347,9 +347,8 @@
   }
 }
 
-}
-
-.founders-card {
+/* Founder card: id-scoped selector so Tailwind utilities never flatten corners */
+#dispatches-grid article.blog-card.founders-card {
   background-color: #111111;
   border-width: 3px;
   border-style: solid;
@@ -359,7 +358,7 @@
   border-top-width: 4px;
   border-top-style: solid;
   border-top-color: #7C3AED;
-  border-radius: 16px;
+  border-radius: 1rem;
   position: relative;
   cursor: pointer;
   padding: 0;
@@ -369,8 +368,11 @@
   box-sizing: border-box;
   box-shadow: 4px 4px 0px #7C3AED;
   transition: box-shadow 150ms ease;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  isolation: isolate;
 }
-.founders-card:hover {
+#dispatches-grid article.blog-card.founders-card:hover {
   box-shadow: 6px 6px 0px #7C3AED;
 }
 .founders-content {
@@ -852,7 +854,7 @@
 </div>
 <div id="dispatches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Card — The Founder's Notes -->
-<article class="blog-card founders-card rounded-16px" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders_notes_economy.html'">
+<article class="blog-card founders-card rounded-16px overflow-hidden" data-category="economy" data-date="2026-05-15" data-popularity="50" onclick="window.location.href='founders_notes_economy.html'">
   <div class="founders-content p-8">
     <span class="founders-series">The Founder&#39;s Notes</span>
     <hr class="founders-rule" />
