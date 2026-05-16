@@ -80,8 +80,8 @@
     .page-wrapper {
       max-width: 1200px;
       margin: 0 auto;
-      border-left: 2px solid #111111;
-      border-right: 2px solid #111111;
+      border-left: 4px solid #111111;
+      border-right: 4px solid #111111;
       background: #ffffff;
     }
 
@@ -101,9 +101,9 @@
 
     /* ── MASTHEAD STRIP ── */
     .masthead {
-      background: #ffffff;
+      background: #111111;
       padding: 12px 6%;
-      border-bottom: 2px solid #111111;
+      border-bottom: 3px solid #111111;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -118,20 +118,19 @@
     .masthead-center {
       font-size: 13px;
       font-weight: 600;
-      color: #111111;
+      color: #e8e8e8;
     }
 
     /* ── HEADLINE SECTION ── */
     .headline-section {
-      background: #ffffff;
+      background: #111111;
       padding: 40px 6% 32px;
-      border-bottom: 2px solid #111111;
     }
     .dateline {
       display: block;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #7C3AED;
       margin-bottom: 14px;
@@ -140,18 +139,18 @@
 
     /* ── THOUGHT BAR ── */
     .thought-bar {
-      border: 2px solid #111111;
+      border: 3px solid #7C3AED;
       border-radius: 0;
       padding: 20px 72px 20px 20px;
       position: relative;
-      background: #faf8ff;
+      background: #1a1a1a;
       overflow: visible;
     }
     .thought-label {
       display: block;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #7C3AED;
       margin-bottom: 8px;
@@ -159,22 +158,32 @@
     }
     .thought-text {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 24px;
-      font-weight: 700;
-      color: #111111;
+      font-size: 26px;
+      font-weight: 800;
+      color: #f5f5f5;
       line-height: 1.4;
     }
     .robot-slot {
       position: absolute;
-      right: 10px;
-      top: -40px;
+      right: -2px;
+      top: -52px;
+      z-index: 2;
+    }
+
+    /* Smooth entrance before jump (does not fight SVG transforms inside SVG) */
+    .thought-bar .robot-slot.box-robot {
+      opacity: 0;
+      transition: opacity 0.45s ease-out;
+    }
+    .thought-bar .robot-slot.box-robot.robot-ready {
+      opacity: 1;
     }
 
     /* ── STORY SECTION ── */
     .story-section {
       background: #f9f7f2;
       padding: 52px 6%;
-      border-bottom: 2px solid #111111;
+      border-top: 3px solid #111111;
     }
     .story-inner {
       max-width: 660px;
@@ -189,18 +198,18 @@
     .section-dateline {
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: #888888;
+      color: #7C3AED;
       white-space: nowrap;
       font-family: system-ui, -apple-system, sans-serif;
     }
-    .section-rule { flex: 1; height: 1px; background: #cccccc; }
+    .section-rule { flex: 1; height: 3px; background: #111111; }
     .story-body p {
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 17px;
       color: #1a1a18;
-      line-height: 1.9;
+      line-height: 1.95;
       margin-bottom: 20px;
     }
     .story-body p:last-child { margin-bottom: 0; }
@@ -209,19 +218,20 @@
     .pull-quote-wrap {
       background: #ffffff;
       padding: 40px 6%;
-      border-bottom: 2px solid #111111;
+      border-top: 3px solid #111111;
+      border-bottom: 3px solid #111111;
     }
     .pull-quote {
       max-width: 660px;
       margin: 0 auto;
-      border-left: 4px solid #7C3AED;
+      border-left: 6px solid #7C3AED;
       border-radius: 0;
       padding-left: 24px;
     }
     .pull-quote p {
       font-family: Georgia, 'Times New Roman', serif;
       font-style: italic;
-      font-size: 22px;
+      font-size: 23px;
       color: #111111;
       line-height: 1.65;
     }
@@ -230,13 +240,13 @@
     .lesson-section {
       background: #111111;
       padding: 48px 6%;
-      border-bottom: 2px solid #7C3AED;
+      border-bottom: 3px solid #7C3AED;
     }
     .lesson-dateline {
       display: block;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: #7C3AED;
       max-width: 660px;
@@ -245,7 +255,7 @@
     }
     .lesson-card {
       background: #1e1e1e;
-      border: 1px solid #333333;
+      border: 2px solid #333333;
       border-radius: 0;
       padding: 22px 26px;
       max-width: 660px;
@@ -263,7 +273,8 @@
     .question-section {
       background: #f9f7f2;
       padding: 48px 6%;
-      border-bottom: 2px solid #111111;
+      border-top: 3px solid #111111;
+      border-bottom: 3px solid #111111;
     }
     .question-inner { max-width: 660px; margin: 0 auto; }
     .question-row { display: flex; align-items: flex-start; gap: 14px; }
@@ -290,7 +301,7 @@
 
     /* ── ARTICLE FOOTER STRIP ── */
     .article-footer {
-      background: #111111;
+      background: #0d0d0d;
       padding: 16px 6%;
       display: flex;
       justify-content: space-between;
@@ -315,8 +326,8 @@
       .masthead-center { display: none; }
 
       .headline-section { padding: 28px 24px 24px; }
-      .thought-bar { padding: 18px 20px; }
-      .thought-text { font-size: 19px; }
+      .thought-bar { padding: 18px 56px 18px 18px; }
+      .thought-text { font-size: 21px; }
 
       .story-section { padding: 40px 24px; }
       .pull-quote-wrap { padding: 32px 24px; }
@@ -506,8 +517,16 @@
       if (bar && window.createBoxRobot) {
         var robot = createBoxRobot('lg');
         robot.className += ' robot-slot';
+        robot.style.animation = 'none';
         bar.appendChild(robot);
-        setTimeout(function () { robot.triggerJump(); }, 400);
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            robot.classList.add('robot-ready');
+            setTimeout(function () {
+              robot.triggerJump();
+            }, 320);
+          });
+        });
       }
     })();
 
