@@ -236,6 +236,40 @@
   .next-avatars { flex-direction:row; justify-content:center; }
 }
 
+
+    /* Series blog nav: ← prev · current · next → */
+    .blog-nav {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+    }
+    .blog-nav a.blog-nav-prev {
+      justify-self: start;
+      color: #7b3f3f;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .blog-nav a.blog-nav-next {
+      justify-self: end;
+      color: #7b3f3f;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .blog-nav a:hover { text-decoration: underline; }
+    .blog-nav .blog-nav-current {
+      justify-self: center;
+      color: #8c8479;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .blog-nav .blog-nav-placeholder {
+      visibility: hidden;
+      justify-self: start;
+    }
+
 </style>
 
 <style id="mobile-optimization-baseline">
@@ -319,10 +353,11 @@
 
 <!-- Internal blog nav -->
 <div class="blog-wrap" style="margin:0 auto 8px;">
-  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-size:14px;">
-    <a href="blog_day6_canada.html" style="color:#7b3f3f; font-weight:600; text-decoration:none;">← Day 6</a>
-    <a href="blog_day8_canada.html" style="color:#8c8479; font-weight:600; text-decoration:none;">Blog 8 →</a>
-  </div>
+  <nav class="blog-nav" aria-label="Blog series navigation">
+    <a href="blog_day6_canada.html" class="blog-nav-prev">← Blog 6</a>
+    <span class="blog-nav-current">Blog 7</span>
+    <a href="blog_day8_canada.html" class="blog-nav-next">Blog 8 →</a>
+  </nav>
 </div>
 
 <!-- MYTH BUSTER -->
