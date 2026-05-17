@@ -323,10 +323,32 @@
 
     /* story image */
     .story-img {
-      width: 100%;
+      width: 190px;
+      height: auto;
       border-radius: 12px;
-      margin: 1.5rem 0;
-      display: block;
+      float: right;
+      margin: 0.25rem 0 1.25rem 1.5rem;
+    }
+
+    .story-img.arjun-img {
+      float: left;
+      margin: 0.25rem 1.5rem 1.25rem 0;
+    }
+
+    .story-section::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    @media (max-width: 640px) {
+      .story-img,
+      .story-img.arjun-img {
+        float: none;
+        width: 130px;
+        display: block;
+        margin: 0 auto 1rem auto;
+      }
     }
 
     /* ── TIP CALLOUT ── */
@@ -718,8 +740,9 @@
     <p>There is no such thing as the best laptop. The one that suits your usage is the best for you.</p>
 
     <!-- ARJUN'S STORY -->
+    <div class="story-section">
     <h2>Arjun's Story</h2>
-    <img src="assets/images/Blog11_ASad.png" alt="Arjun stressed at Best Buy" class="story-img" />
+    <img src="assets/images/Blog11_ASad.png" alt="Arjun stressed at Best Buy" class="story-img arjun-img" />
 
     <p>Arjun walks into Best Buy in Week 2, list-less, plan-less, just a vague idea that he needs "a good laptop for CS."</p>
 
@@ -740,15 +763,18 @@
 
     <p><strong>18 months in.</strong> Thermal throttling kicks in during compile-heavy builds. The fan runs loud. His laptop feels 3 years older than it is.</p>
 
-    <img src="assets/images/Blog11_AAngry.png" alt="Arjun regretting his laptop purchase" class="story-img" />
+    <img src="assets/images/Blog11_AAngry.png" alt="Arjun regretting his laptop purchase" class="story-img arjun-img" />
 
     <div class="warning-callout">
       <p><strong>⚠️ What Arjun Should Have Done:</strong> Before buying any laptop, email your department and ask which OS your coursework requires. CS programs almost always use Unix-based tools. A Mac or Linux machine saves you hours of setup time. Check your program's student Discord or email your academic advisor — one email, answered in 24 hours, changes everything.</p>
     </div>
 
-    <img src="assets/images/Blog11_AIdea.png" alt="Arjun reading university email about software" class="story-img" />
+    <img src="assets/images/Blog11_AIdea.png" alt="Arjun reading university email about software" class="story-img arjun-img" />
+
+    </div>
 
     <!-- PRIYA'S STORY -->
+    <div class="story-section">
     <h2>Priya's Story</h2>
     <img src="assets/images/Blog11_PHappy.png" alt="Priya at her desk with MacBook Air" class="story-img" />
 
@@ -774,6 +800,8 @@
     <div class="tip-callout">
       <span class="tip-icon">💡</span>
       <p>The salesperson in a big box store is there to sell, not to understand your needs. Do your own research first. Then walk in confident. Both Mac and Windows are great — if you choose based on your actual usage.</p>
+    </div>
+
     </div>
 
     <!-- MAC VS WINDOWS -->
