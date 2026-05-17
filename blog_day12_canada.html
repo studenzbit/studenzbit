@@ -616,6 +616,68 @@
   </style>
 
 <style id="mobile-optimization-baseline">
+  .nav-links { display: flex; }
+
+  .hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    color: inherit;
+  }
+
+  .mobile-nav-dropdown {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.25s ease;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #e2ddd6;
+    z-index: 1000;
+  }
+
+  .mobile-nav-dropdown a {
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 24px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #2c2c2c;
+    text-decoration: none;
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-nav-dropdown a:hover {
+    background: #f5ede0;
+  }
+
+  .mobile-nav-dropdown.open {
+    max-height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    nav[style*="height:72px"] { padding: 0 24px !important; }
+    .nav-links { display: none !important; }
+    .hamburger-btn { display: block; }
+    .mobile-nav-dropdown { display: flex; }
+
+    .footer-columns {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 32px !important;
+    }
+  }
+
   html, body { max-width: 100%; overflow-x: hidden; }
   *, *::before, *::after { box-sizing: border-box; }
   img, video, canvas, svg { max-width: 100%; height: auto; }
@@ -624,22 +686,43 @@
 </style>
 </head>
 
-<body style="background:#f2f0f8; padding-top:72px;">
+<body style="margin:0; padding:0; padding-top:72px; background:#f2f0f8; font-family:'DM Sans',sans-serif; color:#2c2c2c;">
 <div id="progress-bar" style="position:fixed; top:0; left:0; height:3px; width:0%; background:#7b3f3f; z-index:9999; transition:width 0.1s ease;"></div>
 
-  <!-- NAV -->
+<script>
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = docHeight <= 0 ? 0 : Math.min(100, (scrollTop / docHeight) * 100);
+    document.getElementById('progress-bar').style.width = progress + '%';
+  });
+</script>
+
+<!-- TopNavBar -->
 <nav style="position:fixed; top:0; left:0; right:0; height:72px; background:#ffffff; border-bottom:1px solid #e2ddd6; display:flex; align-items:center; justify-content:space-between; padding:0 48px; z-index:1000; box-sizing:border-box;">
-  <a href="https://www.studenzbit.com/" style="font-family:'DM Sans',sans-serif; font-size:16px; font-style:italic; font-weight:400; color:#2c2c2c; text-decoration:none;">StudenzBit</a>
-  <div style="display:flex; align-items:center; gap:32px;">
-    <a href="https://www.studenzbit.com/studenzbit_destinations.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Destinations</a>
-    <a href="https://www.studenzbit.com/studenzbit_tech_hub_updated.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Tech Hub</a>
-    <a href="https://www.studenzbit.com/studenzbit_student_toolkit_updated.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Student Toolkit</a>
-    <a href="https://www.studenzbit.com/studenzbit_blog.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Blog</a>
+  <a href="/" style="text-decoration:none;">
+    <span style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-style:italic; font-weight:normal; color:#2c2c2c; letter-spacing:-0.3px;">StudenzBit</span>
+  </a>
+  <div style="display:flex; align-items:center; gap:36px; flex-wrap:wrap;" class="nav-links">
+    <a href="studenzbit_destinations.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Destinations</a>
+    <a href="studenzbit_tech_hub_updated.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Tech Hub</a>
+    <a href="studenzbit_student_toolkit_updated.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Student Toolkit</a>
+    <a href="studenzbit_blog.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#2c2c2c; text-decoration:none;">Blog</a>
+    <a href="all_picks.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#7b3f3f; text-decoration:none; border:1.5px solid #7b3f3f; padding:6px 16px; border-radius:20px;" onmouseover="this.style.background='#7b3f3f';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='#7b3f3f'">All Picks</a>
   </div>
-  <a href="https://www.studenzbit.com/all_picks.html" style="font-family:'DM Sans',-apple-system,sans-serif; font-size:14px; font-weight:500; color:#7b3f3f; text-decoration:none; border:1.5px solid #7b3f3f; padding:6px 16px; border-radius:20px;">All Picks</a>
+  <button class="hamburger-btn" type="button" aria-label="Toggle navigation">☰</button>
+
 </nav>
 
-  <!-- ARTICLE HEADER -->
+<div class="mobile-nav-dropdown">
+  <a href="/studenzbit_destinations.html">Destinations</a>
+  <a href="/studenzbit_tech_hub_updated.html">Tech Hub</a>
+  <a href="/studenzbit_student_toolkit_updated.html">Student Toolkit</a>
+  <a href="/studenzbit_blog.html">Blog</a>
+  <a href="/all_picks.html">All Picks</a>
+</div>
+
+<!-- ARTICLE HEADER -->
   <div class="article-header">
     <p class="post-label">POST 12 · WEEK 1</p>
     <p class="post-sublabel">WEEK 1 · BLOG 12</p>
@@ -991,14 +1074,25 @@
   </div>
 </footer>
 
+
 <script>
-  const bar = document.getElementById('progress-bar');
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    bar.style.width = progress + '%';
+(function () {
+  const hamburger = document.querySelector('.hamburger-btn');
+  const mobileNav = document.querySelector('.mobile-nav-dropdown');
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.textContent = isOpen ? '✕' : '☰';
   });
+
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.textContent = '☰';
+    });
+  });
+})();
 </script>
 
 </body>
